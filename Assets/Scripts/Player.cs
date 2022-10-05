@@ -14,9 +14,10 @@ public class Player : MonoBehaviour
 
     public Transform hit_target = null;  // 최종타겟 임시시정
 
-    public int playerSpeed = 3;
     public GameObject bulletObjA;
-    public float bulletSpeed = 10f;
+
+    public int playerSpeed = 3;
+    public float bulletSpeed = 2f;
     public float bulletDamage = 1f;
 
     Rigidbody2D rigid;
@@ -36,17 +37,6 @@ public class Player : MonoBehaviour
     void Update()
     { 
         Playermove();
-        if (hit_target == null) { 
-            //UnityEngine.Debug.Log("적 없음");
-        }
-        else
-        {
-            UnityEngine.Debug.Log("발사");
-        }
-    }
-    void Fire()
-    {
-        
     }
 
     void Playermove() 
@@ -60,12 +50,13 @@ public class Player : MonoBehaviour
         transform.position = curPos + nextPos;
     }
     
-    void SearchEnemy()                 
+    void SearchEnemy()                        
     {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, searchRadius, layerMask);
+        // OverlapCircleAll = 일정한 범위 내의 특정 layer 찾아줌
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, searchRadius, layerMask); 
         Transform p_shortestTarget = null;
 
-        if(colls.Length > 0)
+        if(colls.Length > 0)    // 배열 크기 0보다 크다 : 범위 내에 적이 있다.
         {
             float p_shortestDistance = Mathf.Infinity;
 
@@ -80,6 +71,7 @@ public class Player : MonoBehaviour
                     p_shortestTarget = p_colTarget.transform;
                 }
             }
+            // 아래 4줄 : 적 자동 조준 코드
             Vector3 fire = p_shortestTarget.position - transform.position;
             GameObject bullet = Instantiate(bulletObjA, transform.position, transform.rotation);
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
@@ -87,9 +79,9 @@ public class Player : MonoBehaviour
         }
         else
         {
+            // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
             UnityEngine.Debug.Log("Length < 0");
         }
-
         hit_target = p_shortestTarget;
     }
 }
