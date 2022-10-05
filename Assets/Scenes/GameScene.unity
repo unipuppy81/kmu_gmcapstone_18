@@ -162,6 +162,9 @@ MonoBehaviour:
   fireRate: 0
   hit_target: {fileID: 827680103}
   playerSpeed: 3
+  bulletObjA: {fileID: 1611506078421503375, guid: b5c12a1464afad34a88922f955836837, type: 3}
+  bulletSpeed: 10
+  bulletDamage: 1
 --- !u!212 &128811909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -928,7 +931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1086364452
 SpriteRenderer:
   m_ObjectHideFlags: 0
