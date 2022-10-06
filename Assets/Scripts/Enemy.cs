@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rigid;
     Transform target;
 
- 
+
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -39,10 +39,10 @@ public class Enemy : MonoBehaviour
     {
         health -= dmg;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
-        }  
+        }
     }
 
     void ReturnSprite()
@@ -52,12 +52,19 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player");
+        if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
 
-            UnityEngine.Debug.Log("Enemy01 Boom");
+            UnityEngine.Debug.Log("Player");
+        }
+        else if (other.gameObject.tag == "Enemy01")
+        {
+            UnityEngine.Debug.Log("Enemy01");
+        }
+        else if(other.gameObject.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
         }
     }
-
 }

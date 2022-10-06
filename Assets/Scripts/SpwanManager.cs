@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -9,22 +8,25 @@ public class SpwanManager : MonoBehaviour
 {
     public bool enabledSpawn = false;
     public GameObject Enemy;
+    public GameObject spawnSpot = null;
+  
 
     Vector3 PlayerPos;
 
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 3, 1);
+        InvokeRepeating("SpawnEnemy", 3, 0.3f);
     }
 
     void Update()
     {
-        PlayerPos = transform.position;
+
     }
 
     void SpawnEnemy()
     {
-        
+      //  spawnSpot = GameObject.FindWithTag("Player");
+      //  PlayerPos = spawnSpot.transform;
 
         float spawnPosx = PlayerPos.x + 8f;
         float spawnPosy = PlayerPos.y + 8f;
@@ -34,7 +36,7 @@ public class SpwanManager : MonoBehaviour
 
         if (enabledSpawn)
         {
-            GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+                GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(randomX, randomY, 0f), Quaternion.identity);
         }
     }
 }
