@@ -8,5 +8,26 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 9e18fa37ee05e0340b9911733551594c
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: e48e64c298443d54696f67315631f3cb
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/StoreScene.unity
+    guid: cbba0014c5eabc845a84d63595653f5f
+  - enabled: 1
+    path: Assets/Scenes/EvolutionScene.unity
+    guid: 1949eac7d5735dc4182a86db69b14d0c
+  - enabled: 1
+    path: Assets/Scenes/ChallengeScene.unity
+    guid: 8a07e0e8e358e114a8d42b87e66401fe
+  - enabled: 1
+    path: Assets/Scenes/CharacterScene.unity
+    guid: ffde064f5c5192449b182dc8b235f4e5
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 24d758e37c35c974d985780ba5c84e55, type: 2}

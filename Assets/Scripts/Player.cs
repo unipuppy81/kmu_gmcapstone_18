@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
 
     public Transform hit_target = null;  // 최종타겟 임시시정
 
+    public GameObject levelPanel;
     public GameObject bulletObjA;
 
     public int playerSpeed = 3;
@@ -113,9 +116,15 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if (curEx >= maxEx)
             {
-                UnityEngine.Debug.Log("레벨업");
+                Time.timeScale = 0f;
+                setactive();
             }
 
         }
+    }
+
+    private void setactive()
+    {
+        
     }
 }
