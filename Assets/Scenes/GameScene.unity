@@ -430,7 +430,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7d87b4921c3cfa54ab448e51c427d553, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledSpawn: 1
   Enemy: {fileID: 8409871284461968199, guid: cab2f3e9a5af04540b6523c2eeda939e, type: 3}
-  spawnSpot: {fileID: 0}
+  Box: {fileID: 492047968957281797, guid: e7875b6ff3f28e942a95b785bf6467b3, type: 3}
 --- !u!4 &1017085520
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1529,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: Bomb
+      value: 
+      objectReference: {fileID: 5458432884013792458, guid: d40f011b926ddb047a6c2a7bba9f5590, type: 3}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: maxEx
       value: 10
