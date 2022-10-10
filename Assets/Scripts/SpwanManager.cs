@@ -9,13 +9,17 @@ public class SpwanManager : MonoBehaviour
 {
     public bool enabledSpawn = false;
     public GameObject Enemy;
-  
+    public GameObject Box;
 
     Vector3 PlayerPos;
 
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 3, 0.3f);
+        InvokeRepeating("SpawnEnemy", 3, 1f);
+        
+        //InvokeRepeating("SpwanBox", 3, 10f);
+        // 코루틴 쓰려했는데 어려움 고쳐봐야됨
+    
     }
 
     void Update()
@@ -37,6 +41,20 @@ public class SpwanManager : MonoBehaviour
         if (enabledSpawn)
         {
                 GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+        }
+    }
+
+    void SpawnBox()
+    {
+        float BoxPosx = 8f;
+        float BoxPosy = 8f;
+
+        float brandomX = UnityEngine.Random.Range(-BoxPosx, BoxPosx);
+        float brandomY = UnityEngine.Random.Range(-BoxPosy, BoxPosy);
+
+        if (enabledSpawn)
+        {
+            GameObject box = (GameObject)Instantiate(Box, new Vector3(brandomX, brandomY, 0f), Quaternion.identity);
         }
     }
 }

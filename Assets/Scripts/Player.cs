@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
 
     public Transform hit_target = null;  // 최종타겟 임시시정
 
+    public GameObject levelPanel;
     public GameObject bulletObjA;
 
     public bool enabledSpawn = false;
@@ -103,9 +105,6 @@ public class Player : MonoBehaviour
         if(colls.Length > 0)    // 배열 크기 0보다 크다 : 범위 내에 적이 있다.
         {
             float p_shortestDistance = Mathf.Infinity;
-
-            //UnityEngine.Debug.Log("Length > 0");
-
             foreach (Collider2D p_colTarget in colls)
             {
                 float t_distance = Vector3.SqrMagnitude(transform.position - p_colTarget.transform.position);
@@ -130,7 +129,6 @@ public class Player : MonoBehaviour
         else
         {
             // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
-            //UnityEngine.Debug.Log("Length < 0");
         }
         hit_target = p_shortestTarget;
     }
@@ -143,9 +141,14 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if (curEx >= maxEx)
             {
-                UnityEngine.Debug.Log("레벨업");
+                //Time.timeScale = 0f;
+                //setactive();
             }
-
         }
+    }
+
+    private void setactive()
+    {
+        
     }
 }
