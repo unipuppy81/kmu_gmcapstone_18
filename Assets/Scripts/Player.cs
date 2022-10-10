@@ -77,8 +77,6 @@ public class Player : MonoBehaviour
         {
             float p_shortestDistance = Mathf.Infinity;
 
-            UnityEngine.Debug.Log("Length > 0");
-
             foreach (Collider2D p_colTarget in colls)
             {
                 float t_distance = Vector3.SqrMagnitude(transform.position - p_colTarget.transform.position);
@@ -103,7 +101,6 @@ public class Player : MonoBehaviour
         else
         {
             // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
-            UnityEngine.Debug.Log("Length < 0");
         }
         hit_target = p_shortestTarget;
     }
@@ -116,10 +113,9 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if (curEx >= maxEx)
             {
-                Time.timeScale = 0f;
-                setactive();
+                //Time.timeScale = 0f;
+                //setactive();
             }
-
         }
     }
 
