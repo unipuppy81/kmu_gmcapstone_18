@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -8,7 +9,6 @@ public class SpwanManager : MonoBehaviour
 {
     public bool enabledSpawn = false;
     public GameObject Enemy;
-    public GameObject spawnSpot = null;
   
 
     Vector3 PlayerPos;
@@ -31,8 +31,8 @@ public class SpwanManager : MonoBehaviour
         float spawnPosx = PlayerPos.x + 8f;
         float spawnPosy = PlayerPos.y + 8f;
 
-        float randomX = Random.Range(-spawnPosx, spawnPosx);
-        float randomY = Random.Range(-spawnPosy, spawnPosy);
+        float randomX = UnityEngine.Random.Range(-spawnPosx, spawnPosx);
+        float randomY = UnityEngine.Random.Range(-spawnPosy, spawnPosy);
 
         if (enabledSpawn)
         {

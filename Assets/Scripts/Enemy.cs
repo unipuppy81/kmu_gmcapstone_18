@@ -58,11 +58,11 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            UnityEngine.Debug.Log("Player");
+            //UnityEngine.Debug.Log("Player");
         }
         else if (other.gameObject.tag == "Enemy01")
         {
-            UnityEngine.Debug.Log("Enemy01");
+            //UnityEngine.Debug.Log("Enemy01");
         }
         else if(other.gameObject.tag == "Bullet")
         {

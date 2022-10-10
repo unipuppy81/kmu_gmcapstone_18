@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -17,6 +18,9 @@ public class Player : MonoBehaviour
 
     public GameObject bulletObjA;
 
+    public bool enabledSpawn = false;
+    public GameObject Bomb;
+
     public int playerSpeed = 3;
 
     public float playerHp = 10f;
@@ -27,6 +31,8 @@ public class Player : MonoBehaviour
     public float bulletDamage = 2f;
     public float maxShotDelay = 0.2f;
     public float curShotDelay;
+
+    Vector3 PlayerPos;
 
     Rigidbody2D rigid;
 
@@ -40,12 +46,14 @@ public class Player : MonoBehaviour
     {
         currentFireRate = fireRate; 
         InvokeRepeating("SearchEnemy", 0f, 0.5f);
+        //InvokeRepeating("SpecialSkill1", 0, 0.3f);
     }
 
     void Update()
     { 
         Playermove();
         Reload();
+        SpecialSkill1();
     }
     
     void Playermove() 
@@ -57,6 +65,28 @@ public class Player : MonoBehaviour
         Vector3 nextPos = new Vector3(h, v, 0) * playerSpeed * Time.deltaTime;
 
         transform.position = curPos + nextPos;
+    }
+
+    void SpecialSkill1() // 군인 특수 스킬
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            float spawnPosx = PlayerPos.x + 8f;
+            float spawnPosy = PlayerPos.y + 8f;
+            float spawnPosz = PlayerPos.z + 8f;
+
+            float randomX = UnityEngine.Random.Range(-spawnPosx, spawnPosx);
+            float randomY = UnityEngine.Random.Range(-spawnPosy, spawnPosy);
+
+            UnityEngine.Debug.Log("스페이스바");
+
+            if (true)
+            {
+                GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(randomX, randomY, spawnPosz), Quaternion.identity);
+                UnityEngine.Debug.Log("특수스킬 생성");
+                Destroy(bomb, 3);
+            }
+        }
     }
 
     void Reload()
@@ -74,7 +104,7 @@ public class Player : MonoBehaviour
         {
             float p_shortestDistance = Mathf.Infinity;
 
-            UnityEngine.Debug.Log("Length > 0");
+            //UnityEngine.Debug.Log("Length > 0");
 
             foreach (Collider2D p_colTarget in colls)
             {
@@ -100,7 +130,7 @@ public class Player : MonoBehaviour
         else
         {
             // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
-            UnityEngine.Debug.Log("Length < 0");
+            //UnityEngine.Debug.Log("Length < 0");
         }
         hit_target = p_shortestTarget;
     }
