@@ -8,8 +8,11 @@ public class Enemy : MonoBehaviour
 {
 
     public float enemySpeed = 1f;
-    public int health;
+    public int enemyHealth = 2;
     public Sprite[] sprites;
+
+
+    public GameObject dropEx;
 
 
     SpriteRenderer spriteRenderer; // 피격 애니메이션
@@ -37,11 +40,12 @@ public class Enemy : MonoBehaviour
 
     void onHit(int dmg)
     {
-        health -= dmg;
+        enemyHealth -= dmg;
 
-        if (health <= 0)
+        if (enemyHealth <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
+            Instantiate(dropEx, transform.position, dropEx.transform.rotation);
         }
     }
 
@@ -54,8 +58,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-
             UnityEngine.Debug.Log("Player");
         }
         else if (other.gameObject.tag == "Enemy01")
@@ -64,7 +66,9 @@ public class Enemy : MonoBehaviour
         }
         else if(other.gameObject.tag == "Bullet")
         {
-            Destroy(this.gameObject);
+           Bullet bullet = other.gameObject.GetComponent<Bullet>();
+
+            onHit(bullet.dmg);
         }
     }
 }

@@ -148,8 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 3
-  health: 0
+  health: 39
   sprites: []
+  dropEx: {fileID: 6416503511496019193, guid: 00a9805793e4bc44b9f89890aab49a32, type: 3}
 --- !u!195 &-8239593354069309475
 NavMeshAgent:
   m_ObjectHideFlags: 0
