@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        
     }
 
     void Start()
@@ -141,7 +140,7 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if (curEx >= maxEx)
             {
-                //Time.timeScale = 0f;
+                Time.timeScale = 0f;
                 //setactive();
             }
         }
