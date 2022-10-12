@@ -358,6 +358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1172f63bf5e35c4f9dd6d6f181cf830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxEx: 10
+  curEx: 0
+  btn1: {fileID: 0}
+  levelpanel: {fileID: 0}
 --- !u!4 &163779485
 Transform:
   m_ObjectHideFlags: 0
@@ -1103,6 +1107,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuButton: {fileID: 669094259}
   pausePanel: {fileID: 0}
+--- !u!1 &747727051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7135236314464125048, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+  m_PrefabInstance: {fileID: 7135236314591888379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &747727056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747727051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1172f63bf5e35c4f9dd6d6f181cf830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEx: 10
+  curEx: 0
+  btn1: {fileID: 997509972}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &899706258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1175,7 @@ GameObject:
   - component: {fileID: 997509976}
   - component: {fileID: 997509975}
   - component: {fileID: 997509974}
+  - component: {fileID: 997509977}
   m_Layer: 5
   m_Name: wp1
   m_TagString: Untagged
@@ -1220,7 +1246,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 997509975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 997509977}
+        m_TargetAssemblyTypeName: WeaponButton, Assembly-CSharp
+        m_MethodName: onClickBtn1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &997509975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,6 +1297,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997509972}
   m_CullTransparentMesh: 1
+--- !u!114 &997509977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997509972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4719fb21cbf9e4cacfe16c4b65ce18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &1017085518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,7 +2465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2027341994
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2435,8 +2486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -8.855408}
-  m_SizeDelta: {x: 0, y: -292.9098}
+  m_AnchoredPosition: {x: 1, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027341995
 MonoBehaviour:
@@ -2451,7 +2502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.40872195, b: 0.40872195, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.83137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
