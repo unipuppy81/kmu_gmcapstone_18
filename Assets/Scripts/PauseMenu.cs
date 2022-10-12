@@ -44,7 +44,4 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
-
-    // Update is called once per frame
-
 }

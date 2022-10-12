@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float maxEx = 10f;
+    public float curEx = 0f;
+    public GameObject btn1;
+    public GameObject levelpanel;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        levelpanel.SetActive(false);
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Ex")
+        {
+            curEx += 1f;
+            Destroy(other.gameObject);
+            if (curEx >= maxEx)
+            {
+                Time.timeScale = 0f;
+                levelpanel.SetActive(true);
+                curEx = 0f;
+                maxEx = 15f;
+            }
+        }
     }
 }

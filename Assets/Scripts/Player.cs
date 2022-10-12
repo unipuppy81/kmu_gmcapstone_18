@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
 
     public Transform hit_target = null;  // 최종타겟 임시시정
 
-    public GameObject levelPanel;
     public GameObject bulletObjA;
 
     public bool enabledSpawn = false;
@@ -26,8 +25,6 @@ public class Player : MonoBehaviour
     public int playerSpeed = 3;
 
     public float playerHp = 10f;
-    public float maxEx = 3f;
-    public float curEx = 0f;
 
     public float bulletSpeed = 2f;
     public float bulletDamage = 2f;
@@ -130,24 +127,5 @@ public class Player : MonoBehaviour
             // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
         }
         hit_target = p_shortestTarget;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Ex")
-        {
-            curEx += 1f;
-            Destroy(other.gameObject);
-            if (curEx >= maxEx)
-            {
-                Time.timeScale = 0f;
-                //setactive();
-            }
-        }
-    }
-
-    private void setactive()
-    {
-        
     }
 }
