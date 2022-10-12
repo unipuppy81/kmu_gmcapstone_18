@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -10,33 +11,42 @@ public class SpwanManager : MonoBehaviour
     public bool enabledSpawn = false;
     public GameObject Enemy;
     public GameObject Box;
+    public GameObject Player;
 
-    Vector3 PlayerPos;
+    Transform player;
+
+
+    void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
 
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 3, 1f);
-        
-        //InvokeRepeating("SpwanBox", 3, 10f);
-        // 코루틴 쓰려했는데 어려움 고쳐봐야됨
-    
+        InvokeRepeating("SpawnBox", 3, 1f);
+        InvokeRepeating("SpawnEnemy", 3, 1f);   
     }
 
     void Update()
+    {
+    }
+
+    void SpawnPos()
     {
 
     }
 
     void SpawnEnemy()
     {
-      //  spawnSpot = GameObject.FindWithTag("Player");
-      //  PlayerPos = spawnSpot.transform;
+        //  spawnSpot = GameObject.FindWithTag("Player");
+        //  PlayerPos = spawnSpot.transform;
 
-        float spawnPosx = PlayerPos.x + 8f;
-        float spawnPosy = PlayerPos.y + 8f;
+        float spawnPosx = player.position.x + 8f;
+        float spawnPosy = player.position.y + 8f;
 
         float randomX = UnityEngine.Random.Range(-spawnPosx, spawnPosx);
         float randomY = UnityEngine.Random.Range(-spawnPosy, spawnPosy);
+
 
         if (enabledSpawn)
         {

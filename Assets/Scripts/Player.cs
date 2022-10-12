@@ -140,7 +140,8 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if (curEx >= maxEx)
             {
-                Time.timeScale = 0f;
+                UnityEngine.Debug.Log("·¹º§ ¾÷");
+                //Time.timeScale = 0f;
                 //setactive();
             }
         }
