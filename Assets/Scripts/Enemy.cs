@@ -65,5 +65,10 @@ public class Enemy : MonoBehaviour
 
             onHit(bullet.dmg);
         }
+        else if (other.gameObject.tag == "SpecialSkill1")
+        {
+            SpecialSkill1 specialSkill1 = other.gameObject.GetComponent<SpecialSkill1>();
+            onHit(specialSkill1.dmg);
+        }
     }
 }

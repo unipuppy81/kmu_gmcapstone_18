@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1172f63bf5e35c4f9dd6d6f181cf830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEx: 10
+  maxEx: 5
   curEx: 0
   btn1: {fileID: 0}
   levelpanel: {fileID: 0}
@@ -1152,11 +1152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1172f63bf5e35c4f9dd6d6f181cf830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEx: 10
+  maxEx: 5
   curEx: 0
-  btn1: {fileID: 997509972}
-  levelpanel: {fileID: 2027341993}
-  PauseBtn: {fileID: 1913626781}
+  btn1: {fileID: 0}
+  levelpanel: {fileID: 0}
+  PauseBtn: {fileID: 0}
 --- !u!1 &899706258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,5 +2667,9 @@ PrefabInstance:
       propertyPath: maxShotDelay
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 128811910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - Ex
   - Box
   - item
+  - SpecialSkill1
   layers:
   - Default
   - TransparentFX

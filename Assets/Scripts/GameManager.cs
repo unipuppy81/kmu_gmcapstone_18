@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Ex")
         {
-            GameObject.Find("Ex")
+            GameObject.Find("Ex");
             curEx += 1f;
             Destroy(other.gameObject);
             if (curEx >= maxEx)

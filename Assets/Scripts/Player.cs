@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public GameObject bulletObjA;
     public GameObject Bomb;
 
+    bool check = true;
+
     public int playerSpeed = 3;
     public float playerHp = 10f;
     public float bulletSpeed = 2f;
@@ -25,9 +27,11 @@ public class Player : MonoBehaviour
     public float maxShotDelay = 0.2f;
     public float curShotDelay;
 
+    public Transform cameraTransform;
+
     float currentFireRate;
 
-    Vector3 PlayerPos;
+    int count = 0;
 
     Rigidbody2D rigid;
 
@@ -40,7 +44,6 @@ public class Player : MonoBehaviour
     {
         currentFireRate = fireRate; 
         InvokeRepeating("SearchEnemy", 0f, 0.5f);
-        //InvokeRepeating("SpecialSkill1", 0, 0.3f);
     }
 
     void Update()
@@ -63,23 +66,11 @@ public class Player : MonoBehaviour
 
     void SpecialSkill1() // 군인 특수 스킬
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && count <= 1)
         {
-            float spawnPosx = PlayerPos.x + 8f;
-            float spawnPosy = PlayerPos.y + 8f;
-            float spawnPosz = PlayerPos.z + 8f;
+            Bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, 0), Quaternion.identity);
 
-            float randomX = UnityEngine.Random.Range(-spawnPosx, spawnPosx);
-            float randomY = UnityEngine.Random.Range(-spawnPosy, spawnPosy);
-
-            UnityEngine.Debug.Log("스페이스바");
-
-            if (true)
-            {
-                GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(randomX, randomY, spawnPosz), Quaternion.identity);
-                UnityEngine.Debug.Log("특수스킬 생성");
-                Destroy(bomb, 3);
-            }
+            count++;
         }
     }
 
