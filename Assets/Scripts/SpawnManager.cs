@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     public bool enabledSpawn = false;
     public GameObject Enemy;
     public GameObject Box;
-    public GameObject Player;
+    public GameObject sbEnemy;
 
     Transform player;
     
@@ -27,6 +27,7 @@ public class SpawnManager : MonoBehaviour
     {
         InvokeRepeating("SpawnBox", 3, 1f);
         InvokeRepeating("SpawnEnemy", 3, 1f);
+        InvokeRepeating("SpawnsBoss", 3, 1f);
     }
 
     void Update()
@@ -71,6 +72,33 @@ public class SpawnManager : MonoBehaviour
         if (enabledSpawn)
         {
             GameObject box = (GameObject)Instantiate(Box, new Vector3(brandomX, brandomY, 0f), Quaternion.identity);
+        }
+    }
+
+    void SpawnsBoss()
+    {
+        float spawnsbPosx1 = player.position.x + 2f;
+        float spawnsbPosy1 = player.position.y + 2f;
+
+        float spawnsbPosx2 = player.position.x - 2f;
+        float spawnsbPosy2 = player.position.y - 2f;
+
+        float sbrandomX = UnityEngine.Random.Range(spawnsbPosx1, spawnsbPosx2);
+        float sbrandomY = UnityEngine.Random.Range(spawnsbPosy1, spawnsbPosy2);
+
+        if (sbrandomX >= -29.7f && sbrandomX <= 28.95f && sbrandomY >= -29.3f && sbrandomY <= 29.3f)
+        {
+            if (enabledSpawn)
+            {
+                GameObject sbenemy = (GameObject)Instantiate(sbEnemy, new Vector3(sbrandomX, sbrandomY, 0f), Quaternion.identity);
+            }
+        }
+        else
+        {
+            if (enabledSpawn)
+            {
+                GameObject sbenemy = (GameObject)Instantiate(sbEnemy, new Vector3(player.position.x, player.position.y, 0f), Quaternion.identity);
+            }
         }
     }
 }
