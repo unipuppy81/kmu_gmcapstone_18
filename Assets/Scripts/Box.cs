@@ -23,7 +23,15 @@ public class Box : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            Instantiate(item_hp, transform.position, item_hp.transform.rotation);
+
+            float randI = UnityEngine.Random.Range(0, 10);
+
+            if (randI >= 0 && randI <= 5){
+                Instantiate(item_hp, transform.position, item_hp.transform.rotation);
+            }
+            else if(randI >= 5 && randI <= 10){
+                Instantiate(item_speed, transform.position, item_speed.transform.rotation);
+            }   
         }
     }
 

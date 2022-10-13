@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float maxEx = 10f;
+    public float maxEx = 5f;
     public float curEx = 0f;
     public GameObject btn1;
     public GameObject levelpanel;
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         levelpanel.SetActive(false);
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ex")
