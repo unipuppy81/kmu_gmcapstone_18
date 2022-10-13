@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public float curEx = 0f;
     public GameObject btn1;
     public GameObject levelpanel;
+    public GameObject PauseBtn;
 
     private void Awake()
     {
@@ -23,8 +24,9 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 levelpanel.SetActive(true);
+                PauseBtn.SetActive(false);
                 curEx = 0f;
-                maxEx = 15f;
+                maxEx += 5f;
             }
         }
     }
