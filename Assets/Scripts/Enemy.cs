@@ -6,20 +6,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    public float enemySpeed = 1f;
-    public int enemyHealth = 2;
     public Sprite[] sprites;
-
-
     public GameObject dropEx;
 
+    public int enemyHealth = 2;
+    public float enemySpeed = 1f;
 
     SpriteRenderer spriteRenderer; // 피격 애니메이션
-
     Rigidbody2D rigid;
     Transform target;
-
 
     void Awake()
     {

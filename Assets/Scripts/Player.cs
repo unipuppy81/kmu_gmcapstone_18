@@ -8,28 +8,24 @@ using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour
-{ 
+{
     //layer 사용시 필요
-    [SerializeField] float searchRadius = 0f;
     [SerializeField] LayerMask layerMask = 0;
+    [SerializeField] float searchRadius = 0f;
     [SerializeField] float fireRate = 0f;
-    float currentFireRate;
-
+   
     public Transform hit_target = null;  // 최종타겟 임시시정
-
     public GameObject bulletObjA;
-
-    public bool enabledSpawn = false;
     public GameObject Bomb;
 
     public int playerSpeed = 3;
-
     public float playerHp = 10f;
-
     public float bulletSpeed = 2f;
     public float bulletDamage = 2f;
     public float maxShotDelay = 0.2f;
     public float curShotDelay;
+
+    float currentFireRate;
 
     Vector3 PlayerPos;
 
@@ -110,6 +106,7 @@ public class Player : MonoBehaviour
                     p_shortestTarget = p_colTarget.transform;
                 }
             }
+
             if(curShotDelay < maxShotDelay)
             {
                 return;

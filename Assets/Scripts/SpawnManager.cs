@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
 
-public class SpwanManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
     public bool enabledSpawn = false;
     public GameObject Enemy;
@@ -14,7 +15,8 @@ public class SpwanManager : MonoBehaviour
     public GameObject Player;
 
     Transform player;
-
+    
+    // stage 1 ¸Ê »çÀÌÁî  x -29.7~28.95 , y -29.3~29.3
 
     void Awake()
     {
@@ -24,33 +26,37 @@ public class SpwanManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnBox", 3, 1f);
-        InvokeRepeating("SpawnEnemy", 3, 1f);   
+        InvokeRepeating("SpawnEnemy", 3, 1f);
     }
 
     void Update()
-    {
-    }
-
-    void SpawnPos()
     {
 
     }
 
     void SpawnEnemy()
     {
-        //  spawnSpot = GameObject.FindWithTag("Player");
-        //  PlayerPos = spawnSpot.transform;
+        float spawnPosx1 = player.position.x + 8f;
+        float spawnPosy1 = player.position.y + 8f;
 
-        float spawnPosx = player.position.x + 8f;
-        float spawnPosy = player.position.y + 8f;
+        float spawnPosx2 = player.position.x - 8f;
+        float spawnPosy2 = player.position.y - 8f;
 
-        float randomX = UnityEngine.Random.Range(-spawnPosx, spawnPosx);
-        float randomY = UnityEngine.Random.Range(-spawnPosy, spawnPosy);
+        float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
+        float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
 
-
-        if (enabledSpawn)
-        {
+        if(randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f) { 
+            if (enabledSpawn)
+            {
                 GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+            }
+        }
+        else
+        {
+            if (enabledSpawn)
+            {
+                GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(0f, 0f, 0f), Quaternion.identity);
+            }
         }
     }
 
