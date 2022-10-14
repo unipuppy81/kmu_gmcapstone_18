@@ -387,9 +387,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEx: 5
   curEx: 0
-  btn1: {fileID: 0}
-  levelpanel: {fileID: 0}
-  PauseBtn: {fileID: 0}
+  btn1: {fileID: 997509972}
+  levelpanel: {fileID: 2027341993}
+  PauseBtn: {fileID: 1913626781}
 --- !u!4 &163779485
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuButton: {fileID: 669094259}
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 1327610487}
 --- !u!1 &747727051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7135236314464125048, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
@@ -1154,9 +1154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEx: 5
   curEx: 0
-  btn1: {fileID: 0}
-  levelpanel: {fileID: 0}
-  PauseBtn: {fileID: 0}
+  btn1: {fileID: 997509972}
+  levelpanel: {fileID: 2027341993}
+  PauseBtn: {fileID: 1913626781}
 --- !u!1 &899706258
 GameObject:
   m_ObjectHideFlags: 0

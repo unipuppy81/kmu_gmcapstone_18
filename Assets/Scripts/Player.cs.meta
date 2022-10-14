@@ -3,7 +3,11 @@ guid: dfe7267fd1f58de428212798fb02c19d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hit_target: {instanceID: 0}
+  - bulletObjA: {instanceID: 0}
+  - Bomb: {fileID: 5458432884013792458, guid: d40f011b926ddb047a6c2a7bba9f5590, type: 3}
+  - cameraTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
