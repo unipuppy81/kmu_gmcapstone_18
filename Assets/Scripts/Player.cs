@@ -66,11 +66,9 @@ public class Player : MonoBehaviour
 
     void SpecialSkill1() // 군인 특수 스킬
     {
-        if (Input.GetKeyDown(KeyCode.Space) && count <= 1)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, 0), Quaternion.identity);
-
-            count++;
+            GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, cameraTransform.position.z), Quaternion.identity);
         }
     }
 
