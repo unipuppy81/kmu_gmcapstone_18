@@ -27,7 +27,8 @@ public class SpawnManager : MonoBehaviour
     {
         InvokeRepeating("SpawnBox", 3, 1f);
         InvokeRepeating("SpawnEnemy", 3, 1f);
-        InvokeRepeating("SpawnsBoss", 3, 1f);
+        //InvokeRepeating("SpawnsBoss", 3, 1f);
+        UnityEngine.Debug.Log("abc");
     }
 
     void Update()
@@ -37,6 +38,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy()
     {
+        //UnityEngine.Debug.Log("SE");
         float spawnPosx1 = player.position.x + 8f;
         float spawnPosy1 = player.position.y + 8f;
 
@@ -63,6 +65,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnBox()
     {
+        //UnityEngine.Debug.Log("SB");
         float BoxPosx = 8f;
         float BoxPosy = 8f;
 
