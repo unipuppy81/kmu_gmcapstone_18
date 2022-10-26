@@ -122,6 +122,10 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
 
             playerHp += 2f;
+            if(playerHp > 10f)
+            {
+                playerHp = 10.0f;
+            }
         }
         else if (other.gameObject.tag == "itemspeed")
         {
