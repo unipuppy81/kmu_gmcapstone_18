@@ -8,8 +8,10 @@ TagManager:
   - Bullet
   - Ex
   - Box
-  - item
   - SpecialSkill1
+  - Boss
+  - itemhp
+  - itemspeed
   layers:
   - Default
   - TransparentFX
