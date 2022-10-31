@@ -56,7 +56,19 @@ public class Player : MonoBehaviour
 
     void Playermove()
     {
+        Vector3 flipMove = Vector3.zero;
         float h = Input.GetAxisRaw("Horizontal");
+        if(h < 0)
+        {
+            flipMove = Vector3.left;
+            transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+        }
+        else if(h>0)
+        {
+            flipMove = Vector3.right;
+            transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        }
+
         float v = Input.GetAxisRaw("Vertical");
 
         Vector3 curPos = transform.position;
