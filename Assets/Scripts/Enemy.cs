@@ -70,5 +70,11 @@ public class Enemy : MonoBehaviour
             SpecialSkill1 specialSkill1 = other.gameObject.GetComponent<SpecialSkill1>();
             onHit(specialSkill1.dmg);
         }
+        else if (other.gameObject.CompareTag("Skill"))
+        {
+            Skill_Guardian skill_Guardian = other.gameObject.GetComponent<Skill_Guardian>();
+            onHit(skill_Guardian.dmg);
+        }
+
     }
 }

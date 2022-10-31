@@ -7,7 +7,7 @@ using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
-    public float maxEx = 5f;
+    public float maxEx = 1f;
     public float curEx = 0f;
     public GameObject btn1;
     public GameObject levelpanel;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
                 levelpanel.SetActive(true);
                 PauseBtn.SetActive(false);
                 curEx = 0f;
-                maxEx += 5f;
+                maxEx += 1f;
             }
         }
     }
