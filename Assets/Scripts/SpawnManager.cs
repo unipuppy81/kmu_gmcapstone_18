@@ -30,10 +30,12 @@ public class SpawnManager : MonoBehaviour
         GameManager gameManager = gameObject.GetComponent<GameManager>();
         InvokeRepeating("SpawnBox", 3, 1f);
         InvokeRepeating("SpawnEnemy", 3, 1f);
-        if(gameManager._mina == 1)
+        /*
+        if(gameManager._mina == 6)
         {
             SpawnsBoss();
         }
+        */
        
     }
 

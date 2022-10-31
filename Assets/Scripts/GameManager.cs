@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseBtn;
     public float _Sec;
     public int _min;
-    public int _mina;
+    public int _mina = 6;
     [SerializeField]
     TextMeshProUGUI timeText;
 
@@ -55,9 +55,8 @@ public class GameManager : MonoBehaviour
             _Sec = 0;
             _min++;
         }
-        if (_min == 1)
+        if (_min == 6)
         {
-            _mina = 1;
             float _Seca = 0.0f;
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
