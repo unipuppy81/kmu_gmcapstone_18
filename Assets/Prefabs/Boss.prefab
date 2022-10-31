@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6248380299242769262}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Boss
+  m_TagString: Enemy01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ddf45e10439114d8983ef4f354479c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
+  maxHealth: 10
+  curHealth: 0
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
+  curmoveCount: 0
+  maxmmoveCount: 2
+  speed: 2
+  isWalk: 0
+  isPattern: 0
+  isDead: 0
+  correctPos: 0
 --- !u!61 &-1134378157411999197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +153,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

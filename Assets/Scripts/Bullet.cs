@@ -13,6 +13,11 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.tag == "Boss")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
