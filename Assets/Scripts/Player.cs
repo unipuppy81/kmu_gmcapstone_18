@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public Transform hit_target = null;  // 최종타겟 임시시정
     public GameObject bulletObjA;
     public GameObject Bomb;
+    public GameObject skillbtn;
 
     bool check = true;
 
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, cameraTransform.position.z), Quaternion.identity);
+            skillbtn.SetActive(false);
         }
     }
 

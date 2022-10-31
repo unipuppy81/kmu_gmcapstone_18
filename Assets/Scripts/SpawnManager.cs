@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
-
+using UnityEngine.AdaptivePerformance.VisualScripting;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject Enemy;
     public GameObject Box;
     public GameObject sbEnemy;
-
+    public GameObject Boss;
+    public TextMeshProUGUI textTimer;
     Transform player;
     
     // stage 1 ∏  ªÁ¿Ã¡Ó  x -29.7~28.95 , y -29.3~29.3
@@ -25,10 +27,14 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        GameManager gameManager = gameObject.GetComponent<GameManager>();
         InvokeRepeating("SpawnBox", 3, 1f);
         InvokeRepeating("SpawnEnemy", 3, 1f);
-        //InvokeRepeating("SpawnsBoss", 3, 1f);
-        UnityEngine.Debug.Log("abc");
+        if(gameManager._mina == 1)
+        {
+            SpawnsBoss();
+        }
+       
     }
 
     void Update()
