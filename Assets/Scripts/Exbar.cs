@@ -6,15 +6,23 @@ using UnityEngine.UI;
 public class Exbar : MonoBehaviour
 {
     public GameManager gameManager;
-    public Image exbar;
+    [SerializeField]
+    public Slider exbar;
 
+    void Awake()
+    {
+        gameManager = gameObject.GetComponent<GameManager>();
+    }
+    void Start()
+    {
+        exbar.value = gameManager.curEx / gameManager.maxEx;
+    }
     void Update()
     {
-        
+        playerEx();
     }
     public void playerEx()
     {
-        gameManager = gameObject.GetComponent<GameManager>();
-        exbar.fillAmount = gameManager.maxEx / gameManager.curEx;
+        exbar.value = gameManager.curEx / gameManager.maxEx;
     }
 }
