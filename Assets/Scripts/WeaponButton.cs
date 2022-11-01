@@ -11,12 +11,17 @@ public class WeaponButton : MonoBehaviour
     int maxGuardians = 4;
 
     Skill_Guardian guardian;
+
     Player player;
+    Skill_Magnetic magneticField;
+    Bullet bullet;
 
     private void Start()
     {
         guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
         player = GameObject.Find("Player").GetComponent<Player>();
+        magneticField = GameObject.Find("MagneticField").GetComponent<Skill_Magnetic>();
+        //bullet = GameObject.Find("").GetComponent<>();
     }
 
     public void onClickBtn1()
@@ -44,5 +49,9 @@ public class WeaponButton : MonoBehaviour
         levelpanel.SetActive(false);
         PausBtn.SetActive(true);
         Time.timeScale = 1f;
+        for(int i = 0; i < 1; i++)
+        {
+            magneticField.magnetic.SetActive(true);
+        }
     }
 }

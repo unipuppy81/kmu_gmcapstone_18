@@ -75,6 +75,10 @@ public class Enemy : MonoBehaviour
             Skill_Guardian skill_Guardian = other.gameObject.GetComponent<Skill_Guardian>();
             onHit(skill_Guardian.dmg);
         }
-
+        else if (other.gameObject.CompareTag("Skill2"))
+        {
+            Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
+            onHit(skill_Magnetic.dmg);
+        }
     }
 }

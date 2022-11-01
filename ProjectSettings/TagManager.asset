@@ -13,6 +13,7 @@ TagManager:
   - itemhp
   - itemspeed
   - Skill
+  - Skill2
   layers:
   - Default
   - TransparentFX
