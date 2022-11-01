@@ -11,9 +11,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuButton;
     public GameObject pausePanel;
 
-    private void Awake()
+    private void Start()
     {
-        pausePanel.SetActive(false);
+
     }
     public void onClickPause()
     {

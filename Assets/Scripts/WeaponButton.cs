@@ -11,10 +11,12 @@ public class WeaponButton : MonoBehaviour
     int maxGuardians = 4;
 
     Skill_Guardian guardian;
+    Player player;
 
     private void Start()
     {
         guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     public void onClickBtn1()
@@ -34,6 +36,7 @@ public class WeaponButton : MonoBehaviour
         levelpanel.SetActive(false);
         PausBtn.SetActive(true);
         Time.timeScale = 1f;
+        player.bulletDamage += 2f;
     }
 
     public void onClickBtn3()
