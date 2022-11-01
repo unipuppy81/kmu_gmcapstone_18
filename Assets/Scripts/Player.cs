@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public float playerSpeed = 3;
     public float playerHp = 10f;
     public float bulletSpeed = 2f;
-    public float bulletDamage = 2f;
+    public float bulletDamage;
     public float maxShotDelay = 0.2f;
     public float curShotDelay;
 
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        bulletDamage = 3.0f;
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //UnityEngine.Debug.Log(bulletDamage);
         Playermove();
         Reload();
         SpecialSkill1();

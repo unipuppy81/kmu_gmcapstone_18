@@ -25,7 +25,9 @@ public class Boss : MonoBehaviour
     public bool isDead;
     public bool correctPos;
 
-    float dirx, diry, timerr;
+    public GameObject Wall;
+
+    float dirx, diry, timerr, bdirx, bdiry;
 
     Vector3 a, b;
     Vector3 lookVec, crushVec, movePos;
@@ -79,7 +81,7 @@ public class Boss : MonoBehaviour
     {
         a = new Vector3(dirx, diry, 0);
         transform.position = Vector2.MoveTowards(transform.position, a, 2.0f * Time.deltaTime);
-
+        
         if (transform.position.x == dirx && transform.position.y == diry)
         {
             if (curmoveCount != maxmmoveCount) 
@@ -160,6 +162,7 @@ public class Boss : MonoBehaviour
                     break;
                 }
             }
+        
             if(curmoveCount == maxmmoveCount)
             {
                 isWalk = false;
@@ -167,6 +170,7 @@ public class Boss : MonoBehaviour
                 curmoveCount = 0;
             }
         }
+        
     }
 
     void Pattern()
@@ -198,6 +202,25 @@ public class Boss : MonoBehaviour
 
         curPatternCount++;
 
+
+       
+
+
+            for(int i = 0; i<5; i++)
+            {
+
+                float attackPosx1 = 5f;
+                float attackPosy1 = 5f;
+
+                float attackPosx2 = -5f;
+                float attackPosy2 = -5f;
+
+                float arandomX = UnityEngine.Random.Range(attackPosx1, attackPosx2);
+                float arandomY = UnityEngine.Random.Range(attackPosy1, attackPosy2);
+
+                GameObject wall = (GameObject)Instantiate(Wall, new Vector3(arandomX, arandomY, 0f), Quaternion.identity);
+            }
+
         if (curPatternCount < maxPatternCount[patternIndex])
             Invoke("RandAttack", 2);
         //else
@@ -225,6 +248,9 @@ public class Boss : MonoBehaviour
 
         int loopNum = 0;
 
+        b = new Vector3(bdirx, bdiry, 0);
+        transform.position = Vector2.MoveTowards(transform.position, a, 2.0f * Time.deltaTime);
+
         //while (!correctPos)
         //{
         //    if(loopNum++ > 100)
@@ -240,8 +266,8 @@ public class Boss : MonoBehaviour
         //        break;
         //    }
         //}
-        
-        if(transform.position != btarget.position) {
+        /*
+        if (transform.position != btarget.position) {
             UnityEngine.Debug.Log("987");
             float dir01 = 10f * Time.deltaTime;
             float dir02 = 10f * Time.deltaTime;
@@ -251,7 +277,7 @@ public class Boss : MonoBehaviour
             //transform.Translate(movePos * Time.deltaTime);
             //transform.position = Vector2.MoveTowards(transform.position, btarget.position, 4.0f * Time.deltaTime);
         }
-        
+        */
         if (curPatternCount < maxPatternCount[patternIndex])
         {
             UnityEngine.Debug.Log("123");

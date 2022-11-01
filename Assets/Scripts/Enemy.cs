@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public Sprite[] sprites;
     public GameObject dropEx;
 
-    public int enemyHealth = 2;
+    public float enemyHealth = 2f;
     public float enemySpeed = 1f;
 
     SpriteRenderer spriteRenderer; // 피격 애니메이션
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
     }
 
-    void onHit(int dmg)
+    void onHit(float dmg)
     {
         enemyHealth -= dmg;
 

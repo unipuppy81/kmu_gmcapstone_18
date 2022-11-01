@@ -5,7 +5,23 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public int dmg =1;
+    private Player player;
+    public float dmg;
+
+    void Awake()
+    {
+
+    }
+    void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+
+        dmg = player.bulletDamage;
+    }
+
+    void Update()
+    {
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,20 +30,10 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(collision.gameObject.tag == "Boss")
+        if (collision.gameObject.tag == "Boss")
         {
             Destroy(gameObject);
         }
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

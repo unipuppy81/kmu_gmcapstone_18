@@ -1236,7 +1236,7 @@ Transform:
   - {fileID: 655105802}
   - {fileID: 1615585535}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &542108229
 MonoBehaviour:
@@ -1595,6 +1595,10 @@ PrefabInstance:
     - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_Name
       value: Guardian2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085180679823026933, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_RootOrder
@@ -1993,6 +1997,10 @@ PrefabInstance:
     - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_Name
       value: Guardian1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085180679823026933, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_RootOrder
@@ -2740,6 +2748,10 @@ PrefabInstance:
     - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_Name
       value: Guardian0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085180679823026933, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_RootOrder
@@ -3713,7 +3725,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2759090223604431361, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2759090223604431361, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3755,6 +3767,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4764015820627649685, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
+      propertyPath: Wall
+      value: 
+      objectReference: {fileID: 245208704090265564, guid: 9d0ec7795f6cff4469d42c19b9dd7bff, type: 3}
     - target: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -3791,6 +3807,10 @@ PrefabInstance:
     - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_Name
       value: Guardian3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085180679823026931, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085180679823026933, guid: 3bb8c36a073bb3542bc9c02d84ed0a5f, type: 3}
       propertyPath: m_RootOrder

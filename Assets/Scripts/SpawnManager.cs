@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         GameManager gameManager = gameObject.GetComponent<GameManager>();
-        InvokeRepeating("SpawnBox", 3, 1f);
+        //InvokeRepeating("SpawnBox", 3, 1f);
         InvokeRepeating("SpawnEnemy", 3, 1f);
         /*
         if(gameManager._mina == 6)
@@ -46,7 +46,6 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        //UnityEngine.Debug.Log("SE");
         float spawnPosx1 = player.position.x + 8f;
         float spawnPosy1 = player.position.y + 8f;
 
