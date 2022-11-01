@@ -50,7 +50,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //UnityEngine.Debug.Log(bulletDamage);
         Playermove();
         Reload();
         SpecialSkill1();

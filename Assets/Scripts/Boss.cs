@@ -17,6 +17,8 @@ public class Boss : MonoBehaviour
     public int curmoveCount;
     public int maxmmoveCount = 2;
     public float speed = 2.0f;
+    public float maxSDelay = 0.2f;
+    public float curSDelay;
 
     private Transform myTransform = null;
 
@@ -25,9 +27,15 @@ public class Boss : MonoBehaviour
     public bool isDead;
     public bool correctPos;
 
+
+
+
     public GameObject Wall;
+    public GameObject Rock;
 
     float dirx, diry, timerr, bdirx, bdiry;
+
+    
 
     Vector3 a, b;
     Vector3 lookVec, crushVec, movePos;
@@ -57,6 +65,8 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
+        Breload();
+
         if(transform.position != btarget.position) { 
             correctPos = false;
         }
@@ -69,6 +79,11 @@ public class Boss : MonoBehaviour
             Move();
         else if (isPattern)
             Pattern();
+    }
+
+    void Breload()
+    {
+        curSDelay += Time.deltaTime;
     }
 
     void isWalking()
@@ -96,12 +111,12 @@ public class Boss : MonoBehaviour
                     timerr += Time.deltaTime;
                     if (timerr >= 3.0f && timerr <= 3.2f)
                         {
-                        UnityEngine.Debug.Log("1");
+                        
                         curmoveCount++;
                     }
                     if (timerr >= 3.0f)
                     {
-                            UnityEngine.Debug.Log("3");
+                            
                             dirx = ndirx;
                         diry = ndiry;
 
@@ -114,12 +129,12 @@ public class Boss : MonoBehaviour
                     timerr += Time.deltaTime;
                         if (timerr >= 3.0f && timerr <= 3.2f)
                         {
-                            UnityEngine.Debug.Log("1");
+                           
                             curmoveCount++;
                         }
                     if (timerr >= 3.0f)
                     {
-                            UnityEngine.Debug.Log("3");
+                            
                             dirx = ndirx;
                         diry = ndiry;
                         timerr = 0.0f;
@@ -131,12 +146,12 @@ public class Boss : MonoBehaviour
                     timerr += Time.deltaTime;
                     if (timerr >= 3.0f && timerr <= 3.2f)
                         {
-                        UnityEngine.Debug.Log("1");
+                     
                         curmoveCount++;
                     }
                     if (timerr >= 3.0f)
                     {
-                            UnityEngine.Debug.Log("3");
+                           
                             dirx = ndirx;
                         diry = ndiry;
                         timerr = 0.0f;
@@ -148,12 +163,12 @@ public class Boss : MonoBehaviour
                     timerr += Time.deltaTime;
                     if (timerr >= 3.0f && timerr <= 3.2f)
                         {
-                        UnityEngine.Debug.Log("1");
+               
                         curmoveCount++;
                     }
                     if (timerr >= 3.0f)
                     {
-                            UnityEngine.Debug.Log("3");
+               
                             dirx = ndirx;
                         diry = ndiry;
 
@@ -198,17 +213,10 @@ public class Boss : MonoBehaviour
     
     void RandAttack()
     {
-        UnityEngine.Debug.Log("RaA");
-
         curPatternCount++;
 
-
-       
-
-
-            for(int i = 0; i<5; i++)
+            for(int i = 0; i < 5; i++)
             {
-
                 float attackPosx1 = 5f;
                 float attackPosy1 = 5f;
 
@@ -229,9 +237,22 @@ public class Boss : MonoBehaviour
 
     void RockAttack()
     {
-        UnityEngine.Debug.Log("RcA");
-
         curPatternCount++;
+        if(curSDelay < maxSDelay)
+        {
+            return;
+        }
+
+            for(int i=0; i < 1; i++)
+            {
+               Vector3 Rockshot = btarget.position - transform.position;
+               GameObject rock = Instantiate(Rock, transform.position, transform.rotation);
+               Rigidbody2D rigid = rock.GetComponent<Rigidbody2D>();
+               rigid.AddForce(Rockshot * 3.0f, ForceMode2D.Impulse);
+
+               curSDelay = 0;
+             }
+
 
         if (curPatternCount < maxPatternCount[patternIndex])
             Invoke("RockAttack", 2);
@@ -241,7 +262,7 @@ public class Boss : MonoBehaviour
 
     void CrushAttack()
     {
-        UnityEngine.Debug.Log("CA");
+        UnityEngine.Debug.Log("순간이동 or 잡몹생성");
         curPatternCount++;
 
         movePos = btarget.position - transform.position;
@@ -280,11 +301,10 @@ public class Boss : MonoBehaviour
         */
         if (curPatternCount < maxPatternCount[patternIndex])
         {
-            UnityEngine.Debug.Log("123");
+
             Invoke("CrushAttack", 2);
         }
-              
-        }
+     }
 
 
    
