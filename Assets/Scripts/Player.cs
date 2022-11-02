@@ -22,7 +22,8 @@ public class Player : MonoBehaviour
     bool check = true;
 
     public float playerSpeed = 3;
-    public float playerHp = 10f;
+    public float playerMaxHp;
+    public float playercurHp;
     public float bulletSpeed = 2f;
     public float bulletDamage;
     public float maxShotDelay = 0.2f;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        playerMaxHp = 10f;
+        playercurHp = 10f;
         currentFireRate = fireRate;
         InvokeRepeating("SearchEnemy", 0f, 0.5f);
     }
@@ -53,6 +56,8 @@ public class Player : MonoBehaviour
         Playermove();
         Reload();
         SpecialSkill1();
+        if(playercurHp <= 0)
+            Destroy(gameObject);
     }
 
     void Playermove()
@@ -136,10 +141,10 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
 
-            playerHp += 2f;
-            if(playerHp > 10f)
+            playercurHp += 2f;
+            if(playercurHp > 10f)
             {
-                playerHp = 10.0f;
+                playercurHp = 10.0f;
             }
         }
         else if (other.gameObject.tag == "itemspeed")
@@ -147,6 +152,10 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
 
             playerSpeed += 0.5f;
+        }
+        else if(other.gameObject.tag == "Enemy01")
+        {
+            playercurHp -= 1f;
         }
     }
 }
