@@ -7,109 +7,81 @@ using System;
 
 public class LoadingSceneController : MonoBehaviour
 {
-    private static LoadingSceneController instance;
-    public static LoadingSceneController Instance
-    {
-        get 
-        {
-            if(instance == null)
-            {
-                var obj = FindObjectOfType<LoadingSceneController>();
-                if(obj != null)
-                {
-                    instance = obj;
-                }
-                else
-                {
-                    instance = Create();
-                }
-            }
-            return instance;
-        }
-    }
+    public static string nextScene;
 
-    private static LoadingSceneController Create()
-    {
-        return Instantiate(Resources.Load<LoadingSceneController>("LoadingUI"));
-    }
 
-    private void Awake()
-    {
-        if(instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
-    }
 
     [SerializeField]
-    private CanvasGroup canvasGroup;
 
-    [SerializeField]
-    private Image progressBar;
+    Image progressBar;
 
-    private string loadSceneName;
 
-    public void LoadScene(string sceneName)
+
+    private void Start()
+
     {
-        gameObject.SetActive(true);
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        loadSceneName = sceneName;
-        StartCoroutine(LoadSceneProcess());
+
+        StartCoroutine(LoadScene());
+
     }
 
-    private IEnumerator LoadSceneProcess()
-    {
-        progressBar.fillAmount = 0f;
-        yield return StartCoroutine(Fade(true));
 
-        AsyncOperation op = SceneManager.LoadSceneAsync(loadSceneName);
+
+    public static void LoadScene(string sceneName)
+
+    {
+
+        nextScene = sceneName;
+
+        SceneManager.LoadScene("Loading");
+
+    }
+
+
+
+    IEnumerator LoadScene()
+
+    {
+
+        yield return null;
+
+
+
+        AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
+
         op.allowSceneActivation = false;
 
-        float timer = 0f;
+
+
+        float timer = 0.0f;
+
         while (!op.isDone)
+
         {
+
             yield return null;
-            if(op.progress < 0.9f)
+
+
+
+            timer += Time.deltaTime;
+            if (op.progress < 0.9f) 
             {
-                progressBar.fillAmount = op.progress;
+                progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount, op.progress, timer); 
+                if (progressBar.fillAmount >= op.progress) 
+                { 
+                    timer = 0f; 
+                } 
             }
             else
             {
-                timer += Time.unscaledDeltaTime;
-                progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer);
-                if(progressBar.fillAmount >= 1f)
-                {
-                    op.allowSceneActivation = true;
-                    yield break;
+                progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount, 1f, timer);
+                if (progressBar.fillAmount == 1.0f)
+                { 
+                    op.allowSceneActivation = true; yield break; 
                 }
             }
         }
+
     }
 
-    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
-    {
-        if(arg0.name == loadSceneName)
-        {
-            StartCoroutine(Fade(false));
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-    }
-
-    private IEnumerator Fade(bool isFadeIn)
-    {
-        float timer = 0f;
-        while(timer <= 1f)
-        {
-            yield return null;
-            timer += Time.unscaledDeltaTime * 3f;
-            canvasGroup.alpha = isFadeIn ? Mathf.Lerp(0f,1f,timer) : Mathf.Lerp(1f, 0f,timer);
-        }
-
-        if(!isFadeIn)
-        {
-            gameObject.SetActive(false);
-        }
-    }
 }
