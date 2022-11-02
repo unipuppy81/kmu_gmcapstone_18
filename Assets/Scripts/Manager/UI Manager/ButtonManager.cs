@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class WeaponButton : MonoBehaviour
+
+public class ButtonManager : MonoBehaviour
 {
+    public static bool GameIsPauseed = false;
+    public GameObject ButtonName;
+    public GameObject pausePanel;
     public GameObject levelpanel;
-    public GameObject PausBtn;
 
     int maxGuardians = 4;
 
     Skill_Guardian guardian;
-
-    Player player;
     Skill_Magnetic magneticField;
+    Player player;
     Bullet bullet;
 
     private void Start()
@@ -23,10 +27,43 @@ public class WeaponButton : MonoBehaviour
         magneticField = GameObject.Find("MagneticField").GetComponent<Skill_Magnetic>();
     }
 
-    public void onClickBtn1()
+    public void PauseClick()
+    {
+        if (GameIsPauseed)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+            pausePanel.SetActive(true);
+        }
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        GameIsPauseed = false;
+        pausePanel.SetActive(false);
+    }
+
+    public void Pause()
+    {
+        ButtonName.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPauseed = true;
+    }
+
+    public void ToMain()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void WpBtn1()
     {
         levelpanel.SetActive(false);
-        PausBtn.SetActive(true);
+        ButtonName.SetActive(true);
         Time.timeScale = 1f;
         if (guardian.hasGuardians < maxGuardians)
         {
@@ -35,20 +72,20 @@ public class WeaponButton : MonoBehaviour
         }
     }
 
-    public void onClickBtn2()
+    public void WpBtn2()
     {
         levelpanel.SetActive(false);
-        PausBtn.SetActive(true);
+        ButtonName.SetActive(true);
         Time.timeScale = 1f;
         player.bulletDamage += 2f;
     }
 
-    public void onClickBtn3()
+    public void WpBtn3()
     {
         levelpanel.SetActive(false);
-        PausBtn.SetActive(true);
+        ButtonName.SetActive(true);
         Time.timeScale = 1f;
-        for(int i = 0; i < 1; i++)
+        for (int i = 0; i < 1; i++)
         {
             magneticField.magnetic.SetActive(true);
         }

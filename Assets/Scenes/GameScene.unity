@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 399933179}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -1123,11 +1123,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 399933174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8cb210dada9abf4a8c91757754d3f11, type: 3}
+  m_Script: {fileID: 11500000, guid: f17ebc2b3bdfd69418187576630d51b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuButton: {fileID: 399933174}
+  ButtonName: {fileID: 399933174}
   pausePanel: {fileID: 1327610487}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &468738675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1763,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 669094264}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ToMain
         m_Mode: 1
         m_Arguments:
@@ -1820,11 +1821,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 669094259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8cb210dada9abf4a8c91757754d3f11, type: 3}
+  m_Script: {fileID: 11500000, guid: f17ebc2b3bdfd69418187576630d51b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuButton: {fileID: 669094259}
+  ButtonName: {fileID: 669094259}
   pausePanel: {fileID: 1327610487}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &732122498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,7 +3189,7 @@ GameObject:
   - component: {fileID: 1327610490}
   - component: {fileID: 1327610489}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PausePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3402,7 +3404,7 @@ GameObject:
   - component: {fileID: 1397163877}
   - component: {fileID: 1397163876}
   - component: {fileID: 1397163879}
-  - component: {fileID: 1397163878}
+  - component: {fileID: 1397163880}
   m_Layer: 5
   m_Name: wp2panel
   m_TagString: Untagged
@@ -3469,20 +3471,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397163874}
   m_CullTransparentMesh: 1
---- !u!114 &1397163878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397163874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4719fb21cbf9e4cacfe16c4b65ce18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelpanel: {fileID: 2027341993}
-  PausBtn: {fileID: 1913626781}
 --- !u!114 &1397163879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,9 +3515,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1397163878}
-        m_TargetAssemblyTypeName: WeaponButton, Assembly-CSharp
-        m_MethodName: onClickBtn2
+      - m_Target: {fileID: 1397163880}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: WpBtn2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3539,6 +3527,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1397163880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397163874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17ebc2b3bdfd69418187576630d51b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonName: {fileID: 1913626781}
+  pausePanel: {fileID: 1327610487}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &1415227268
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,7 +3554,7 @@ GameObject:
   - component: {fileID: 1415227271}
   - component: {fileID: 1415227270}
   - component: {fileID: 1415227273}
-  - component: {fileID: 1415227272}
+  - component: {fileID: 1415227274}
   m_Layer: 5
   m_Name: wp3panel
   m_TagString: Untagged
@@ -3618,20 +3621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415227268}
   m_CullTransparentMesh: 1
---- !u!114 &1415227272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415227268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4719fb21cbf9e4cacfe16c4b65ce18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelpanel: {fileID: 2027341993}
-  PausBtn: {fileID: 1913626781}
 --- !u!114 &1415227273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3676,9 +3665,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1415227272}
-        m_TargetAssemblyTypeName: WeaponButton, Assembly-CSharp
-        m_MethodName: onClickBtn3
+      - m_Target: {fileID: 1397163880}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: WpBtn3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3688,6 +3677,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1415227274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415227268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17ebc2b3bdfd69418187576630d51b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonName: {fileID: 1913626781}
+  pausePanel: {fileID: 1327610487}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &1416225020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3700,7 +3704,7 @@ GameObject:
   - component: {fileID: 1416225023}
   - component: {fileID: 1416225022}
   - component: {fileID: 1416225025}
-  - component: {fileID: 1416225024}
+  - component: {fileID: 1416225026}
   m_Layer: 5
   m_Name: wp1panel
   m_TagString: Untagged
@@ -3767,20 +3771,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416225020}
   m_CullTransparentMesh: 1
---- !u!114 &1416225024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416225020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4719fb21cbf9e4cacfe16c4b65ce18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelpanel: {fileID: 2027341993}
-  PausBtn: {fileID: 1913626781}
 --- !u!114 &1416225025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3825,9 +3815,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1416225024}
-        m_TargetAssemblyTypeName: WeaponButton, Assembly-CSharp
-        m_MethodName: onClickBtn1
+      - m_Target: {fileID: 1397163880}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: WpBtn1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3837,6 +3827,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1416225026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416225020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17ebc2b3bdfd69418187576630d51b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonName: {fileID: 1913626781}
+  pausePanel: {fileID: 1327610487}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &1473773567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,7 +4132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fef57c527b387643860f575e110da30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleSpeed: 1
   dmg: 3
   target: {fileID: 128811910}
   magnetic: {fileID: 1708163160}
@@ -4218,7 +4222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fef57c527b387643860f575e110da30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleSpeed: 1
   dmg: 3
   target: {fileID: 128811910}
   magnetic: {fileID: 1708163160}
@@ -4867,7 +4870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1913626782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4935,8 +4938,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1913626786}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: onClickPause
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: PauseClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4993,11 +4996,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913626781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8cb210dada9abf4a8c91757754d3f11, type: 3}
+  m_Script: {fileID: 11500000, guid: f17ebc2b3bdfd69418187576630d51b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuButton: {fileID: 1913626781}
+  ButtonName: {fileID: 1913626781}
   pausePanel: {fileID: 1327610487}
+  levelpanel: {fileID: 2027341993}
 --- !u!1 &1923599515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,7 +5172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2027341994
 RectTransform:
   m_ObjectHideFlags: 0

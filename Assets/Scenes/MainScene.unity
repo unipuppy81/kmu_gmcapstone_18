@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 247919245}
-        m_TargetAssemblyTypeName: StoreSceneLoad, Assembly-CSharp
-        m_MethodName: ChaneSceneBtn
+      - m_Target: {fileID: 247919251}
+        m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
+        m_MethodName: StoreLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -341,8 +341,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 247919251}
-        m_TargetAssemblyTypeName: GameSceneLoad, Assembly-CSharp
-        m_MethodName: ChaneSceneBtn
+        m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
+        m_MethodName: GameSceneLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -467,11 +467,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 247919250}
-  - component: {fileID: 247919249}
-  - component: {fileID: 247919248}
-  - component: {fileID: 247919247}
-  - component: {fileID: 247919246}
-  - component: {fileID: 247919245}
   - component: {fileID: 247919251}
   m_Layer: 0
   m_Name: ChangeScene
@@ -480,66 +475,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &247919245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247919244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 733496f0ce6294e46b7678b6b9a9402f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &247919246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247919244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b19cf82846879c4fa13a12e6aac66f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &247919247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247919244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98af4755bc08c854eadaf39c3a7c0f12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &247919248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247919244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706b6848fd08f9941b9b70812f0f31c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &247919249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247919244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e25fd8cbefe1ed4290574e9260bd3ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &247919250
 Transform:
   m_ObjectHideFlags: 0
@@ -564,7 +499,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 247919244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7805e3818d633e94695d7b7650922d01, type: 3}
+  m_Script: {fileID: 11500000, guid: 06aa26754c280dd4b88b12d642050cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &389343120
@@ -726,9 +661,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 247919247}
-        m_TargetAssemblyTypeName: CharacterSceneLoad, Assembly-CSharp
-        m_MethodName: ChaneSceneBtn
+      - m_Target: {fileID: 247919251}
+        m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
+        m_MethodName: CharacterLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1020,9 +955,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 247919249}
-        m_TargetAssemblyTypeName: MainSceneLoad, Assembly-CSharp
-        m_MethodName: ChaneSceneBtn
+      - m_Target: {fileID: 247919251}
+        m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
+        m_MethodName: MainLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1658,9 +1593,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 247919248}
-        m_TargetAssemblyTypeName: ChallengeSceneLoad, Assembly-CSharp
-        m_MethodName: ChaneSceneBtn
+      - m_Target: {fileID: 247919251}
+        m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
+        m_MethodName: ChallengeLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1944,9 +1879,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 247919246}
-        m_TargetAssemblyTypeName: EvolutionSceneLoad, Assembly-CSharp
-        m_MethodName: ChaneSceneBtn
+      - m_Target: {fileID: 247919251}
+        m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
+        m_MethodName: EvolutionLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
