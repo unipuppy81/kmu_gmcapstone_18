@@ -30,7 +30,6 @@ public class GuardianCullTime : MonoBehaviour
         while(true)
         {
             yield return null;
-            //Debug.Log("È°¼ºÈ­");
         }
     }
 

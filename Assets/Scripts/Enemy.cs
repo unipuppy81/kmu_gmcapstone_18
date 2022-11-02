@@ -70,14 +70,15 @@ public class Enemy : MonoBehaviour
             SpecialSkill1 specialSkill1 = other.gameObject.GetComponent<SpecialSkill1>();
             onHit(specialSkill1.dmg);
         }
-        else if (other.gameObject.CompareTag("Skill"))
+        else if (other.gameObject.CompareTag("Skill")) // 방패(가디언)
         {
             Skill_Guardian skill_Guardian = other.gameObject.GetComponent<Skill_Guardian>();
             onHit(skill_Guardian.dmg);
         }
-        else if (other.gameObject.CompareTag("Skill2"))
+        else if (other.gameObject.CompareTag("Skill2")) //EMP필드(자기장)
         {
             Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
+
             onHit(skill_Magnetic.dmg);
         }
     }

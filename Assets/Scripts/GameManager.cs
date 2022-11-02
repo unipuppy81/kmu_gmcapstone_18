@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         _Sec += Time.deltaTime;
         timeText.text = string.Format("{0:D2}:{1:D2}", _min, (int)_Sec);
 
-        if((int)_Sec >59)
+        if((int)_Sec > 59)
         {
             _Sec = 0;
             _min++;

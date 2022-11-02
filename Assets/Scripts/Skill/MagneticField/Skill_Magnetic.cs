@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Skill_Magnetic : MonoBehaviour
 {
-    [Header("크기속도 조절")]
-    [SerializeField]
-    [Range(0f, 10f)] float scaleSpeed = 1f;
-
     public int dmg = 3;
 
     public Transform target;
@@ -34,12 +30,12 @@ public class Skill_Magnetic : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy01"))
         {
-            //Destroy(gameObject);
+            
         }
 
         if (collision.gameObject.tag == "Box")
         {
-            //Destroy(gameObject);
+            
         }
     }
 }

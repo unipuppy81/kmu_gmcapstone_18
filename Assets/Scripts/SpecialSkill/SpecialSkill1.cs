@@ -11,13 +11,6 @@ public class SpecialSkill1 : MonoBehaviour
 
     public int dmg = 30;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         searchEnemy();
@@ -44,8 +37,7 @@ public class SpecialSkill1 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy01")
         {
-            //Destroy(gameObject);
-            UnityEngine.Debug.Log("Àû Á×À½");
+
         }
     }
 }
