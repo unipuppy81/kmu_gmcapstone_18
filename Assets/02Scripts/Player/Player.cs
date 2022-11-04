@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 {
     //layer 사용시 필요
     [SerializeField] LayerMask layerMask = 0;
+    [SerializeField] LayerMask layerMask2 = 0;
     [SerializeField] float searchRadius = 0f;
     [SerializeField] float fireRate = 0f;
 
