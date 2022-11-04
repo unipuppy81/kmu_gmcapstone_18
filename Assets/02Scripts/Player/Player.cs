@@ -50,14 +50,14 @@ public class Player : MonoBehaviour
     {
         bulletDamage = 3.0f;
         bulletObjA = playerbulletA;
+        playerMaxHp = 10f;
+        playercurHp = 10f;
 
         rigid = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
-        playerMaxHp = 10f;
-        playercurHp = 10f;
         currentFireRate = fireRate;
         InvokeRepeating("SearchEnemy", 0f, 0.5f);
     }

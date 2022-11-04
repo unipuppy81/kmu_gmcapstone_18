@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI timeText;
     [SerializeField]
+    TextMeshProUGUI levelText;
+    [SerializeField]
     List<upgradeManager> upgrades;
     [SerializeField]
     List<UpgradeButton> upgradeButtons;
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour
     public float _Sec;
     public int _min;
     public int _mina = 6;
-
+    public int levelcount;
 
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
     {
         if (curEx >= maxEx)
         {
+            levelcount += 1;
+            levelText.text = string.Format("LV : {0:D1}", levelcount);
             Time.timeScale = 0f;
             openPanel(GetUpgrades(3));
             curEx = 0f;

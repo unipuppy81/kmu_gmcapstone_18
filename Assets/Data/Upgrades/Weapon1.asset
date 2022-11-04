@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: weapon1
-  icon: {fileID: 21300000, guid: df2e79fe34e58b248bcf999778ec554f, type: 3}
+  icon: {fileID: 21300000, guid: a0ca00dcbf3d9ca4085fe801a5396f45, type: 3}
