@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     // A = 근접, B = 원거리, C = 중간보스
     public enum Type { A, B, C };
-    public Type enmeyType;
+    public Type enemyType;
     public Sprite[] sprites;
     public GameObject EnemyBullet;
 
@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        switch (enmeyType)
+        switch (enemyType)
         {
             case Type.A:
                 enemyHealth = 2f;
@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        switch (enmeyType)
+        switch (enemyType)
         {
             case Type.A:
                 FollowTarget();
@@ -158,7 +158,7 @@ public class Enemy : MonoBehaviour
             gameObject.SetActive(false);
             //GameObject exA = objectManager.MakeObj(experienceA);
             //GameObject exB = objectManager.MakeObj(experienceB);
-            switch (enmeyType)
+            switch (enemyType)
             {
 
                 case Type.A:

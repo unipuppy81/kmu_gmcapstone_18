@@ -25,8 +25,7 @@ public class Player : MonoBehaviour
     public string bulletObjA;
     string playerbulletA = "bulletPlayerA";
 
-
-    bool check = true;
+    bool spSkill1Check = true;
 
     public float playerSpeed = 3f;
     public float maxSpeed = 10f;
@@ -36,6 +35,7 @@ public class Player : MonoBehaviour
     public float bulletDamage;
     public float maxShotDelay = 0.2f;
     public float curShotDelay;
+    public int playerLevel = 0;
 
     public Transform cameraTransform;
 
@@ -95,10 +95,11 @@ public class Player : MonoBehaviour
 
     void SpecialSkill1() // 군인 특수 스킬
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && spSkill1Check == true)
         {
             GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, cameraTransform.position.z), Quaternion.identity);
             skillbtn.SetActive(false);
+            spSkill1Check = false;
         }
     }
 

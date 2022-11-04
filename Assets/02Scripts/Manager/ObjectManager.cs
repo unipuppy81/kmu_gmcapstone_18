@@ -98,7 +98,6 @@ public class ObjectManager : MonoBehaviour
                 
                 break;
             case "bulletPlayerA":
-                UnityEngine.Debug.Log("OB-0");
                 targetPool = bulletPlayerA;
                 
                 break;
@@ -107,12 +106,10 @@ public class ObjectManager : MonoBehaviour
 
                 break;
             case "exA":
-                UnityEngine.Debug.Log("OB-1");
                 targetPool = exA;
 
                 break;
             case "exB":
-                UnityEngine.Debug.Log("OB-2");
                 targetPool = exB;
                 break;
 

@@ -62,8 +62,8 @@ public class SpawnManager : MonoBehaviour
         spawnPos.y += 5f;
 
         //InvokeRepeating("SpawnBox", 3, 1f);
-        InvokeRepeating("SpawnEnemy", 3, 1f);      
-        //InvokeRepeating("SpawnbEnemy", 3, 10f);
+        //InvokeRepeating("SpawnEnemy", 3, 1f);      
+        InvokeRepeating("SpawnbEnemy", 3, 10f);
     }
 
     void Update()

@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1172f63bf5e35c4f9dd6d6f181cf830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEx: 1
+  maxEx: 5
   curEx: 0
   btn1: {fileID: 997509972}
   levelpanel: {fileID: 2027341993}
@@ -1588,7 +1588,7 @@ GameObject:
   m_Layer: 0
   m_Name: Front
   m_TagString: Skill
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1630,6 +1630,7 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
+  guardianLevel: 0
 --- !u!1 &542108227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,7 +1871,7 @@ GameObject:
   m_Layer: 0
   m_Name: Right
   m_TagString: Skill
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1912,6 +1913,7 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
+  guardianLevel: 0
 --- !u!1 &669094259
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3061,7 @@ MonoBehaviour:
   Box: {fileID: 492047968957281797, guid: e7875b6ff3f28e942a95b785bf6467b3, type: 3}
   sBoss: {fileID: 724861632309306098, guid: 3f84103bfc656fd4f818c5c2a9cb6a51, type: 3}
   Boss: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
+  enemya: {fileID: 0}
   Enemy: 
   bEnemy: 
   textTimer: {fileID: 1099294324}
@@ -4611,7 +4614,7 @@ GameObject:
   m_Layer: 0
   m_Name: Back
   m_TagString: Skill
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4653,6 +4656,7 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
+  guardianLevel: 0
 --- !u!1 &1615585534
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,7 +4670,7 @@ GameObject:
   m_Layer: 0
   m_Name: Left
   m_TagString: Skill
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4708,6 +4712,7 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
+  guardianLevel: 0
 --- !u!1 &1627577490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4756,6 +4761,7 @@ MonoBehaviour:
   dmg: 3
   target: {fileID: 128811910}
   magnetic: {fileID: 1708163160}
+  magneticLevel: 0
 --- !u!1001 &1708163158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4846,6 +4852,7 @@ MonoBehaviour:
   dmg: 3
   target: {fileID: 128811910}
   magnetic: {fileID: 1708163160}
+  magneticLevel: 0
 --- !u!1001 &1742281228
 PrefabInstance:
   m_ObjectHideFlags: 0

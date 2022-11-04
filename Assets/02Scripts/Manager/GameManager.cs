@@ -7,7 +7,7 @@ using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
-    public float maxEx = 1f;
+    public float maxEx = 5f;
     public float curEx = 0f;
     public GameObject btn1;
     public GameObject levelpanel;
@@ -23,9 +23,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     List<UpgradeButton> upgradeButtons;
 
+    public float ex1Amount = 1f;
+    public float ex2Amount = 2f;
+
+    Player player;
+
     private void Awake()
     {
         levelpanel.SetActive(false);
+        player = GetComponent<Player>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,15 +39,30 @@ public class GameManager : MonoBehaviour
         if (other.gameObject.tag == "Ex")
         {
             GameObject.Find("Ex");
-            curEx += 1f;
+            curEx += ex1Amount;
+            Debug.Log(curEx);
             Destroy(other.gameObject);
-            if (curEx >= maxEx)
-            {
-                Time.timeScale = 0f;
-                openPanel(GetUpgrades(3));
-                curEx = 0f;
-                maxEx += 1f;
-            }
+            exManager();
+        }
+        else if (other.gameObject.tag == "Ex2")
+        {
+            GameObject.Find("Ex2");
+            curEx += ex2Amount;
+            Debug.Log(curEx);
+            Destroy(other.gameObject);
+            exManager();
+        }
+    }
+
+    void exManager()
+    {
+        if (curEx >= maxEx)
+        {
+            Time.timeScale = 0f;
+            openPanel(GetUpgrades(3));
+            curEx = 0f;
+            maxEx += 5f;
+            player.playerLevel += 1;
         }
     }
     private void Update()

@@ -151,7 +151,7 @@ MonoBehaviour:
     m_Bits: 256
   searchRadius: 2
   objectManager: {fileID: 0}
-  enmeyType: 1
+  enemyType: 1
   sprites: []
   EnemyBullet: {fileID: 3660098938351450938, guid: ba5713d1448688c46a6b48a2b86fa2a9, type: 3}
   enemyHealth: 2

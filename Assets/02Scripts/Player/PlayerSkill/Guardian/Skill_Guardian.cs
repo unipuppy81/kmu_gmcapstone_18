@@ -17,6 +17,8 @@ public class Skill_Guardian : MonoBehaviour
     public float orbitSpeed;
     Vector3 offset;
 
+    public int guardianLevel = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,30 @@ public class Skill_Guardian : MonoBehaviour
         transform.RotateAround(target.position, Vector3.forward, orbitSpeed * Time.deltaTime);
 
         offset = transform.position - target.position;
+
+        levelDesign();
+    }
+
+    void levelDesign()
+    {
+        switch (guardianLevel)
+        {
+            case 1:
+                dmg = 3;
+                break;
+
+            case 2:
+                dmg = 5;
+                break;
+
+            case 3:
+                dmg = 7;
+                break;
+
+            case 4:
+                dmg = 10;
+                break;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

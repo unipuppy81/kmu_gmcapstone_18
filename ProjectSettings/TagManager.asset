@@ -14,6 +14,7 @@ TagManager:
   - itemspeed
   - Skill
   - Skill2
+  - Ex2
   layers:
   - Default
   - TransparentFX
