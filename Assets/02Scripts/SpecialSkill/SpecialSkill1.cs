@@ -28,7 +28,7 @@ public class SpecialSkill1 : MonoBehaviour
 
             for (int i = 0; i < enemy1.Length; i++)
             {
-                Destroy(enemy1[i]);
+                enemy1[i].SetActive(false);
             }
         }
     }
