@@ -19,10 +19,13 @@ public class Skill_Guardian : MonoBehaviour
 
     public int guardianLevel = 0;
 
+    Equip_Dumbbell _Dumbbell;
+
     // Start is called before the first frame update
     void Start()
     {
         offset = transform.position - target.position;
+        _Dumbbell = GetComponent<Equip_Dumbbell>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,10 @@ public class Skill_Guardian : MonoBehaviour
             case 4:
                 dmg = 10;
                 break;
+        }
+        if(guardianLevel == 5 && _Dumbbell.selectedDumbbell == true) // 최종 진화
+        {
+            dmg = 15;
         }
     }
 

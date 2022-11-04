@@ -7,10 +7,13 @@ public class Equip_Ammo : MonoBehaviour
     public int ammoLevel = 0;
 
     GameManager gameManager;
+
+    public bool selectedBullet;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GetComponent<GameManager>();
+        selectedBullet = false;
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class Equip_Ammo : MonoBehaviour
             case 1:
                 gameManager.ex1Amount *= 1.05f;
                 gameManager.ex2Amount *= 1.05f;
+                selectedBullet = true;
                 break;
 
             case 2:

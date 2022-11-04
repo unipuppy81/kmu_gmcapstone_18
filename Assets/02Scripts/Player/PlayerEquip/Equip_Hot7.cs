@@ -2,46 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Equip_Dumbbell : MonoBehaviour  // 방패의 조합 장비
+public class Equip_Hot7 : MonoBehaviour
 {
+    public int hot7Level = 0;
+
+    public bool selectedHot7;
+
     Player player;
-
-    public int dumbbellLevel = 0;
-
-    public bool selectedDumbbell;
-
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Player>();
-        selectedDumbbell = false;
+        InvokeRepeating("levelDesign", 5f, 5f);
+        selectedHot7 = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        levelDesign();
+
     }
 
     void levelDesign()
     {
-        switch (dumbbellLevel)
+        switch (hot7Level)
         {
             case 1:
-                player.playerMaxHp *= 1.1f;
-                selectedDumbbell = true;
+                player.playercurHp *= 1.01f;
+                selectedHot7 = true;
                 break;
 
             case 2:
-                player.playerMaxHp *= 1.2f;
+                player.playercurHp *= 1.02f;
                 break;
 
             case 3:
-                player.playerMaxHp *= 1.3f;
+                player.playercurHp *= 1.03f;
                 break;
 
             case 4:
-                player.playerMaxHp *= 1.4f;
+                player.playercurHp *= 1.04f;
                 break;
         }
     }

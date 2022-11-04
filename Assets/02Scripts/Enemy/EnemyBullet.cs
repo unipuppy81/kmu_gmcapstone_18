@@ -9,11 +9,14 @@ public class EnemyBullet : MonoBehaviour
     private float dmg;
     
     public float lifetime;
+
+    Skill_Guardian guardian;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         enemy = GameObject.Find("Enemy2(Clone)").GetComponent<Enemy>();
+        guardian = GetComponent<Skill_Guardian>();
 
         lifetime = 0f;
 
@@ -43,6 +46,10 @@ public class EnemyBullet : MonoBehaviour
         {
             UnityEngine.Debug.Log("원거리 공격 맞음");
 
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.tag == "Skill" && guardian.guardianLevel == 5) // 가디언 최종 진화 시 적 총알이 막힘
+        {
             Destroy(gameObject);
         }
     }
