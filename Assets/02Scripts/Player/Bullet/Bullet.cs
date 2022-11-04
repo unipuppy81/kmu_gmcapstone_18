@@ -27,12 +27,14 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy01")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Boss")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 

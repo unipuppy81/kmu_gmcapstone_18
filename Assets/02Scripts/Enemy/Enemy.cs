@@ -142,7 +142,8 @@ public class Enemy : MonoBehaviour
         enemyHealth -= dmg;
         if (enemyHealth <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
             Instantiate(dropEx, transform.position, dropEx.transform.rotation);
         }  
     }

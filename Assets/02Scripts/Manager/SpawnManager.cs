@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
@@ -10,12 +11,19 @@ using UnityEngine.AdaptivePerformance.VisualScripting;
 
 public class SpawnManager : MonoBehaviour
 {
+    public ObjectManager objectManager;
+
     public bool enabledSpawn = false;
-    public GameObject Enemy;
     public GameObject Box;
     public GameObject sBoss;
     public GameObject Boss;
-    public GameObject bEnemy;
+
+    public string Enemy;
+    public string bEnemy;
+   
+
+
+    
 
     public TextMeshProUGUI textTimer;
     Transform player;
@@ -27,11 +35,18 @@ public class SpawnManager : MonoBehaviour
     public float mbspawnTime = 10.0f;
     public float timeAfterSpawn;
 
-    // stage 1 ∏  ªÁ¿Ã¡Ó  x -29.7~28.95 , y -29.3~29.3
 
+    string Enemy1 = "enemyA";
+    string Enemy2 = "enemyB";
+    // stage 1 ∏  ªÁ¿Ã¡Ó  x -29.7~28.95 , y -29.3~29.3
+   
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        Enemy = Enemy1;
+        bEnemy = Enemy2;
+
     }
 
     void Start()
@@ -71,7 +86,6 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
     void SpawnEnemy()
     {
         float spawnPosx1 = player.position.x + 8f;
@@ -87,14 +101,18 @@ public class SpawnManager : MonoBehaviour
         {
             if (enabledSpawn)
             {
-                GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+                GameObject enemy = objectManager.MakeObj(Enemy);
+                enemy.transform.position = new Vector3(randomX, randomY, 0f);
             }
         }
         else
         {
             if (enabledSpawn)
             {
-                GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(0f, 0f, 0f), Quaternion.identity);
+                GameObject enemy = objectManager.MakeObj(Enemy);
+                enemy.transform.position = new Vector3(0f, 0f, 0f);
+
+                //GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(0f, 0f, 0f), Quaternion.identity);
             }
         }
     }
@@ -114,14 +132,16 @@ public class SpawnManager : MonoBehaviour
         {
             if (enabledSpawn)
             {
-                GameObject benemy = (GameObject)Instantiate(bEnemy, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+                GameObject benemy = objectManager.MakeObj(bEnemy);
+                benemy.transform.position = new Vector3(randomX, randomY, 0f);
             }
         }
         else
         {
             if (enabledSpawn)
             {
-                GameObject benemy = (GameObject)Instantiate(bEnemy, new Vector3(0f, 0f, 0f), Quaternion.identity);
+                GameObject benemy = objectManager.MakeObj(bEnemy);
+                benemy.transform.position = new Vector3(0f, 0f, 0f);
             }
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
@@ -14,10 +15,15 @@ public class Player : MonoBehaviour
     [SerializeField] float searchRadius = 0f;
     [SerializeField] float fireRate = 0f;
 
+    public ObjectManager objectManager;
+
     public Transform hit_target = null;  // 최종타겟 임시시정
-    public GameObject bulletObjA;
+    //public GameObject bulletObjA;
     public GameObject Bomb;
     public GameObject skillbtn;
+
+    public string bulletObjA;
+    string playerbulletA;
 
     bool check = true;
 
@@ -41,6 +47,8 @@ public class Player : MonoBehaviour
     void Awake()
     {
         bulletDamage = 3.0f;
+        playerbulletA = "bulletPlayerA";
+
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -121,9 +129,10 @@ public class Player : MonoBehaviour
             {
                 return;
             }
-            // 아래 4줄 : 적 자동 조준 코드 & 발사
+            //  적 자동 조준 코드 & 발사
             Vector3 fire = p_shortestTarget.position - transform.position;
-            GameObject bullet = Instantiate(bulletObjA, transform.position, transform.rotation);
+            GameObject bullet = objectManager.MakeObj(playerbulletA);
+            bullet.transform.position = transform.position;
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
             rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);
 

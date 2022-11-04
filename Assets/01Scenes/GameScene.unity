@@ -463,7 +463,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181710544
 GameObject:
@@ -547,7 +547,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275868937
 GameObject:
@@ -828,7 +828,7 @@ RectTransform:
   - {fileID: 1913626782}
   - {fileID: 2027341994}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1430,7 +1430,7 @@ Transform:
   - {fileID: 655105802}
   - {fileID: 1615585535}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &542108229
 MonoBehaviour:
@@ -1827,6 +1827,54 @@ MonoBehaviour:
   ButtonName: {fileID: 669094259}
   pausePanel: {fileID: 1327610487}
   levelpanel: {fileID: 2027341993}
+--- !u!1 &708593454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708593456}
+  - component: {fileID: 708593455}
+  m_Layer: 0
+  m_Name: ObjectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &708593455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708593454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700d4852f94bdc146bc08683572e5499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAPrefab: {fileID: 8409871284461968199, guid: cab2f3e9a5af04540b6523c2eeda939e, type: 3}
+  enemyBPrefab: {fileID: 9124793542810104664, guid: 4145d2a9c7dbc3a459a533a38a11b91f, type: 3}
+  bulletPlayerAPrefab: {fileID: 1611506078421503375, guid: b5c12a1464afad34a88922f955836837, type: 3}
+  bulletEnemyAPrefab: {fileID: 3660098938351450938, guid: ba5713d1448688c46a6b48a2b86fa2a9, type: 3}
+--- !u!4 &708593456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708593454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3070083, y: -1.9801543, z: -0.07687115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732122498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,12 +2655,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208d096ef54fa2349b2865a4b888c34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectManager: {fileID: 708593455}
   enabledSpawn: 1
-  Enemy: {fileID: 8409871284461968199, guid: cab2f3e9a5af04540b6523c2eeda939e, type: 3}
   Box: {fileID: 492047968957281797, guid: e7875b6ff3f28e942a95b785bf6467b3, type: 3}
   sBoss: {fileID: 724861632309306098, guid: 3f84103bfc656fd4f818c5c2a9cb6a51, type: 3}
   Boss: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
-  bEnemy: {fileID: 9124793542810104664, guid: 4145d2a9c7dbc3a459a533a38a11b91f, type: 3}
+  Enemy: 
+  bEnemy: 
   textTimer: {fileID: 1099294324}
   spawnPos: {x: 0, y: 0, z: 0}
   spawnTime: 20
@@ -2631,7 +2680,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1057216064
 GameObject:
@@ -4123,7 +4172,7 @@ Transform:
   m_Children:
   - {fileID: 1708163159}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1627577492
 MonoBehaviour:
@@ -5429,6 +5478,10 @@ PrefabInstance:
       propertyPath: searchRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: objectManager
+      value: 
+      objectReference: {fileID: 708593455}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: cameraTransform
       value: 
