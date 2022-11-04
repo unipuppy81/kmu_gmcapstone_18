@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
@@ -11,12 +13,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] LayerMask layerMask = 0;
     [SerializeField] float searchRadius = 0f;
 
+    public ObjectManager objectManager;
 
     // A = 근접, B = 원거리, C = 중간보스
     public enum Type { A, B, C };
     public Type enmeyType;
     public Sprite[] sprites;
-    public GameObject dropEx;
     public GameObject EnemyBullet;
 
     public float enemyHealth;
@@ -28,12 +30,23 @@ public class Enemy : MonoBehaviour
 
     public bool isShoot;
 
+    public string experienceA;
+    public string experienceB;
+
+    string exAcheck = "exA";
+    string exBcheck = "exB";
+
     SpriteRenderer spriteRenderer; // 피격 애니메이션
     Rigidbody2D rigid;
-    Transform target;
+    Transform target, exPoint;
 
     void Awake()
     {
+        exPoint = null;
+
+        experienceA = exAcheck;
+        experienceB = exBcheck;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -142,9 +155,63 @@ public class Enemy : MonoBehaviour
         enemyHealth -= dmg;
         if (enemyHealth <= 0)
         {
-            //Destroy(this.gameObject);
             gameObject.SetActive(false);
-            Instantiate(dropEx, transform.position, dropEx.transform.rotation);
+            //GameObject exA = objectManager.MakeObj(experienceA);
+            //GameObject exB = objectManager.MakeObj(experienceB);
+            switch (enmeyType)
+            {
+
+                case Type.A:
+                    GameObject experiencea = objectManager.MakeObj(experienceA);
+                    experiencea.transform.position = transform.position;
+
+
+                    break;
+                case Type.B:
+                    GameObject experienceb = objectManager.MakeObj(experienceB);
+                    experienceb.transform.position = transform.position;
+
+                    break;
+                case Type.C:
+                    for (int i = 0; i < 1; i++)
+                    {
+                        float exspawnx1 = transform.position.x + 2f;
+                        float exspawny1 = transform.position.y + 2f;
+
+                        float exspawnx2 = transform.position.x - 2f;
+                        float exspawny2 = transform.position.y - 2f;
+
+                        float randomX = UnityEngine.Random.Range(exspawnx1, exspawnx2);
+                        float randomY = UnityEngine.Random.Range(exspawny1, exspawny1);
+
+                        UnityEngine.Debug.Log("1");
+                          
+                        GameObject exA = objectManager.MakeObj(experienceA);
+
+                        //UnityEngine.Debug.Log("2");
+                        exA.transform.position = new Vector3(randomX, randomY, 0f);
+                        //UnityEngine.Debug.Log("3");
+                    }
+
+                    UnityEngine.Debug.Log("4");
+                    
+                    for (int i = 0; i< 3; i++) {
+                        float exspawnx1a = transform.position.x + 2f;
+                        float exspawny1a = transform.position.y + 2f;
+
+                        float exspawnx2a = transform.position.x - 2f;
+                        float exspawny2a = transform.position.y - 2f;
+
+                        float randomXa = UnityEngine.Random.Range(exspawnx1a, exspawnx2a);
+                        float randomYa = UnityEngine.Random.Range(exspawny1a, exspawny2a);
+                        UnityEngine.Debug.Log("5");
+                        GameObject exB = objectManager.MakeObj(experienceB);
+                        UnityEngine.Debug.Log("6");
+                        exB.transform.position = new Vector3(randomXa, randomYa, 0f);
+                        UnityEngine.Debug.Log("7");
+                    }
+                    break;
+            }
         }  
     }
 

@@ -23,7 +23,8 @@ public class Player : MonoBehaviour
     public GameObject skillbtn;
 
     public string bulletObjA;
-    string playerbulletA;
+    string playerbulletA = "bulletPlayerA";
+
 
     bool check = true;
 
@@ -47,7 +48,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         bulletDamage = 3.0f;
-        playerbulletA = "bulletPlayerA";
+        bulletObjA = playerbulletA;
 
         rigid = GetComponent<Rigidbody2D>();
     }
@@ -129,9 +130,10 @@ public class Player : MonoBehaviour
             {
                 return;
             }
+           
             //  적 자동 조준 코드 & 발사
             Vector3 fire = p_shortestTarget.position - transform.position;
-            GameObject bullet = objectManager.MakeObj(playerbulletA);
+            GameObject bullet = objectManager.MakeObj(bulletObjA);
             bullet.transform.position = transform.position;
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
             rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);

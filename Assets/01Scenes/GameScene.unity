@@ -2093,6 +2093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAPrefab: {fileID: 8409871284461968199, guid: cab2f3e9a5af04540b6523c2eeda939e, type: 3}
   enemyBPrefab: {fileID: 9124793542810104664, guid: 4145d2a9c7dbc3a459a533a38a11b91f, type: 3}
+  exAPrefab: {fileID: 6416503511496019193, guid: 00a9805793e4bc44b9f89890aab49a32, type: 3}
+  exBPrefab: {fileID: 6416503511496019193, guid: 2795e832c50ed40408e821bb6d9e0afc, type: 3}
   bulletPlayerAPrefab: {fileID: 1611506078421503375, guid: b5c12a1464afad34a88922f955836837, type: 3}
   bulletEnemyAPrefab: {fileID: 3660098938351450938, guid: ba5713d1448688c46a6b48a2b86fa2a9, type: 3}
 --- !u!4 &708593456

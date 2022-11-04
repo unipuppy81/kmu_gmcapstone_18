@@ -13,21 +13,19 @@ public class SpawnManager : MonoBehaviour
 {
     public ObjectManager objectManager;
 
+
+
     public bool enabledSpawn = false;
     public GameObject Box;
     public GameObject sBoss;
     public GameObject Boss;
+    public GameObject enemya;
+
 
     public string Enemy;
     public string bEnemy;
-   
-
-
-    
 
     public TextMeshProUGUI textTimer;
-    Transform player;
-    Transform bossSpawnPos;
 
     public Vector3 spawnPos;
 
@@ -38,11 +36,17 @@ public class SpawnManager : MonoBehaviour
 
     string Enemy1 = "enemyA";
     string Enemy2 = "enemyB";
+
+    Transform player;
+    Transform bossSpawnPos;
+
+
     // stage 1 ∏  ªÁ¿Ã¡Ó  x -29.7~28.95 , y -29.3~29.3
    
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
 
         Enemy = Enemy1;
         bEnemy = Enemy2;
@@ -59,7 +63,7 @@ public class SpawnManager : MonoBehaviour
 
         //InvokeRepeating("SpawnBox", 3, 1f);
         InvokeRepeating("SpawnEnemy", 3, 1f);      
-        InvokeRepeating("SpawnbEnemy", 3, 10f);
+        //InvokeRepeating("SpawnbEnemy", 3, 10f);
     }
 
     void Update()
@@ -103,6 +107,9 @@ public class SpawnManager : MonoBehaviour
             {
                 GameObject enemy = objectManager.MakeObj(Enemy);
                 enemy.transform.position = new Vector3(randomX, randomY, 0f);
+
+                Enemy enemylogic = enemy.GetComponent<Enemy>();
+                enemylogic.objectManager = objectManager;
             }
         }
         else
@@ -112,6 +119,8 @@ public class SpawnManager : MonoBehaviour
                 GameObject enemy = objectManager.MakeObj(Enemy);
                 enemy.transform.position = new Vector3(0f, 0f, 0f);
 
+                Enemy enemylogic = enemy.GetComponent<Enemy>();
+                enemylogic.objectManager = objectManager;
                 //GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(0f, 0f, 0f), Quaternion.identity);
             }
         }
@@ -134,6 +143,9 @@ public class SpawnManager : MonoBehaviour
             {
                 GameObject benemy = objectManager.MakeObj(bEnemy);
                 benemy.transform.position = new Vector3(randomX, randomY, 0f);
+
+                Enemy enemylogic = benemy.GetComponent<Enemy>();
+                enemylogic.objectManager = objectManager;
             }
         }
         else
@@ -142,6 +154,9 @@ public class SpawnManager : MonoBehaviour
             {
                 GameObject benemy = objectManager.MakeObj(bEnemy);
                 benemy.transform.position = new Vector3(0f, 0f, 0f);
+
+                Enemy enemylogic = benemy.GetComponent<Enemy>();
+                enemylogic.objectManager = objectManager;
             }
         }
     }

@@ -8,23 +8,21 @@ public class ObjectManager : MonoBehaviour
     public GameObject enemyAPrefab;
     public GameObject enemyBPrefab;
 
+    public GameObject exAPrefab;
+    public GameObject exBPrefab;
+
     public GameObject bulletPlayerAPrefab;
     public GameObject bulletEnemyAPrefab;
 
 
     GameObject[] enemyA;
     GameObject[] enemyB;
-    //GameObject[] enemyC;
-    //GameObject[] bossEnemy;
 
-    //GameObject[] box;
-    //GameObject[] item_bomb;
-    //GameObject[] item_hp;
-    //GameObject[] item_magnet;
-    //GameObject[] item_speed;
+    GameObject[] exA;
+    GameObject[] exB;
 
     GameObject[] bulletPlayerA;
-    //GameObject[] bulletPlayerB;
+
     GameObject[] bulletEnemyA;
 
 
@@ -32,21 +30,15 @@ public class ObjectManager : MonoBehaviour
 
     void Awake() // 로딩시간에 오브젝트 풀 생성
     {
-        enemyA = new GameObject[100];
+        enemyA = new GameObject[200];
         enemyB = new GameObject[20];
-        //enemyC = new GameObject[3];
-        //bossEnemy = new GameObject[2];
 
-        //box = new GameObject[20];
-        //item_bomb = new GameObject[20];
-        //item_hp = new GameObject[20];
-        //item_magnet = new GameObject[20];
-        //item_speed = new GameObject[20];
+        exA = new GameObject[800];
+        exB = new GameObject[500];
 
         bulletPlayerA = new GameObject[20];
-        //bulletPlayerB = new GameObject[10];
-        bulletEnemyA = new GameObject[20];
 
+        bulletEnemyA = new GameObject[20];
         Generate();
     }
 
@@ -77,6 +69,19 @@ public class ObjectManager : MonoBehaviour
             bulletEnemyA[index] = Instantiate(bulletEnemyAPrefab);
             bulletEnemyA[index].SetActive(false);
         }
+
+        // #3. Ex
+        for (int index = 0; index < exA.Length; index++)
+        {
+            exA[index] = Instantiate(exAPrefab);
+            exA[index].SetActive(false);
+        }
+
+        for (int index = 0; index < exB.Length; index++)
+        {
+            exB[index] = Instantiate(exBPrefab);
+            exB[index].SetActive(false);
+        }
     }
 
     public GameObject MakeObj(string type)
@@ -86,19 +91,31 @@ public class ObjectManager : MonoBehaviour
         {
             case "enemyA":
                 targetPool = enemyA;
+                
                 break;
-
             case "enemyB":
                 targetPool = enemyB;
+                
                 break;
-
             case "bulletPlayerA":
+                UnityEngine.Debug.Log("OB-0");
                 targetPool = bulletPlayerA;
+                
                 break;
-
             case "bulletEnemyA":
                 targetPool = bulletEnemyA;
+
                 break;
+            case "exA":
+                UnityEngine.Debug.Log("OB-1");
+                targetPool = exA;
+
+                break;
+            case "exB":
+                UnityEngine.Debug.Log("OB-2");
+                targetPool = exB;
+                break;
+
         }
 
         for (int index = 0; index < enemyA.Length; index++){

@@ -116,8 +116,7 @@ public class Boss : MonoBehaviour
                     }
                     if (timerr >= 3.0f)
                     {
-                            
-                            dirx = ndirx;
+                        dirx = ndirx;
                         diry = ndiry;
 
                         timerr = 0.0f;
@@ -129,14 +128,13 @@ public class Boss : MonoBehaviour
                     timerr += Time.deltaTime;
                         if (timerr >= 3.0f && timerr <= 3.2f)
                         {
-                           
                             curmoveCount++;
                         }
                     if (timerr >= 3.0f)
                     {
-                            
-                            dirx = ndirx;
+                        dirx = ndirx;
                         diry = ndiry;
+
                         timerr = 0.0f;
                     }
                     break;
@@ -145,15 +143,14 @@ public class Boss : MonoBehaviour
                     ndiry = transform.position.y;
                     timerr += Time.deltaTime;
                     if (timerr >= 3.0f && timerr <= 3.2f)
-                        {
-                     
+                    {
                         curmoveCount++;
                     }
                     if (timerr >= 3.0f)
                     {
-                           
-                            dirx = ndirx;
+                        dirx = ndirx;
                         diry = ndiry;
+
                         timerr = 0.0f;
                     }
                     break;
@@ -162,14 +159,12 @@ public class Boss : MonoBehaviour
                     ndiry = transform.position.y - 2.0f;
                     timerr += Time.deltaTime;
                     if (timerr >= 3.0f && timerr <= 3.2f)
-                        {
-               
+                    {
                         curmoveCount++;
                     }
                     if (timerr >= 3.0f)
                     {
-               
-                            dirx = ndirx;
+                        dirx = ndirx;
                         diry = ndiry;
 
                         timerr = 0.0f;
