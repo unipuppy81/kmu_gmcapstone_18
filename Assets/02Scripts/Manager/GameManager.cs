@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
         if (_min == 6)
         {
             float _Seca = 0.0f;
+            gameObject.SetActive(false);
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
            

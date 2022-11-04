@@ -154,7 +154,7 @@ public class Enemy : MonoBehaviour
         curShotDelay = 0;
     }
 
-    void onHit(float dmg)
+    public void onHit(float dmg)
     {
         enemyHealth -= dmg;
         if (enemyHealth <= 0)

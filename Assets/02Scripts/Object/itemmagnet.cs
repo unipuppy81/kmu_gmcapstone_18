@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ public class itemmagnet : MonoBehaviour
 
     private Player player;
 
-    GameObject Ex;
     Transform target;
     Rigidbody2D rigid;
 
@@ -22,7 +22,6 @@ public class itemmagnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -36,10 +35,18 @@ public class itemmagnet : MonoBehaviour
 
             foreach (Collider2D p_Target in colls)
             {
-                Vector3 fire = target.position - p_Target.transform.position;
-                Rigidbody2D rigid = p_Target.GetComponent<Rigidbody2D>();
+                //float timer = 0.0f;
+                //timer += Time.deltaTime;
 
-                rigid.AddForce(fire * 100, ForceMode2D.Impulse);
+                //sr.material.color = Color.red;
+                //if(timer >= 1.0f) 
+                //{ 
+                p_Target.transform.position = target.position;
+                //}
+                //Vector3 fire = target.position - p_Target.transform.position;
+                // Rigidbody2D rigid = p_Target.GetComponent<Rigidbody2D>();
+
+                //rigid.AddForce(fire * 3, ForceMode2D.Impulse);
             }
         }
     }

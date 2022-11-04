@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class itembomb : MonoBehaviour
 {
+    [SerializeField] LayerMask layerMask = 0;
+    [SerializeField] float searchRadius = 1000f;
+
     private Player player;
+    private Enemy enemy;
+
+    Transform target;
+    Rigidbody2D rigid;
 
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,10 +29,11 @@ public class itembomb : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-            player.playercurHp += 2f;
-            if (player.playercurHp >= player.playerMaxHp)
+            Collider2D[] colls = Physics2D.OverlapCircleAll(target.position, searchRadius, layerMask);
+
+            foreach (Collider2D p_Target in colls)
             {
-                player.playercurHp = player.playerMaxHp;
+                p_Target.gameObject.SetActive(false);
             }
         }
     }

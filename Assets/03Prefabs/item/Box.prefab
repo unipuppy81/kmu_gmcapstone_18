@@ -149,3 +149,4 @@ MonoBehaviour:
   item_hp: {fileID: 1886762644406353252, guid: 88fceb015e6205941895164700981fd2, type: 3}
   item_speed: {fileID: 9137629792703058471, guid: a608d8dee66a66340af18e49b0a21371, type: 3}
   item_magnet: {fileID: 1886762644406353252, guid: 81aaa6a68a693224cb5d5abc31de9629, type: 3}
+  item_bomb: {fileID: 1886762644406353252, guid: 60693ff655ee54447aa747972b455dfc, type: 3}
