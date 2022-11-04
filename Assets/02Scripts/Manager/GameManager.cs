@@ -11,12 +11,17 @@ public class GameManager : MonoBehaviour
     public float curEx = 0f;
     public GameObject btn1;
     public GameObject levelpanel;
+    public GameObject upgradePanel;
     public GameObject PauseBtn;
     public float _Sec;
     public int _min;
     public int _mina = 6;
     [SerializeField]
     TextMeshProUGUI timeText;
+    [SerializeField]
+    List<upgradeManager> upgrades;
+    [SerializeField]
+    List<UpgradeButton> upgradeButtons;
 
     private void Awake()
     {
@@ -33,8 +38,7 @@ public class GameManager : MonoBehaviour
             if (curEx >= maxEx)
             {
                 Time.timeScale = 0f;
-                levelpanel.SetActive(true);
-                PauseBtn.SetActive(false);
+                openPanel(GetUpgrades(3));
                 curEx = 0f;
                 maxEx += 1f;
             }
@@ -61,5 +65,29 @@ public class GameManager : MonoBehaviour
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
            
+    }
+    public List<upgradeManager> GetUpgrades(int count)
+    {
+        List<upgradeManager> upgradelist = new List<upgradeManager>();
+
+        if(count > upgrades.Count)
+        {
+            count = upgrades.Count;
+        }
+        for(int i = 0; i < count; i++)
+        {
+            upgradelist.Add(upgrades[Random.Range(0, upgrades.Count)]);
+        }
+        return upgradelist;
+    }
+    public void openPanel(List<upgradeManager> upgradeManagers)
+    {
+        levelpanel.SetActive(true);
+        upgradePanel.SetActive(true);
+        PauseBtn.SetActive(false);
+        for (int i = 0; i < upgradeManagers.Count; i++)
+        {
+            upgradeButtons[i].Set(upgradeManagers[i]);
+        }
     }
 }
