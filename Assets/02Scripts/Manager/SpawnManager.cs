@@ -63,7 +63,7 @@ public class SpawnManager : MonoBehaviour
 
         //InvokeRepeating("SpawnBox", 3, 1f);
         //InvokeRepeating("SpawnEnemy", 3, 1f);      
-        InvokeRepeating("SpawnbEnemy", 3, 10f);
+        InvokeRepeating("SpawnbEnemy", 3, 1f);
     }
 
     void Update()
@@ -163,7 +163,6 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnBox()
     {
-        //UnityEngine.Debug.Log("SB");
         float BoxPosx = 8f;
         float BoxPosy = 8f;
 

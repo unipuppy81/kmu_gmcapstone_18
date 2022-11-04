@@ -21,6 +21,10 @@ public class Enemy : MonoBehaviour
     public Sprite[] sprites;
     public GameObject EnemyBullet;
 
+    public GameObject sbossEx;
+
+
+
     public float enemyHealth;
     public float enemySpeed;
     public float enemyDamage;
@@ -38,11 +42,10 @@ public class Enemy : MonoBehaviour
 
     SpriteRenderer spriteRenderer; // 피격 애니메이션
     Rigidbody2D rigid;
-    Transform target, exPoint;
+    Transform target;
 
     void Awake()
     {
-        exPoint = null;
 
         experienceA = exAcheck;
         experienceB = exBcheck;
@@ -92,7 +95,8 @@ public class Enemy : MonoBehaviour
             case Type.B:
                 Reload();
                 isShooting();
-                if (!isShoot) { 
+                if (!isShoot)
+                {
                     FollowTarget();
                 }
                 break;
@@ -102,7 +106,7 @@ public class Enemy : MonoBehaviour
 
                 break;
         }
-        
+
     }
 
     void Reload()
@@ -121,7 +125,7 @@ public class Enemy : MonoBehaviour
     }
     void FollowTarget()
     {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
     }
 
     void SearchPlayer()
@@ -133,7 +137,7 @@ public class Enemy : MonoBehaviour
         {
             target = p_Target.transform;
         }
-        
+
         if (curShotDelay < maxShotDelay)
         {
             return;
@@ -156,11 +160,8 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             gameObject.SetActive(false);
-            //GameObject exA = objectManager.MakeObj(experienceA);
-            //GameObject exB = objectManager.MakeObj(experienceB);
             switch (enemyType)
             {
-
                 case Type.A:
                     GameObject experiencea = objectManager.MakeObj(experienceA);
                     experiencea.transform.position = transform.position;
@@ -173,46 +174,11 @@ public class Enemy : MonoBehaviour
 
                     break;
                 case Type.C:
-                    for (int i = 0; i < 1; i++)
-                    {
-                        float exspawnx1 = transform.position.x + 2f;
-                        float exspawny1 = transform.position.y + 2f;
-
-                        float exspawnx2 = transform.position.x - 2f;
-                        float exspawny2 = transform.position.y - 2f;
-
-                        float randomX = UnityEngine.Random.Range(exspawnx1, exspawnx2);
-                        float randomY = UnityEngine.Random.Range(exspawny1, exspawny1);
-
-                        UnityEngine.Debug.Log("1");
-                          
-                        GameObject exA = objectManager.MakeObj(experienceA);
-
-                        //UnityEngine.Debug.Log("2");
-                        exA.transform.position = new Vector3(randomX, randomY, 0f);
-                        //UnityEngine.Debug.Log("3");
-                    }
-
-                    UnityEngine.Debug.Log("4");
-                    
-                    for (int i = 0; i< 3; i++) {
-                        float exspawnx1a = transform.position.x + 2f;
-                        float exspawny1a = transform.position.y + 2f;
-
-                        float exspawnx2a = transform.position.x - 2f;
-                        float exspawny2a = transform.position.y - 2f;
-
-                        float randomXa = UnityEngine.Random.Range(exspawnx1a, exspawnx2a);
-                        float randomYa = UnityEngine.Random.Range(exspawny1a, exspawny2a);
-                        UnityEngine.Debug.Log("5");
-                        GameObject exB = objectManager.MakeObj(experienceB);
-                        UnityEngine.Debug.Log("6");
-                        exB.transform.position = new Vector3(randomXa, randomYa, 0f);
-                        UnityEngine.Debug.Log("7");
-                    }
+                    Instantiate(sbossEx, transform.position, sbossEx.transform.rotation);
                     break;
             }
-        }  
+            
+        }
     }
 
     void ReturnSprite()
@@ -230,9 +196,9 @@ public class Enemy : MonoBehaviour
         {
             //UnityEngine.Debug.Log("Enemy01");
         }
-        else if(other.gameObject.tag == "Bullet")
+        else if (other.gameObject.tag == "Bullet")
         {
-           Bullet bullet = other.gameObject.GetComponent<Bullet>();
+            Bullet bullet = other.gameObject.GetComponent<Bullet>();
 
             onHit(bullet.dmg);
         }

@@ -7,6 +7,13 @@ using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI timeText;
+    [SerializeField]
+    List<upgradeManager> upgrades;
+    [SerializeField]
+    List<UpgradeButton> upgradeButtons;
+
     public float maxEx = 5f;
     public float curEx = 0f;
     public GameObject btn1;
@@ -16,12 +23,7 @@ public class GameManager : MonoBehaviour
     public float _Sec;
     public int _min;
     public int _mina = 6;
-    [SerializeField]
-    TextMeshProUGUI timeText;
-    [SerializeField]
-    List<upgradeManager> upgrades;
-    [SerializeField]
-    List<UpgradeButton> upgradeButtons;
+
 
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
             GameObject.Find("Ex");
             curEx += ex1Amount;
             Debug.Log(curEx);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             exManager();
         }
         else if (other.gameObject.tag == "Ex2")
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
             GameObject.Find("Ex2");
             curEx += ex2Amount;
             Debug.Log(curEx);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             exManager();
         }
     }

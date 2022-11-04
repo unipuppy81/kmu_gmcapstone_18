@@ -170,6 +170,11 @@ public class Player : MonoBehaviour
         {
             playercurHp -= 1f;
         }
+
+        else if (other.gameObject.tag == "enemybulletA")
+        {
+            playercurHp -= 2f;
+        }
     }
 }
    

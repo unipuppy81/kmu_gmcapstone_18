@@ -9,8 +9,8 @@ public class Boss : MonoBehaviour
 {
     public enum Type { A,B,C };
     public Type enemyType;
-    public int maxHealth = 10;
-    public int curHealth;
+    public float maxHealth = 10.0f;
+    public float curHealth;
     public int patternIndex;
     public int curPatternCount;
     public int[] maxPatternCount;
@@ -19,15 +19,16 @@ public class Boss : MonoBehaviour
     public float speed = 2.0f;
     public float maxSDelay = 0.2f;
     public float curSDelay;
+ 
 
     private Transform myTransform = null;
 
     public bool isWalk;
     public bool isPattern;
     public bool isDead;
+    public bool isCrash;
     public bool correctPos;
-
-
+    
 
 
     public GameObject Wall;
@@ -45,7 +46,8 @@ public class Boss : MonoBehaviour
     void Awake()
     {
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-      
+
+        isCrash = false;
         isWalk = true;
         isPattern = false;
 
@@ -103,76 +105,21 @@ public class Boss : MonoBehaviour
             {
                 int num = UnityEngine.Random.Range(0, 4);
                 float ndirx, ndiry;
-                switch (num)
+                ndirx = UnityEngine.Random.Range(-10, 10);
+                ndiry = UnityEngine.Random.Range(-10, 10);
+                timerr += Time.deltaTime;
+                if (timerr >= 3.0f && timerr <= 3.2f)
                 {
-                case 0:
-                    ndirx = transform.position.x;
-                    ndiry = transform.position.y + 2.0f;
-                    timerr += Time.deltaTime;
-                    if (timerr >= 3.0f && timerr <= 3.2f)
-                        {
-                        
-                        curmoveCount++;
-                    }
-                    if (timerr >= 3.0f)
-                    {
-                        dirx = ndirx;
-                        diry = ndiry;
-
-                        timerr = 0.0f;
-                    }
-                    break;
-                case 1:
-                    ndirx = transform.position.x + 2.0f;
-                    ndiry = transform.position.y;
-                    timerr += Time.deltaTime;
-                        if (timerr >= 3.0f && timerr <= 3.2f)
-                        {
-                            curmoveCount++;
-                        }
-                    if (timerr >= 3.0f)
-                    {
-                        dirx = ndirx;
-                        diry = ndiry;
-
-                        timerr = 0.0f;
-                    }
-                    break;
-                case 2:
-                    ndirx = transform.position.x - 2.0f;
-                    ndiry = transform.position.y;
-                    timerr += Time.deltaTime;
-                    if (timerr >= 3.0f && timerr <= 3.2f)
-                    {
-                        curmoveCount++;
-                    }
-                    if (timerr >= 3.0f)
-                    {
-                        dirx = ndirx;
-                        diry = ndiry;
-
-                        timerr = 0.0f;
-                    }
-                    break;
-                case 3:
-                    ndirx = transform.position.x;
-                    ndiry = transform.position.y - 2.0f;
-                    timerr += Time.deltaTime;
-                    if (timerr >= 3.0f && timerr <= 3.2f)
-                    {
-                        curmoveCount++;
-                    }
-                    if (timerr >= 3.0f)
-                    {
-                        dirx = ndirx;
-                        diry = ndiry;
-
-                        timerr = 0.0f;
-                    }
-                    break;
+                    curmoveCount++;
+                }
+                if (timerr >= 3.0f)
+                {
+                    dirx = ndirx;
+                    diry = ndiry;
+                    timerr = 0.0f;
                 }
             }
-        
+      
             if(curmoveCount == maxmmoveCount)
             {
                 isWalk = false;
@@ -180,7 +127,19 @@ public class Boss : MonoBehaviour
                 curmoveCount = 0;
             }
         }
+    }
+
+    void CheckBorder()
+    {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Border")
+        {
+            isCrash = true;
+        }
     }
 
     void Pattern()
@@ -209,14 +168,13 @@ public class Boss : MonoBehaviour
     void RandAttack()
     {
         curPatternCount++;
-
-            for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 5; i++)
             {
-                float attackPosx1 = 5f;
-                float attackPosy1 = 5f;
+                float attackPosx1 = 5.5f;
+                float attackPosy1 = 5.5f;
 
-                float attackPosx2 = -5f;
-                float attackPosy2 = -5f;
+                float attackPosx2 = -5.5f;
+                float attackPosy2 = -5.5f;
 
                 float arandomX = UnityEngine.Random.Range(attackPosx1, attackPosx2);
                 float arandomY = UnityEngine.Random.Range(attackPosy1, attackPosy2);
@@ -238,15 +196,15 @@ public class Boss : MonoBehaviour
             return;
         }
 
-            for(int i=0; i < 1; i++)
-            {
-               Vector3 Rockshot = btarget.position - transform.position;
-               GameObject rock = Instantiate(Rock, transform.position, transform.rotation);
-               Rigidbody2D rigid = rock.GetComponent<Rigidbody2D>();
-               rigid.AddForce(Rockshot * 3.0f, ForceMode2D.Impulse);
+        for(int i=0; i < 1; i++)
+        {
+        Vector3 Rockshot = btarget.position - transform.position;
+        GameObject rock = Instantiate(Rock, transform.position, transform.rotation);
+        Rigidbody2D rigid = rock.GetComponent<Rigidbody2D>();
+        rigid.AddForce(Rockshot * 3.0f, ForceMode2D.Impulse);
 
-               curSDelay = 0;
-             }
+        curSDelay = 0;
+        }
 
 
         if (curPatternCount < maxPatternCount[patternIndex])
@@ -257,46 +215,23 @@ public class Boss : MonoBehaviour
 
     void CrushAttack()
     {
-        UnityEngine.Debug.Log("순간이동 or 잡몹생성");
         curPatternCount++;
+        for (int i = 0; i < 5; i++)
+        {
+            float attackPosx1 = 5.5f;
+            float attackPosy1 = 5.5f;
 
-        movePos = btarget.position - transform.position;
+            float attackPosx2 = -5.5f;
+            float attackPosy2 = -5.5f;
 
-        int loopNum = 0;
+            float arandomX = UnityEngine.Random.Range(attackPosx1, attackPosx2);
+            float arandomY = UnityEngine.Random.Range(attackPosy1, attackPosy2);
 
-        b = new Vector3(bdirx, bdiry, 0);
-        transform.position = Vector2.MoveTowards(transform.position, a, 2.0f * Time.deltaTime);
-
-        //while (!correctPos)
-        //{
-        //    if(loopNum++ > 100)
-        //    {
-        //        throw new Exception("Loop");
-        //    }
-        //    UnityEngine.Debug.Log("987");
-        //    transform.Translate(movePos * Time.deltaTime);
-        //    UnityEngine.Debug.Log("000");
-        //    if(transform.position.x == dirx && transform.position.y == diry)
-        //    {
-        //        UnityEngine.Debug.Log("999");
-        //        break;
-        //    }
-        //}
-        /*
-        if (transform.position != btarget.position) {
-            UnityEngine.Debug.Log("987");
-            float dir01 = 10f * Time.deltaTime;
-            float dir02 = 10f * Time.deltaTime;
-
-            Vector3 a = new Vector3(dir01, dir02, 0);
-            transform.Translate(a);
-            //transform.Translate(movePos * Time.deltaTime);
-            //transform.position = Vector2.MoveTowards(transform.position, btarget.position, 4.0f * Time.deltaTime);
+            GameObject wall = (GameObject)Instantiate(Wall, new Vector3(arandomX, arandomY, 0f), Quaternion.identity);
         }
-        */
+
         if (curPatternCount < maxPatternCount[patternIndex])
         {
-
             Invoke("CrushAttack", 2);
         }
      }
@@ -372,8 +307,6 @@ public class Boss : MonoBehaviour
     IEnumerator CrushAttack1()
         {
             UnityEngine.Debug.Log("C");
-            //boxCollider.enabled = false;
-
 
             // +crush anim
             if (transform.position != btarget.position)

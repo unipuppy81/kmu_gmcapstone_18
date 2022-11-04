@@ -115,13 +115,12 @@ public class ObjectManager : MonoBehaviour
 
         }
 
-        for (int index = 0; index < enemyA.Length; index++){
+        for (int index = 0; index < targetPool.Length; index++){
             if (!targetPool[index].activeSelf){
                 targetPool[index].SetActive(true);
                 return targetPool[index];
             }
         }
-
         return null;
     }
 }
