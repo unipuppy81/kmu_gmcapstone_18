@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6965814671064007042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.417925, y: 4.3396177, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ddf45e10439114d8983ef4f354479c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
+  objectManager: {fileID: 0}
+  bossType: 0
   maxHealth: 10
   curHealth: 0
   patternIndex: 0
@@ -108,12 +109,15 @@ MonoBehaviour:
   curmoveCount: 0
   maxmmoveCount: 2
   speed: 2
+  maxSDelay: 0.2
+  curSDelay: 0
   isWalk: 0
   isPattern: 0
   isDead: 0
+  isCrash: 0
   correctPos: 0
-  Wall: {fileID: 245208704090265564, guid: 9d0ec7795f6cff4469d42c19b9dd7bff, type: 3}
   Rock: {fileID: 7894243082421634571, guid: 807a5dcd0703d2b43beb37b60ba4b74d, type: 3}
+  Wall: {fileID: 245208704090265564, guid: 9d0ec7795f6cff4469d42c19b9dd7bff, type: 3}
 --- !u!61 &-1134378157411999197
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ TagManager:
   - Skill
   - Skill2
   - Ex2
+  - enemybulletA
   layers:
   - Default
   - TransparentFX

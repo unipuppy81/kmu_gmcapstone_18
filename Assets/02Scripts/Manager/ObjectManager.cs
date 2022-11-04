@@ -14,6 +14,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject bulletPlayerAPrefab;
     public GameObject bulletEnemyAPrefab;
 
+    public GameObject WallPrefab;
 
     GameObject[] enemyA;
     GameObject[] enemyB;
@@ -24,9 +25,11 @@ public class ObjectManager : MonoBehaviour
     GameObject[] bulletPlayerA;
 
     GameObject[] bulletEnemyA;
-
+    GameObject[] Wall;
 
     GameObject[] targetPool;
+
+
 
     void Awake() // 로딩시간에 오브젝트 풀 생성
     {
@@ -39,6 +42,8 @@ public class ObjectManager : MonoBehaviour
         bulletPlayerA = new GameObject[20];
 
         bulletEnemyA = new GameObject[20];
+
+        Wall = new GameObject[100];
         Generate();
     }
 
@@ -82,6 +87,14 @@ public class ObjectManager : MonoBehaviour
             exB[index] = Instantiate(exBPrefab);
             exB[index].SetActive(false);
         }
+
+        // #4. Boss Weapon
+        for (int index = 0; index < Wall.Length; index++)
+        {
+            Wall[index] = Instantiate(WallPrefab);
+            Wall[index].SetActive(false);
+        }
+
     }
 
     public GameObject MakeObj(string type)
@@ -113,6 +126,9 @@ public class ObjectManager : MonoBehaviour
                 targetPool = exB;
                 break;
 
+            case "wall":
+                targetPool = Wall;
+                break;
         }
 
         for (int index = 0; index < targetPool.Length; index++){

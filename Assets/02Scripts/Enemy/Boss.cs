@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    public ObjectManager objectManager;
+
     public enum Type { A,B,C };
-    public Type enemyType;
+    public Type bossType;
     public float maxHealth = 10.0f;
     public float curHealth;
     public int patternIndex;
@@ -19,7 +22,7 @@ public class Boss : MonoBehaviour
     public float speed = 2.0f;
     public float maxSDelay = 0.2f;
     public float curSDelay;
- 
+    public float BossSpeed;
 
     private Transform myTransform = null;
 
@@ -28,11 +31,11 @@ public class Boss : MonoBehaviour
     public bool isDead;
     public bool isCrash;
     public bool correctPos;
-    
 
 
-    public GameObject Wall;
+
     public GameObject Rock;
+    public GameObject Wall;
 
     float dirx, diry, timerr, bdirx, bdiry;
 
@@ -43,8 +46,9 @@ public class Boss : MonoBehaviour
 
     Transform btarget;
 
-    void Awake()
-    {
+    void Awake() {
+        BossSpeed = 2.0f;
+
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         isCrash = false;
@@ -97,7 +101,7 @@ public class Boss : MonoBehaviour
     void Move()
     {
         a = new Vector3(dirx, diry, 0);
-        transform.position = Vector2.MoveTowards(transform.position, a, 2.0f * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, a, BossSpeed * Time.deltaTime);
         
         if (transform.position.x == dirx && transform.position.y == diry)
         {
@@ -105,8 +109,8 @@ public class Boss : MonoBehaviour
             {
                 int num = UnityEngine.Random.Range(0, 4);
                 float ndirx, ndiry;
-                ndirx = UnityEngine.Random.Range(-10, 10);
-                ndiry = UnityEngine.Random.Range(-10, 10);
+                ndirx = UnityEngine.Random.Range(-5, 5);
+                ndiry = UnityEngine.Random.Range(-5 , 5);
                 timerr += Time.deltaTime;
                 if (timerr >= 3.0f && timerr <= 3.2f)
                 {
@@ -156,10 +160,11 @@ public class Boss : MonoBehaviour
             case 1:
                 RockAttack();
                 break;
-
+            
             case 2:
                 CrushAttack();
                 break;
+            
         }
         isWalk = true;
         isPattern = false;
@@ -167,20 +172,21 @@ public class Boss : MonoBehaviour
     
     void RandAttack()
     {
+        UnityEngine.Debug.Log("A");
         curPatternCount++;
         for(int i = 0; i < 5; i++)
             {
-                float attackPosx1 = 5.5f;
-                float attackPosy1 = 5.5f;
+                float attackPosx1 = 5.0f;
+                float attackPosy1 = 5.0f;
 
-                float attackPosx2 = -5.5f;
-                float attackPosy2 = -5.5f;
+                float attackPosx2 = -5.0f;
+                float attackPosy2 = -5.0f;
 
                 float arandomX = UnityEngine.Random.Range(attackPosx1, attackPosx2);
                 float arandomY = UnityEngine.Random.Range(attackPosy1, attackPosy2);
 
                 GameObject wall = (GameObject)Instantiate(Wall, new Vector3(arandomX, arandomY, 0f), Quaternion.identity);
-            }
+        }
 
         if (curPatternCount < maxPatternCount[patternIndex])
             Invoke("RandAttack", 2);
@@ -190,6 +196,7 @@ public class Boss : MonoBehaviour
 
     void RockAttack()
     {
+        UnityEngine.Debug.Log("B");
         curPatternCount++;
         if(curSDelay < maxSDelay)
         {
@@ -215,8 +222,12 @@ public class Boss : MonoBehaviour
 
     void CrushAttack()
     {
+        BossSpeed += 2f;
+
+        /*
+        UnityEngine.Debug.Log("C");
         curPatternCount++;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             float attackPosx1 = 5.5f;
             float attackPosy1 = 5.5f;
@@ -226,14 +237,13 @@ public class Boss : MonoBehaviour
 
             float arandomX = UnityEngine.Random.Range(attackPosx1, attackPosx2);
             float arandomY = UnityEngine.Random.Range(attackPosy1, attackPosy2);
-
-            GameObject wall = (GameObject)Instantiate(Wall, new Vector3(arandomX, arandomY, 0f), Quaternion.identity);
         }
 
         if (curPatternCount < maxPatternCount[patternIndex])
         {
             Invoke("CrushAttack", 2);
         }
+        */
      }
 
 

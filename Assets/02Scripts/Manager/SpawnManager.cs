@@ -47,10 +47,8 @@ public class SpawnManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-
         Enemy = Enemy1;
         bEnemy = Enemy2;
-
     }
 
     void Start()
@@ -63,7 +61,7 @@ public class SpawnManager : MonoBehaviour
 
         //InvokeRepeating("SpawnBox", 3, 1f);
         //InvokeRepeating("SpawnEnemy", 3, 1f);      
-        InvokeRepeating("SpawnbEnemy", 3, 1f);
+        //InvokeRepeating("SpawnbEnemy", 3, 1f);
     }
 
     void Update()
@@ -121,7 +119,6 @@ public class SpawnManager : MonoBehaviour
 
                 Enemy enemylogic = enemy.GetComponent<Enemy>();
                 enemylogic.objectManager = objectManager;
-                //GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(0f, 0f, 0f), Quaternion.identity);
             }
         }
     }
@@ -136,6 +133,7 @@ public class SpawnManager : MonoBehaviour
 
         float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
         float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
+
 
         if (randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f)
         {
