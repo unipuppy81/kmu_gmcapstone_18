@@ -23,8 +23,6 @@ public class Enemy : MonoBehaviour
 
     public GameObject sbossEx;
 
-
-
     public float enemyHealth;
     public float enemySpeed;
     public float enemyDamage;
@@ -106,7 +104,11 @@ public class Enemy : MonoBehaviour
 
                 break;
         }
+    }
 
+    void durationTime()
+    {
+        
     }
 
     void Reload()
@@ -215,7 +217,6 @@ public class Enemy : MonoBehaviour
         else if (other.gameObject.CompareTag("Skill2")) //EMP필드(자기장)
         {
             Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
-
             onHit(skill_Magnetic.dmg);
         }
     }

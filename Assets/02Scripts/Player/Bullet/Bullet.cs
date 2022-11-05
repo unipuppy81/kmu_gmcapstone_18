@@ -54,6 +54,7 @@ public class Bullet : MonoBehaviour
         if(bulletLevel == 5 && _Ammo.selectedBullet == true)
         {
             dmg = 15;
+            player.maxShotDelay *= 0.5f; // 재장전속도(공격속도)
         }
     }
 

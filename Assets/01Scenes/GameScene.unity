@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 190220248}
   - component: {fileID: 190220247}
   m_Layer: 5
-  m_Name: pasive2 -3
+  m_Name: Dumbbell3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 193652429}
   - component: {fileID: 193652428}
   m_Layer: 5
-  m_Name: wp3 -2
+  m_Name: EMP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 305645219}
   - component: {fileID: 305645218}
   m_Layer: 5
-  m_Name: pasive2 -1
+  m_Name: Dumbbell1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,7 +1218,7 @@ GameObject:
   - component: {fileID: 341452422}
   - component: {fileID: 341452421}
   m_Layer: 5
-  m_Name: wp2 -1
+  m_Name: Shield1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3106,7 +3106,7 @@ GameObject:
   - component: {fileID: 879036629}
   - component: {fileID: 879036628}
   m_Layer: 5
-  m_Name: pasive1 -3
+  m_Name: Ammo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3300,7 +3300,7 @@ GameObject:
   - component: {fileID: 997509976}
   - component: {fileID: 997509975}
   m_Layer: 5
-  m_Name: wp1 -1
+  m_Name: Gun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3612,7 +3612,7 @@ GameObject:
   - component: {fileID: 1093598843}
   - component: {fileID: 1093598842}
   m_Layer: 5
-  m_Name: wp1 -3
+  m_Name: Gun3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3823,7 +3823,7 @@ GameObject:
   - component: {fileID: 1174951241}
   - component: {fileID: 1174951240}
   m_Layer: 5
-  m_Name: wp3 -3
+  m_Name: EMP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4129,7 +4129,7 @@ GameObject:
   - component: {fileID: 1211260628}
   - component: {fileID: 1211260627}
   m_Layer: 5
-  m_Name: pasive1 -1
+  m_Name: Ammo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4990,7 +4990,7 @@ GameObject:
   - component: {fileID: 1496813961}
   - component: {fileID: 1496813960}
   m_Layer: 5
-  m_Name: pasive3 -2
+  m_Name: Hot7_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5066,7 +5066,7 @@ GameObject:
   - component: {fileID: 1531377756}
   - component: {fileID: 1531377755}
   m_Layer: 5
-  m_Name: pasive3 -1
+  m_Name: Hot7_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5142,7 +5142,7 @@ GameObject:
   - component: {fileID: 1545925039}
   - component: {fileID: 1545925038}
   m_Layer: 5
-  m_Name: pasive1 -2
+  m_Name: Ammo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5640,6 +5640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleSpeed: 1
+  damageTime: 0.5
   dmg: 3
   target: {fileID: 128811910}
   magnetic: {fileID: 1708163160}
@@ -5732,6 +5733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleSpeed: 1
+  damageTime: 0.5
   dmg: 3
   target: {fileID: 128811910}
   magnetic: {fileID: 1708163160}
@@ -5955,7 +5957,7 @@ GameObject:
   - component: {fileID: 1791954870}
   - component: {fileID: 1791954869}
   m_Layer: 5
-  m_Name: pasive2 -2
+  m_Name: Dumbbell2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6336,7 +6338,7 @@ GameObject:
   - component: {fileID: 1851059615}
   - component: {fileID: 1851059614}
   m_Layer: 5
-  m_Name: wp2 -2
+  m_Name: Shield2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6412,7 +6414,7 @@ GameObject:
   - component: {fileID: 1876619883}
   - component: {fileID: 1876619882}
   m_Layer: 5
-  m_Name: pasive3 -3
+  m_Name: Hot7_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7062,7 +7064,7 @@ GameObject:
   - component: {fileID: 2024971775}
   - component: {fileID: 2024971774}
   m_Layer: 5
-  m_Name: wp3 -1
+  m_Name: EMP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7334,7 +7336,7 @@ GameObject:
   - component: {fileID: 2088031605}
   - component: {fileID: 2088031604}
   m_Layer: 5
-  m_Name: wp1 -2
+  m_Name: Gun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7658,7 +7660,7 @@ GameObject:
   - component: {fileID: 2130290272}
   - component: {fileID: 2130290271}
   m_Layer: 5
-  m_Name: wp2 -3
+  m_Name: Shield3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

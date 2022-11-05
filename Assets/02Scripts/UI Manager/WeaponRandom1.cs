@@ -33,6 +33,7 @@ public class WeaponRandom1 : MonoBehaviour
                 j = Random.Range(0, select2.Count);
                 select2[j].SetActive(true);
                 select3.RemoveAt(j);
+                select3.RemoveAt(i);
                 k = Random.Range(0, select3.Count);
                 select3[k].SetActive(true);
                 break;
@@ -42,6 +43,7 @@ public class WeaponRandom1 : MonoBehaviour
                 j = Random.Range(0, select2.Count);
                 select2[j].SetActive(true);
                 select3.RemoveAt(j);
+                select3.RemoveAt(i);
                 k = Random.Range(0, select3.Count);
                 select3[k].SetActive(true);
                 break;
@@ -51,6 +53,7 @@ public class WeaponRandom1 : MonoBehaviour
                 j = Random.Range(0, select2.Count);
                 select2[j].SetActive(true);
                 select3.RemoveAt(j);
+                select3.RemoveAt(i);
                 k = Random.Range(0, select3.Count);
                 select3[k].SetActive(true);
                 break;
@@ -60,6 +63,7 @@ public class WeaponRandom1 : MonoBehaviour
                 j = Random.Range(0, select2.Count);
                 select2[j].SetActive(true);
                 select3.RemoveAt(j);
+                select3.RemoveAt(i);
                 k = Random.Range(0, select3.Count);
                 select3[k].SetActive(true);
                 break;
@@ -69,6 +73,7 @@ public class WeaponRandom1 : MonoBehaviour
                 j = Random.Range(0, select2.Count);
                 select2[j].SetActive(true);
                 select3.RemoveAt(j);
+                select3.RemoveAt(i);
                 k = Random.Range(0, select3.Count);
                 select3[k].SetActive(true);
                 break;
@@ -78,6 +83,7 @@ public class WeaponRandom1 : MonoBehaviour
                 j = Random.Range(0, select2.Count);
                 select2[j].SetActive(true);
                 select3.RemoveAt(j);
+                select3.RemoveAt(i);
                 k = Random.Range(0, select3.Count);
                 select3[k].SetActive(true);
                 break;
