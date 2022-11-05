@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 119988934}
   - component: {fileID: 119988933}
   - component: {fileID: 119988932}
-  - component: {fileID: 119988931}
   m_Layer: 5
   m_Name: Selectpanel2
   m_TagString: Untagged
@@ -298,27 +297,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -66}
   m_SizeDelta: {x: -780.703, y: -1106.14}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &119988931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119988929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b502b72d30fa149a479c60d66aafb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  select:
-  - {fileID: 2088031602}
-  - {fileID: 1851059612}
-  - {fileID: 193652426}
-  - {fileID: 1545925036}
-  - {fileID: 1791954867}
-  - {fileID: 1496813958}
-  panel: {fileID: 2027341993}
-  state: 0
 --- !u!114 &119988932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +634,7 @@ GameObject:
   - component: {fileID: 190220248}
   - component: {fileID: 190220247}
   m_Layer: 5
-  m_Name: pasive2
+  m_Name: pasive2 -3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,7 +710,7 @@ GameObject:
   - component: {fileID: 193652429}
   - component: {fileID: 193652428}
   m_Layer: 5
-  m_Name: wp3
+  m_Name: wp3 -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,7 +1074,7 @@ GameObject:
   - component: {fileID: 305645219}
   - component: {fileID: 305645218}
   m_Layer: 5
-  m_Name: pasive2
+  m_Name: pasive2 -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1240,7 +1218,7 @@ GameObject:
   - component: {fileID: 341452422}
   - component: {fileID: 341452421}
   m_Layer: 5
-  m_Name: wp2
+  m_Name: wp2 -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3128,7 +3106,7 @@ GameObject:
   - component: {fileID: 879036629}
   - component: {fileID: 879036628}
   m_Layer: 5
-  m_Name: pasive1
+  m_Name: pasive1 -3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3322,7 +3300,7 @@ GameObject:
   - component: {fileID: 997509976}
   - component: {fileID: 997509975}
   m_Layer: 5
-  m_Name: wp1
+  m_Name: wp1 -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3634,7 +3612,7 @@ GameObject:
   - component: {fileID: 1093598843}
   - component: {fileID: 1093598842}
   m_Layer: 5
-  m_Name: wp1
+  m_Name: wp1 -3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3845,7 +3823,7 @@ GameObject:
   - component: {fileID: 1174951241}
   - component: {fileID: 1174951240}
   m_Layer: 5
-  m_Name: wp3
+  m_Name: wp3 -3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4151,7 +4129,7 @@ GameObject:
   - component: {fileID: 1211260628}
   - component: {fileID: 1211260627}
   m_Layer: 5
-  m_Name: pasive1
+  m_Name: pasive1 -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4735,7 +4713,6 @@ GameObject:
   - component: {fileID: 1416225022}
   - component: {fileID: 1416225025}
   - component: {fileID: 1416225026}
-  - component: {fileID: 1416225027}
   m_Layer: 5
   m_Name: Selectpanel1
   m_TagString: Untagged
@@ -4866,27 +4843,6 @@ MonoBehaviour:
   ButtonName: {fileID: 1913626781}
   pausePanel: {fileID: 1327610487}
   levelpanel: {fileID: 2027341993}
---- !u!114 &1416225027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416225020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b502b72d30fa149a479c60d66aafb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  select:
-  - {fileID: 997509972}
-  - {fileID: 341452419}
-  - {fileID: 2024971772}
-  - {fileID: 1211260625}
-  - {fileID: 305645216}
-  - {fileID: 1531377753}
-  panel: {fileID: 2027341993}
-  state: 0
 --- !u!1 &1473773567
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,7 +4990,7 @@ GameObject:
   - component: {fileID: 1496813961}
   - component: {fileID: 1496813960}
   m_Layer: 5
-  m_Name: pasive3
+  m_Name: pasive3 -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5110,7 +5066,7 @@ GameObject:
   - component: {fileID: 1531377756}
   - component: {fileID: 1531377755}
   m_Layer: 5
-  m_Name: pasive3
+  m_Name: pasive3 -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5186,7 +5142,7 @@ GameObject:
   - component: {fileID: 1545925039}
   - component: {fileID: 1545925038}
   m_Layer: 5
-  m_Name: pasive1
+  m_Name: pasive1 -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5263,7 +5219,6 @@ GameObject:
   - component: {fileID: 1569803548}
   - component: {fileID: 1569803547}
   - component: {fileID: 1569803546}
-  - component: {fileID: 1569803545}
   m_Layer: 5
   m_Name: Selectpanel3
   m_TagString: Untagged
@@ -5297,27 +5252,6 @@ RectTransform:
   m_AnchoredPosition: {x: 358.9001, y: -66}
   m_SizeDelta: {x: -780.703, y: -1106.14}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1569803545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569803543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b502b72d30fa149a479c60d66aafb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  select:
-  - {fileID: 1093598840}
-  - {fileID: 2130290269}
-  - {fileID: 1174951238}
-  - {fileID: 879036626}
-  - {fileID: 190220245}
-  - {fileID: 1876619880}
-  panel: {fileID: 2027341993}
-  state: 0
 --- !u!114 &1569803546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6021,7 +5955,7 @@ GameObject:
   - component: {fileID: 1791954870}
   - component: {fileID: 1791954869}
   m_Layer: 5
-  m_Name: pasive2
+  m_Name: pasive2 -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6402,7 +6336,7 @@ GameObject:
   - component: {fileID: 1851059615}
   - component: {fileID: 1851059614}
   m_Layer: 5
-  m_Name: wp2
+  m_Name: wp2 -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6478,7 +6412,7 @@ GameObject:
   - component: {fileID: 1876619883}
   - component: {fileID: 1876619882}
   m_Layer: 5
-  m_Name: pasive3
+  m_Name: pasive3 -3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7128,7 +7062,7 @@ GameObject:
   - component: {fileID: 2024971775}
   - component: {fileID: 2024971774}
   m_Layer: 5
-  m_Name: wp3
+  m_Name: wp3 -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7203,6 +7137,7 @@ GameObject:
   - component: {fileID: 2027341994}
   - component: {fileID: 2027341996}
   - component: {fileID: 2027341995}
+  - component: {fileID: 2027341997}
   m_Layer: 5
   m_Name: levelPanel
   m_TagString: Untagged
@@ -7274,6 +7209,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027341993}
   m_CullTransparentMesh: 1
+--- !u!114 &2027341997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027341993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b502b72d30fa149a479c60d66aafb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  select1:
+  - {fileID: 997509972}
+  - {fileID: 341452419}
+  - {fileID: 2024971772}
+  - {fileID: 1211260625}
+  - {fileID: 305645216}
+  - {fileID: 1531377753}
+  select2:
+  - {fileID: 2088031602}
+  - {fileID: 1851059612}
+  - {fileID: 193652426}
+  - {fileID: 1545925036}
+  - {fileID: 1791954867}
+  - {fileID: 1496813958}
+  select3:
+  - {fileID: 1093598840}
+  - {fileID: 2130290269}
+  - {fileID: 1174951238}
+  - {fileID: 879036626}
+  - {fileID: 190220245}
+  - {fileID: 1876619880}
+  panel: {fileID: 2027341993}
+  state: 0
 --- !u!1 &2059436252
 GameObject:
   m_ObjectHideFlags: 0
@@ -7364,7 +7334,7 @@ GameObject:
   - component: {fileID: 2088031605}
   - component: {fileID: 2088031604}
   m_Layer: 5
-  m_Name: wp1
+  m_Name: wp1 -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7688,7 +7658,7 @@ GameObject:
   - component: {fileID: 2130290272}
   - component: {fileID: 2130290271}
   m_Layer: 5
-  m_Name: wp2
+  m_Name: wp2 -3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
