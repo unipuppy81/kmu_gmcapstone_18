@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    public Sprite[] Gun;
     private Player player;
     public float dmg;
 

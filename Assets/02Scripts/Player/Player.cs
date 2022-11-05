@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     //public GameObject bulletObjA;
     public GameObject Bomb;
     public GameObject skillbtn;
+    public GameObject gameoverPannel;
 
     public string bulletObjA;
     string playerbulletA = "bulletPlayerA";
@@ -52,7 +53,6 @@ public class Player : MonoBehaviour
         bulletObjA = playerbulletA;
         playerMaxHp = 10f;
         playercurHp = 10f;
-
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -67,8 +67,6 @@ public class Player : MonoBehaviour
         Playermove();
         Reload();
         SpecialSkill1();
-        if(playercurHp <= 0)
-            Destroy(gameObject);
     }
 
     void Playermove()
@@ -78,12 +76,12 @@ public class Player : MonoBehaviour
         if(h < 0)
         {
             flipMove = Vector3.left;
-            transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+            transform.localScale = new Vector3(-0.04f, 0.04f, 0.0f);
         }
         else if(h>0)
         {
             flipMove = Vector3.right;
-            transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            transform.localScale = new Vector3(0.04f, 0.04f, 0.0f);
         }
 
         float v = Input.GetAxisRaw("Vertical");
@@ -175,6 +173,12 @@ public class Player : MonoBehaviour
         else if (other.gameObject.tag == "enemybulletA")
         {
             playercurHp -= 2f;
+        }
+
+        if (playercurHp <= 0)
+        {
+            Time.timeScale = 0;
+            gameoverPannel.SetActive(true);
         }
     }
 }
