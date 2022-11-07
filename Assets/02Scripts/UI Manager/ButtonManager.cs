@@ -65,11 +65,15 @@ public class ButtonManager : MonoBehaviour
         levelpanel.SetActive(false);
         ButtonName.SetActive(true);
         Time.timeScale = 1f;
+        
+        
+        /*
         if (guardian.hasGuardians < maxGuardians)
         {
             guardian.guardians[guardian.hasGuardians].SetActive(true);
             guardian.hasGuardians += 1;
         }
+        */
     }
 
     public void WpBtn2()

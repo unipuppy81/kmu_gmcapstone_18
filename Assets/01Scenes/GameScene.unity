@@ -355,7 +355,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 119988934}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 119988932}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: WpBtn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &119988934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,9 +522,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 1099294324}
   levelText: {fileID: 400205741}
+  select1: []
+  select2: []
+  select3: []
   maxEx: 5
   curEx: 0
-  btn1: {fileID: 997509972}
   levelpanel: {fileID: 2027341993}
   PauseBtn: {fileID: 1913626781}
   _Sec: 0
@@ -2622,9 +2636,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 1099294324}
   levelText: {fileID: 400205741}
+  select1:
+  - {fileID: 997509972}
+  - {fileID: 341452419}
+  - {fileID: 2024971772}
+  - {fileID: 1211260625}
+  - {fileID: 305645216}
+  - {fileID: 1531377753}
+  select2:
+  - {fileID: 2088031602}
+  - {fileID: 1851059612}
+  - {fileID: 193652426}
+  - {fileID: 1545925036}
+  - {fileID: 1791954867}
+  - {fileID: 1496813958}
+  select3:
+  - {fileID: 1093598840}
+  - {fileID: 2130290269}
+  - {fileID: 1174951238}
+  - {fileID: 879036626}
+  - {fileID: 190220245}
+  - {fileID: 1876619880}
   maxEx: 1
   curEx: 0
-  btn1: {fileID: 997509972}
   levelpanel: {fileID: 2027341993}
   PauseBtn: {fileID: 1913626781}
   _Sec: 0
@@ -4827,7 +4861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416225022}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1416225026}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: WpBtn1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1416225026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5310,7 +5356,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1569803548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1569803546}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: WpBtn3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1569803548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7139,7 +7197,6 @@ GameObject:
   - component: {fileID: 2027341994}
   - component: {fileID: 2027341996}
   - component: {fileID: 2027341995}
-  - component: {fileID: 2027341997}
   m_Layer: 5
   m_Name: levelPanel
   m_TagString: Untagged
@@ -7211,41 +7268,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027341993}
   m_CullTransparentMesh: 1
---- !u!114 &2027341997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027341993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b502b72d30fa149a479c60d66aafb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  select1:
-  - {fileID: 997509972}
-  - {fileID: 341452419}
-  - {fileID: 2024971772}
-  - {fileID: 1211260625}
-  - {fileID: 305645216}
-  - {fileID: 1531377753}
-  select2:
-  - {fileID: 2088031602}
-  - {fileID: 1851059612}
-  - {fileID: 193652426}
-  - {fileID: 1545925036}
-  - {fileID: 1791954867}
-  - {fileID: 1496813958}
-  select3:
-  - {fileID: 1093598840}
-  - {fileID: 2130290269}
-  - {fileID: 1174951238}
-  - {fileID: 879036626}
-  - {fileID: 190220245}
-  - {fileID: 1876619880}
-  panel: {fileID: 2027341993}
-  state: 0
 --- !u!1 &2059436252
 GameObject:
   m_ObjectHideFlags: 0

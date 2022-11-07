@@ -51,6 +51,7 @@ public class Bullet : MonoBehaviour
                 dmg = 12;
                 break;
         }
+
         if(bulletLevel == 5 && _Ammo.selectedBullet == true)
         {
             dmg = 15;

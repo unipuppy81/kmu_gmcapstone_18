@@ -11,10 +11,15 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI timeText;
     [SerializeField]
     TextMeshProUGUI levelText;
+    [SerializeField]
+    public List<GameObject> select1 = new List<GameObject>();
+    [SerializeField]
+    public List<GameObject> select2 = new List<GameObject>();
+    [SerializeField]
+    public List<GameObject> select3 = new List<GameObject>();
 
     public float maxEx = 5f;
     public float curEx = 0f;
-    public GameObject btn1;
     public GameObject levelpanel;
     public GameObject PauseBtn;
     public float _Sec;
@@ -23,6 +28,7 @@ public class GameManager : MonoBehaviour
     public int levelcount;
     public int min;
     public int max;
+    int i, j, k;
 
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
@@ -34,14 +40,33 @@ public class GameManager : MonoBehaviour
         levelpanel.SetActive(false);
         player = GetComponent<Player>();
     }
+    private void Update()
+    {
+        Timer();
+        ActiveFalse();
+    }
 
+    void ActiveFalse()
+    {
+        if (levelpanel.activeSelf == false)
+        {
+            Debug.Log("456");
+            for (int t = 0; t < select1.Count; t++)
+            {
+                Debug.Log("0");
+                select1[t].SetActive(false);
+                select2[t].SetActive(false);
+                select3[t].SetActive(false);
+            }
+        }
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ex")
         {
             GameObject.Find("Ex");
             curEx += ex1Amount;
-            Debug.Log(curEx);
+            //Debug.Log(curEx);
             other.gameObject.SetActive(false);
             exManager();
         }
@@ -49,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Ex2");
             curEx += ex2Amount;
-            Debug.Log(curEx);
+            //Debug.Log(curEx);
             other.gameObject.SetActive(false);
             exManager();
         }
@@ -63,18 +88,14 @@ public class GameManager : MonoBehaviour
             levelText.text = string.Format("LV : {0:D1}", levelcount);
             Time.timeScale = 0f;
             levelpanel.SetActive(true);
+            RandomSelect1();
             PauseBtn.SetActive(false);
             curEx = 0f;
-            maxEx += 5f;
+            //maxEx += 5f;
             player.playerLevel += 1;
         }
     }
-
-    
-    private void Update()
-    {
-        Timer();
-    }
+   
 
     void Timer()
     {
@@ -93,5 +114,146 @@ public class GameManager : MonoBehaviour
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
            
+    }
+    
+    public void RandomSelect1()
+    {
+        Debug.Log("ABC");
+        if (levelpanel.activeSelf == true)
+        {
+            i = Random.Range(0, select1.Count);
+            switch (i)
+            {
+                case 0:
+                    select1[0].SetActive(true);
+                    j = Random.Range(0, select2.Count);
+                    while (i == j)
+                    {
+                        j = Random.Range(0, select2.Count);
+                    }
+                    select2[j].SetActive(true);
+                    k = Random.Range(0, select3.Count);
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    select3[k].SetActive(true);
+                    break;
+                case 1:
+                    select1[1].SetActive(true);
+                    //select2.RemoveAt(i);
+                    j = Random.Range(0, select2.Count);
+                    while (i == j)
+                    {
+                        j = Random.Range(0, select2.Count);
+                    }
+                    select2[j].SetActive(true);
+                    //select3.RemoveAt(j);
+                    //select3.RemoveAt(i);
+                    k = Random.Range(0, select3.Count);
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    select3[k].SetActive(true);
+                    break;
+                case 2:
+                    select1[2].SetActive(true);
+                    //select2.RemoveAt(i);
+                    j = Random.Range(0, select2.Count);
+                    while (i == j)
+                    {
+                        j = Random.Range(0, select2.Count);
+                    }
+                    select2[j].SetActive(true);
+                    //select3.RemoveAt(j);
+                    //select3.RemoveAt(i);
+                    k = Random.Range(0, select3.Count);
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    select3[k].SetActive(true);
+                    break;
+                case 3:
+                    select1[3].SetActive(true);
+                    //select2.RemoveAt(i);
+                    j = Random.Range(0, select2.Count);
+                    while (i == j)
+                    {
+                        j = Random.Range(0, select2.Count);
+                    }
+                    select2[j].SetActive(true);
+                    //select3.RemoveAt(j);
+                    //select3.RemoveAt(i);
+                    k = Random.Range(0, select3.Count);
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    select3[k].SetActive(true);
+                    break;
+                case 4:
+                    select1[4].SetActive(true);
+                    //select2.RemoveAt(i);
+                    j = Random.Range(0, select2.Count);
+                    while (i == j)
+                    {
+                        j = Random.Range(0, select2.Count);
+                    }
+                    select2[j].SetActive(true);
+                    //select3.RemoveAt(j);
+                    //select3.RemoveAt(i);
+                    k = Random.Range(0, select3.Count);
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    select3[k].SetActive(true);
+                    break;
+                case 5:
+                    select1[5].SetActive(true);
+                    //select2.RemoveAt(i);
+                    j = Random.Range(0, select2.Count);
+                    while (i == j)
+                    {
+                        j = Random.Range(0, select2.Count);
+                    }
+                    select2[j].SetActive(true);
+                    //select3.RemoveAt(j);
+                    //select3.RemoveAt(i);
+                    k = Random.Range(0, select3.Count);
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    select3[k].SetActive(true);
+                    break;
+            }
+        }
     }
 }
