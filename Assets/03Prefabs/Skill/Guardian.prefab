@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9085180679823026933}
   - component: {fileID: 9085180679823026930}
-  - component: {fileID: 2113659066060940003}
   - component: {fileID: -7441422050506044298}
+  - component: {fileID: 7168221491449126070}
   m_Layer: 0
   m_Name: Guardian
-  m_TagString: Skill
+  m_TagString: Sheild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2113659066060940003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9085180679823026931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de3c7dd67ae554c44947e866101d5f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  guardians: []
-  hasGuardians: 0
-  dmg: 3
-  time: 360
-  target: {fileID: 0}
-  orbitSpeed: 80
-  guardianLevel: 0
 --- !u!61 &-7441422050506044298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,3 +112,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 12}
   m_EdgeRadius: 0
+--- !u!114 &7168221491449126070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085180679823026931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3c7dd67ae554c44947e866101d5f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guardians: []
+  hasGuardians: 0
+  maxGuardians: 4
+  dmg: 3
+  time: 360
+  target: {fileID: 0}
+  orbitSpeed: 0
+  guardianLevel: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 1

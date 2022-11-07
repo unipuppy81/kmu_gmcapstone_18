@@ -44,8 +44,9 @@ public class Skill_Guardian : MonoBehaviour
 
         offset = transform.position - target.position;
 
-        LevelDesign();
         guardianLevel = buttonManager.sheildCount;
+        LevelDesign();
+        
     }
 
     void LevelDesign()
@@ -55,7 +56,6 @@ public class Skill_Guardian : MonoBehaviour
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
             dmg = 3;
-            Debug.Log(hasGuardians);
             level1 = false;
             level2 = true;
         }
