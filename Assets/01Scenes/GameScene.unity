@@ -2390,7 +2390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bac4c79f6f43be4382feec813a180f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
 --- !u!1 &290118667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,7 +2870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &344581791
 Transform:
   m_ObjectHideFlags: 0
@@ -2897,7 +2896,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2974,7 +2973,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6805,25 +6804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d9619416bddfc4694dca848d9ea197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun1_levelText: {fileID: 912011475}
-  sheild1_levelText: {fileID: 399381068}
-  emp1_levelText: {fileID: 2127127728}
-  ammo1_levelText: {fileID: 1055509908}
-  dumb1_levelText: {fileID: 1709742963}
-  hot1_levelText: {fileID: 1934841788}
-  gun2_levelText: {fileID: 718774096}
-  sheild2_levelText: {fileID: 308318143}
-  emp2_levelText: {fileID: 1753631225}
-  ammo2_levelText: {fileID: 2085721614}
-  dumb2_levelText: {fileID: 1573994910}
-  hot2_levelText: {fileID: 733084672}
-  gun3_levelText: {fileID: 598840274}
-  sheild3_levelText: {fileID: 1135514052}
-  emp3_levelText: {fileID: 2049676795}
-  ammo3_levelText: {fileID: 597988506}
-  dumb3_levelText: {fileID: 176185049}
-  hot3_levelText: {fileID: 714066254}
-  btn: {fileID: 0}
 --- !u!1001 &819694115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8950,6 +8930,10 @@ MonoBehaviour:
   sBoss: {fileID: 724861632309306098, guid: 3f84103bfc656fd4f818c5c2a9cb6a51, type: 3}
   Boss: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
   enemya: {fileID: 0}
+  bTop: {fileID: 344581790}
+  bBottom: {fileID: 1590053982}
+  bLeft: {fileID: 1916304859}
+  bRight: {fileID: 1354950658}
   Enemy: 
   bEnemy: 
   textTimer: {fileID: 1099294324}
@@ -11328,7 +11312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1354950659
 Transform:
   m_ObjectHideFlags: 0
@@ -11354,7 +11338,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11431,7 +11415,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13462,7 +13446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1590053983
 Transform:
   m_ObjectHideFlags: 0
@@ -13488,7 +13472,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13565,7 +13549,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15802,7 +15786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1824608977
 Transform:
   m_ObjectHideFlags: 0
@@ -16763,7 +16747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1916304860
 Transform:
   m_ObjectHideFlags: 0
@@ -16789,7 +16773,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -16866,7 +16850,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

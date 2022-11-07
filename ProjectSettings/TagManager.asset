@@ -22,6 +22,8 @@ TagManager:
   - Ammo
   - Dumbbell
   - Hot7
+  - exPos
+  - itemmagent
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - BossBorder
   - Enemy
   - Player
   - Ex

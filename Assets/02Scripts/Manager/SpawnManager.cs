@@ -21,6 +21,11 @@ public class SpawnManager : MonoBehaviour
     public GameObject Boss;
     public GameObject enemya;
 
+    public GameObject bTop;
+    public GameObject bBottom;
+    public GameObject bLeft;
+    public GameObject bRight;
+
 
     public string Enemy;
     public string bEnemy;
@@ -82,6 +87,11 @@ public class SpawnManager : MonoBehaviour
 
         if (timeAfterSpawn >= spawnTime)
         {
+            player.position = new Vector3(0, 0, 0);
+            bTop.SetActive(true);
+            bBottom.SetActive(true);
+            bLeft.SetActive(true);
+            bRight.SetActive(true);
             Instantiate(Boss, spawnPos, Boss.transform.rotation);
             timeAfterSpawn = 0f;
             spawnTime = 10000000000000f;
