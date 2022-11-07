@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 
@@ -20,13 +21,32 @@ public class ButtonManager : MonoBehaviour
     Player player;
     Bullet bullet;
 
+    public int gunCount;
+
     private void Start()
     {
+        gunCount = 0;
         guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
         player = GameObject.Find("Player").GetComponent<Player>();
         magneticField = GameObject.Find("MagneticField").GetComponent<Skill_Magnetic>();
     }
 
+    public void ClickBtn()
+    {
+        print("버튼 클릭");
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        if (EventSystem.current.currentSelectedGameObject.tag == "Gun")
+        {
+            gunCount++;
+            print(gunCount);
+        }
+        // 방금 클릭한 게임 오브젝트의 이름과 버튼 속 문자 출력
+        print(clickObject.tag);
+        levelpanel.SetActive(false);
+        ButtonName.SetActive(true);
+        Time.timeScale = 1f;
+
+    }
     public void PauseClick()
     {
         if (GameIsPauseed)
@@ -65,8 +85,6 @@ public class ButtonManager : MonoBehaviour
         levelpanel.SetActive(false);
         ButtonName.SetActive(true);
         Time.timeScale = 1f;
-        
-        
         /*
         if (guardian.hasGuardians < maxGuardians)
         {
@@ -82,6 +100,8 @@ public class ButtonManager : MonoBehaviour
         ButtonName.SetActive(true);
         Time.timeScale = 1f;
         player.bulletDamage += 2f;
+
+        
     }
 
     public void WpBtn3()

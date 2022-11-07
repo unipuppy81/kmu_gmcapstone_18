@@ -50,10 +50,8 @@ public class GameManager : MonoBehaviour
     {
         if (levelpanel.activeSelf == false)
         {
-            Debug.Log("456");
             for (int t = 0; t < select1.Count; t++)
             {
-                Debug.Log("0");
                 select1[t].SetActive(false);
                 select2[t].SetActive(false);
                 select3[t].SetActive(false);
@@ -66,7 +64,6 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Ex");
             curEx += ex1Amount;
-            //Debug.Log(curEx);
             other.gameObject.SetActive(false);
             exManager();
         }
@@ -74,7 +71,6 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Ex2");
             curEx += ex2Amount;
-            //Debug.Log(curEx);
             other.gameObject.SetActive(false);
             exManager();
         }
@@ -82,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     void exManager()
     {
-        if (curEx >= maxEx)
+        if (curEx == maxEx)
         {
             levelcount += 1;
             levelText.text = string.Format("LV : {0:D1}", levelcount);
@@ -95,14 +91,14 @@ public class GameManager : MonoBehaviour
             player.playerLevel += 1;
         }
     }
-   
+
 
     void Timer()
     {
         _Sec += Time.deltaTime;
         timeText.text = string.Format("{0:D2}:{1:D2}", _min, (int)_Sec);
 
-        if((int)_Sec > 59)
+        if ((int)_Sec > 59)
         {
             _Sec = 0;
             _min++;
@@ -113,12 +109,11 @@ public class GameManager : MonoBehaviour
             gameObject.SetActive(false);
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
-           
+
     }
-    
+
     public void RandomSelect1()
     {
-        Debug.Log("ABC");
         if (levelpanel.activeSelf == true)
         {
             i = Random.Range(0, select1.Count);
@@ -141,25 +136,30 @@ public class GameManager : MonoBehaviour
                     {
                         k = Random.Range(0, select3.Count);
                     }
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
                     select3[k].SetActive(true);
                     break;
                 case 1:
                     select1[1].SetActive(true);
-                    //select2.RemoveAt(i);
                     j = Random.Range(0, select2.Count);
                     while (i == j)
                     {
                         j = Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    //select3.RemoveAt(j);
-                    //select3.RemoveAt(i);
                     k = Random.Range(0, select3.Count);
                     while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
                     while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
@@ -167,21 +167,22 @@ public class GameManager : MonoBehaviour
                     break;
                 case 2:
                     select1[2].SetActive(true);
-                    //select2.RemoveAt(i);
                     j = Random.Range(0, select2.Count);
                     while (i == j)
                     {
                         j = Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    //select3.RemoveAt(j);
-                    //select3.RemoveAt(i);
                     k = Random.Range(0, select3.Count);
                     while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
                     while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
@@ -189,21 +190,22 @@ public class GameManager : MonoBehaviour
                     break;
                 case 3:
                     select1[3].SetActive(true);
-                    //select2.RemoveAt(i);
                     j = Random.Range(0, select2.Count);
                     while (i == j)
                     {
                         j = Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    //select3.RemoveAt(j);
-                    //select3.RemoveAt(i);
                     k = Random.Range(0, select3.Count);
                     while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
                     while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
@@ -211,21 +213,22 @@ public class GameManager : MonoBehaviour
                     break;
                 case 4:
                     select1[4].SetActive(true);
-                    //select2.RemoveAt(i);
                     j = Random.Range(0, select2.Count);
                     while (i == j)
                     {
                         j = Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    //select3.RemoveAt(j);
-                    //select3.RemoveAt(i);
                     k = Random.Range(0, select3.Count);
                     while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
                     while (k == j)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
+                    while (k == i)
                     {
                         k = Random.Range(0, select3.Count);
                     }
@@ -233,15 +236,12 @@ public class GameManager : MonoBehaviour
                     break;
                 case 5:
                     select1[5].SetActive(true);
-                    //select2.RemoveAt(i);
                     j = Random.Range(0, select2.Count);
                     while (i == j)
                     {
                         j = Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    //select3.RemoveAt(j);
-                    //select3.RemoveAt(i);
                     k = Random.Range(0, select3.Count);
                     while (k == i)
                     {
@@ -251,9 +251,15 @@ public class GameManager : MonoBehaviour
                     {
                         k = Random.Range(0, select3.Count);
                     }
+                    while (k == i)
+                    {
+                        k = Random.Range(0, select3.Count);
+                    }
                     select3[k].SetActive(true);
                     break;
             }
         }
+
     }
+
 }

@@ -17,6 +17,11 @@ TagManager:
   - Ex2
   - enemybulletA
   - Gun
+  - Sheild
+  - EMP
+  - Ammo
+  - Dumbbell
+  - Hot7
   layers:
   - Default
   - TransparentFX
