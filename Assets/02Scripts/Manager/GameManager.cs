@@ -12,6 +12,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI levelText;
     [SerializeField]
+    TextMeshProUGUI gunlevelText;
+    [SerializeField]
+    TextMeshProUGUI sheildlevelText;
+    [SerializeField]
+    TextMeshProUGUI emplevelText;
+    [SerializeField]
+    TextMeshProUGUI ammolevelText;
+    [SerializeField]
+    TextMeshProUGUI dumblevelText;
+    [SerializeField]
+    TextMeshProUGUI hotlevelText;
+
+
+
+    [SerializeField]
     public List<GameObject> select1 = new List<GameObject>();
     [SerializeField]
     public List<GameObject> select2 = new List<GameObject>();
@@ -34,11 +49,13 @@ public class GameManager : MonoBehaviour
     public float ex2Amount = 2f;
 
     Player player;
+    ButtonManager btnmanager;
 
     private void Awake()
     {
         levelpanel.SetActive(false);
         player = GetComponent<Player>();
+        btnmanager = GetComponent<ButtonManager>();
     }
     private void Update()
     {
@@ -110,6 +127,15 @@ public class GameManager : MonoBehaviour
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
 
+    }
+    void WplevelText()
+    {
+        gunlevelText.text = string.Format("LV : {0:D1}",btnmanager.gunCount);
+        sheildlevelText.text = string.Format("LV : {0:D1}", btnmanager.sheildCount);
+        emplevelText.text = string.Format("LV : {0:D1}", btnmanager.empCount);
+        ammolevelText.text = string.Format("LV : {0:D1}", btnmanager.ammoCount);
+        dumblevelText.text = string.Format("LV : {0:D1}", btnmanager.dumbbellCount);
+        hotlevelText.text = string.Format("LV : {0:D1}", btnmanager.hot7Count);
     }
 
     public void RandomSelect1()

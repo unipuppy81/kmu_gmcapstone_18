@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
         selectedBullet = false;
 
         dmg = player.bulletDamage;
+
     }
 
     void Update()

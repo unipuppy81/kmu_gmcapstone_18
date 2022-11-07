@@ -42,7 +42,7 @@ public class ButtonManager : MonoBehaviour
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
         if (EventSystem.current.currentSelectedGameObject.tag == "Gun")
         {
-            if(gunCount<5)
+            if(gunCount < max)
             {
                 gunCount++;
             }
@@ -53,7 +53,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if(EventSystem.current.currentSelectedGameObject.tag == "Sheild")
         {
-            if (sheildCount < 5)
+            if (sheildCount < max)
             {
                 sheildCount++;
             }
@@ -66,7 +66,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "EMP")
         {
-            if (empCount < 5)
+            if (empCount < max)
             {
                 empCount++;
             }
@@ -77,7 +77,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Ammo")
         {
-            if (ammoCount < 5)
+            if (ammoCount < max)
             {
                 ammoCount++;
             }
@@ -88,7 +88,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Dumbbell")
         {
-            if (dumbbellCount < 5)
+            if (dumbbellCount < max)
             {
                 dumbbellCount++;
             }
@@ -99,7 +99,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Hot7")
         {
-            if (hot7Count < 5)
+            if (hot7Count < max)
             {
                 hot7Count++;
             }
