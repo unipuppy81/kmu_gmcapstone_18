@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,6 +14,45 @@ public class ButtonManager : MonoBehaviour
     public GameObject ButtonName;
     public GameObject pausePanel;
     public GameObject levelpanel;
+
+    [SerializeField]
+    TextMeshProUGUI gun1_levelText;
+    [SerializeField]
+    TextMeshProUGUI sheild1_levelText;
+    [SerializeField]
+    TextMeshProUGUI emp1_levelText;
+    [SerializeField]
+    TextMeshProUGUI ammo1_levelText;
+    [SerializeField]
+    TextMeshProUGUI dumb1_levelText;
+    [SerializeField]
+    TextMeshProUGUI hot1_levelText;
+
+    [SerializeField]
+    TextMeshProUGUI gun2_levelText;
+    [SerializeField]
+    TextMeshProUGUI sheild2_levelText;
+    [SerializeField]
+    TextMeshProUGUI emp2_levelText;
+    [SerializeField]
+    TextMeshProUGUI ammo2_levelText;
+    [SerializeField]
+    TextMeshProUGUI dumb2_levelText;
+    [SerializeField]
+    TextMeshProUGUI hot2_levelText;
+
+    [SerializeField]
+    TextMeshProUGUI gun3_levelText;
+    [SerializeField]
+    TextMeshProUGUI sheild3_levelText;
+    [SerializeField]
+    TextMeshProUGUI emp3_levelText;
+    [SerializeField]
+    TextMeshProUGUI ammo3_levelText;
+    [SerializeField]
+    TextMeshProUGUI dumb3_levelText;
+    [SerializeField]
+    TextMeshProUGUI hot3_levelText;
 
     int maxGuardians = 4;
 
@@ -50,6 +90,9 @@ public class ButtonManager : MonoBehaviour
             {
                 gunCount = 5;
             }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
         }
         else if(EventSystem.current.currentSelectedGameObject.tag == "Sheild")
         {
@@ -62,6 +105,9 @@ public class ButtonManager : MonoBehaviour
                 sheildCount = 5;
 
             }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
 
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "EMP")
@@ -74,6 +120,9 @@ public class ButtonManager : MonoBehaviour
             {
                 empCount = 5;
             }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Ammo")
         {
@@ -85,6 +134,9 @@ public class ButtonManager : MonoBehaviour
             {
                 ammoCount = 5;
             }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Dumbbell")
         {
@@ -96,6 +148,9 @@ public class ButtonManager : MonoBehaviour
             {
                 dumbbellCount = 5;
             }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Hot7")
         {
@@ -103,10 +158,14 @@ public class ButtonManager : MonoBehaviour
             {
                 hot7Count++;
             }
+
             else
             {
                 hot7Count = 5;
             }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
         }
 
         levelpanel.SetActive(false);
@@ -147,38 +206,31 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void WpBtn1()
+    void Wp_1_levelText()
     {
-        levelpanel.SetActive(false);
-        ButtonName.SetActive(true);
-        Time.timeScale = 1f;
-        /*
-        if (guardian.hasGuardians < maxGuardians)
-        {
-            guardian.guardians[guardian.hasGuardians].SetActive(true);
-            guardian.hasGuardians += 1;
-        }
-        */
+        gun1_levelText.text = string.Format("LV : {0:D1}", gunCount);
+        sheild1_levelText.text = string.Format("LV : {0:D1}", sheildCount);
+        emp1_levelText.text = string.Format("LV : {0:D1}", empCount);
+        ammo1_levelText.text = string.Format("LV : {0:D1}", ammoCount);
+        dumb1_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
+        hot1_levelText.text = string.Format("LV : {0:D1}", hot7Count);
     }
-
-    public void WpBtn2()
+    void Wp_2_levelText()
     {
-        levelpanel.SetActive(false);
-        ButtonName.SetActive(true);
-        Time.timeScale = 1f;
-        player.bulletDamage += 2f;
-
-        
+        gun2_levelText.text = string.Format("LV : {0:D1}", gunCount);
+        sheild2_levelText.text = string.Format("LV : {0:D1}", sheildCount);
+        emp2_levelText.text = string.Format("LV : {0:D1}", empCount);
+        ammo2_levelText.text = string.Format("LV : {0:D1}", ammoCount);
+        dumb2_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
+        hot2_levelText.text = string.Format("LV : {0:D1}", hot7Count);
     }
-
-    public void WpBtn3()
+    void Wp_3_levelText()
     {
-        levelpanel.SetActive(false);
-        ButtonName.SetActive(true);
-        Time.timeScale = 1f;
-        for (int i = 0; i < 1; i++)
-        {
-            magneticField.magnetic.SetActive(true);
-        }
+        gun3_levelText.text = string.Format("LV : {0:D1}", gunCount);
+        sheild3_levelText.text = string.Format("LV : {0:D1}", sheildCount);
+        emp3_levelText.text = string.Format("LV : {0:D1}", empCount);
+        ammo3_levelText.text = string.Format("LV : {0:D1}", ammoCount);
+        dumb3_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
+        hot3_levelText.text = string.Format("LV : {0:D1}", hot7Count);
     }
 }

@@ -11,20 +11,6 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI timeText;
     [SerializeField]
     TextMeshProUGUI levelText;
-    [SerializeField]
-    TextMeshProUGUI gunlevelText;
-    [SerializeField]
-    TextMeshProUGUI sheildlevelText;
-    [SerializeField]
-    TextMeshProUGUI emplevelText;
-    [SerializeField]
-    TextMeshProUGUI ammolevelText;
-    [SerializeField]
-    TextMeshProUGUI dumblevelText;
-    [SerializeField]
-    TextMeshProUGUI hotlevelText;
-
-
 
     [SerializeField]
     public List<GameObject> select1 = new List<GameObject>();
@@ -127,15 +113,6 @@ public class GameManager : MonoBehaviour
             timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
         }
 
-    }
-    void WplevelText()
-    {
-        gunlevelText.text = string.Format("LV : {0:D1}",btnmanager.gunCount);
-        sheildlevelText.text = string.Format("LV : {0:D1}", btnmanager.sheildCount);
-        emplevelText.text = string.Format("LV : {0:D1}", btnmanager.empCount);
-        ammolevelText.text = string.Format("LV : {0:D1}", btnmanager.ammoCount);
-        dumblevelText.text = string.Format("LV : {0:D1}", btnmanager.dumbbellCount);
-        hotlevelText.text = string.Format("LV : {0:D1}", btnmanager.hot7Count);
     }
 
     public void RandomSelect1()
