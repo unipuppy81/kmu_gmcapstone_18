@@ -22,10 +22,16 @@ public class ButtonManager : MonoBehaviour
     Bullet bullet;
 
     public int gunCount;
+    public int sheildCount;
+    public int empCount;
+    public int ammoCount;
+    public int dumbbellCount;
+    public int hot7Count;
 
+    int max;
     private void Start()
     {
-        gunCount = 0;
+        max = 5;
         guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
         player = GameObject.Find("Player").GetComponent<Player>();
         magneticField = GameObject.Find("MagneticField").GetComponent<Skill_Magnetic>();
@@ -33,15 +39,76 @@ public class ButtonManager : MonoBehaviour
 
     public void ClickBtn()
     {
-        print("버튼 클릭");
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
         if (EventSystem.current.currentSelectedGameObject.tag == "Gun")
         {
-            gunCount++;
-            print(gunCount);
+            if(gunCount<5)
+            {
+                gunCount++;
+            }
+            else
+            {
+                gunCount = 5;
+            }
         }
-        // 방금 클릭한 게임 오브젝트의 이름과 버튼 속 문자 출력
-        print(clickObject.tag);
+        else if(EventSystem.current.currentSelectedGameObject.tag == "Sheild")
+        {
+            if (sheildCount < 5)
+            {
+                sheildCount++;
+            }
+            else
+            {
+                sheildCount = 5;
+
+            }
+
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "EMP")
+        {
+            if (empCount < 5)
+            {
+                empCount++;
+            }
+            else
+            {
+                empCount = 5;
+            }
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Ammo")
+        {
+            if (ammoCount < 5)
+            {
+                ammoCount++;
+            }
+            else
+            {
+                ammoCount = 5;
+            }
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Dumbbell")
+        {
+            if (dumbbellCount < 5)
+            {
+                dumbbellCount++;
+            }
+            else
+            {
+                dumbbellCount = 5;
+            }
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Hot7")
+        {
+            if (hot7Count < 5)
+            {
+                hot7Count++;
+            }
+            else
+            {
+                hot7Count = 5;
+            }
+        }
+
         levelpanel.SetActive(false);
         ButtonName.SetActive(true);
         Time.timeScale = 1f;
