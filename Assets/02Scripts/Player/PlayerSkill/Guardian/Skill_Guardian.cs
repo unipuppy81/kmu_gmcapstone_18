@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill_Guardian : MonoBehaviour
 {
     public GameObject[] guardians;
     public int hasGuardians = 0;
+    public int maxGuardians = 4;
 
     public int dmg = 3;
 
@@ -18,14 +20,19 @@ public class Skill_Guardian : MonoBehaviour
     Vector3 offset;
 
     public int guardianLevel = 0;
+    public bool level1, level2, level3, level4, level5 = true;
 
     Equip_Dumbbell _Dumbbell;
+
+    ButtonManager buttonManager;
 
     // Start is called before the first frame update
     void Start()
     {
         offset = transform.position - target.position;
         _Dumbbell = GetComponent<Equip_Dumbbell>();
+        //_Dumbbell = GameObject.FindWithTag("Dumbbell").GetComponent<Equip_Dumbbell>();
+        buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
     }
 
     // Update is called once per frame
@@ -37,33 +44,52 @@ public class Skill_Guardian : MonoBehaviour
 
         offset = transform.position - target.position;
 
-        levelDesign();
+        LevelDesign();
+        guardianLevel = buttonManager.sheildCount;
     }
 
-    void levelDesign()
+    void LevelDesign()
     {
-        switch (guardianLevel)
+        if(guardianLevel == 1 && level1 == true)
         {
-            case 1:
-                dmg = 3;
-                break;
-
-            case 2:
-                dmg = 5;
-                break;
-
-            case 3:
-                dmg = 7;
-                break;
-
-            case 4:
-                dmg = 10;
-                break;
+            guardians[hasGuardians].SetActive(true);
+            hasGuardians += 1;
+            dmg = 3;
+            Debug.Log(hasGuardians);
+            level1 = false;
+            level2 = true;
         }
-        if(guardianLevel == 5 && _Dumbbell.selectedDumbbell == true) // 최종 진화
+        else if(guardianLevel == 2 && level2 == true)
         {
+            guardians[hasGuardians].SetActive(true);
+            hasGuardians += 1;
+            dmg = 5;
+            level2 = false;
+            level3 = true;
+        }
+        else if (guardianLevel == 3 && level3 == true)
+        {
+            guardians[hasGuardians].SetActive(true);
+            hasGuardians += 1;
+            dmg = 7;
+            level3 = false;
+            level4 = true;
+        }
+        else if (guardianLevel == 4 && level4 == true)
+        {
+            guardians[hasGuardians].SetActive(true);
+            hasGuardians += 1;
+            dmg = 9;
+            level4 = false;
+            level5 = true;
+        }
+        if (guardianLevel == 5 && level5 == true) // 최종 진화 //_Dumbbell.selectedDumbbell == true &&
+        {
+            transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             dmg = 15;
+            level5 = false;
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)

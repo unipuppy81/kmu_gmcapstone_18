@@ -4299,11 +4299,17 @@ MonoBehaviour:
   - {fileID: 819694117}
   - {fileID: 1742281230}
   hasGuardians: 0
+  maxGuardians: 4
   dmg: 3
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
   guardianLevel: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 1
 --- !u!1 &531632143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,11 +5699,17 @@ MonoBehaviour:
   - {fileID: 819694117}
   - {fileID: 1742281230}
   hasGuardians: 0
+  maxGuardians: 4
   dmg: 3
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
   guardianLevel: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 1
 --- !u!1 &669094259
 GameObject:
   m_ObjectHideFlags: 0
@@ -13347,11 +13359,17 @@ MonoBehaviour:
   - {fileID: 819694117}
   - {fileID: 1742281230}
   hasGuardians: 0
+  maxGuardians: 4
   dmg: 3
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
   guardianLevel: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 1
 --- !u!1 &1586574178
 GameObject:
   m_ObjectHideFlags: 0
@@ -13864,11 +13882,17 @@ MonoBehaviour:
   - {fileID: 819694117}
   - {fileID: 1742281230}
   hasGuardians: 0
+  maxGuardians: 4
   dmg: 3
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
   guardianLevel: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 1
 --- !u!1 &1627577490
 GameObject:
   m_ObjectHideFlags: 0
@@ -19740,7 +19764,7 @@ PrefabInstance:
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: Bomb
       value: 
-      objectReference: {fileID: 5458432884013792458, guid: d40f011b926ddb047a6c2a7bba9f5590, type: 3}
+      objectReference: {fileID: 7253572862770996703, guid: 823b634f35417d64a83662cd725946a5, type: 3}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: maxEx
       value: 10

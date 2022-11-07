@@ -12,9 +12,11 @@ public class Bullet : MonoBehaviour
 
     Equip_Ammo _Ammo;
 
+    ButtonManager buttonManager;
+
     void Awake()
     {
-
+        buttonManager = GetComponent<ButtonManager>();
     }
     void Start()
     {
