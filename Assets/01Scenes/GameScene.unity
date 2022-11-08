@@ -1065,22 +1065,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1099294324}
-  levelText: {fileID: 400205741}
-  select1: []
-  select2: []
-  select3: []
-  maxEx: 5
-  curEx: 0
   levelpanel: {fileID: 2027341993}
-  PauseBtn: {fileID: 1913626781}
+  Pausebutton: {fileID: 1913626781}
+  levelText: {fileID: 400205741}
+  select1:
+  - {fileID: 1416225020}
+  - {fileID: 1374948400}
+  - {fileID: 210717151}
+  - {fileID: 2109036596}
+  - {fileID: 1502872947}
+  - {fileID: 1086841231}
+  select2:
+  - {fileID: 1767192239}
+  - {fileID: 1784547407}
+  - {fileID: 1813351305}
+  - {fileID: 186557108}
+  - {fileID: 1941047585}
+  - {fileID: 554032438}
+  select3:
+  - {fileID: 330162362}
+  - {fileID: 2118704524}
+  - {fileID: 109802976}
+  - {fileID: 2089233639}
+  - {fileID: 1389009922}
+  - {fileID: 2062646734}
+  exbar: {fileID: 0}
+  MaxEx: 20000
+  CurEx: 0
+  levelCount: 0
+  ex1Amount: 1
+  ex2Amount: 2
   _Sec: 0
   _min: 0
   _mina: 0
   levelcount: 0
   min: 0
   max: 0
-  ex1Amount: 1
-  ex2Amount: 2
 --- !u!4 &163779485
 Transform:
   m_ObjectHideFlags: 0
@@ -6845,6 +6865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1099294324}
+  levelpanel: {fileID: 2027341993}
+  Pausebutton: {fileID: 1913626781}
   levelText: {fileID: 400205741}
   select1:
   - {fileID: 1416225020}
@@ -6867,18 +6889,18 @@ MonoBehaviour:
   - {fileID: 2089233639}
   - {fileID: 1389009922}
   - {fileID: 2062646734}
-  maxEx: 1
-  curEx: 0
-  levelpanel: {fileID: 2027341993}
-  PauseBtn: {fileID: 1913626781}
+  exbar: {fileID: 1779581623}
+  MaxEx: 20000
+  CurEx: 0
+  levelCount: 0
+  ex1Amount: 1
+  ex2Amount: 2
   _Sec: 0
   _min: 0
   _mina: 0
   levelcount: 0
   min: 0
   max: 0
-  ex1Amount: 1
-  ex2Amount: 2
 --- !u!114 &747727061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6891,9 +6913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1595fc8989fc5794dac6bafce66f868c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   player: {fileID: 0}
-  exbar: {fileID: 1779581623}
   Hpbar: {fileID: 62212226}
 --- !u!114 &747727066
 MonoBehaviour:

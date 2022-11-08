@@ -24,12 +24,13 @@ public class Equip_Ammo : MonoBehaviour
     void Update()
     {
         ammoLevel = buttonManager.ammoCount;
-        levelDesign();
+        //levelDesign();
         if(ammoLevel >= 1)
         {
             selectedBullet = true;
         }
     }
+    /*
     void levelDesign()
     {
         if (ammoLevel == 1 && level1 == true)
@@ -67,4 +68,5 @@ public class Equip_Ammo : MonoBehaviour
             level5 = false;
         }
     }
+    */
 }

@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Threading;
 
-public class GameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    [SerializeField]
-    TextMeshProUGUI timeText;
     [SerializeField]
     GameObject levelpanel;
     [SerializeField]
@@ -32,30 +30,20 @@ public class GameManager : MonoBehaviour
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
 
-    public float _Sec;
-    public int _min;
-    public int _mina = 6;
-    public int levelcount;
-    public int min;
-    public int max;
-
-
-    Player player;
-    ButtonManager btnmanager;
-
-    private void Awake()
+    public void Start()
     {
         levelCount = 0;
+        exbar.value = CurEx / MaxEx;
         levelpanel.SetActive(false);
     }
-    private void Update()
+    public void Update()
     {
-        Timer();
         ActiveFalse();
+        Level();
     }
     public void Level()
     {
-        if (CurEx == 3f)
+        if(CurEx == 3f)
         {
             levelCount++;
             playerEx(0f, 3f);
@@ -63,7 +51,7 @@ public class GameManager : MonoBehaviour
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 5f)
+        else if(CurEx == 5f)
         {
             levelCount++;
             playerEx(3f, 5f);
@@ -447,7 +435,7 @@ public class GameManager : MonoBehaviour
             leveltext();
             RandomChoose();
         }
-        else if (CurEx >= MaxEx)
+        else if(CurEx >= MaxEx)
         {
             levelCount = 50;
             playerEx(1200f, 1500f);
@@ -465,7 +453,6 @@ public class GameManager : MonoBehaviour
             CurEx += ex1Amount;
             Debug.Log(CurEx);
             other.gameObject.SetActive(false);
-            Level();
         }
         else if (other.gameObject.tag == "Ex2")
         {
@@ -473,7 +460,6 @@ public class GameManager : MonoBehaviour
             CurEx += ex2Amount;
             Debug.Log(CurEx);
             other.gameObject.SetActive(false);
-            Level();
         }
     }
     public void openPanel()
@@ -657,23 +643,5 @@ public class GameManager : MonoBehaviour
                 select3[t].SetActive(false);
             }
         }
-    }
-    void Timer()
-    {
-        _Sec += Time.deltaTime;
-        timeText.text = string.Format("{0:D2}:{1:D2}", _min, (int)_Sec);
-
-        if ((int)_Sec > 59)
-        {
-            _Sec = 0;
-            _min++;
-        }
-        if (_min == 6)
-        {
-            float _Seca = 0.0f;
-            gameObject.SetActive(false);
-            timeText.text = string.Format("{0:D2}:{1:D2}", _mina, (int)_Seca);
-        }
-
     }
 }
