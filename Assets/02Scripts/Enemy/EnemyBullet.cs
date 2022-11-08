@@ -48,9 +48,11 @@ public class EnemyBullet : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else if(collision.gameObject.tag == "Skill" && guardian.guardianLevel == 5) // 가디언 최종 진화 시 적 총알이 막힘
+        else if(collision.gameObject.tag == "Skill") // 가디언 최종 진화 시 적 총알이 막힘
         {
+            if(guardian.guardianLevel == 5) { 
             Destroy(gameObject);
+            }
         }
     }
 }

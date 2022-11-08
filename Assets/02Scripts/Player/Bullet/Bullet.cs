@@ -6,10 +6,12 @@ public class Bullet : MonoBehaviour
 {
     private Player player;
     public float dmg;
+    public float lifetime;
 
     public int bulletLevel = 1;
     public bool selectedBullet = false;
     public bool level1, level2, level3, level4, level5 = true;
+
 
     Equip_Ammo _Ammo;
 
@@ -27,8 +29,19 @@ public class Bullet : MonoBehaviour
     {
         levelDesign();
         bulletLevel = buttonManager.gunCount;
+        alive();
     }
 
+    void alive()
+    {
+        lifetime += Time.deltaTime;
+
+        if (lifetime >= 3.0f)
+        {
+            gameObject.SetActive(false);
+            lifetime = 0f;
+        }
+    }
     void levelDesign()
     {
         if (bulletLevel == 1 && level1 == true)

@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void exManager()
     {
-        if (curEx == maxEx)
+        if (curEx >= maxEx)
         {
             
             int data = 1;

@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guardians: []
+  guardians2: []
   hasGuardians: 0
   maxGuardians: 4
   dmg: 3

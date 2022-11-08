@@ -36,8 +36,8 @@ public class SpawnManager : MonoBehaviour
 
     public Vector3 spawnPos;
 
-    public float spawnTime = 20.0f;
-    public float mbspawnTime = 10.0f;
+    public float spawnTime;
+    public float mbspawnTime;
     public float timeAfterSpawn;
 
 
@@ -56,6 +56,9 @@ public class SpawnManager : MonoBehaviour
 
         Enemy = Enemy1;
         bEnemy = Enemy2;
+
+        spawnTime = 60.0f;
+        mbspawnTime = 30.0f;
     }
 
     void Start()
@@ -66,9 +69,9 @@ public class SpawnManager : MonoBehaviour
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 3, 1f);
-        InvokeRepeating("SpawnEnemy", 3, 1f);      
-        //InvokeRepeating("SpawnbEnemy", 3, 1f);
+        InvokeRepeating("SpawnBox", 3, 10f);
+        InvokeRepeating("SpawnEnemy", 3, 0.25f);      
+        InvokeRepeating("SpawnbEnemy", 3, 5f);
     }
 
     void Update()
