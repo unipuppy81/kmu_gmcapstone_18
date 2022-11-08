@@ -9,10 +9,9 @@ public class Equip_Dumbbell : MonoBehaviour  // 방패의 조합 장비
     ButtonManager buttonManager;
 
     public int dumbbellLevel = 0;
+    public static bool selectedDumbbell = false;
 
-    public bool selectedDumbbell = false;
-
-    public bool level1, level2, level3, level4 = true;
+    public bool level1, level2, level3, level4, level5 = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +25,10 @@ public class Equip_Dumbbell : MonoBehaviour  // 방패의 조합 장비
     {
         levelDesign();
         dumbbellLevel = buttonManager.dumbbellCount;
+        if(dumbbellLevel >= 1)
+        {
+            selectedDumbbell = true;
+        }
     }
 
     void levelDesign()
@@ -33,7 +36,6 @@ public class Equip_Dumbbell : MonoBehaviour  // 방패의 조합 장비
         if (dumbbellLevel == 1 && level1 == true)
         {
             player.playerMaxHp *= 1.1f;
-            selectedDumbbell = true;
             level1 = false;
             level2 = true;
         }
@@ -53,25 +55,12 @@ public class Equip_Dumbbell : MonoBehaviour  // 방패의 조합 장비
         {
             player.playerMaxHp *= 1.4f;
             level4 = false;
+            level5 = true;
         }
-        /*switch (dumbbellLevel)
+        else if (dumbbellLevel == 5 && level5 == true)
         {
-            case 1:
-                player.playerMaxHp *= 1.1f;
-                selectedDumbbell = true;
-                break;
-
-            case 2:
-                player.playerMaxHp *= 1.2f;
-                break;
-
-            case 3:
-                player.playerMaxHp *= 1.3f;
-                break;
-
-            case 4:
-                player.playerMaxHp *= 1.4f;
-                break;
-        }*/
+            player.playerMaxHp *= 1.4f;
+            level5 = false;
+        }
     }
 }

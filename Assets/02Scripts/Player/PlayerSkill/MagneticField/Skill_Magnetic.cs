@@ -19,6 +19,10 @@ public class Skill_Magnetic : MonoBehaviour
 
     public int magneticLevel = 0;
 
+    public bool level1, level2, level3, level4, level5 = true;
+
+    ButtonManager buttonManager;
+
     Equip_Hot7 _Hot7;
     Enemy enemy;
     // Start is called before the first frame update
@@ -26,11 +30,13 @@ public class Skill_Magnetic : MonoBehaviour
     {
         _Hot7 = GetComponent<Equip_Hot7>();
         enemy = GetComponent<Enemy>();
+        buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        magneticLevel = buttonManager.empCount;
         searchEnemy();
         levelDesign();
         transform.position = target.position;
@@ -44,80 +50,38 @@ public class Skill_Magnetic : MonoBehaviour
 
     void levelDesign()
     {
-        switch (magneticLevel)
+        if (magneticLevel == 1 && level1 == true)
         {
-            case 1:
-                transform.localScale = new Vector3(2, 2, 2);
-                if(currentDamageTime >= damageTime)
-                {
-                    dmg = 3;
-                    currentDamageTime = 0;
-                }
-                else
-                {
-                    dmg = 0;
-                }
-                
-                break;
-
-            case 2:
-                transform.localScale = new Vector3(3, 3, 3); // µÑ Áß Á» ´õ ±¦ÂúÀº °ÍÀ¸·Î
-                /*transform.localScale = new Vector3(transform.localScale.x + 1.5f * scaleSpeed * Time.deltaTime,
-                    transform.localScale.y + 1.5f * scaleSpeed * Time.deltaTime, 0);*/
-                if (currentDamageTime >= damageTime)
-                {
-                    dmg = 5;
-                    currentDamageTime = 0;
-                }
-                else
-                {
-                    dmg = 0;
-                }
-
-                break;
-
-            case 3:
-                transform.localScale = new Vector3(4, 4, 4);
-                if (currentDamageTime >= damageTime)
-                {
-                    dmg = 7;
-                    currentDamageTime = 0;
-                }
-                else
-                {
-                    dmg = 0;
-                }
-
-                break;
-
-            case 4:
-                transform.localScale = new Vector3(5, 5, 5);
-                if (currentDamageTime >= damageTime)
-                {
-                    dmg = 9;
-                    currentDamageTime = 0;
-                }
-                else
-                {
-                    dmg = 0;
-                }
-
-                break;
+            magnetic.gameObject.SetActive(true);
+            dmg = 3;
+            level1 = false;
+            level2 = true;
         }
-        if(magneticLevel == 5 && _Hot7.selectedHot7 == true)
+        else if (magneticLevel == 2 && level2 == true)
         {
-            transform.localScale = new Vector3(6, 6, 6);
-            if (currentDamageTime >= damageTime)
-            {
-                dmg = 12;
-                currentDamageTime = 0;
-                enemy.enemySpeed *= 0.8f;
-            }
-            else
-            {
-                dmg = 0;
-            }
-
+            transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            dmg = 5;
+            level2 = false;
+            level3 = true;
+        }
+        else if (magneticLevel == 3 && level3 == true)
+        {
+            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            dmg = 7;
+            level3 = false;
+            level4 = true;
+        }
+        else if (magneticLevel == 4 && level4 == true)
+        {
+            transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
+            dmg = 9;
+            level4 = false;
+            level5 = true;
+        }
+        else if (magneticLevel == 5 && level5 == true && Equip_Hot7.selectedHot7 == true)
+        {
+            dmg = 12;
+            level5 = false;
         }
     }
 

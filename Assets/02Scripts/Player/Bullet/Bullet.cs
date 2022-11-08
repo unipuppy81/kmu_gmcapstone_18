@@ -8,57 +8,59 @@ public class Bullet : MonoBehaviour
     public float dmg;
 
     public int bulletLevel = 1;
-    public bool selectedBullet;
+    public bool selectedBullet = false;
+    public bool level1, level2, level3, level4, level5 = true;
 
     Equip_Ammo _Ammo;
 
     ButtonManager buttonManager;
 
-    void Awake()
-    {
-        buttonManager = GetComponent<ButtonManager>();
-    }
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         _Ammo = GetComponent<Equip_Ammo>();
-        selectedBullet = false;
-
+        buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         dmg = player.bulletDamage;
-
     }
 
     void Update()
     {
         levelDesign();
+        bulletLevel = buttonManager.gunCount;
     }
 
     void levelDesign()
     {
-        switch (bulletLevel)
+        if (bulletLevel == 1 && level1 == true)
         {
-            case 1:
-                dmg = 3;
-                selectedBullet = true;
-                break;
-
-            case 2:
-                dmg = 6;
-                break;
-
-            case 3:
-                dmg = 9;
-                break;
-
-            case 4:
-                dmg = 12;
-                break;
+            dmg = 3;
+            Debug.Log("ÃÑ¾Ë ½êÁü");
+            level1 = false;
+            level2 = true;
         }
-
-        if(bulletLevel == 5 && _Ammo.selectedBullet == true)
+        else if (bulletLevel == 2 && level2 == true)
+        {
+            dmg = 6;
+            level2 = false;
+            level3 = true;
+        }
+        else if (bulletLevel == 3 && level3 == true)
+        {
+            dmg = 9;
+            level3 = false;
+            level4 = true;
+        }
+        else if (bulletLevel == 4 && level4 == true)
+        {
+            dmg = 12;
+            level4 = false;
+            level5 = true;
+        }
+        else if (bulletLevel == 5 && level5 == true && Equip_Ammo.selectedBullet == true)
         {
             dmg = 15;
-            player.maxShotDelay *= 0.5f; // ÀçÀåÀü¼Óµµ(°ø°Ý¼Óµµ)
+            player.maxShotDelay *= 0.5f;
+            level5 = false;
         }
     }
 

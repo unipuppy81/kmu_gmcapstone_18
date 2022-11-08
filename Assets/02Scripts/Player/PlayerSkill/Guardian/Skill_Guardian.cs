@@ -22,7 +22,7 @@ public class Skill_Guardian : MonoBehaviour
     public int guardianLevel = 0;
     public bool level1, level2, level3, level4, level5 = true;
 
-    Equip_Dumbbell _Dumbbell;
+    //Equip_Dumbbell _Dumbbell;
 
     ButtonManager buttonManager;
 
@@ -30,7 +30,7 @@ public class Skill_Guardian : MonoBehaviour
     void Start()
     {
         offset = transform.position - target.position;
-        _Dumbbell = GetComponent<Equip_Dumbbell>();
+        //_Dumbbell = GetComponent<Equip_Dumbbell>();
         //_Dumbbell = GameObject.FindWithTag("Dumbbell").GetComponent<Equip_Dumbbell>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
     }
@@ -46,7 +46,6 @@ public class Skill_Guardian : MonoBehaviour
 
         guardianLevel = buttonManager.sheildCount;
         LevelDesign();
-        
     }
 
     void LevelDesign()
@@ -83,13 +82,12 @@ public class Skill_Guardian : MonoBehaviour
             level4 = false;
             level5 = true;
         }
-        if (guardianLevel == 5 && level5 == true) // 최종 진화 //_Dumbbell.selectedDumbbell == true &&
+        else if(guardianLevel == 5 && level5 == true && Equip_Dumbbell.selectedDumbbell == true) 
         {
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             dmg = 15;
             level5 = false;
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
