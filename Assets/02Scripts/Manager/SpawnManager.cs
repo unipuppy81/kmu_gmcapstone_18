@@ -26,6 +26,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject bLeft;
     public GameObject bRight;
 
+    public GameObject[] EnemyArray;
+
 
     public string Enemy;
     public string bEnemy;
@@ -79,6 +81,8 @@ public class SpawnManager : MonoBehaviour
         timeAfterSpawn += Time.deltaTime;
 
 
+
+
         if (timeAfterSpawn >= mbspawnTime)
         {
             Instantiate(sBoss, spawnPos, sBoss.transform.rotation);
@@ -87,6 +91,14 @@ public class SpawnManager : MonoBehaviour
 
         if (timeAfterSpawn >= spawnTime)
         {
+            enabledSpawn = false;
+            EnemyArray = GameObject.FindGameObjectsWithTag("Enemy01");
+
+            for (int i = 0; i < EnemyArray.Length; i++)
+            {
+                EnemyArray[i].SetActive(false);
+            }
+
             player.position = new Vector3(0, 0, 0);
             bTop.SetActive(true);
             bBottom.SetActive(true);
