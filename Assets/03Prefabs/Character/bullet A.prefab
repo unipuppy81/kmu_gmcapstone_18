@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611506078421503375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.357, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120,10 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc32f02e7064cb47adf3b036ecd5b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gun: []
   dmg: 0
   bulletLevel: 1
   selectedBullet: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 1
 --- !u!70 &8651675961334256259
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

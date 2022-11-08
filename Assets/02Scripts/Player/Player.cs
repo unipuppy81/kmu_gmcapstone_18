@@ -140,13 +140,15 @@ public class Player : MonoBehaviour
             {
                 return;
             }
-           
+
             //  적 자동 조준 코드 & 발사
             Vector3 fire = p_shortestTarget.position - transform.position;
             GameObject bullet = objectManager.MakeObj(bulletObjA);
+
+            float angle2 = Vector3.SignedAngle(transform.up, fire, transform.forward);
+
+            bullet.transform.localEulerAngles = new Vector3(0, 0, angle2);
             bullet.transform.position = transform.position;
-            //Quaternion lookRotation = Quaternion.LookRotation(fire);
-            //bullet.transform.rotation = Quaternion.LookRotation(fire);
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
             rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);
 

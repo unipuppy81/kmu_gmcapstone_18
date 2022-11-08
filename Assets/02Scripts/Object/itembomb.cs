@@ -7,6 +7,8 @@ public class itembomb : MonoBehaviour
     [SerializeField] LayerMask layerMask = 0;
     [SerializeField] float searchRadius = 1000f;
 
+
+
     private Player player;
     private Enemy enemy;
 

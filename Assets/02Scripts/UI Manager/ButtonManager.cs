@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+
+
     public static bool GameIsPauseed = false;
     public GameObject ButtonName;
     public GameObject pausePanel;
@@ -68,9 +70,13 @@ public class ButtonManager : MonoBehaviour
     public int dumbbellCount;
     public int hot7Count;
 
+
+    public GameManager gm;
+
     int max;
-    private void Start()
+    private void Awake()
     {
+        gm = gameObject.GetComponent<GameManager>();
         max = 5;
         guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -169,9 +175,8 @@ public class ButtonManager : MonoBehaviour
         }
 
         levelpanel.SetActive(false);
-        ButtonName.SetActive(true);
+        ButtonName.SetActive(true);  
         Time.timeScale = 1f;
-
     }
     public void PauseClick()
     {

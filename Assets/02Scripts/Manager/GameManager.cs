@@ -34,11 +34,17 @@ public class GameManager : MonoBehaviour
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
 
+    public static bool isClicked = false;
+    public static int ok = 1;
+    public static bool isPanel;
+
     Player player;
     ButtonManager btnmanager;
 
     private void Awake()
     {
+        //isClicked = false;
+        isPanel = false;
         levelpanel.SetActive(false);
         player = GetComponent<Player>();
         btnmanager = GetComponent<ButtonManager>();
@@ -83,12 +89,16 @@ public class GameManager : MonoBehaviour
     {
         if (curEx == maxEx)
         {
+            
+            int data = 1;
             levelcount += 1;
             levelText.text = string.Format("LV : {0:D1}", levelcount);
             Time.timeScale = 0f;
             levelpanel.SetActive(true);
-            RandomSelect1();
+            isPanel = true;
+            UnityEngine.Debug.Log("SetActive");
             PauseBtn.SetActive(false);
+            RandomSelect1();
             curEx = 0f;
             //maxEx += 5f;
             player.playerLevel += 1;

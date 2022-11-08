@@ -38,8 +38,8 @@ public class itemmagnet : MonoBehaviour
 
             for(int i = 0; i < exArray.Length; i++)
             {
-                exArray[i].transform.position = target.position;
-                //gm.exManager();
+
+                    exArray[i].transform.position = target.position;
             }
 
 
