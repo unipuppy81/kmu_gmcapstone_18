@@ -175,7 +175,6 @@ public class Enemy : MonoBehaviour
                     GameObject experiencea = objectManager.MakeObj(experienceA);
                     experiencea.transform.position = transform.position;
 
-
                     break;
                 case Type.B:
                     GameObject experienceb = objectManager.MakeObj(experienceB);

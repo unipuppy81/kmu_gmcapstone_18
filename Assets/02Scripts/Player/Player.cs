@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     //layer 사용시 필요
     [SerializeField] LayerMask layerMask = 0;
     [SerializeField] LayerMask layerMask2 = 0;
-    [SerializeField] float searchRadius = 0f;
+    [SerializeField] float searchRadius;
     [SerializeField] float fireRate = 0f;
     [SerializeField] TextMeshProUGUI spcountText;
 
@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        searchRadius = 7f;
         bulletSpeed = 4f;
         specialSkill = 1;
         bulletDamage = 3.0f;

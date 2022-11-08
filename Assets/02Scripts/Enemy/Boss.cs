@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour
     public Type bossType;
     public float maxHealth = 10.0f;
     public float curHealth;
+    public float bossHealth;
     public int patternIndex;
     public int curPatternCount;
     public int[] maxPatternCount;
@@ -48,7 +49,7 @@ public class Boss : MonoBehaviour
 
     void Awake() {
         BossSpeed = 2.0f;
-
+        bossHealth = 500f;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         isCrash = false;
@@ -136,11 +137,41 @@ public class Boss : MonoBehaviour
         
     }
 
+    void onHit(float dmg)
+    {
+        bossHealth -= dmg;
+        if (bossHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Border")
         {
             isCrash = true;
+        }
+
+        else if (other.gameObject.tag == "Bullet")
+        {
+            Bullet bullet = other.gameObject.GetComponent<Bullet>();
+
+            onHit(bullet.dmg);
+
+            takeDamageText(bullet.dmg);
+        }
+        else if (other.gameObject.CompareTag("Skill")) // 방패(가디언)
+        {
+            Skill_Guardian skill_Guardian = other.gameObject.GetComponent<Skill_Guardian>();
+
+            onHit(skill_Guardian.dmg);
+            takeDamageText(skill_Guardian.dmg);
+        }
+        else if (other.gameObject.CompareTag("Skill2")) //EMP필드(자기장)
+        {
+            Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
+            onHit(skill_Magnetic.dmg);
+            takeDamageText(skill_Magnetic.dmg);
         }
     }
 
