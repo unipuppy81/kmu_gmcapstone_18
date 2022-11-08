@@ -63,13 +63,13 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.A:
-                enemyHealth = 6f;
+                enemyHealth = 4f;
                 enemySpeed = 2.5f;
                 enemyDamage = 2f;
 
                 break;
             case Type.B:
-                enemyHealth = 4f;
+                enemyHealth = 3f;
                 enemySpeed = 2f;
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
