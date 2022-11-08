@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
     public int specialSkill = 0;
 
     public Transform cameraTransform;
-
     float currentFireRate;
 
     int count = 0;
@@ -96,22 +95,21 @@ public class Player : MonoBehaviour
 
     void SpecialSkill1() // 군인 특수 스킬
     {
+         if (Input.GetKeyDown(KeyCode.Space) )
+         {
+              if (specialSkill != 0)
+              {
+                  specialSkill -= 1;
+                  GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, cameraTransform.position.z), Quaternion.identity);
+                  skillbtn.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Space) )
-            {
-                 if (specialSkill != 0)
-                 {
-                 specialSkill -= 1;
-                 GameObject bomb = (GameObject)Instantiate(Bomb, new Vector3(cameraTransform.position.x, cameraTransform.position.y, cameraTransform.position.z), Quaternion.identity);
-                 skillbtn.SetActive(true);
-
-                 //spSkill1Check = false; && spSkill1Check == true
-                }
-                 else if(specialSkill == 0)
-            {
-                skillbtn.SetActive(false);
-            }
-        }
+                  //spSkill1Check = false; && spSkill1Check == true
+              }
+              else if(specialSkill == 0)
+              {
+                 skillbtn.SetActive(false);
+              }
+         }
     }
 
     void Reload()
@@ -147,6 +145,8 @@ public class Player : MonoBehaviour
             Vector3 fire = p_shortestTarget.position - transform.position;
             GameObject bullet = objectManager.MakeObj(bulletObjA);
             bullet.transform.position = transform.position;
+            //Quaternion lookRotation = Quaternion.LookRotation(fire);
+            //bullet.transform.rotation = Quaternion.LookRotation(fire);
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
             rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);
 

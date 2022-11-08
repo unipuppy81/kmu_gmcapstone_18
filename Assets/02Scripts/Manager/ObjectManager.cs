@@ -16,6 +16,8 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject WallPrefab;
 
+    public Transform player;
+
     GameObject[] enemyA;
     GameObject[] enemyB;
 

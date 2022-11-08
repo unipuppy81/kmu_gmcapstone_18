@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Skill_Guardian : MonoBehaviour
 {
     public GameObject[] guardians;
+    public GameObject[] guardians2;
     public int hasGuardians = 0;
     public int maxGuardians = 4;
 
@@ -30,8 +31,6 @@ public class Skill_Guardian : MonoBehaviour
     void Start()
     {
         offset = transform.position - target.position;
-        //_Dumbbell = GetComponent<Equip_Dumbbell>();
-        //_Dumbbell = GameObject.FindWithTag("Dumbbell").GetComponent<Equip_Dumbbell>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
     }
 
@@ -84,6 +83,14 @@ public class Skill_Guardian : MonoBehaviour
         }
         else if(guardianLevel == 5 && level5 == true && Equip_Dumbbell.selectedDumbbell == true) 
         {
+            guardians[0].SetActive(false);
+            guardians[1].SetActive(false);
+            guardians[2].SetActive(false);
+            guardians[3].SetActive(false);
+            guardians2[0].SetActive(true);
+            guardians2[1].SetActive(true);
+            guardians2[2].SetActive(true);
+            guardians2[3].SetActive(true);
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             dmg = 15;
             level5 = false;
