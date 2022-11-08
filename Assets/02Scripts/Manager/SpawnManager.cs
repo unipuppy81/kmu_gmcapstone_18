@@ -80,9 +80,6 @@ public class SpawnManager : MonoBehaviour
     {
         timeAfterSpawn += Time.deltaTime;
 
-
-
-
         if (timeAfterSpawn >= mbspawnTime)
         {
             Instantiate(sBoss, spawnPos, sBoss.transform.rotation);

@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void exManager()
+    public void exManager()
     {
         if (curEx == maxEx)
         {
@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
             PauseBtn.SetActive(false);
             curEx = 0f;
             //maxEx += 5f;
+            UnityEngine.Debug.Log("ADB");
             player.playerLevel += 1;
         }
     }

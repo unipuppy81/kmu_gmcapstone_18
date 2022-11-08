@@ -8,15 +8,21 @@ public class itemmagnet : MonoBehaviour
     [SerializeField] LayerMask layerMask = 0;
     [SerializeField] float searchRadius = 1000f;
 
+    public GameObject[] exArray;
+    public GameObject[] ex2Array;
+
     private Player player;
+
+    public GameManager gm;
 
     Transform target;
     Rigidbody2D rigid;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        gm = gameObject.GetComponent<GameManager>();
     }
     void Update()
     {
@@ -27,13 +33,19 @@ public class itemmagnet : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+            exArray = GameObject.FindGameObjectsWithTag("Ex");
+            ex2Array = GameObject.FindGameObjectsWithTag("Ex2");
 
-
-            Collider2D[] colls = Physics2D.OverlapCircleAll(target.position, searchRadius, layerMask);
-
-            foreach (Collider2D p_Target in colls)
+            for(int i = 0; i < exArray.Length; i++)
             {
-                p_Target.transform.position = target.position;
+                exArray[i].transform.position = target.position;
+                //gm.exManager();
+            }
+
+
+            for (int i = 0; i < ex2Array.Length; i++)
+            {
+                ex2Array[i].transform.position = target.position;
             }
         }
     }
