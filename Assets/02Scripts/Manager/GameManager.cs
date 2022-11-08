@@ -55,10 +55,14 @@ public class GameManager : MonoBehaviour
     }
     public void Level()
     {
+        if(CurEx < 3)
+        {
+            playerEx(0f, 2f);
+        }
         if (CurEx == 3f)
         {
             levelCount++;
-            playerEx(0f, 3f);
+            playerEx(0f, 2f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -66,7 +70,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 5f)
         {
             levelCount++;
-            playerEx(3f, 5f);
+            playerEx(0f, 3f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -74,7 +78,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 8f)
         {
             levelCount++;
-            playerEx(5f, 8f);
+            playerEx(0f, 4f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -82,7 +86,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 12f)
         {
             levelCount++;
-            playerEx(8f, 12f);
+            playerEx(0f, 5f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -90,7 +94,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 17f)
         {
             levelCount++;
-            playerEx(12f, 17f);
+            playerEx(0f, 6f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -98,7 +102,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 23f)
         {
             levelCount++;
-            playerEx(17f, 23f);
+            playerEx(0f, 7f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -106,7 +110,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 30f)
         {
             levelCount++;
-            playerEx(23f, 30f);
+            playerEx(0f, 88f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -114,7 +118,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 38f)
         {
             levelCount++;
-            playerEx(30f, 38f);
+            playerEx(0f, 9f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -122,7 +126,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 47f)
         {
             levelCount++;
-            playerEx(38f, 47f);
+            playerEx(0f, 10f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -130,7 +134,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 57f)
         {
             levelCount++;
-            playerEx(47f, 57f);
+            playerEx(0f, 13f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -138,7 +142,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 70f)
         {
             levelCount++;
-            playerEx(57f, 70f);
+            playerEx(0f, 20f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -146,7 +150,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 90f)
         {
             levelCount++;
-            playerEx(70f, 90f);
+            playerEx(0f, 20f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -154,7 +158,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 110f)
         {
             levelCount++;
-            playerEx(70f, 110f);
+            playerEx(0f, 20f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -162,7 +166,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 130f)
         {
             levelCount++;
-            playerEx(110f, 130f);
+            playerEx(0f, 20f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -170,7 +174,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 150f)
         {
             levelCount++;
-            playerEx(150f, 180f);
+            playerEx(0f, 30f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -178,7 +182,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 210f)
         {
             levelCount++;
-            playerEx(180f, 210f);
+            playerEx(0f, 30f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -186,7 +190,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 240f)
         {
             levelCount++;
-            playerEx(210f, 240f);
+            playerEx(0f, 30f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -194,7 +198,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 270f)
         {
             levelCount++;
-            playerEx(240f, 270f);
+            playerEx(0f, 30f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -202,7 +206,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 300f)
         {
             levelCount++;
-            playerEx(270f, 300f);
+            playerEx(0f, 40f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -210,7 +214,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 340f)
         {
             levelCount++;
-            playerEx(300f, 340f);
+            playerEx(0f, 40f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -218,7 +222,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 380f)
         {
             levelCount++;
-            playerEx(340f, 380f);
+            playerEx(0f, 40f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -226,7 +230,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 420f)
         {
             levelCount++;
-            playerEx(380f, 420f);
+            playerEx(0f, 40f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -234,7 +238,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 460f)
         {
             levelCount++;
-            playerEx(420f, 460f);
+            playerEx(0f, 40f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -242,7 +246,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 500f)
         {
             levelCount++;
-            playerEx(460f, 500f);
+            playerEx(0f, 50f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -250,7 +254,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 550f)
         {
             levelCount++;
-            playerEx(500f, 550f);
+            playerEx(0f, 50f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -258,7 +262,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 600f)
         {
             levelCount++;
-            playerEx(550f, 600f);
+            playerEx(0f, 50f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -266,7 +270,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 650f)
         {
             levelCount++;
-            playerEx(600f, 650f);
+            playerEx(0f, 50f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -274,7 +278,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 700f)
         {
             levelCount++;
-            playerEx(650f, 700f);
+            playerEx(0f, 50f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -282,7 +286,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 750f)
         {
             levelCount++;
-            playerEx(700f, 750f);
+            playerEx(0f, 50f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -290,7 +294,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 800f)
         {
             levelCount++;
-            playerEx(750f, 800f);
+            playerEx(0f, 100f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -298,7 +302,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 900f)
         {
             levelCount++;
-            playerEx(800f, 900f);
+            playerEx(0f, 100f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -306,7 +310,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 1000f)
         {
             levelCount++;
-            playerEx(900f, 1000f);
+            playerEx(0f, 100f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -314,7 +318,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 1100f)
         {
             levelCount++;
-            playerEx(1000f, 1100f);
+            playerEx(0f, 100f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -322,7 +326,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 1200f)
         {
             levelCount++;
-            playerEx(1100f, 1200f);
+            playerEx(0f, 300f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -330,7 +334,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 1500f)
         {
             levelCount++;
-            playerEx(1200f, 1500f);
+            playerEx(0f, 300f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -338,7 +342,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 1800f)
         {
             levelCount++;
-            playerEx(1500f, 1800f);
+            playerEx(0f, 300f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -346,7 +350,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 2200f)
         {
             levelCount++;
-            playerEx(1800f, 2200f);
+            playerEx(0f, 300f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -354,7 +358,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 2700f)
         {
             levelCount++;
-            playerEx(2200f, 2700f);
+            playerEx(0f, 300f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -362,7 +366,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 3000f)
         {
             levelCount++;
-            playerEx(2700f, 3000f);
+            playerEx(0f, 1000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -370,7 +374,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 4000f)
         {
             levelCount++;
-            playerEx(3000f, 4000f);
+            playerEx(0f, 1000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -378,7 +382,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 5000f)
         {
             levelCount++;
-            playerEx(4000f, 5000f);
+            playerEx(0f, 1000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -386,7 +390,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 6000f)
         {
             levelCount++;
-            playerEx(5000f, 6000f);
+            playerEx(0f, 1000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -394,7 +398,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 7000f)
         {
             levelCount++;
-            playerEx(6000f, 7000f);
+            playerEx(0f, 1000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -402,7 +406,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 8000f)
         {
             levelCount++;
-            playerEx(7000f, 8000f);
+            playerEx(0f, 2000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -410,7 +414,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 10000f)
         {
             levelCount++;
-            playerEx(8000f, 10000f);
+            playerEx(0f, 2000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -418,7 +422,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 12000f)
         {
             levelCount++;
-            playerEx(10000f, 12000f);
+            playerEx(0f, 2000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -426,7 +430,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 14000f)
         {
             levelCount++;
-            playerEx(12000f, 14000f);
+            playerEx(0f, 2000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -434,7 +438,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 16000f)
         {
             levelCount++;
-            playerEx(14000f, 16000f);
+            playerEx(0f, 4000f);
             openPanel();
             leveltext();
             RandomChoose();
@@ -442,15 +446,7 @@ public class GameManager : MonoBehaviour
         else if (CurEx == 20000f)
         {
             levelCount++;
-            playerEx(16000f, 20000f);
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx >= MaxEx)
-        {
-            levelCount = 50;
-            playerEx(1200f, 1500f);
+            playerEx(2000f, 2000f);
             openPanel();
             leveltext();
             RandomChoose();
