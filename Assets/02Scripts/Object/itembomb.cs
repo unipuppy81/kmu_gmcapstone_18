@@ -27,16 +27,7 @@ public class itembomb : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            /*
-            Destroy(this.gameObject);
-
-            Collider2D[] colls = Physics2D.OverlapCircleAll(target.position, searchRadius, layerMask);
-
-            foreach (Collider2D p_Target in colls)
-            {
-                p_Target.gameObject.SetActive(false);
-            }
-            */
+            player.specialSkill += 1;
         }
     }
 }

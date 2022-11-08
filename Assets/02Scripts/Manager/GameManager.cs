@@ -91,7 +91,6 @@ public class GameManager : MonoBehaviour
             PauseBtn.SetActive(false);
             curEx = 0f;
             //maxEx += 5f;
-            UnityEngine.Debug.Log("ADB");
             player.playerLevel += 1;
         }
     }

@@ -15,12 +15,13 @@ public class SpecialSkill1 : MonoBehaviour
     {
         searchEnemy();
     }
+
     void searchEnemy()
     {
         GameObject[] enemy1 = GameObject.FindGameObjectsWithTag("Enemy01");
 
         transform.localScale = new Vector3(transform.localScale.x - (1f * scaleSpeed * Time.deltaTime),
-            transform.localScale.y - (1f * scaleSpeed * Time.deltaTime), 0);
+        transform.localScale.y - (1f * scaleSpeed * Time.deltaTime), 0);
 
         if (transform.localScale.x < 0.1f && transform.localScale.y < 0.1f)
         {
