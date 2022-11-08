@@ -72,17 +72,15 @@ public class ButtonManager : MonoBehaviour
 
 
     public GameManager gm;
-    LevelManager levelManager;
     OnButtonClick onButtonClick;
     int max;
     private void Awake()
     {
-        gm = gameObject.GetComponent<GameManager>();
         max = 5;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
         player = GameObject.Find("Player").GetComponent<Player>();
         magneticField = GameObject.Find("MagneticField").GetComponent<Skill_Magnetic>();
-        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     public void ClickBtn()
@@ -175,7 +173,7 @@ public class ButtonManager : MonoBehaviour
             Wp_2_levelText();
             Wp_3_levelText();
         }
-        levelManager.closePanel();
+        gm.closePanel();
     }
 
     public void PauseClick()
