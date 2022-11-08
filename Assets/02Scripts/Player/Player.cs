@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask layerMask2 = 0;
     [SerializeField] float searchRadius = 0f;
     [SerializeField] float fireRate = 0f;
+    [SerializeField] TextMeshProUGUI spcountText;
 
     public ObjectManager objectManager;
 
@@ -65,11 +67,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        spcount();
         Playermove();
         Reload();
         SpecialSkill1();
     }
 
+    void spcount()
+    {
+        spcountText.text = String.Format("Count : {0:D1}", specialSkill);
+    }
     void Playermove()
     {
         Vector3 flipMove = Vector3.zero;
