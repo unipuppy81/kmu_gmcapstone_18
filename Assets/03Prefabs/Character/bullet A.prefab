@@ -120,13 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc32f02e7064cb47adf3b036ecd5b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
+  dmg: 3
+  lifetime: 0
   bulletLevel: 1
   selectedBullet: 0
-  level1: 0
-  level2: 0
-  level3: 0
-  level4: 0
+  level1: 1
+  level2: 1
+  level3: 1
+  level4: 1
   level5: 1
 --- !u!70 &8651675961334256259
 CapsuleCollider2D:

@@ -124,6 +124,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   searchRadius: 2
+  hudDamageText: {fileID: 8670602533683797090, guid: b51dbccb5dcfdac4d852b95dd058497d, type: 3}
   objectManager: {fileID: 0}
   enemyType: 1
   sprites: []

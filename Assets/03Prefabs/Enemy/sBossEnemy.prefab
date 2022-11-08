@@ -151,6 +151,7 @@ MonoBehaviour:
     m_Bits: 0
   searchRadius: 0
   objectManager: {fileID: 0}
+  hudDamageText: {fileID: 8670602533683797090, guid: b51dbccb5dcfdac4d852b95dd058497d, type: 3}
   enemyType: 2
   sprites: []
   EnemyBullet: {fileID: 0}

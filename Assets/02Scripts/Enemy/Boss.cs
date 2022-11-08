@@ -32,7 +32,7 @@ public class Boss : MonoBehaviour
     public bool isCrash;
     public bool correctPos;
 
-
+    public GameObject hudDamageText;
 
     public GameObject Rock;
     public GameObject Wall;
@@ -302,4 +302,10 @@ public class Boss : MonoBehaviour
 
             StartCoroutine(Think());
         }
+    void takeDamageText(float damage)
+    {
+        GameObject hudText = Instantiate(hudDamageText);
+        hudText.GetComponent<DamageText>().damage = damage;
+        Debug.Log(damage);
+    }
 }

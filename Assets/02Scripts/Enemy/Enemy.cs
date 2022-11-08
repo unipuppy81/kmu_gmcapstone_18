@@ -12,8 +12,9 @@ public class Enemy : MonoBehaviour
     //layer 사용시 필요
     [SerializeField] LayerMask layerMask = 0;
     [SerializeField] float searchRadius = 0f;
-    
-    
+
+    public GameObject hudDamageText;
+
     private Player player2;
     public ObjectManager objectManager;
    
@@ -218,21 +219,32 @@ public class Enemy : MonoBehaviour
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
 
             onHit(bullet.dmg);
+            takeDamageText(bullet.dmg);
         }
         else if (other.gameObject.tag == "SpecialSkill1")
         {
             SpecialSkill1 specialSkill1 = other.gameObject.GetComponent<SpecialSkill1>();
             onHit(specialSkill1.dmg);
+            takeDamageText(specialSkill1.dmg);
         }
         else if (other.gameObject.CompareTag("Skill")) // 방패(가디언)
         {
             Skill_Guardian skill_Guardian = other.gameObject.GetComponent<Skill_Guardian>();
             onHit(skill_Guardian.dmg);
+            takeDamageText(skill_Guardian.dmg);
         }
         else if (other.gameObject.CompareTag("Skill2")) //EMP필드(자기장)
         {
             Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
             onHit(skill_Magnetic.dmg);
+            takeDamageText(skill_Magnetic.dmg);
         }
+    }
+    void takeDamageText(float damage)
+    {
+        GameObject hudText = Instantiate(hudDamageText);
+        hudText.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);  // 자기 자신 머리 위에 데미지 표시
+        hudText.GetComponent<DamageText>().damage = damage;
+        Debug.Log(damage);
     }
 }

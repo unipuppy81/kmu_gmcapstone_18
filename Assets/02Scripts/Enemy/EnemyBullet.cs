@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     private Player player;
-    private Enemy enemy;
+    //private Enemy enemy;
     private float dmg;
     
     public float lifetime;
@@ -15,13 +15,13 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-        enemy = GameObject.Find("Enemy2(Clone)").GetComponent<Enemy>();
+        //enemy = GameObject.Find("Enemy2(Clone)").GetComponent<Enemy>();
         //guardian = GetComponent<Skill_Guardian>();
         //guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
 
         lifetime = 0f;
 
-        dmg = enemy.bulletenemyDamage;
+        //dmg = enemy.bulletenemyDamage;
     }
 
     // Update is called once per frame
