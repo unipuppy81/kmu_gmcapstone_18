@@ -26,7 +26,7 @@ public class Rock : MonoBehaviour
         {
             UnityEngine.Debug.Log("캐릭터 피 깎임");
 
-            player.playercurHp -= player.maxSpeed;
+            player.playercurHp -= rockDamage;
 
             Destroy(gameObject);
         }

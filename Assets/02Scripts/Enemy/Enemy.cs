@@ -49,7 +49,6 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-
         experienceA = exAcheck;
         experienceB = exBcheck;
 
@@ -174,6 +173,7 @@ public class Enemy : MonoBehaviour
                 case Type.A:
                     GameObject experiencea = objectManager.MakeObj(experienceA);
                     experiencea.transform.position = transform.position;
+
 
                     break;
                 case Type.B:

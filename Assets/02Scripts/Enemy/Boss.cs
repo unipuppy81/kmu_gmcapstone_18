@@ -173,7 +173,7 @@ public class Boss : MonoBehaviour
             onHit(skill_Magnetic.dmg);
             takeDamageText(skill_Magnetic.dmg);
         }
-    }
+    }   
 
     void Pattern()
     {

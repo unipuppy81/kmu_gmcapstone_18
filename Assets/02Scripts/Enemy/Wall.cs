@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Player player;
+
+    public int wallDamage;
+    void Awake()
     {
-        
+        wallDamage = 2;
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -16,11 +19,21 @@ public class Wall : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            UnityEngine.Debug.Log("캐릭터 피 깎임 구멍이라서");
+            UnityEngine.Debug.Log("캐릭터 피 깎임");
+
+            player.playercurHp -= wallDamage;
+
+            Destroy(gameObject);
         }
+        /*
+        if (collision.gameObject.tag == "Border")
+        {
+            Destroy(gameObject);
+        }
+        */
     }
 }

@@ -7,18 +7,18 @@ public class EnemyBullet : MonoBehaviour
     private Player player;
     //private Enemy enemy;
     private float dmg;
-    
+
     public float lifetime;
 
     //Skill_Guardian guardian;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         //enemy = GameObject.Find("Enemy2(Clone)").GetComponent<Enemy>();
         //guardian = GetComponent<Skill_Guardian>();
         //guardian = GameObject.Find("Front").GetComponent<Skill_Guardian>();
-
+        dmg = 4f;
         lifetime = 0f;
 
         //dmg = enemy.bulletenemyDamage;
@@ -45,12 +45,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             player.playercurHp -= dmg;
         }
         else if(collision.gameObject.tag == "Skill" && Skill_Guardian.guardianLevel == 5)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

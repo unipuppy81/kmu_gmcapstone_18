@@ -124,8 +124,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   searchRadius: 0
-  objectManager: {fileID: 0}
   hudDamageText: {fileID: 8670602533683797090, guid: b51dbccb5dcfdac4d852b95dd058497d, type: 3}
+  objectManager: {fileID: 0}
   enemyType: 0
   sprites: []
   EnemyBullet: {fileID: 0}
@@ -133,6 +133,7 @@ MonoBehaviour:
   enemyHealth: 2
   enemySpeed: 1
   enemyDamage: 0
+  bulletenemyDamage: 0
   maxShotDelay: 3
   curShotDelay: 0
   bulletSpeed: 0
