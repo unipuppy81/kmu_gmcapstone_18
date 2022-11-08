@@ -25,7 +25,8 @@ public class SpecialSkill1 : MonoBehaviour
 
         if (transform.localScale.x < 0.1f && transform.localScale.y < 0.1f)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
 
             for (int i = 0; i < enemy1.Length; i++)
             {

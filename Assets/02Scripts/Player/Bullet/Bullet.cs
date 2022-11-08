@@ -48,7 +48,6 @@ public class Bullet : MonoBehaviour
         {
             dmg = 2;
             player.spawntime = 0.4f;
-            Debug.Log("ÃÑ¾Ë ½êÁü");
             level1 = false;
             level2 = true;
         }

@@ -345,6 +345,7 @@ public class Boss : MonoBehaviour
     void takeDamageText(float damage)
     {
         GameObject hudText = Instantiate(hudDamageText);
+        hudText.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);  // 자기 자신 머리 위에 데미지 표시
         hudText.GetComponent<DamageText>().damage = damage;
         Debug.Log(damage);
     }
