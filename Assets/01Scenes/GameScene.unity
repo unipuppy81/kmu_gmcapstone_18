@@ -2916,7 +2916,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4342,7 +4342,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -5409,7 +5408,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -5813,7 +5811,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -7186,7 +7183,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -9098,7 +9094,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -9320,7 +9315,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -11014,7 +11008,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -11939,7 +11932,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -12109,7 +12101,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -14129,7 +14121,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -14255,7 +14246,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -14658,7 +14649,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -15421,7 +15411,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -15917,7 +15906,6 @@ MonoBehaviour:
   time: 360
   target: {fileID: 128811910}
   orbitSpeed: 100
-  guardianLevel: 0
   level1: 1
   level2: 1
   level3: 1
@@ -17641,7 +17629,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -20503,7 +20491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125052, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_Radius
-      value: 4.614077
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125052, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_Offset.x
@@ -20511,11 +20499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125052, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_Offset.y
-      value: -0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125052, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125053, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_RootOrder

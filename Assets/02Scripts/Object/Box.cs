@@ -20,17 +20,19 @@ public class Box : MonoBehaviour
 
             float randI = UnityEngine.Random.Range(0, 10);
 
-            if (randI >= 0 && randI <= 2){
+            if (randI >= 0 && randI <= 4){
                 Instantiate(item_hp, transform.position, item_hp.transform.rotation);
             }
-            else if(randI >= 2 && randI <= 4){
+            else if(randI >= 4 && randI <= 8){
                 Instantiate(item_speed, transform.position, item_speed.transform.rotation);
             }
+            /*
             else if (randI >= 4 && randI <= 6)
             {
                 Instantiate(item_magnet, transform.position, item_magnet.transform.rotation);
             }
-            else if (randI >= 6 && randI <= 10)
+            */
+            else if (randI >= 8 && randI <= 10)
             {
                 Instantiate(item_bomb, transform.position, item_bomb.transform.rotation);
             }
