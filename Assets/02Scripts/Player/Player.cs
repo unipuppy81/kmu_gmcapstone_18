@@ -44,6 +44,11 @@ public class Player : MonoBehaviour
     public int specialSkill = 0;
     public float spawntime;
 
+    public float playertop;
+    public float playerbottom;
+    public float playerleft;
+    public float playerright;
+
     public Transform cameraTransform;
     float currentFireRate;
 
@@ -53,6 +58,10 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        playertop = 29.3f;
+        playerbottom = -29.3f;
+        playerleft = -29.7f;
+        playerright = 28.95f;
         searchRadius = 7f;
         bulletSpeed = 4f;
         specialSkill = 1;
@@ -82,6 +91,7 @@ public class Player : MonoBehaviour
     {
         spcountText.text = String.Format("Count : {0:D1}", specialSkill);
     }
+
     void Playermove()
     {
         Vector3 flipMove = Vector3.zero;
@@ -98,6 +108,33 @@ public class Player : MonoBehaviour
         }
 
         float v = Input.GetAxisRaw("Vertical");
+
+        Vector3 pos = transform.position;
+
+        if(pos.x > playerright)
+        {
+            h = 0;
+            pos.x = playerright;
+        }
+        else if(pos.x < playerleft)
+        {
+            h = 0;
+            pos.x = playerleft;
+        }
+
+        if (pos.y > playertop)
+        {
+            v = 0;
+            pos.y = playertop;
+        }
+        else if (pos.y < playerbottom)
+        {
+            v = 0;
+            pos.y = playerbottom;
+        }
+
+        transform.position = pos;
+
 
         Vector3 curPos = transform.position;
         Vector3 nextPos = new Vector3(h, v, 0) * playerSpeed * Time.deltaTime;

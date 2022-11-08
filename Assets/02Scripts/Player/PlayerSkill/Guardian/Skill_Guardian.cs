@@ -53,7 +53,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 3;
+            dmg = 1;
             level1 = false;
             level2 = true;
         }
@@ -61,7 +61,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 5;
+            dmg = 2;
             level2 = false;
             level3 = true;
         }
@@ -69,7 +69,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 7;
+            dmg = 2;
             level3 = false;
             level4 = true;
         }
@@ -77,7 +77,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 9;
+            dmg = 3;
             level4 = false;
             level5 = true;
         }
@@ -92,7 +92,7 @@ public class Skill_Guardian : MonoBehaviour
             guardians2[2].SetActive(true);
             guardians2[3].SetActive(true);
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            dmg = 15;
+            dmg = 5;
             level5 = false;
         }
     }

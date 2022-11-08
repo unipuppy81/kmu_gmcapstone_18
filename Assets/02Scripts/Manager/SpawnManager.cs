@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
 {
     public ObjectManager objectManager;
 
-
+    private Player p;
 
     public bool enabledSpawn = false;
     public GameObject Box;
@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        p = GameObject.Find("Player").GetComponent<Player>();
         Enemy = Enemy1;
         bEnemy = Enemy2;
 
@@ -106,6 +106,12 @@ public class SpawnManager : MonoBehaviour
             bRight.SetActive(true);
             Instantiate(Boss, spawnPos, Boss.transform.rotation);
             timeAfterSpawn = 0f;
+
+            p.playerright = 5.5f;
+            p.playerleft = -5.5f;
+            p.playerbottom = -5.5f;
+            p.playertop = 5.5f;
+
             spawnTime = 10000000000000f;
         }
     }
