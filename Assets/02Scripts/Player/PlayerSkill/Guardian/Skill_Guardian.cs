@@ -20,7 +20,7 @@ public class Skill_Guardian : MonoBehaviour
     public float orbitSpeed;
     Vector3 offset;
 
-    public int guardianLevel = 0;
+    public static int guardianLevel = 0;
     public bool level1, level2, level3, level4, level5 = true;
 
     //Equip_Dumbbell _Dumbbell;

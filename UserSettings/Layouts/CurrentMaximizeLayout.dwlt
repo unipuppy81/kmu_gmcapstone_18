@@ -571,7 +571,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 33310
+  controlID: 33743
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -851,7 +851,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f236f5fffe36f5ff0c37f5ff3237f5ff0afbffff066500006e650000be670000e8670000ee670000
+      m_ExpandedIDs: f236f5fffe36f5ff0c37f5ff3237f5ff0afbffff06650000166500006e650000be670000e8670000ee670000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
