@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public GameObject Bomb;
     public GameObject skillbtn;
     public GameObject gameoverPannel;
+    public GameObject gameclearPannel;
 
     public string bulletObjA;
     string playerbulletA = "bulletPlayerA";
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
         Playermove();
         Reload();
         SpecialSkill1();
+        specialSkillbtn();
     }
 
     void spcount()
@@ -154,11 +156,20 @@ public class Player : MonoBehaviour
 
                   //spSkill1Check = false; && spSkill1Check == true
               }
-              else if(specialSkill == 0)
-              {
-                 skillbtn.SetActive(false);
-              }
+              //else if(specialSkill > 0)
+              //{
+
+              //   skillbtn.SetActive(false);
+              //}
          }
+    }
+
+    void specialSkillbtn()
+    {
+        if(specialSkill == 0)
+        {
+            skillbtn.SetActive(false);
+        }
     }
 
     void Reload()
@@ -210,12 +221,18 @@ public class Player : MonoBehaviour
         hit_target = p_shortestTarget;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (playercurHp <= 0)
         {
             Time.timeScale = 0;
             gameoverPannel.SetActive(true);
+        }
+
+        if(Boss.bossHealth <= 0)
+        {
+            Time.timeScale = 0;
+            gameclearPannel.SetActive(true);
         }
     }
 }

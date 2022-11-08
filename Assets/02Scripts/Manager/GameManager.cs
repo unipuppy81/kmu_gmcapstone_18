@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Threading;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,14 +46,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
         levelCount = 0;
         levelpanel.SetActive(false);
     }
+
+
+
     private void Update()
     {
+
         Timer();
         ActiveFalse();
     }
+
+
+
     public void Level()
     {
         if(CurEx < 3)
@@ -497,145 +506,151 @@ public class GameManager : MonoBehaviour
     {
         if (levelpanel.activeSelf == true)
         {
-            i = Random.Range(0, select1.Count);
+            i = UnityEngine.Random.Range(0, select1.Count);
             switch (i)
             {
                 case 0:
                     select1[0].SetActive(true);
-                    j = Random.Range(0, select2.Count);
+                    j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
-                        j = Random.Range(0, select2.Count);
+                        j = UnityEngine.Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    k = Random.Range(0, select3.Count);
+                    k = UnityEngine.Random.Range(0, select3.Count);
                     while (k == i)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
                     }
                     while (k == j)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
+                        while (k == i)
+                        {
+                            k = UnityEngine.Random.Range(0, select3.Count);
+                        }
                     }
-                    while (k == i)
-                    {
-                        k = Random.Range(0, select3.Count);
-                    }
+                    
                     select3[k].SetActive(true);
                     break;
                 case 1:
                     select1[1].SetActive(true);
-                    j = Random.Range(0, select2.Count);
+                    j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
-                        j = Random.Range(0, select2.Count);
+                        j = UnityEngine.Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    k = Random.Range(0, select3.Count);
+                    k = UnityEngine.Random.Range(0, select3.Count);
                     while (k == i)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
                     }
                     while (k == j)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
+                        while (k == i)
+                        {
+                            k = UnityEngine.Random.Range(0, select3.Count);
+                        }
                     }
-                    while (k == i)
-                    {
-                        k = Random.Range(0, select3.Count);
-                    }
+                    
                     select3[k].SetActive(true);
                     break;
                 case 2:
                     select1[2].SetActive(true);
-                    j = Random.Range(0, select2.Count);
+                    j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
-                        j = Random.Range(0, select2.Count);
+                        j = UnityEngine.Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    k = Random.Range(0, select3.Count);
+                    k = UnityEngine.Random.Range(0, select3.Count);
                     while (k == i)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
                     }
                     while (k == j)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
+                        while (k == i)
+                        {
+                            k = UnityEngine.Random.Range(0, select3.Count);
+                        }
                     }
-                    while (k == i)
-                    {
-                        k = Random.Range(0, select3.Count);
-                    }
+                    
                     select3[k].SetActive(true);
                     break;
                 case 3:
                     select1[3].SetActive(true);
-                    j = Random.Range(0, select2.Count);
+                    j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
-                        j = Random.Range(0, select2.Count);
+                        j = UnityEngine.Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    k = Random.Range(0, select3.Count);
+                    k = UnityEngine.Random.Range(0, select3.Count);
                     while (k == i)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
                     }
                     while (k == j)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
+                        while (k == i)
+                        {
+                            k = UnityEngine.Random.Range(0, select3.Count);
+                        }
                     }
-                    while (k == i)
-                    {
-                        k = Random.Range(0, select3.Count);
-                    }
+                    
                     select3[k].SetActive(true);
                     break;
                 case 4:
                     select1[4].SetActive(true);
-                    j = Random.Range(0, select2.Count);
+                    j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
-                        j = Random.Range(0, select2.Count);
+                        j = UnityEngine.Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    k = Random.Range(0, select3.Count);
+                    k = UnityEngine.Random.Range(0, select3.Count);
                     while (k == i)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
                     }
                     while (k == j)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
+                        while (k == i)
+                        {
+                            k = UnityEngine.Random.Range(0, select3.Count);
+                        }
                     }
-                    while (k == i)
-                    {
-                        k = Random.Range(0, select3.Count);
-                    }
+                    
                     select3[k].SetActive(true);
                     break;
                 case 5:
                     select1[5].SetActive(true);
-                    j = Random.Range(0, select2.Count);
+                    j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
-                        j = Random.Range(0, select2.Count);
+                        j = UnityEngine.Random.Range(0, select2.Count);
                     }
                     select2[j].SetActive(true);
-                    k = Random.Range(0, select3.Count);
+                    k = UnityEngine.Random.Range(0, select3.Count);
                     while (k == i)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
                     }
                     while (k == j)
                     {
-                        k = Random.Range(0, select3.Count);
+                        k = UnityEngine.Random.Range(0, select3.Count);
+                        while (k == i)
+                        {
+                            k = UnityEngine.Random.Range(0, select3.Count);
+                        }
                     }
-                    while (k == i)
-                    {
-                        k = Random.Range(0, select3.Count);
-                    }
+                    
                     select3[k].SetActive(true);
                     break;
             }

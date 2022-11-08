@@ -12,11 +12,11 @@ public class Boss : MonoBehaviour
 
     private Player player;
 
+   
+
     public enum Type { A,B,C };
     public Type bossType;
-    public float maxHealth = 10.0f;
-    public float curHealth;
-    public float bossHealth;
+    public static float bossHealth = 1f;
     public int patternIndex;
     public int curPatternCount;
     public int[] maxPatternCount;
@@ -51,8 +51,10 @@ public class Boss : MonoBehaviour
     Transform btarget;
 
     void Awake() {
+        
+
         BossSpeed = 2.0f;
-        bossHealth = 500f;
+        bossHealth = 10f;
         bossDamage = 5;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -314,7 +316,7 @@ public class Boss : MonoBehaviour
 
     IEnumerator RandAttack1()
     {
-       UnityEngine.Debug.Log("A");
+
 
        yield return new WaitForSeconds(3.0f);
 
@@ -323,7 +325,7 @@ public class Boss : MonoBehaviour
 
     IEnumerator RockAttack1()
         {
-            UnityEngine.Debug.Log("B");
+
             yield return new WaitForSeconds(3.0f);
 
             StartCoroutine(Think());
@@ -331,7 +333,6 @@ public class Boss : MonoBehaviour
 
     IEnumerator CrushAttack1()
         {
-            UnityEngine.Debug.Log("C");
 
             // +crush anim
             if (transform.position != btarget.position)
@@ -345,8 +346,7 @@ public class Boss : MonoBehaviour
     void takeDamageText(float damage)
     {
         GameObject hudText = Instantiate(hudDamageText);
-        hudText.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);  // 자기 자신 머리 위에 데미지 표시
+        hudText.transform.position = this.gameObject.transform.position + new Vector3(0, 1f, 0);  // 자기 자신 머리 위에 데미지 표시
         hudText.GetComponent<DamageText>().damage = damage;
-        Debug.Log(damage);
     }
 }
