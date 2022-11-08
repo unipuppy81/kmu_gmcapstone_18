@@ -12,8 +12,11 @@ public class Enemy : MonoBehaviour
     //layer 사용시 필요
     [SerializeField] LayerMask layerMask = 0;
     [SerializeField] float searchRadius = 0f;
-
+    
+    
+    private Player player2;
     public ObjectManager objectManager;
+   
 
     // A = 근접, B = 원거리, C = 중간보스
     public enum Type { A, B, C };
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour
     public float enemyHealth;
     public float enemySpeed;
     public float enemyDamage;
+    public float bulletenemyDamage;
     public float maxShotDelay = 3f;
     public float curShotDelay;
     public float bulletSpeed;
@@ -51,6 +55,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player2 = GameObject.Find("Player").GetComponent<Player>();
     }
 
     void Start()
@@ -58,24 +63,25 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.A:
-                enemyHealth = 2f;
-                enemySpeed = 2f;
+                enemyHealth = 6f;
+                enemySpeed = 2.5f;
                 enemyDamage = 2f;
 
                 break;
             case Type.B:
-                enemyHealth = 1f;
-                enemySpeed = 1.5f;
-                enemyDamage = 4f;
+                enemyHealth = 4f;
+                enemySpeed = 2f;
+                bulletenemyDamage = 4f;
+                enemyDamage = 1f;
                 searchRadius = 5f;
-                bulletSpeed = 1f;
+                bulletSpeed = 1.0f;
                 InvokeRepeating("SearchPlayer", 0f, 0.5f);
                 break;
 
             case Type.C:
-                enemyHealth = 20f;
-                enemySpeed = 2f;
-                enemyDamage = 3f;
+                enemyHealth = 100f;
+                enemySpeed = 3f;
+                enemyDamage = 5f;
 
                 break;
 
@@ -192,11 +198,20 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //UnityEngine.Debug.Log("Player");
-        }
-        else if (other.gameObject.tag == "Enemy01")
-        {
-            //UnityEngine.Debug.Log("Enemy01");
+            switch (enemyType)
+            {
+                case Type.A:
+                    player2.playercurHp -= enemyDamage;
+
+                    break;
+                case Type.B:
+                    player2.playercurHp -= enemyDamage;
+
+                    break;
+                case Type.C:
+                    player2.playercurHp -= enemyDamage;
+                    break;
+            }
         }
         else if (other.gameObject.tag == "Bullet")
         {

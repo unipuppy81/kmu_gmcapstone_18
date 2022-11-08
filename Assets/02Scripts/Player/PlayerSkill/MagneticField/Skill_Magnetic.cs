@@ -53,34 +53,34 @@ public class Skill_Magnetic : MonoBehaviour
         if (magneticLevel == 1 && level1 == true)
         {
             magnetic.gameObject.SetActive(true);
-            dmg = 3;
+            dmg = 1;
             level1 = false;
             level2 = true;
         }
         else if (magneticLevel == 2 && level2 == true)
         {
             transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-            dmg = 5;
+            dmg = 2;
             level2 = false;
             level3 = true;
         }
         else if (magneticLevel == 3 && level3 == true)
         {
             transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-            dmg = 7;
+            dmg = 3;
             level3 = false;
             level4 = true;
         }
         else if (magneticLevel == 4 && level4 == true)
         {
             transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
-            dmg = 9;
+            dmg = 4;
             level4 = false;
             level5 = true;
         }
         else if (magneticLevel == 5 && level5 == true && Equip_Hot7.selectedHot7 == true)
         {
-            dmg = 12;
+            dmg = 5;
             level5 = false;
         }
     }

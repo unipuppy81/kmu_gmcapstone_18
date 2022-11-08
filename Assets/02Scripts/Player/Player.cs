@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] TextMeshProUGUI spcountText;
 
     public ObjectManager objectManager;
+    public Enemy enemy;
 
     public Transform hit_target = null;  // 최종타겟 임시시정
     //public GameObject bulletObjA;
@@ -35,12 +36,13 @@ public class Player : MonoBehaviour
     public float maxSpeed = 10f;
     public float playerMaxHp;
     public float playercurHp;
-    public float bulletSpeed = 2f;
+    public float bulletSpeed;
     public float bulletDamage;
     public float maxShotDelay = 0.2f;
     public float curShotDelay;
     public int playerLevel = 0;
     public int specialSkill = 0;
+    public float spawntime;
 
     public Transform cameraTransform;
     float currentFireRate;
@@ -51,18 +53,20 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        bulletSpeed = 4f;
         specialSkill = 1;
         bulletDamage = 3.0f;
         bulletObjA = playerbulletA;
-        playerMaxHp = 10f;
-        playercurHp = 10f;
+        playerMaxHp = 30f;
+        playercurHp = 30f;
         rigid = GetComponent<Rigidbody2D>();
+        spawntime = 0.5f;
     }
 
     void Start()
     {
         currentFireRate = fireRate;
-        InvokeRepeating("SearchEnemy", 0f, 0.5f);
+        InvokeRepeating("SearchEnemy", 0f, spawntime);
     }
 
     void Update()
@@ -170,32 +174,6 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "itemhp")
-        {
-            Destroy(other.gameObject);
-
-            playercurHp += 2f;
-            if(playercurHp > 10f)
-            {
-                playercurHp = 10.0f;
-            }
-        }
-        else if (other.gameObject.tag == "itemspeed")
-        {
-            Destroy(other.gameObject);
-
-            playerSpeed += 0.5f;
-        }
-        else if(other.gameObject.tag == "Enemy01")
-        {
-            playercurHp -= 1f;
-        }
-
-        else if (other.gameObject.tag == "enemybulletA")
-        {
-            playercurHp -= 2f;
-        }
-
         if (playercurHp <= 0)
         {
             Time.timeScale = 0;

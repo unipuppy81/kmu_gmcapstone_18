@@ -21,7 +21,7 @@ public class EnemyBullet : MonoBehaviour
 
         lifetime = 0f;
 
-        dmg = enemy.enemyDamage;
+        dmg = enemy.bulletenemyDamage;
     }
 
     // Update is called once per frame
@@ -45,11 +45,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
+            player.playercurHp -= dmg;
         }
         else if(collision.gameObject.tag == "Skill" && Skill_Guardian.guardianLevel == 5)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

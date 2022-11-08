@@ -105,7 +105,7 @@ MonoBehaviour:
   curHealth: 0
   patternIndex: 0
   curPatternCount: 0
-  maxPatternCount: 010000000100000002000000
+  maxPatternCount: 030000000300000005000000
   curmoveCount: 0
   maxmmoveCount: 2
   speed: 2

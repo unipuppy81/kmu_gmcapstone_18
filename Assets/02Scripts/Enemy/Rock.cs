@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Player player;
+
+    public int rockDamage;
+    void Awake()
     {
-        
+        rockDamage = 10;
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -22,6 +25,9 @@ public class Rock : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             UnityEngine.Debug.Log("캐릭터 피 깎임");
+
+            player.playercurHp -= player.maxSpeed;
+
             Destroy(gameObject);
         }
         /*

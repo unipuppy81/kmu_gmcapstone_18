@@ -59,9 +59,7 @@ public class Boss : MonoBehaviour
         curmoveCount = 0;
 
         dirx = btarget.position.x;
-        diry = btarget.position.y;
-
-        //StartCoroutine(Think());    
+        diry = btarget.position.y; 
     }
 
     void Start()
@@ -172,7 +170,6 @@ public class Boss : MonoBehaviour
     
     void RandAttack()
     {
-        UnityEngine.Debug.Log("A");
         curPatternCount++;
         for(int i = 0; i < 5; i++)
             {
@@ -190,13 +187,10 @@ public class Boss : MonoBehaviour
 
         if (curPatternCount < maxPatternCount[patternIndex])
             Invoke("RandAttack", 2);
-        //else
-           // Invoke("Pattern", 3);
     }
 
     void RockAttack()
     {
-        UnityEngine.Debug.Log("B");
         curPatternCount++;
         if(curSDelay < maxSDelay)
         {
@@ -216,35 +210,16 @@ public class Boss : MonoBehaviour
 
         if (curPatternCount < maxPatternCount[patternIndex])
             Invoke("RockAttack", 2);
-       // else
-           // Invoke("Pattern", 3);
     }
 
     void CrushAttack()
     {
+        curPatternCount++;
         BossSpeed += 2f;
 
-        /*
-        UnityEngine.Debug.Log("C");
-        curPatternCount++;
-        for (int i = 0; i < 10; i++)
-        {
-            float attackPosx1 = 5.5f;
-            float attackPosy1 = 5.5f;
-
-            float attackPosx2 = -5.5f;
-            float attackPosy2 = -5.5f;
-
-            float arandomX = UnityEngine.Random.Range(attackPosx1, attackPosx2);
-            float arandomY = UnityEngine.Random.Range(attackPosy1, attackPosy2);
-        }
-
         if (curPatternCount < maxPatternCount[patternIndex])
-        {
             Invoke("CrushAttack", 2);
-        }
-        */
-     }
+    }
 
 
    
