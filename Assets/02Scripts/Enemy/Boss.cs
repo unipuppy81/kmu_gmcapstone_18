@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour
 {
     public ObjectManager objectManager;
 
+    private Player player;
+
     public enum Type { A,B,C };
     public Type bossType;
     public float maxHealth = 10.0f;
@@ -24,6 +26,7 @@ public class Boss : MonoBehaviour
     public float maxSDelay = 0.2f;
     public float curSDelay;
     public float BossSpeed;
+    public int bossDamage;
 
     private Transform myTransform = null;
 
@@ -50,8 +53,9 @@ public class Boss : MonoBehaviour
     void Awake() {
         BossSpeed = 2.0f;
         bossHealth = 500f;
+        bossDamage = 5;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        player = GameObject.Find("Player").GetComponent<Player>();
         isCrash = false;
         isWalk = true;
         isPattern = false;
@@ -172,6 +176,11 @@ public class Boss : MonoBehaviour
             Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
             onHit(skill_Magnetic.dmg);
             takeDamageText(skill_Magnetic.dmg);
+        }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+
+            player.playercurHp -= bossDamage;
         }
     }   
 
