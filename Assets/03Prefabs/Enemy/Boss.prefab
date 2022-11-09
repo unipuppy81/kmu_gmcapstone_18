@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6965814671064007042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.06}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,8 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectManager: {fileID: 0}
   bossType: 0
-  maxHealth: 10
-  curHealth: 0
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 030000000300000005000000
@@ -112,6 +110,7 @@ MonoBehaviour:
   maxSDelay: 0.2
   curSDelay: 0
   BossSpeed: 0
+  bossDamage: 0
   isWalk: 0
   isPattern: 0
   isDead: 0
