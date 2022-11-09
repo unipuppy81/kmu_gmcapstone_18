@@ -54,7 +54,7 @@ public class Boss : MonoBehaviour
         
 
         BossSpeed = 2.0f;
-        bossHealth = 10f;
+        bossHealth = 500f;
         bossDamage = 5;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.Find("Player").GetComponent<Player>();
