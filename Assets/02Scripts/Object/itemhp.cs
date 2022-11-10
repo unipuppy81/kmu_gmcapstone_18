@@ -23,7 +23,7 @@ public class itemhp : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-            player.playercurHp += 2f;
+            player.playercurHp += 8f;
             if (player.playercurHp >= player.playerMaxHp)
             {
                 player.playercurHp = player.playerMaxHp;

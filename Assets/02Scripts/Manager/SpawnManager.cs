@@ -12,8 +12,11 @@ using UnityEngine.AdaptivePerformance.VisualScripting;
 public class SpawnManager : MonoBehaviour
 {
     public ObjectManager objectManager;
+    public GameManager gameManager;
 
     private Player p;
+    private Enemy e;
+
 
     public bool enabledSpawn = false;
     public GameObject Box;
@@ -40,9 +43,13 @@ public class SpawnManager : MonoBehaviour
     public float mbspawnTime;
     public float timeAfterSpawn;
 
+    public bool isSpawnTure;
 
+  
     string Enemy1 = "enemyA";
     string Enemy2 = "enemyB";
+
+    float spawnPosx1, spawnPosy1, spawnPosx2, spawnPosy2, canspawnX1, canspawnX2, canspawnY1, canspawnY2, randomX, randomY;
 
     Transform player;
     Transform bossSpawnPos;
@@ -54,24 +61,30 @@ public class SpawnManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         p = GameObject.Find("Player").GetComponent<Player>();
+        e = GameObject.Find("Enemy").GetComponent<Enemy>();
+
         Enemy = Enemy1;
         bEnemy = Enemy2;
 
         spawnTime = 60.0f;
         mbspawnTime = 30.0f;
+
+        isSpawnTure = false;
     }
 
     void Start()
     {
-        GameManager gameManager = gameObject.GetComponent<GameManager>();
+        gameManager = gameObject.GetComponent<GameManager>();
 
         timeAfterSpawn = 0;
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 3, 10f);
+        InvokeRepeating("SpawnBox", 3, 20f);
         InvokeRepeating("SpawnEnemy", 3, 0.5f);      
         InvokeRepeating("SpawnbEnemy", 3, 5f);
+
+        isSpawnTure = false;
     }
 
     void Update()
@@ -124,29 +137,42 @@ public class SpawnManager : MonoBehaviour
         float spawnPosx2 = player.position.x - 8f;
         float spawnPosy2 = player.position.y - 8f;
 
+        float canspawnX1 = player.position.x + 3f;
+        float canspawnX2 = player.position.x - 3f;
+
+        float canspawnY1 = player.position.y + 3f;
+        float canspawnY2 = player.position.y - 3f;
+
         float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
         float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
 
-        if (randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f)
-        {
-            if (enabledSpawn)
-            {
-                GameObject enemy = objectManager.MakeObj(Enemy);
-                enemy.transform.position = new Vector3(randomX, randomY, 0f);
 
-                Enemy enemylogic = enemy.GetComponent<Enemy>();
-                enemylogic.objectManager = objectManager;
-            }
+
+        if (randomX >= canspawnX2 && randomX <= canspawnX1 && randomY >= canspawnY2 && randomY <= canspawnY1)
+        {
+            isSpawnTure = false;
         }
         else
-        {
-            if (enabledSpawn)
-            {
-                GameObject enemy = objectManager.MakeObj(Enemy);
-                enemy.transform.position = new Vector3(0f, 0f, 0f);
+            isSpawnTure = true;
 
-                Enemy enemylogic = enemy.GetComponent<Enemy>();
-                enemylogic.objectManager = objectManager;
+        if (isSpawnTure) { 
+            if (randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f){
+                     if (enabledSpawn){
+                        GameObject enemy = objectManager.MakeObj(Enemy);
+                        enemy.transform.position = new Vector3(randomX, randomY, 0f);
+
+                        Enemy enemylogic = enemy.GetComponent<Enemy>();
+                        enemylogic.objectManager = objectManager;
+                     }
+            }
+            else{
+                if (enabledSpawn){
+                    GameObject enemy = objectManager.MakeObj(Enemy);
+                    enemy.transform.position = new Vector3(0f, 0f, 0f);
+
+                    Enemy enemylogic = enemy.GetComponent<Enemy>();
+                    enemylogic.objectManager = objectManager;
+                }
             }
         }
     }
@@ -159,30 +185,40 @@ public class SpawnManager : MonoBehaviour
         float spawnPosx2 = player.position.x - 8f;
         float spawnPosy2 = player.position.y - 8f;
 
+        float canspawnX1 = player.position.x + 3f;
+        float canspawnX2 = player.position.x - 3f;
+
+        float canspawnY1 = player.position.y + 3f;
+        float canspawnY2 = player.position.y - 3f;
+
         float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
         float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
 
-
-        if (randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f)
+        if (randomX >= canspawnX2 && randomX <= canspawnX1 && randomY >= canspawnY2 && randomY <= canspawnY1)
         {
-            if (enabledSpawn)
-            {
-                GameObject benemy = objectManager.MakeObj(bEnemy);
-                benemy.transform.position = new Vector3(randomX, randomY, 0f);
-
-                Enemy enemylogic = benemy.GetComponent<Enemy>();
-                enemylogic.objectManager = objectManager;
-            }
+            isSpawnTure = false;
         }
         else
-        {
-            if (enabledSpawn)
-            {
-                GameObject benemy = objectManager.MakeObj(bEnemy);
-                benemy.transform.position = new Vector3(0f, 0f, 0f);
+            isSpawnTure = true;
 
-                Enemy enemylogic = benemy.GetComponent<Enemy>();
-                enemylogic.objectManager = objectManager;
+        if (isSpawnTure) { 
+            if (randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f){
+                if (enabledSpawn){
+                    GameObject benemy = objectManager.MakeObj(bEnemy);
+                    benemy.transform.position = new Vector3(randomX, randomY, 0f);
+
+                    Enemy enemylogic = benemy.GetComponent<Enemy>();
+                    enemylogic.objectManager = objectManager;
+                }
+            }
+            else{
+                if (enabledSpawn){
+                    GameObject benemy = objectManager.MakeObj(bEnemy);
+                    benemy.transform.position = new Vector3(0f, 0f, 0f);
+
+                    Enemy enemylogic = benemy.GetComponent<Enemy>();
+                    enemylogic.objectManager = objectManager;
+                }
             }
         }
     }

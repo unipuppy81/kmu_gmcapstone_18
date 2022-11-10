@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     private Player player2;
     public ObjectManager objectManager;
-   
+    public GameManager gameManger;
 
     // A = 근접, B = 원거리, C = 중간보스
     public enum Type { A, B, C };
@@ -64,13 +64,13 @@ public class Enemy : MonoBehaviour
         {
             case Type.A:
                 enemyHealth = 4f;
-                enemySpeed = 2.5f;
+                enemySpeed = 2.0f;
                 enemyDamage = 2f;
 
                 break;
             case Type.B:
                 enemyHealth = 3f;
-                enemySpeed = 2f;
+                enemySpeed = 1.8f;
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
                 searchRadius = 5f;
