@@ -61,7 +61,6 @@ public class SpawnManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         p = GameObject.Find("Player").GetComponent<Player>();
-        e = GameObject.Find("Enemy").GetComponent<Enemy>();
 
         Enemy = Enemy1;
         bEnemy = Enemy2;
