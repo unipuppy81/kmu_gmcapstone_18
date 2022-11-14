@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
     public float maxShotDelay = 3f;
     public float curShotDelay;
     public float bulletSpeed;
+    public float enemyaMaxHealth;
+    public float enemybMaxHealth;
 
     public bool isShoot;
 
@@ -46,11 +48,15 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriteRenderer; // 피격 애니메이션
     Rigidbody2D rigid;
     Transform target;
+    float t;
 
     void Awake()
     {
         experienceA = exAcheck;
         experienceB = exBcheck;
+
+        enemyaMaxHealth = 4f;
+        enemybMaxHealth = 3f;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
@@ -63,13 +69,13 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.A:
-                enemyHealth = 4f;
+                enemyHealth = 2f;
                 enemySpeed = 2.0f;
                 enemyDamage = 2f;
 
                 break;
             case Type.B:
-                enemyHealth = 3f;
+                enemyHealth = 2f;
                 enemySpeed = 1.8f;
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
@@ -90,6 +96,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        t += Time.deltaTime;
         switch (enemyType)
         {
             case Type.A:
@@ -112,9 +119,46 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void durationTime()
+    void OnEnable()
     {
-        
+
+        switch (enemyType)
+        {
+            case Type.A:
+                if (t >= 0 && t<=10)
+                {
+                    enemyHealth = 5f;
+                }
+                else if (t >= 10)
+                {
+                    enemyHealth = 10f;
+                }
+
+
+                break;
+            case Type.B:
+                if (t >= 0 && t <= 10)
+                {
+                    enemyHealth = 4f;
+                }
+                else if (t >= 10)
+                {
+                    enemyHealth = 10f;
+                }
+
+
+                break;
+        }
+    }
+
+    void UpdateHealth()
+    {
+        t += Time.deltaTime;
+        if(t >= 10.0f)
+        {
+            enemyaMaxHealth = 10f;
+            enemybMaxHealth = 10f;
+        }
     }
 
     void Reload()

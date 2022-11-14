@@ -162,6 +162,7 @@ public class SpawnManager : MonoBehaviour
 
                         Enemy enemylogic = enemy.GetComponent<Enemy>();
                         enemylogic.objectManager = objectManager;
+
                      }
             }
             else{
@@ -171,6 +172,7 @@ public class SpawnManager : MonoBehaviour
 
                     Enemy enemylogic = enemy.GetComponent<Enemy>();
                     enemylogic.objectManager = objectManager;
+
                 }
             }
         }
