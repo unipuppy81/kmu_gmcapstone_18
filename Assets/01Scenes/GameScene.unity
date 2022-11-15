@@ -1371,7 +1371,6 @@ MonoBehaviour:
   _Sec: 0
   _min: 0
   _mina: 0
-  levelcount: 0
   min: 0
   max: 0
 --- !u!4 &163779485
@@ -7852,7 +7851,6 @@ MonoBehaviour:
   _Sec: 0
   _min: 0
   _mina: 0
-  levelcount: 0
   min: 0
   max: 0
 --- !u!114 &747727061
@@ -7923,6 +7921,22 @@ MonoBehaviour:
   level3: 1
   level4: 1
   level5: 1
+--- !u!114 &747727073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747727051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a260b498afd94a44eb01a198570179f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ex1Amount: 1
+  ex2Amount: 2
+  curEx: 0
+  exbar: {fileID: 1779581623}
 --- !u!1001 &797331573
 PrefabInstance:
   m_ObjectHideFlags: 0
