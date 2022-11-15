@@ -10843,6 +10843,8 @@ MonoBehaviour:
   spawnTime: 200
   mbspawnTime: 10
   timeAfterSpawn: 0
+  aenemyspawn: 0
+  benemyspawn: 0
   isSpawnTure: 0
 --- !u!4 &1017085520
 Transform:
@@ -25015,7 +25017,7 @@ PrefabInstance:
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: BasketBall
       value: 
-      objectReference: {fileID: 3961865430525766492, guid: 341e504c2990d724cb917c463c3dc1e9, type: 3}
+      objectReference: {fileID: 3119007986711868381, guid: 790a766181da468419c336f98a79b402, type: 3}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: PausePanel
       value: 
