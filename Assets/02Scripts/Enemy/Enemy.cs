@@ -70,13 +70,13 @@ public class Enemy : MonoBehaviour
         {
             case Type.A:
                 enemyHealth = 2f;
-                enemySpeed = 2.0f;
+                enemySpeed = 1.0f;
                 enemyDamage = 2f;
 
                 break;
             case Type.B:
                 enemyHealth = 2f;
-                enemySpeed = 1.8f;
+                enemySpeed = 0.7f;
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
                 searchRadius = 5f;
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
 
             case Type.C:
                 enemyHealth = 100f;
-                enemySpeed = 3f;
+                enemySpeed = 1.3f;
                 enemyDamage = 5f;
 
                 break;

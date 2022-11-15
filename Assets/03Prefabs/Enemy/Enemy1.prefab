@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8409871284461968199}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   searchRadius: 0
   hudDamageText: {fileID: 8670602533683797090, guid: b51dbccb5dcfdac4d852b95dd058497d, type: 3}
   objectManager: {fileID: 0}
+  gameManger: {fileID: 0}
   enemyType: 0
   sprites: []
   EnemyBullet: {fileID: 0}
@@ -137,6 +138,8 @@ MonoBehaviour:
   maxShotDelay: 3
   curShotDelay: 0
   bulletSpeed: 0
+  enemyaMaxHealth: 0
+  enemybMaxHealth: 0
   isShoot: 0
   experienceA: 
   experienceB: 

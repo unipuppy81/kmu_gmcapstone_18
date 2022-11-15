@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     public float playerright;
 
     public Vector3 basketfire;
-
+    public Vector2 basketfire2d;
 
     public Transform cameraTransform;
     float currentFireRate;
@@ -111,7 +111,12 @@ public class Player : MonoBehaviour
         basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
         GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
         Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
-        rigid.AddForce(basketfire, ForceMode2D.Impulse);
+
+        basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
+
+
+        //rigid.AddForce(basketfire, ForceMode2D.Impulse);
+        rigid.AddForce(basketfire2d * 10f,ForceMode2D.Impulse);
     }
 
     void spcount()

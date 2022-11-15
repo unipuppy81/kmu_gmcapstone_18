@@ -41,11 +41,11 @@ public class Rock : MonoBehaviour
 
             Destroy(gameObject);
         }
-        /*
+
         if (collision.gameObject.tag == "Border")
         {
-            Destroy(gameObject);
+            Destroy(gameObject , 0.2f);
         }
-        */
+
     }
 }

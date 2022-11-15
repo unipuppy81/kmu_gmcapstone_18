@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    [SerializeField] LayerMask layerMask = 0;
+
     public ObjectManager objectManager;
 
     private Player player;
@@ -40,6 +42,7 @@ public class Boss : MonoBehaviour
 
     public GameObject Rock;
     public GameObject Wall;
+    public GameObject DangerMarker;
 
     float dirx, diry, timerr, bdirx, bdiry;
 

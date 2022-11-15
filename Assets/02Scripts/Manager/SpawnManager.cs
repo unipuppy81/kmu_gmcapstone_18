@@ -42,14 +42,20 @@ public class SpawnManager : MonoBehaviour
     public float spawnTime;
     public float mbspawnTime;
     public float timeAfterSpawn;
-
+    public float aenemyspawn;
+    public float benemyspawn;
+ 
+    
     public bool isSpawnTure;
 
   
     string Enemy1 = "enemyA";
     string Enemy2 = "enemyB";
 
-    float spawnPosx1, spawnPosy1, spawnPosx2, spawnPosy2, canspawnX1, canspawnX2, canspawnY1, canspawnY2, randomX, randomY;
+    float spawnPosx1, spawnPosy1, spawnPosx2, spawnPosy2, canspawnX1, canspawnX2, canspawnY1, canspawnY2, randomX, randomY, timerr;
+
+    
+
 
     Transform player;
     Transform bossSpawnPos;
@@ -73,6 +79,8 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        spawnTimeControl();
+
         gameManager = gameObject.GetComponent<GameManager>();
 
         timeAfterSpawn = 0;
@@ -90,7 +98,18 @@ public class SpawnManager : MonoBehaviour
     {
         SpawnBoss();
     }
-
+    
+    void spawnTimeControl()
+    {
+        if(timeAfterSpawn >= 0 && timeAfterSpawn < 10f)
+        {
+            aenemyspawn = 4f;
+        }
+        else if(timeAfterSpawn >= 10f)
+        {
+            aenemyspawn = 0.1f;
+        }
+    }
     void SpawnBoss()
     {
         timeAfterSpawn += Time.deltaTime;
