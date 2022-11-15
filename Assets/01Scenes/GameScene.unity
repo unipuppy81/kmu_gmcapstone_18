@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 157837295}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2621,7 +2621,7 @@ GameObject:
   - component: {fileID: 276789186}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3454,7 +3454,7 @@ GameObject:
   - component: {fileID: 344581792}
   m_Layer: 0
   m_Name: BossTop
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10825,6 +10825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectManager: {fileID: 708593455}
+  gameManager: {fileID: 163779484}
   enabledSpawn: 1
   Box: {fileID: 492047968957281797, guid: e7875b6ff3f28e942a95b785bf6467b3, type: 3}
   sBoss: {fileID: 724861632309306098, guid: 3f84103bfc656fd4f818c5c2a9cb6a51, type: 3}
@@ -10842,6 +10843,7 @@ MonoBehaviour:
   spawnTime: 200
   mbspawnTime: 10
   timeAfterSpawn: 0
+  isSpawnTure: 0
 --- !u!4 &1017085520
 Transform:
   m_ObjectHideFlags: 0
@@ -11365,7 +11367,7 @@ GameObject:
   - component: {fileID: 1066551217}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12499,7 +12501,7 @@ GameObject:
   - component: {fileID: 1181844106}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13986,7 +13988,7 @@ GameObject:
   - component: {fileID: 1354950660}
   m_Layer: 0
   m_Name: BossRight
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16895,7 +16897,7 @@ GameObject:
   - component: {fileID: 1590053984}
   m_Layer: 0
   m_Name: BossBottom
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21506,7 +21508,7 @@ GameObject:
   - component: {fileID: 1916304861}
   m_Layer: 0
   m_Name: BossLeft
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25010,6 +25012,10 @@ PrefabInstance:
       propertyPath: skillbtn
       value: 
       objectReference: {fileID: 468738675}
+    - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: BasketBall
+      value: 
+      objectReference: {fileID: 3961865430525766492, guid: 341e504c2990d724cb917c463c3dc1e9, type: 3}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: PausePanel
       value: 

@@ -24,6 +24,7 @@ TagManager:
   - Hot7
   - exPos
   - itemmagent
+  - Border
   layers:
   - Default
   - TransparentFX

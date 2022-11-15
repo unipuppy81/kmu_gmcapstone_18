@@ -27,9 +27,12 @@ public class Player : MonoBehaviour
     public GameObject skillbtn;
     public GameObject gameoverPannel;
     public GameObject gameclearPannel;
+    public GameObject BasketBall;
 
     public string bulletObjA;
     string playerbulletA = "bulletPlayerA";
+
+
 
     bool spSkill1Check = true;
 
@@ -49,6 +52,9 @@ public class Player : MonoBehaviour
     public float playerbottom;
     public float playerleft;
     public float playerright;
+
+    public Vector3 basketfire;
+
 
     public Transform cameraTransform;
     float currentFireRate;
@@ -87,6 +93,25 @@ public class Player : MonoBehaviour
         Reload();
         SpecialSkill1();
         specialSkillbtn();
+        basketball();
+    }
+
+    void basketball()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            basketballscript();
+        }
+    }
+
+    void basketballscript()
+    {
+        UnityEngine.Debug.Log("ABC");
+    
+        basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
+        GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
+        Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
+        rigid.AddForce(basketfire, ForceMode2D.Impulse);
     }
 
     void spcount()
@@ -103,7 +128,7 @@ public class Player : MonoBehaviour
             flipMove = Vector3.left;
             transform.localScale = new Vector3(-0.04f, 0.04f, 0.0f);
         }
-        else if(h>0)
+        else if(h > 0)
         {
             flipMove = Vector3.right;
             transform.localScale = new Vector3(0.04f, 0.04f, 0.0f);
