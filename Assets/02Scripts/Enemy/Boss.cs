@@ -19,6 +19,7 @@ public class Boss : MonoBehaviour
     public enum Type { A,B,C };
     public Type bossType;
     public static float bossHealth = 1f;
+    public static float bossCurHealth = 1f;
     public int patternIndex;
     public int curPatternCount;
     public int[] maxPatternCount;
@@ -58,6 +59,7 @@ public class Boss : MonoBehaviour
 
         BossSpeed = 2.0f;
         bossHealth = 500f;
+        bossCurHealth = 500f;
         bossDamage = 5;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -148,8 +150,8 @@ public class Boss : MonoBehaviour
 
     void onHit(float dmg)
     {
-        bossHealth -= dmg;
-        if (bossHealth <= 0)
+        bossCurHealth -= dmg;
+        if (bossCurHealth <= 0)
         {
             gameObject.SetActive(false);
         }

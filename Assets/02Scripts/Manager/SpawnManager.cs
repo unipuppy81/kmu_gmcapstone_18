@@ -31,6 +31,9 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject[] EnemyArray;
 
+    public GameObject bosshpbar;
+    public GameObject exbar;
+
 
     public string Enemy;
     public string bEnemy;
@@ -75,6 +78,8 @@ public class SpawnManager : MonoBehaviour
         mbspawnTime = 30.0f;
 
         isSpawnTure = false;
+        bosshpbar.SetActive(false);
+        exbar.SetActive(true);
     }
 
     void Start()
@@ -135,6 +140,8 @@ public class SpawnManager : MonoBehaviour
             bBottom.SetActive(true);
             bLeft.SetActive(true);
             bRight.SetActive(true);
+            bosshpbar.SetActive(true);
+            exbar.SetActive(false);
             Instantiate(Boss, spawnPos, Boss.transform.rotation);
             timeAfterSpawn = 0f;
 

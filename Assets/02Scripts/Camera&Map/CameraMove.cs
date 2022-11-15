@@ -15,7 +15,7 @@ public class CameraMove : MonoBehaviour
 
     void LateUpdate() // update 뒤에 호출
     {
-        transform.position = new Vector3(target.position.x, target.position.y, -10.0f);
+        transform.position = new Vector3(target.position.x, target.position.y, -20.0f);
     }
     void Update()
     {

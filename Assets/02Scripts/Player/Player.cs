@@ -259,7 +259,7 @@ public class Player : MonoBehaviour
             gameoverPannel.SetActive(true);
         }
 
-        if(Boss.bossHealth <= 0)
+        if(Boss.bossCurHealth <= 0)
         {
             Time.timeScale = 0;
             gameclearPannel.SetActive(true);
