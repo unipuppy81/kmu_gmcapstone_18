@@ -22,7 +22,7 @@ public class exbarmanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerEx(3);
+        playerEx(2);
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,39 +45,31 @@ public class exbarmanager : MonoBehaviour
         {
             case 0:
                 exbar.value = curEx / maxEx;
-                if(curEx > maxEx)
-                {
-                    curEx = 0;
-                }
                 break;
             case 1:
-                maxEx = 2;
+                maxEx = 5;
                 exbar.value = curEx / maxEx;
-                if (curEx > maxEx)
-                {
-                    curEx = 0;
-                }
                 break;
             case 2:
-                maxEx = 3;
+                maxEx = 4;
                 exbar.value = curEx / maxEx;
-                if (curEx > maxEx)
+                if (curEx >= maxEx)
                 {
                     curEx = 0;
                 }
                 break;
             case 3:
-                maxEx = 4;
+                maxEx = 5;
                 exbar.value = curEx / maxEx;
-                if (curEx == maxEx)
+                if (curEx >= maxEx)
                 {
                     curEx = 0;
                 }
                 break;
             case 4:
-                maxEx = 5;
+                maxEx = 6;
                 exbar.value = curEx / maxEx;
-                if (curEx == maxEx)
+                if (curEx >= maxEx)
                 {
                     curEx = 0;
                 }

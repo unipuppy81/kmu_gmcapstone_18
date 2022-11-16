@@ -63,127 +63,126 @@ public class GameManager : MonoBehaviour
 
     public void Level()
     {
-        if (CurEx == 3f)
+        if (CurEx > 2f || CurEx == 2) //1
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 5f)
-        {
-            levelCount++;
-
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 8f)
+        else if (CurEx >= 5f)//2
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 12f)
+        else if (CurEx >= 9f)//3
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 17f)
+        else if (CurEx >= 14f)//4
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 23f)
+        else if (CurEx == 20f)//5
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 30f)
+        else if (CurEx == 27f)//6
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 38f)
+        else if (CurEx == 35f)//7
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 47f)
+        else if (CurEx == 44f)//8
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 57f)
+        else if (CurEx == 54f)//9
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 70f)
+        else if (CurEx == 65f)//10
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 90f)
+        else if (CurEx == 75f)//11
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 110f)
+        else if (CurEx == 85f)//12
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 130f)
+        else if (CurEx == 95f)//13
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 150f)
+        else if (CurEx == 105f)//14
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 210f)
+        else if (CurEx == 115f)//15
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 240f)
+        else if (CurEx == 130f)//16
         {
             levelCount++;
             openPanel();
             leveltext();
             RandomChoose();
         }
-        else if (CurEx == 270f)
+        else if (CurEx == 145f) //17
+        {
+            levelCount++;
+            openPanel();
+            leveltext();
+            RandomChoose();
+        }
+        else if (CurEx == 160f)
         {
             levelCount++;
             openPanel();
