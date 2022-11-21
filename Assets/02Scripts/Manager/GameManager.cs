@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Slider exbar;
 
-    public float MaxEx = 20000.0f;
+    public float MaxEx;
     public float CurEx;
 
     public int levelCount;
@@ -45,12 +45,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
         levelCount = 0;
+        MaxEx = 5f;
         levelpanel.SetActive(false);
     }
-
-
 
     private void Update()
     {
@@ -59,355 +57,6 @@ public class GameManager : MonoBehaviour
         ActiveFalse();
     }
 
-
-
-    public void Level()
-    {
-        if (CurEx > 2f || CurEx == 2) //1
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx >= 5f)//2
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx >= 9f)//3
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx >= 14f)//4
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 20f)//5
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 27f)//6
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 35f)//7
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 44f)//8
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 54f)//9
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 65f)//10
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 75f)//11
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 85f)//12
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 95f)//13
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 105f)//14
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 115f)//15
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 130f)//16
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 145f) //17
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 160f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 300f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 340f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 380f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 420f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 460f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 500f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 550f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 600f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 650f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 700f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 750f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 800f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 900f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 1000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 1100f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 1200f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 1500f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 1800f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 2200f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 2700f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 3000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 4000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 5000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 6000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 7000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 8000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 10000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 12000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 14000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 16000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-        else if (CurEx == 20000f)
-        {
-            levelCount++;
-            openPanel();
-            leveltext();
-            RandomChoose();
-        }
-
-    }
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ex")
@@ -425,6 +74,36 @@ public class GameManager : MonoBehaviour
             Debug.Log(CurEx);
             other.gameObject.SetActive(false);
             Level();
+        }
+    }
+    public void Level()
+    {
+        if (CurEx >= MaxEx)
+        {
+            levelCount++;
+            openPanel();
+            leveltext();
+            RandomChoose();
+            if(levelCount <=10)
+            {
+                CurEx = 0;
+                MaxEx += 1;
+            }
+            else if (levelCount > 10 && levelCount <= 20)
+            {
+                CurEx = 0;
+                MaxEx += 5;
+            }
+            else if (levelCount > 20 && levelCount <= 30)
+            {
+                CurEx = 0;
+                MaxEx += 10;
+            }
+            else if (levelCount > 30 && levelCount <= 40)
+            {
+                CurEx = 0;
+                MaxEx += 20;
+            }
         }
     }
     public void openPanel()

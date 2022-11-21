@@ -1325,7 +1325,7 @@ MonoBehaviour:
   - {fileID: 2089233639}
   - {fileID: 1389009922}
   - {fileID: 2062646734}
-  exbar: {fileID: 0}
+  exbar: {fileID: 1650073995}
   MaxEx: 20000
   CurEx: 0
   levelCount: 0
@@ -7768,8 +7768,8 @@ MonoBehaviour:
   - {fileID: 2089233639}
   - {fileID: 1389009922}
   - {fileID: 2062646734}
-  exbar: {fileID: 0}
-  MaxEx: 20000
+  exbar: {fileID: 1650073995}
+  MaxEx: 5
   CurEx: 0
   levelCount: 0
   ex1Amount: 1
@@ -7792,7 +7792,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  gm: {fileID: 0}
   Hpbar: {fileID: 62212226}
+  exbar: {fileID: 1650073995}
 --- !u!114 &747727066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7859,10 +7861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a260b498afd94a44eb01a198570179f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ex1Amount: 1
-  ex2Amount: 2
-  curEx: 0
   exbar: {fileID: 1650073995}
+  gm: {fileID: 0}
 --- !u!1001 &797331573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17983,7 +17983,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
