@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public GameObject gameoverPannel;
     public GameObject gameclearPannel;
     public GameObject BasketBall;
+    public GameObject Ax;
 
     public string bulletObjA;
     string playerbulletA = "bulletPlayerA";
@@ -56,8 +57,15 @@ public class Player : MonoBehaviour
     public Vector3 basketfire;
     public Vector2 basketfire2d;
 
+    public Vector3 axfire;
+    public Vector2 axfire2d;
+    public Vector3 axPosition;
+    public Vector2 axFire;
+
     public Transform cameraTransform;
     float currentFireRate;
+
+    float axTime;
 
     int count = 0;
 
@@ -94,6 +102,8 @@ public class Player : MonoBehaviour
         SpecialSkill1();
         specialSkillbtn();
         basketball();
+        ax();
+        axTime += Time.deltaTime;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -165,8 +175,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
-
     void basketballscript()
     {   
         basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
@@ -178,6 +186,38 @@ public class Player : MonoBehaviour
 
         //rigid.AddForce(basketfire, ForceMode2D.Impulse);
         rigid.AddForce(basketfire2d * 10f, ForceMode2D.Impulse);
+    }
+
+    void ax()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            axScript();
+        }
+    }
+
+    void axScript()
+    {
+        float spawnPosx1 = transform.position.x + 1f;
+        float spawnPosy1 = transform.position.y + 1f;
+
+        float spawnPosx2 = transform.position.x - 1f;
+        float spawnPosy2 = transform.position.y - 1f;
+
+        float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
+        float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
+
+        Vector3 axFired = new Vector3(randomX, randomY, 0);
+
+        axfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
+        GameObject ax = Instantiate(Ax, transform.position, transform.rotation);
+        Rigidbody2D rigid = ax.GetComponent<Rigidbody2D>();
+
+        axfire2d = new Vector2(axFired.x, axFired.y).normalized;
+        axFire = axfire2d * 7f;
+
+        //rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
+        rigid.velocity = new Vector2(axFire.x, axFire.y);
     }
 
     void spcount()

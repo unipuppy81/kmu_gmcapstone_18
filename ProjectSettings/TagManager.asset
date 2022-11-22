@@ -25,6 +25,7 @@ TagManager:
   - exPos
   - itemmagent
   - Border
+  - Skill3
   layers:
   - Default
   - TransparentFX

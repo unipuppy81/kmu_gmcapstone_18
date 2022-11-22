@@ -321,6 +321,13 @@ public class Enemy : MonoBehaviour
             onHit(skill_Magnetic.dmg);
             takeDamageText(skill_Magnetic.dmg);
         }
+        else if (other.gameObject.CompareTag("Skill3")) //EMP필드(자기장)
+        {
+            Skill_Ax skill_Ax = other.gameObject.GetComponent<Skill_Ax>();
+            onHit(skill_Ax.dmg);
+            takeDamageText(skill_Ax.dmg);
+            //knockback.PlayFeedbackM(skill_Magnetic.gameObject);
+        }
     }
     void takeDamageText(float damage)
     {

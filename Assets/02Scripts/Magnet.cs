@@ -9,6 +9,8 @@ public class Magnet : MonoBehaviour, ICollectible
     public static event Action onExCollected;
     Rigidbody2D rb;
 
+    public GameObject ex;
+
     bool hasTarget = false;
     Vector3 targetPosition;
 
@@ -16,15 +18,21 @@ public class Magnet : MonoBehaviour, ICollectible
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
         if (hasTarget)
         {
+            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
+
             Vector2 targetDirection = (targetPosition - transform.position).normalized;
-            rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * moveSpeed;
+            //rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * moveSpeed;
+            rigid.AddForce(targetDirection * 10f, ForceMode2D.Impulse);
+
+            // 플레이어 바운더리 콜라이더에서는 힘만 주기
+            // 플레이어 콜라이더에 닿으면 경험치가 사라지도록 만들기
         }
     }
 
@@ -33,9 +41,9 @@ public class Magnet : MonoBehaviour, ICollectible
         if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
             Debug.Log("경험치 먹음");
-            gameObject.SetActive(false);
             //onExCollected?.Invoke();
             Collect();
+            //gameObject.SetActive(false);
         }
     }
 

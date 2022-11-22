@@ -126,11 +126,11 @@ MonoBehaviour:
   searchRadius: 2
   hudDamageText: {fileID: 8670602533683797090, guid: b51dbccb5dcfdac4d852b95dd058497d, type: 3}
   objectManager: {fileID: 0}
+  gameManger: {fileID: 0}
   enemyType: 1
   sprites: []
   EnemyBullet: {fileID: 3660098938351450938, guid: ba5713d1448688c46a6b48a2b86fa2a9, type: 3}
   sbossEx: {fileID: 0}
-  specialSkill1: {fileID: 7253572862770996703, guid: 823b634f35417d64a83662cd725946a5, type: 3}
   enemyHealth: 2
   enemySpeed: 1
   enemyDamage: 1
@@ -138,8 +138,9 @@ MonoBehaviour:
   maxShotDelay: 3
   curShotDelay: 0
   bulletSpeed: 2
+  enemyaMaxHealth: 0
+  enemybMaxHealth: 0
   isShoot: 0
-  specialSkillT: {fileID: 7253572862770996700, guid: 823b634f35417d64a83662cd725946a5, type: 3}
   experienceA: 
   experienceB: 
 --- !u!58 &7314383461467629448
