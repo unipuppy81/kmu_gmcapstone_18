@@ -8,7 +8,9 @@ class BasketBall : MonoBehaviour
     public float basketdmg;
     public bool level1, level2, level3, level4, level5 = true;
 
-    
+    float basketTime;
+
+
 
     void Awake()
     {
@@ -20,6 +22,20 @@ class BasketBall : MonoBehaviour
        
     }
 
+    void Update()
+    {
+        basketTime += Time.deltaTime;
+        basketLife();
+    }
+
+    void basketLife()
+    {
+        if (basketTime >= 10f)
+        {
+            Destroy(this.gameObject);
+            basketTime = 0f;
+        }
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy01")

@@ -279,6 +279,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
     public void ActiveFalse()
     {
         if (levelpanel.activeSelf == false)

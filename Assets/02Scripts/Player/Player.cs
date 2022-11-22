@@ -165,8 +165,10 @@ public class Player : MonoBehaviour
         }
     }
 
+
+
     void basketballscript()
-    {    
+    {   
         basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
         GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
         Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
