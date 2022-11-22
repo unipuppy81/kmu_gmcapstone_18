@@ -94,7 +94,7 @@ public class SpawnManager : MonoBehaviour
 
         InvokeRepeating("SpawnBox", 3, 20f);
         InvokeRepeating("SpawnEnemy", 3, 0.5f);      
-        InvokeRepeating("SpawnbEnemy", 3, 5f);
+        InvokeRepeating("SpawnbEnemy", 3, 10f);
 
         isSpawnTure = false;
     }

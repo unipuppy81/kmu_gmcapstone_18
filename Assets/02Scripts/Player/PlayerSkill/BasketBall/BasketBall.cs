@@ -12,8 +12,6 @@ class BasketBall : MonoBehaviour
 
     void Awake()
     {
-
-
         basketdmg = 1f;
     }
 
@@ -32,7 +30,6 @@ class BasketBall : MonoBehaviour
         if (collision.gameObject.tag == "Boss")
         {
             UnityEngine.Debug.Log("보스 피 깎임");
-
         }
     }
 }

@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
     bool spSkill1Check = true;
 
-    public float playerSpeed = 3f;
+    public float playerSpeed = 1.2f;
     public float maxSpeed = 10f;
     public float playerMaxHp;
     public float playercurHp;
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         playerleft = -29.7f;
         playerright = 28.95f;
         searchRadius = 7f;
-        bulletSpeed = 4f;
+        bulletSpeed = 10f;
         specialSkill = 1;
         bulletDamage = 3.0f;
         bulletObjA = playerbulletA;
@@ -96,6 +96,67 @@ public class Player : MonoBehaviour
         basketball();
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (playercurHp <= 0)
+        {
+            Time.timeScale = 0;
+            gameoverPannel.SetActive(true);
+        }
+
+        if (Boss.bossCurHealth <= 0)
+        {
+            Time.timeScale = 0;
+            gameclearPannel.SetActive(true);
+        }
+    }
+
+    void SearchEnemy()
+    {
+        // OverlapCircleAll = 일정한 범위 내의 특정 layer 찾아줌
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, searchRadius, layerMask);
+        Transform p_shortestTarget = null;
+
+        if (colls.Length > 0)    // 배열 크기 0보다 크다 : 범위 내에 적이 있다.
+        {
+            float p_shortestDistance = Mathf.Infinity;
+            foreach (Collider2D p_colTarget in colls)
+            {
+                float t_distance = Vector3.SqrMagnitude(transform.position - p_colTarget.transform.position);
+                if (p_shortestDistance > t_distance)
+                {
+                    p_shortestDistance = t_distance;
+                    p_shortestTarget = p_colTarget.transform;
+                }
+            }
+            if (curShotDelay < maxShotDelay)
+            {
+                return;
+            }
+
+            //  적 자동 조준 코드 & 발사
+            Vector3 fire = p_shortestTarget.position - transform.position;
+            GameObject bullet = objectManager.MakeObj(bulletObjA);
+
+            float angle2 = Vector3.SignedAngle(transform.up, fire, transform.forward);
+
+            fire = fire.normalized;
+
+            bullet.transform.localEulerAngles = new Vector3(0, 0, angle2);
+            bullet.transform.position = transform.position;
+            Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
+            rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);
+
+            curShotDelay = 0;
+        }
+        else
+        {
+            // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
+        }
+        hit_target = p_shortestTarget;
+    }
+
+
     void basketball()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -105,9 +166,7 @@ public class Player : MonoBehaviour
     }
 
     void basketballscript()
-    {
-        UnityEngine.Debug.Log("ABC");
-    
+    {    
         basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
         GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
         Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
@@ -116,7 +175,7 @@ public class Player : MonoBehaviour
 
 
         //rigid.AddForce(basketfire, ForceMode2D.Impulse);
-        rigid.AddForce(basketfire2d * 10f,ForceMode2D.Impulse);
+        rigid.AddForce(basketfire2d * 10f, ForceMode2D.Impulse);
     }
 
     void spcount()
@@ -207,63 +266,5 @@ public class Player : MonoBehaviour
         curShotDelay += Time.deltaTime;
     }
 
-    void SearchEnemy()
-    {
-        // OverlapCircleAll = 일정한 범위 내의 특정 layer 찾아줌
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, searchRadius, layerMask);
-        Transform p_shortestTarget = null;
-
-        if (colls.Length > 0)    // 배열 크기 0보다 크다 : 범위 내에 적이 있다.
-        {
-            float p_shortestDistance = Mathf.Infinity;
-            foreach (Collider2D p_colTarget in colls)
-            {
-                float t_distance = Vector3.SqrMagnitude(transform.position - p_colTarget.transform.position);
-                if (p_shortestDistance > t_distance)
-                {
-                    p_shortestDistance = t_distance;
-                    p_shortestTarget = p_colTarget.transform;
-                }
-            }
-
-            if (curShotDelay < maxShotDelay)
-            {
-                return;
-            }
-
-            //  적 자동 조준 코드 & 발사
-            Vector3 fire = p_shortestTarget.position - transform.position;
-            GameObject bullet = objectManager.MakeObj(bulletObjA);
-
-            float angle2 = Vector3.SignedAngle(transform.up, fire, transform.forward);
-
-            bullet.transform.localEulerAngles = new Vector3(0, 0, angle2);
-            bullet.transform.position = transform.position;
-            Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
-            rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);
-
-            curShotDelay = 0;
-        }
-        else
-        {
-            // 배열 크기 0보다 작다 : 적이 주변에 감지되지 않는다.
-        }
-        hit_target = p_shortestTarget;
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (playercurHp <= 0)
-        {
-            Time.timeScale = 0;
-            gameoverPannel.SetActive(true);
-        }
-
-        if(Boss.bossCurHealth <= 0)
-        {
-            Time.timeScale = 0;
-            gameclearPannel.SetActive(true);
-        }
-    }
 }
    

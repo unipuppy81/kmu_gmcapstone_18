@@ -66,17 +66,18 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        t += Time.deltaTime;
         switch (enemyType)
         {
             case Type.A:
-                enemyHealth = 2f;
-                enemySpeed = 1.0f;
-                enemyDamage = 2f;
-
+                    enemyHealth = 2f;
+                    enemySpeed = 0.75f;
+                    enemyDamage = 2f;
                 break;
+
             case Type.B:
                 enemyHealth = 2f;
-                enemySpeed = 0.7f;
+                enemySpeed = 0.5f;
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
                 searchRadius = 5f;
@@ -86,11 +87,51 @@ public class Enemy : MonoBehaviour
 
             case Type.C:
                 enemyHealth = 100f;
-                enemySpeed = 1.3f;
+                enemySpeed = 0.8f;
                 enemyDamage = 5f;
 
                 break;
 
+        }
+        InvokeRepeating("HealthPlus", 0f, 0.1f);
+    }
+
+    void HealthPlus()
+    {
+        switch (enemyType)
+        {
+            case Type.A:
+                if (t >= 0 && t <= 10) {
+                enemyHealth = 2f;
+                }
+                else if(t >= 10){
+                    enemyHealth = 4f;
+                }
+                enemySpeed = 0.75f;
+                enemyDamage = 2f;
+
+                break;
+            case Type.B:
+                if (t >= 0 && t <= 10){
+                    enemyHealth = 1f;
+                }
+                else if (t >= 10){
+                    enemyHealth = 3f;
+                }
+                enemySpeed = 0.5f;
+                bulletenemyDamage = 4f;
+                enemyDamage = 1f;
+                searchRadius = 5f;
+                bulletSpeed = 1.0f;
+                InvokeRepeating("SearchPlayer", 0f, 0.5f);
+
+                break;
+            case Type.C:
+                enemyHealth = 100f;
+                enemySpeed = 0.8f;
+                enemyDamage = 5f;
+
+                break;
         }
     }
 
@@ -101,7 +142,6 @@ public class Enemy : MonoBehaviour
         {
             case Type.A:
                 FollowTarget();
-
                 break;
             case Type.B:
                 Reload();
@@ -121,7 +161,6 @@ public class Enemy : MonoBehaviour
 
     void OnEnable()
     {
-
         switch (enemyType)
         {
             case Type.A:
