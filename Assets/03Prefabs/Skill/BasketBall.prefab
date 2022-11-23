@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3119007986711868379}
   - component: {fileID: 3119007986711868380}
   - component: {fileID: 3285155954478574556}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BasketBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,3 +142,4 @@ MonoBehaviour:
   level3: 0
   level4: 0
   level5: 1
+  sprites: {fileID: 21300000, guid: d12ae66a5e0606f438ef25116d4dc380, type: 3}

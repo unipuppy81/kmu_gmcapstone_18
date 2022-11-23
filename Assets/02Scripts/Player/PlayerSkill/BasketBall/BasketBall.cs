@@ -6,14 +6,23 @@ class BasketBall : MonoBehaviour
 {
     public static int baskeetballLevel = 0;
     public float basketdmg;
-    public bool level1, level2, level3, level4, level5 = true;
+    public bool level1, level2, level3, level4, level5;
 
     float basketTime;
 
+    SpriteRenderer spriteR;
+
+    public Sprite sprites;
 
 
     void Awake()
     {
+        level1 = false;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
         basketdmg = 1f;
     }
 
@@ -26,15 +35,33 @@ class BasketBall : MonoBehaviour
     {
         basketTime += Time.deltaTime;
         basketLife();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            level5 = true;
+            spriteR.sprite = sprites;
+        }
     }
 
     void basketLife()
     {
-        if (basketTime >= 10f)
+        if(level5 == false)
         {
-            Destroy(this.gameObject);
-            basketTime = 0f;
+            if (basketTime >= 10f)
+            {
+                Destroy(this.gameObject);
+                basketTime = 0f;
+            }
         }
+
+        if(level5 == true)
+        {
+            if (basketTime >= 5f)
+            {
+                basketTime = 0f;
+            }
+        }
+
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

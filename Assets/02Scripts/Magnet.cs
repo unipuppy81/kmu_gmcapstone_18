@@ -40,7 +40,7 @@ public class Magnet : MonoBehaviour, ICollectible
     {
         if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            Debug.Log("경험치 먹음");
+            
             //onExCollected?.Invoke();
             Collect();
             //gameObject.SetActive(false);

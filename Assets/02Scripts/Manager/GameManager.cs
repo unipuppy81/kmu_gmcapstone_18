@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     public void openPanel()
     {
         levelpanel.SetActive(true);

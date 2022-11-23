@@ -64,9 +64,35 @@ public class Enemy : MonoBehaviour
         player2 = GameObject.Find("Player").GetComponent<Player>();
     }
 
+    void OnEnable() // 활성화될때 실행됨
+    {
+        switch (enemyType)
+        {
+            case Type.A:
+                if(t >=0 && t <= 10)
+                {
+                    UnityEngine.Debug.Log(t);
+                    enemyHealth = 2f;
+                }
+                else if (t >= 10)
+                {
+                    UnityEngine.Debug.Log(t);
+                    enemyHealth = 8f;
+                }
+
+
+                break;
+
+            case Type.B:
+                enemyHealth = 2f;
+
+                break;
+        }
+    }
+
     void Start()
     {
-        t += Time.deltaTime;
+
         switch (enemyType)
         {
             case Type.A:
@@ -93,46 +119,7 @@ public class Enemy : MonoBehaviour
                 break;
 
         }
-        //InvokeRepeating("HealthPlus", 0f, 10f);
-    }
-
-    void HealthPlus()
-    {
-        switch (enemyType)
-        {
-            case Type.A:
-                if (t >= 0 && t <= 10) {
-                enemyHealth = 3f;
-                }
-                else if(t >= 10){
-                    enemyHealth = 4f;
-                }
-                enemySpeed = 0.75f;
-                enemyDamage = 2f;
-
-                break;
-            case Type.B:
-                if (t >= 0 && t <= 10){
-                    enemyHealth = 1f;
-                }
-                else if (t >= 10){
-                    enemyHealth = 3f;
-                }
-                enemySpeed = 0.5f;
-                bulletenemyDamage = 4f;
-                enemyDamage = 1f;
-                searchRadius = 5f;
-                bulletSpeed = 7.0f;
-                InvokeRepeating("SearchPlayer", 0f, 0.5f);
-
-                break;
-            case Type.C:
-                enemyHealth = 100f;
-                enemySpeed = 0.8f;
-                enemyDamage = 5f;
-
-                break;
-        }
+       
     }
 
     void Update()

@@ -166,6 +166,20 @@ public class Player : MonoBehaviour
         {
             basketballscript();
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            level5basket();
+        }
+    }
+    void level5basket()
+    {
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10f, layerMask2);
+        foreach(Collider2D p_colBasket in colls)
+        {
+
+        }
+
     }
 
     void basketballscript()
