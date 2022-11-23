@@ -169,16 +169,43 @@ public class Player : MonoBehaviour
     }
 
     void basketballscript()
-    {   
-        basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
-        GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
-        Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
+    {
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 5f, layerMask);
+        Transform p_shortestTarget = null;
 
-        basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
+        if (colls.Length > 0)    // 배열 크기 0보다 크다 : 범위 내에 적이 있다.
+        {
+            float p_shortestDistance = Mathf.Infinity;
+            foreach (Collider2D p_colTarget in colls)
+            {
+                float t_distance = Vector3.SqrMagnitude(transform.position - p_colTarget.transform.position);
+                if (p_shortestDistance > t_distance)
+                {
+                    p_shortestDistance = t_distance;
+                    p_shortestTarget = p_colTarget.transform;
+                }
+            }
 
+            basketfire = p_shortestTarget.position - transform.position;
 
-        //rigid.AddForce(basketfire, ForceMode2D.Impulse);
-        rigid.AddForce(basketfire2d * 10f, ForceMode2D.Impulse);
+            //basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
+            GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
+            Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
+
+            basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
+
+            rigid.AddForce(basketfire2d * 4f, ForceMode2D.Impulse);
+        }
+        else
+        {
+            basketfire = new Vector2(transform.position.x + 5f, transform.position.y + 5f);
+            GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
+            Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
+
+            basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
+
+            rigid.AddForce(basketfire2d * 4f, ForceMode2D.Impulse);
+        }
     }
 
     void ax()
