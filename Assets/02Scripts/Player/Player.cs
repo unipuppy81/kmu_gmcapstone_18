@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     public GameObject Bomb;
     public GameObject skillbtn;
     public GameObject gameoverPannel;
-    public GameObject gameclearPannel;
     public GameObject BasketBall;
     public GameObject Ax;
 
@@ -112,12 +111,6 @@ public class Player : MonoBehaviour
         {
             Time.timeScale = 0;
             gameoverPannel.SetActive(true);
-        }
-
-        if (Boss.bossCurHealth <= 0)
-        {
-            Time.timeScale = 0;
-            gameclearPannel.SetActive(true);
         }
     }
 

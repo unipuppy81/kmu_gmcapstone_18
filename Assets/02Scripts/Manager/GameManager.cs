@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Slider exbar;
 
+    public GameObject gameclearPannel;
+    public GameObject Bossalive;
+
     public float MaxEx;
     public float CurEx;
 
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
         levelCount = 0;
         MaxEx = 5f;
         levelpanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -55,6 +59,17 @@ public class GameManager : MonoBehaviour
 
         Timer();
         ActiveFalse();
+        if(Bossalive.activeSelf == true)
+        {
+            if (Boss.bossCurHealth == 0 || Boss.bossCurHealth < 0)
+            {
+                Time.timeScale = 0f;
+                gameclearPannel.SetActive(true);
+                Boss.bossCurHealth = 100f;
+            }
+        }
+        
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -270,11 +285,10 @@ public class GameManager : MonoBehaviour
                             k = UnityEngine.Random.Range(0, select3.Count);
                         }
                     }
-                    
                     select3[k].SetActive(true);
                     break;
                 case 6:
-                    select1[7].SetActive(true);
+                    select1[6].SetActive(true);
                     j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {
@@ -297,7 +311,7 @@ public class GameManager : MonoBehaviour
                     select3[k].SetActive(true);
                     break;
                 case 7:
-                    select1[8].SetActive(true);
+                    select1[7].SetActive(true);
                     j = UnityEngine.Random.Range(0, select2.Count);
                     while (i == j)
                     {

@@ -9,7 +9,6 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask = 0;
-
     public ObjectManager objectManager;
 
     private Player player;
@@ -58,8 +57,8 @@ public class Boss : MonoBehaviour
         
 
         BossSpeed = 2.0f;
-        bossHealth = 500f;
-        bossCurHealth = 500f;
+        bossHealth = 100f;
+        bossCurHealth = 100f;
         bossDamage = 5;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.Find("Player").GetComponent<Player>();
