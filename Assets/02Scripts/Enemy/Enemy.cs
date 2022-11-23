@@ -93,7 +93,7 @@ public class Enemy : MonoBehaviour
                 break;
 
         }
-        InvokeRepeating("HealthPlus", 0f, 0.1f);
+        //InvokeRepeating("HealthPlus", 0f, 10f);
     }
 
     void HealthPlus()
@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         {
             case Type.A:
                 if (t >= 0 && t <= 10) {
-                enemyHealth = 2f;
+                enemyHealth = 3f;
                 }
                 else if(t >= 10){
                     enemyHealth = 4f;
@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
                 searchRadius = 5f;
-                bulletSpeed = 1.0f;
+                bulletSpeed = 7.0f;
                 InvokeRepeating("SearchPlayer", 0f, 0.5f);
 
                 break;
@@ -154,37 +154,6 @@ public class Enemy : MonoBehaviour
 
             case Type.C:
                 FollowTarget();
-
-                break;
-        }
-    }
-
-    void OnEnable()
-    {
-        switch (enemyType)
-        {
-            case Type.A:
-                if (t >= 0 && t<=10)
-                {
-                    enemyHealth = 5f;
-                }
-                else if (t >= 10)
-                {
-                    enemyHealth = 10f;
-                }
-
-
-                break;
-            case Type.B:
-                if (t >= 0 && t <= 10)
-                {
-                    enemyHealth = 4f;
-                }
-                else if (t >= 10)
-                {
-                    enemyHealth = 10f;
-                }
-
 
                 break;
         }
@@ -238,6 +207,7 @@ public class Enemy : MonoBehaviour
 
 
         Vector3 fire = target.position - transform.position;
+        fire = fire.normalized;
         GameObject eBullet = Instantiate(EnemyBullet, transform.position, transform.rotation);
         Rigidbody2D rigid = eBullet.GetComponent<Rigidbody2D>();
         rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);

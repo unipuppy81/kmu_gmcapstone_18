@@ -336,6 +336,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     void Timer()
     {
         _Sec += Time.deltaTime;

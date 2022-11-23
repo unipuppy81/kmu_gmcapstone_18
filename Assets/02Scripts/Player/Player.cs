@@ -77,8 +77,8 @@ public class Player : MonoBehaviour
         playerbottom = -29.3f;
         playerleft = -29.7f;
         playerright = 28.95f;
-        searchRadius = 7f;
-        bulletSpeed = 10f;
+        searchRadius = 4f;
+        bulletSpeed = 7f;
         specialSkill = 1;
         bulletDamage = 3.0f;
         bulletObjA = playerbulletA;
