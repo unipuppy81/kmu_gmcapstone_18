@@ -18,7 +18,7 @@ public class Magnet : MonoBehaviour, ICollectible
 
     private void Awake()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()

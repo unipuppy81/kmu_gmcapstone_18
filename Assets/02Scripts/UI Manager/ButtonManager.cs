@@ -24,6 +24,10 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI emp1_levelText;
     [SerializeField]
+    TextMeshProUGUI ax1_levelText;
+    [SerializeField]
+    TextMeshProUGUI basket1_levelText;
+    [SerializeField]
     TextMeshProUGUI ammo1_levelText;
     [SerializeField]
     TextMeshProUGUI dumb1_levelText;
@@ -37,6 +41,10 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI emp2_levelText;
     [SerializeField]
+    TextMeshProUGUI ax2_levelText;
+    [SerializeField]
+    TextMeshProUGUI basket2_levelText;
+    [SerializeField]
     TextMeshProUGUI ammo2_levelText;
     [SerializeField]
     TextMeshProUGUI dumb2_levelText;
@@ -49,6 +57,10 @@ public class ButtonManager : MonoBehaviour
     TextMeshProUGUI sheild3_levelText;
     [SerializeField]
     TextMeshProUGUI emp3_levelText;
+    [SerializeField]
+    TextMeshProUGUI ax3_levelText;
+    [SerializeField]
+    TextMeshProUGUI basket3_levelText;
     [SerializeField]
     TextMeshProUGUI ammo3_levelText;
     [SerializeField]
@@ -69,6 +81,8 @@ public class ButtonManager : MonoBehaviour
     public int ammoCount;
     public int dumbbellCount;
     public int hot7Count;
+    public int axCount;
+    public int basketCount;
 
 
     public GameManager gm;
@@ -173,6 +187,34 @@ public class ButtonManager : MonoBehaviour
             Wp_2_levelText();
             Wp_3_levelText();
         }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Ax")
+        {
+            if (axCount < max)
+            {
+                axCount++;
+            }
+            else
+            {
+                axCount = 5;
+            }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Basketball")
+        {
+            if (basketCount < max)
+            {
+                basketCount++;
+            }
+            else
+            {
+                basketCount = 5;
+            }
+            Wp_1_levelText();
+            Wp_2_levelText();
+            Wp_3_levelText();
+        }
         gm.closePanel();
     }
 
@@ -214,6 +256,8 @@ public class ButtonManager : MonoBehaviour
         gun1_levelText.text = string.Format("LV : {0:D1}", gunCount);
         sheild1_levelText.text = string.Format("LV : {0:D1}", sheildCount);
         emp1_levelText.text = string.Format("LV : {0:D1}", empCount);
+        ax1_levelText.text = string.Format("LV : {0:D1}", axCount);
+        basket1_levelText.text = string.Format("LV : {0:D1}", basketCount);
         ammo1_levelText.text = string.Format("LV : {0:D1}", ammoCount);
         dumb1_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
         hot1_levelText.text = string.Format("LV : {0:D1}", hot7Count);
@@ -223,6 +267,8 @@ public class ButtonManager : MonoBehaviour
         gun2_levelText.text = string.Format("LV : {0:D1}", gunCount);
         sheild2_levelText.text = string.Format("LV : {0:D1}", sheildCount);
         emp2_levelText.text = string.Format("LV : {0:D1}", empCount);
+        ax2_levelText.text = string.Format("LV : {0:D1}", axCount);
+        basket2_levelText.text = string.Format("LV : {0:D1}", basketCount);
         ammo2_levelText.text = string.Format("LV : {0:D1}", ammoCount);
         dumb2_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
         hot2_levelText.text = string.Format("LV : {0:D1}", hot7Count);
@@ -232,6 +278,8 @@ public class ButtonManager : MonoBehaviour
         gun3_levelText.text = string.Format("LV : {0:D1}", gunCount);
         sheild3_levelText.text = string.Format("LV : {0:D1}", sheildCount);
         emp3_levelText.text = string.Format("LV : {0:D1}", empCount);
+        ax3_levelText.text = string.Format("LV : {0:D1}", axCount);
+        basket3_levelText.text = string.Format("LV : {0:D1}", basketCount);
         ammo3_levelText.text = string.Format("LV : {0:D1}", ammoCount);
         dumb3_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
         hot3_levelText.text = string.Format("LV : {0:D1}", hot7Count);

@@ -26,6 +26,8 @@ TagManager:
   - itemmagent
   - Border
   - Skill3
+  - Ax
+  - Basketball
   layers:
   - Default
   - TransparentFX
