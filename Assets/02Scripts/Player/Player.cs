@@ -238,6 +238,20 @@ public class Player : MonoBehaviour
 
         //rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
         rigid.velocity = new Vector2(axFire.x, axFire.y);
+
+        if (axTime >= 0f && axTime < 1f)
+        {
+            rigid.velocity = new Vector2(axFire.x, axFire.y);
+        }
+        else if (axTime >= 0.1f)
+        {
+            rigid.velocity = new Vector2(-axFire.x, -axFire.y);
+        }
+        else if (axTime >= 0.5f)
+        {
+            Destroy(ax);
+            axTime = 0f;
+        }
     }
 
     void spcount()

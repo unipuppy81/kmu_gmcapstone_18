@@ -16,6 +16,8 @@ public class Skill_Guardian : MonoBehaviour
 
     public float time = 360;
 
+    public float rotationSpeed = 50f;
+
     public Transform target;
     public float orbitSpeed;
     Vector3 offset;
@@ -40,6 +42,7 @@ public class Skill_Guardian : MonoBehaviour
         transform.position = target.position + offset;
         transform.RotateAround(target.position, Vector3.forward, orbitSpeed * Time.deltaTime);
         transform.rotation = Quaternion.identity;
+        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
         offset = transform.position - target.position;
 
@@ -83,14 +86,11 @@ public class Skill_Guardian : MonoBehaviour
         }
         else if(guardianLevel == 5 && level5 == true && Equip_Dumbbell.selectedDumbbell == true) 
         {
-            guardians[0].SetActive(false);
-            guardians[1].SetActive(false);
-            guardians[2].SetActive(false);
-            guardians[3].SetActive(false);
-            guardians2[0].SetActive(true);
-            guardians2[1].SetActive(true);
-            guardians2[2].SetActive(true);
-            guardians2[3].SetActive(true);
+            for(int i = 0; i < 4; i++)
+            {
+                guardians[i].SetActive(false);
+                guardians2[i].SetActive(true);
+            }
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             dmg = 5;
             level5 = false;
