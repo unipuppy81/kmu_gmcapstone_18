@@ -17,6 +17,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject levelpanel;
 
+
     [SerializeField]
     TextMeshProUGUI gun1_levelText;
     [SerializeField]
@@ -250,7 +251,6 @@ public class ButtonManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainScene");
     }
-
     void Wp_1_levelText()
     {
         gun1_levelText.text = string.Format("LV : {0:D1}", gunCount);
