@@ -33,16 +33,17 @@ public class Magnet : MonoBehaviour, ICollectible
     {
 
         // 조건 줘서 자석 아이템 먹으면 자석 발동되게 할거임
-        Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
-        targetPosition = player.transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.01f);
-        
+        if(player.isMagnet == true) { 
+            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
+            targetPosition = player.transform.position;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
+        }
         //Vector2 targetDirection = (targetPosition - transform.position).normalized;
         //rigid.AddForce(targetDirection * 0.01f, ForceMode2D.Impulse);
 
         //UnityEngine.Debug.Log(targetPosition);
         // 플레이어 바운더리 콜라이더에서는 힘만 주기
-            // 플레이어 콜라이더에 닿으면 경험치가 사라지도록 만들기
+        // 플레이어 콜라이더에 닿으면 경험치가 사라지도록 만들기
     }
 
     private void OnTriggerStay2D(Collider2D other)

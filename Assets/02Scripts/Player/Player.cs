@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
     public float playerleft;
     public float playerright;
 
+    public bool isMagnet;
+
     public Vector3 basketfire;
     public Vector2 basketfire2d;
 
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
     float currentFireRate;
     bool isClick;
     float axTime;
+    float magnetTimer;
 
     int count = 0;
 
@@ -87,6 +90,7 @@ public class Player : MonoBehaviour
         spawntime = 0.5f;
 
         isClick = false;
+        isMagnet = false;
     }
 
 
@@ -104,12 +108,23 @@ public class Player : MonoBehaviour
         SpecialSkill1();
         specialSkillbtn();
 
+        if(isMagnet == true)
+        {
+            magnetTimer += Time.deltaTime;
+            if(magnetTimer >= 3.0f)
+            {
+                isMagnet = false;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             isClick = true;
         }
-
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            isMagnet = true;
+        }
         basketball();
         ax();
         axTime += Time.deltaTime;
