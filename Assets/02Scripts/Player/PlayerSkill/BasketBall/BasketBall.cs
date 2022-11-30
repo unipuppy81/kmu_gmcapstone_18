@@ -36,8 +36,10 @@ class BasketBall : MonoBehaviour
         basketTime += Time.deltaTime;
         basketLife();
 
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
+            
             level5 = true;
             spriteR.sprite = sprites;
         }

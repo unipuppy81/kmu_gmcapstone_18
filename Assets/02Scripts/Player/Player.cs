@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 
     public Transform cameraTransform;
     float currentFireRate;
-
+    bool isClick;
     float axTime;
 
     int count = 0;
@@ -85,7 +85,10 @@ public class Player : MonoBehaviour
         playercurHp = 30f;
         rigid = GetComponent<Rigidbody2D>();
         spawntime = 0.5f;
+
+        isClick = false;
     }
+
 
     void Start()
     {
@@ -100,6 +103,13 @@ public class Player : MonoBehaviour
         Reload();
         SpecialSkill1();
         specialSkillbtn();
+
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            isClick = true;
+        }
+
         basketball();
         ax();
         axTime += Time.deltaTime;
@@ -162,22 +172,10 @@ public class Player : MonoBehaviour
 
     void basketball()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        
+        if (isClick == true)
         {
             basketballscript();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            level5basket();
-        }
-    }
-    void level5basket()
-    {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10f, layerMask2);
-        foreach(Collider2D p_colBasket in colls)
-        {
-
         }
 
     }
@@ -220,6 +218,8 @@ public class Player : MonoBehaviour
 
             rigid.AddForce(basketfire2d * 4f, ForceMode2D.Impulse);
         }
+
+        isClick = false;
     }
 
     void ax()
