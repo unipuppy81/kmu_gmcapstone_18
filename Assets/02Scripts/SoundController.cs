@@ -8,8 +8,10 @@ public class SoundController : MonoBehaviour
 {
     public AudioMixer masterMixer;
     public AudioMixer BGMMixer;
+    public AudioMixer SPXMixer;
     public Slider masterSlider;
     public Slider bgmSlider;
+    public Slider spxSlider;
 
     public void MasterControl()
     {
@@ -25,6 +27,14 @@ public class SoundController : MonoBehaviour
 
         if (sound == -40f) BGMMixer.SetFloat("BGM", -80);
         else BGMMixer.SetFloat("BGM", sound);
+
+    }
+    public void SPXControl()
+    {
+        float sound = spxSlider.value;
+
+        if (sound == -40f) SPXMixer.SetFloat("SPX", -80);
+        else SPXMixer.SetFloat("SPX", sound);
 
     }
 
