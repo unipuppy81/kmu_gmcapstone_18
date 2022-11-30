@@ -22,11 +22,12 @@ public class Magnet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player").GetComponent<Player>();
+
     }
 
     private void Start()
     {
-        //targetPosition = player.transform.position;
+       // Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -34,7 +35,7 @@ public class Magnet : MonoBehaviour
 
         // 조건 줘서 자석 아이템 먹으면 자석 발동되게 할거임
         if(player.isMagnet == true) { 
-            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
+           // Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
             targetPosition = player.transform.position;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
         }
@@ -48,12 +49,11 @@ public class Magnet : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
+        if (other.gameObject.tag == "PlayerMg")
         {
             
-            //onExCollected?.Invoke();
-            Collect();
-            //gameObject.SetActive(false);
+            targetPosition = player.transform.position;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.001f);
         }
     }
 

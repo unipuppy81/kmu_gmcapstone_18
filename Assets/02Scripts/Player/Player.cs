@@ -114,6 +114,7 @@ public class Player : MonoBehaviour
             if(magnetTimer >= 3.0f)
             {
                 isMagnet = false;
+                magnetTimer = 0f;
             }
         }
 

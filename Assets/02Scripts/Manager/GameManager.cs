@@ -156,19 +156,11 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
+                        select3[k].SetActive(true);
                     }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
-                    }
-                    select3[k].SetActive(true);
                     break;
                 case 1:
                     select1[1].SetActive(true);
@@ -179,17 +171,10 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                    }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
+                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
@@ -202,19 +187,12 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
+                        select3[k].SetActive(true);
                     }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
-                    }
-                    
+
                     select3[k].SetActive(true);
                     break;
                 case 3:
@@ -226,19 +204,12 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
+                        select3[k].SetActive(true);
                     }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
-                    }
-                    
+
                     select3[k].SetActive(true);
                     break;
                 case 4:
@@ -250,19 +221,12 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
+                        select3[k].SetActive(true);
                     }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
-                    }
-                    
+
                     select3[k].SetActive(true);
                     break;
                 case 5:
@@ -274,17 +238,10 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                    }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
+                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
@@ -297,17 +254,10 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                    }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
+                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
@@ -320,17 +270,10 @@ public class GameManager : MonoBehaviour
                     }
                     select2[j].SetActive(true);
                     k = UnityEngine.Random.Range(0, select3.Count);
-                    while (k == i)
+                    while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                    }
-                    while (k == j)
-                    {
-                        k = UnityEngine.Random.Range(0, select3.Count);
-                        while (k == i)
-                        {
-                            k = UnityEngine.Random.Range(0, select3.Count);
-                        }
+                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
