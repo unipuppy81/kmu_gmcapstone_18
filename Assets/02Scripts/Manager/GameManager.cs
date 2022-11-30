@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
     {
         levelText.text = string.Format("LV : {0:D1}", levelCount);
     }
-    
+
     public void RandomChoose()
     {
         if (levelpanel.activeSelf == true)
@@ -159,8 +159,8 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
+                    select3[k].SetActive(true);
                     break;
                 case 1:
                     select1[1].SetActive(true);
@@ -174,7 +174,6 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
@@ -190,9 +189,7 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
-
                     select3[k].SetActive(true);
                     break;
                 case 3:
@@ -207,9 +204,7 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
-
                     select3[k].SetActive(true);
                     break;
                 case 4:
@@ -224,9 +219,7 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
-
                     select3[k].SetActive(true);
                     break;
                 case 5:
@@ -241,7 +234,6 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
@@ -257,7 +249,6 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
@@ -273,7 +264,6 @@ public class GameManager : MonoBehaviour
                     while (k == i || k == j)
                     {
                         k = UnityEngine.Random.Range(0, select3.Count);
-                        select3[k].SetActive(true);
                     }
                     select3[k].SetActive(true);
                     break;
