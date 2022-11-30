@@ -9,6 +9,7 @@ public class Skill_Ax : MonoBehaviour
 
     float axTime;
     public GameObject Ax;
+    public GameObject player;
 
     public static int axLevel = 0;
     public bool level1, level2, level3, level4, level5 = true;
@@ -18,12 +19,16 @@ public class Skill_Ax : MonoBehaviour
     public Vector3 axPosition;
     public Vector2 axFire;
 
+    public bool go;
+
     ButtonManager buttonManager;
     // Start is called before the first frame update
     void Start()
     {
+        go = false;
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
-
+        player = GameObject.Find("Player");
+        StartCoroutine(Boom());
     }
 
     // Update is called once per frame
@@ -34,6 +39,13 @@ public class Skill_Ax : MonoBehaviour
         axLevel = buttonManager.axCount;
         //axLife();
         LevelDesign();
+    }
+
+    IEnumerator Boom()
+    {
+        go = true;
+        yield return new WaitForSeconds(1.5f);
+        go = false;
     }
 
     void instantiate()
@@ -63,19 +75,18 @@ public class Skill_Ax : MonoBehaviour
         }
         if (axTime >= 2f)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
             axTime = 0f;
         }
     }
 
-
     void axLife()
     {
         Rigidbody2D rigid = Ax.GetComponent<Rigidbody2D>();
-        /*if (axTime >= 5f)
+        if (axTime >= 5f)
         {
             rigid.velocity = new Vector2(-axFire.x, -axFire.y);
-        }*/
+        }
         if (axTime >= 10f)
         {
             //Destroy(this.gameObject);
@@ -88,7 +99,10 @@ public class Skill_Ax : MonoBehaviour
     {
         if (axLevel == 1 && level1 == true)
         {
-            instantiate();
+            for(int i = 0; i < 1; i++)
+            {
+                instantiate();
+            }
             dmg = 3;
             level1 = false;
             level2 = true;

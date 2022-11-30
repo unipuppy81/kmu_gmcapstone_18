@@ -28,6 +28,7 @@ TagManager:
   - Skill3
   - Ax
   - Basketball
+  - PlayerMg
   layers:
   - Default
   - TransparentFX

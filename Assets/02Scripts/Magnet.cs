@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance.VisualScripting;
 
-public class Magnet : MonoBehaviour, ICollectible
+public class Magnet : MonoBehaviour
 {
     public static event Action onExCollected;
     Rigidbody2D rb;
