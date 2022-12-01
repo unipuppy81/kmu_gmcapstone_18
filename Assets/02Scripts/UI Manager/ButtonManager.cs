@@ -10,7 +10,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    
+
+
     public static bool GameIsPauseed = false;
     public GameObject ButtonName;
     public GameObject pausePanel;
@@ -87,7 +88,6 @@ public class ButtonManager : MonoBehaviour
 
     public GameManager gm;
     OnButtonClick onButtonClick;
-
     int max;
     private void Awake()
     {
@@ -106,7 +106,6 @@ public class ButtonManager : MonoBehaviour
             if(gunCount < max)
             {
                 gunCount++;
-                
             }
             else
             {
@@ -121,7 +120,6 @@ public class ButtonManager : MonoBehaviour
             if (sheildCount < max)
             {
                 sheildCount++;
-
             }
             else
             {
@@ -138,7 +136,6 @@ public class ButtonManager : MonoBehaviour
             if (empCount < max)
             {
                 empCount++;
-
             }
             else
             {
@@ -210,7 +207,6 @@ public class ButtonManager : MonoBehaviour
             if (basketCount < max)
             {
                 basketCount++;
-                UnityEngine.Debug.Log("111");
             }
             else
             {
@@ -220,8 +216,6 @@ public class ButtonManager : MonoBehaviour
             Wp_2_levelText();
             Wp_3_levelText();
         }
-        
-
         gm.closePanel();
     }
 

@@ -71,10 +71,12 @@ public class Enemy : MonoBehaviour
             case Type.A:
                 if(t >=0 && t <= 10)
                 {
+                    UnityEngine.Debug.Log(t);
                     enemyHealth = 2f;
                 }
                 else if (t >= 10)
                 {
+                    UnityEngine.Debug.Log(t);
                     enemyHealth = 8f;
                 }
 
