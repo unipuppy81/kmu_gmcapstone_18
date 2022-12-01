@@ -38,7 +38,7 @@ public class Skill_Ax : MonoBehaviour
         axTime += Time.deltaTime;
         axLevel = buttonManager.axCount;
         //axLife();
-        LevelDesign();
+        //LevelDesign();
     }
 
     IEnumerator Boom()

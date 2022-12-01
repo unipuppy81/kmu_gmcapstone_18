@@ -137,3 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ex: {fileID: 6416503511496019193}
+  hasTarget: 1
+  magnetStrength: 2
+  distanceStretch: 4
+  magnetDirection: 1

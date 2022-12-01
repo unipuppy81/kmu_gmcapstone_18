@@ -8139,119 +8139,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598840272}
   m_CullTransparentMesh: 1
---- !u!1 &600918061
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 600918062}
-  - component: {fileID: 600918064}
-  - component: {fileID: 600918063}
-  - component: {fileID: 600918065}
-  m_Layer: 8
-  m_Name: playerColider
-  m_TagString: PlayerCo
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &600918062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600918061}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &600918063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600918061}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1172f63bf5e35c4f9dd6d6f181cf830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeText: {fileID: 1099294324}
-  levelpanel: {fileID: 2027341993}
-  Pausebutton: {fileID: 1913626781}
-  levelText: {fileID: 400205741}
-  select1:
-  - {fileID: 1416225020}
-  - {fileID: 1374948400}
-  - {fileID: 210717151}
-  - {fileID: 2109036596}
-  - {fileID: 1502872947}
-  - {fileID: 1086841231}
-  select2:
-  - {fileID: 1767192239}
-  - {fileID: 1784547407}
-  - {fileID: 1813351305}
-  - {fileID: 186557108}
-  - {fileID: 1941047585}
-  - {fileID: 554032438}
-  select3:
-  - {fileID: 330162362}
-  - {fileID: 2118704524}
-  - {fileID: 109802976}
-  - {fileID: 2089233639}
-  - {fileID: 1389009922}
-  - {fileID: 2062646734}
-  exbar: {fileID: 1650073995}
-  gameclearPannel: {fileID: 551654291}
-  Bossalive: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
-  MaxEx: 5
-  CurEx: 0
-  levelCount: 0
-  ex1Amount: 1
-  ex2Amount: 2
-  _Sec: 0
-  _min: 0
-  _mina: 0
-  min: 0
-  max: 0
---- !u!58 &600918064
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600918061}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 6.3
---- !u!114 &600918065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600918061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c0f0e60c491e0f4d83a03ae3fe95313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 128811910}
 --- !u!1 &611409142
 GameObject:
   m_ObjectHideFlags: 0
@@ -23355,7 +23242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1684765528}
   - component: {fileID: 1684765530}
-  - component: {fileID: 1684765529}
   - component: {fileID: 1684765531}
   m_Layer: 8
   m_Name: playerMg
@@ -23377,21 +23263,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1684765529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684765527}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d36079c77f94a642a17d93b7d588a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newPosition: {x: 0, y: 0}
 --- !u!58 &1684765530
 CircleCollider2D:
   m_ObjectHideFlags: 0

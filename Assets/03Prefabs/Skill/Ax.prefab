@@ -434,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 3
   Ax: {fileID: 5463815195168949252}
-  target: {fileID: 0}
+  player: {fileID: 0}
   level1: 1
   level2: 1
   level3: 1
@@ -444,3 +444,4 @@ MonoBehaviour:
   axfire2d: {x: 0, y: 0}
   axPosition: {x: 0, y: 0, z: 0}
   axFire: {x: 0, y: 0}
+  go: 0

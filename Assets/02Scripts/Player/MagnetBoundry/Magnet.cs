@@ -37,18 +37,6 @@ public class Magnet : MonoBehaviour
            // Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
         }
-        /*if (hasTarget)
-        {
-            //transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.0001f);
-
-            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
-
-            Vector2 targetDirection = (player.transform.position - transform.position).normalized; // 플레이어로 향하는 벡터
-            float distance = Vector2.Distance(player.transform.position, transform.position); // 플레이어와 EX의 거리
-            float magnetDistanceStr = (distanceStretch / distance) * magnetStrength; // 거리에 따른 힘이 달라야 하므로 거리로 나눔
-            rigid.AddForce(magnetDistanceStr * (targetDirection * magnetDirection), ForceMode2D.Force);
-            //rigid.AddForce(targetDirection * 0.2f, ForceMode2D.Impulse);
-        }*/
     }
 
 
@@ -59,7 +47,7 @@ public class Magnet : MonoBehaviour
         {
             gameObject.SetActive(false);
             hasTarget = false;
-           
+            Debug.Log("플레이어랑 부딪힘");
         }
     }
 
@@ -74,7 +62,7 @@ public class Magnet : MonoBehaviour
             float distance = Vector2.Distance(player.transform.position, transform.position); // 플레이어와 EX의 거리
             float magnetDistanceStr = (distanceStretch / distance) * magnetStrength; // 거리에 따른 힘이 달라야 하므로 거리로 나눔
             rigid.AddForce(magnetDistanceStr * (targetDirection * magnetDirection), ForceMode2D.Force);
-           
+            Debug.Log("부딪힘");
         }
     }
 

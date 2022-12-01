@@ -129,6 +129,7 @@ public class Player : MonoBehaviour
         basketball();
         ax();
         axTime += Time.deltaTime;
+        Debug.Log(axTime);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -267,17 +268,19 @@ public class Player : MonoBehaviour
         axFire = axfire2d * 7f;
 
         //rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
-        rigid.velocity = new Vector2(axFire.x, axFire.y);
+        //rigid.velocity = new Vector2(axFire.x, axFire.y);
 
-        if (axTime >= 0f && axTime < 1f)
+        if (axTime >= 0f && axTime < 0.7f)
         {
-            rigid.velocity = new Vector2(axFire.x, axFire.y);
+            //rigid.velocity = new Vector2(axFire.x, axFire.y);
+            rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
         }
-        else if (axTime >= 0.1f)
+        else if (axTime >= 0.7f)
         {
-            rigid.velocity = new Vector2(-axFire.x, -axFire.y);
+            //rigid.velocity = new Vector2(-axFire.x, -axFire.y);
+            rigid.AddForce(-axfire2d * 10f, ForceMode2D.Impulse);
         }
-        else if (axTime >= 0.5f)
+        else if (axTime >= 1.5f)
         {
             Destroy(ax);
             axTime = 0f;
