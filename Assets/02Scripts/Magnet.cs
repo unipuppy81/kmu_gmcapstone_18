@@ -7,20 +7,18 @@ using UnityEngine.AdaptivePerformance.VisualScripting;
 
 public class Magnet : MonoBehaviour
 {
-    public static event Action onExCollected;
-    Rigidbody2D rb;
     Player player;
     public GameObject ex;
 
     public bool hasTarget = false;
     Vector3 targetPosition;
-   
 
-    float moveSpeed = 0.5f;
+    public float magnetStrength = 1f; // 자석 세기
+    public float distanceStretch = 3f; // 거리에 따른 세기
+    public int magnetDirection = 1;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player").GetComponent<Player>();
 
     }
@@ -32,39 +30,59 @@ public class Magnet : MonoBehaviour
 
     private void FixedUpdate()
     {
+        targetPosition = player.transform.position;
 
         // 조건 줘서 자석 아이템 먹으면 자석 발동되게 할거임
-        if(player.isMagnet == true) { 
+        if (player.isMagnet == true) { 
            // Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
-            targetPosition = player.transform.position;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
         }
-        //Vector2 targetDirection = (targetPosition - transform.position).normalized;
-        //rigid.AddForce(targetDirection * 0.01f, ForceMode2D.Impulse);
+        /*if (hasTarget)
+        {
+            //transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.0001f);
 
-        //UnityEngine.Debug.Log(targetPosition);
-        // 플레이어 바운더리 콜라이더에서는 힘만 주기
-        // 플레이어 콜라이더에 닿으면 경험치가 사라지도록 만들기
+            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
+
+            Vector2 targetDirection = (player.transform.position - transform.position).normalized; // 플레이어로 향하는 벡터
+            float distance = Vector2.Distance(player.transform.position, transform.position); // 플레이어와 EX의 거리
+            float magnetDistanceStr = (distanceStretch / distance) * magnetStrength; // 거리에 따른 힘이 달라야 하므로 거리로 나눔
+            rigid.AddForce(magnetDistanceStr * (targetDirection * magnetDirection), ForceMode2D.Force);
+            //rigid.AddForce(targetDirection * 0.2f, ForceMode2D.Impulse);
+        }*/
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if (other.tag == "Player")
+        {
+            gameObject.SetActive(false);
+            hasTarget = false;
+            Debug.Log("플레이어랑 부딪힘");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "PlayerMg")
+        if (other.tag == "PlayerMg")
         {
-            
-            targetPosition = player.transform.position;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.001f);
+            hasTarget = true;
+            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
+
+            Vector2 targetDirection = (player.transform.position - transform.position).normalized; // 플레이어로 향하는 벡터
+            float distance = Vector2.Distance(player.transform.position, transform.position); // 플레이어와 EX의 거리
+            float magnetDistanceStr = (distanceStretch / distance) * magnetStrength; // 거리에 따른 힘이 달라야 하므로 거리로 나눔
+            rigid.AddForce(magnetDistanceStr * (targetDirection * magnetDirection), ForceMode2D.Force);
+            Debug.Log("부딪힘");
         }
     }
 
-    public void setTarget(Vector3 position)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        //targetPosition = position;
-        hasTarget = true;
-    }
-
-    public void Collect()
-    {
-        onExCollected?.Invoke();
+        if (other.tag == "PlayerMg")
+        {
+            hasTarget = false;
+        }
     }
 }
