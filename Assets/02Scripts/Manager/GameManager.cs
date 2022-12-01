@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
             Level();
         }
     }
+
     public void Level()
     {
         if (CurEx >= MaxEx)
