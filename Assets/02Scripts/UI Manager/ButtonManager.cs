@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using static UnityEngine.ParticleSystem;
 
 
 public class ButtonManager : MonoBehaviour
@@ -217,6 +218,7 @@ public class ButtonManager : MonoBehaviour
             Wp_3_levelText();
         }
         gm.closePanel();
+        gm.selectPanel.Clear();
     }
 
     public void PauseClick()
