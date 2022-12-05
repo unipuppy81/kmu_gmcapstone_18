@@ -172,7 +172,7 @@ public class ButtonManager : MonoBehaviour
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "coin")
         {
-            coin += 100;
+            coin += 200;
             cointext();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "heart")
