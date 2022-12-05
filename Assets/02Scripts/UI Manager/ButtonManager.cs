@@ -35,40 +35,8 @@ public class ButtonManager : MonoBehaviour
     TextMeshProUGUI dumb1_levelText;
     [SerializeField]
     TextMeshProUGUI hot1_levelText;
-
     [SerializeField]
-    TextMeshProUGUI gun2_levelText;
-    [SerializeField]
-    TextMeshProUGUI sheild2_levelText;
-    [SerializeField]
-    TextMeshProUGUI emp2_levelText;
-    [SerializeField]
-    TextMeshProUGUI ax2_levelText;
-    [SerializeField]
-    TextMeshProUGUI basket2_levelText;
-    [SerializeField]
-    TextMeshProUGUI ammo2_levelText;
-    [SerializeField]
-    TextMeshProUGUI dumb2_levelText;
-    [SerializeField]
-    TextMeshProUGUI hot2_levelText;
-
-    [SerializeField]
-    TextMeshProUGUI gun3_levelText;
-    [SerializeField]
-    TextMeshProUGUI sheild3_levelText;
-    [SerializeField]
-    TextMeshProUGUI emp3_levelText;
-    [SerializeField]
-    TextMeshProUGUI ax3_levelText;
-    [SerializeField]
-    TextMeshProUGUI basket3_levelText;
-    [SerializeField]
-    TextMeshProUGUI ammo3_levelText;
-    [SerializeField]
-    TextMeshProUGUI dumb3_levelText;
-    [SerializeField]
-    TextMeshProUGUI hot3_levelText;
+    TextMeshProUGUI coinText;
 
     int maxGuardians = 4;
 
@@ -85,7 +53,7 @@ public class ButtonManager : MonoBehaviour
     public int hot7Count;
     public int axCount;
     public int basketCount;
-
+    public int coin;
 
     public GameManager gm;
     OnButtonClick onButtonClick;
@@ -113,8 +81,6 @@ public class ButtonManager : MonoBehaviour
                 gunCount = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
         }
         else if(EventSystem.current.currentSelectedGameObject.tag == "Sheild")
         {
@@ -128,9 +94,6 @@ public class ButtonManager : MonoBehaviour
 
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
-
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "EMP")
         {
@@ -143,8 +106,6 @@ public class ButtonManager : MonoBehaviour
                 empCount = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Ammo")
         {
@@ -157,8 +118,6 @@ public class ButtonManager : MonoBehaviour
                 ammoCount = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Dumbbell")
         {
@@ -171,8 +130,6 @@ public class ButtonManager : MonoBehaviour
                 dumbbellCount = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Hot7")
         {
@@ -186,8 +143,6 @@ public class ButtonManager : MonoBehaviour
                 hot7Count = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Ax")
         {
@@ -200,8 +155,6 @@ public class ButtonManager : MonoBehaviour
                 axCount = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
         }
         else if (EventSystem.current.currentSelectedGameObject.tag == "Basketball")
         {
@@ -216,8 +169,15 @@ public class ButtonManager : MonoBehaviour
                 basketCount = 5;
             }
             Wp_1_levelText();
-            Wp_2_levelText();
-            Wp_3_levelText();
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "coin")
+        {
+            coin += 100;
+            cointext();
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "heart")
+        {
+            player.playercurHp += 20f;
         }
         gm.closePanel();
         gm.selectPanel.Clear();
@@ -266,26 +226,9 @@ public class ButtonManager : MonoBehaviour
         dumb1_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
         hot1_levelText.text = string.Format("LV : {0:D1}", hot7Count);
     }
-    void Wp_2_levelText()
+    void cointext()
     {
-        gun2_levelText.text = string.Format("LV : {0:D1}", gunCount);
-        sheild2_levelText.text = string.Format("LV : {0:D1}", sheildCount);
-        emp2_levelText.text = string.Format("LV : {0:D1}", empCount);
-        ax2_levelText.text = string.Format("LV : {0:D1}", axCount);
-        basket2_levelText.text = string.Format("LV : {0:D1}", basketCount);
-        ammo2_levelText.text = string.Format("LV : {0:D1}", ammoCount);
-        dumb2_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
-        hot2_levelText.text = string.Format("LV : {0:D1}", hot7Count);
+        coinText.text = string.Format("COIN : {0:D3}", coin);
     }
-    void Wp_3_levelText()
-    {
-        gun3_levelText.text = string.Format("LV : {0:D1}", gunCount);
-        sheild3_levelText.text = string.Format("LV : {0:D1}", sheildCount);
-        emp3_levelText.text = string.Format("LV : {0:D1}", empCount);
-        ax3_levelText.text = string.Format("LV : {0:D1}", axCount);
-        basket3_levelText.text = string.Format("LV : {0:D1}", basketCount);
-        ammo3_levelText.text = string.Format("LV : {0:D1}", ammoCount);
-        dumb3_levelText.text = string.Format("LV : {0:D1}", dumbbellCount);
-        hot3_levelText.text = string.Format("LV : {0:D1}", hot7Count);
-    }
+
 }

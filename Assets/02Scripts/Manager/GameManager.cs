@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
 
+
+    
     public float _Sec;
     public int _min;
     public int _mina = 6;   
@@ -69,7 +71,6 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-
         Timer();
         ActiveFalse();
         if(Bossalive.activeSelf == true)
@@ -82,7 +83,6 @@ public class GameManager : MonoBehaviour
             }
         }
         selectPanel = new List<GameObject> (bList);
-
     }
 
     public void OnTriggerEnter2D(Collider2D other)

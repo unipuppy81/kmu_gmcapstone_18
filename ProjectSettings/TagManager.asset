@@ -30,6 +30,8 @@ TagManager:
   - Basketball
   - PlayerMg
   - PlayerCo
+  - coin
+  - heart
   layers:
   - Default
   - TransparentFX
