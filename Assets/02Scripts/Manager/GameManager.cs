@@ -6,6 +6,8 @@ using TMPro;
 using System.Threading;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
+//using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> empty = new List<GameObject>();
     public List<GameObject> bList;
 
+   
     Player player;
     ButtonManager btnmanager;
 
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        
+       
     }
     private void Update()
     {
@@ -321,17 +324,19 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    void Gatcha()
+    public void Gatcha()
     {
-        // 카운트가 5이상이면 select1배열 에서 삭제
-        if (btnmanager.gunCount == 2) { selectPanel.RemoveAt(0); }
+        
+        // 카운트가 5이상이면 selectPanel 에서 삭제
+        /*if (btnmanager.gunCount == 2) { selectPanel.RemoveAt(0); }
         if (btnmanager.sheildCount == 2) { selectPanel.RemoveAt(1); }
         if (btnmanager.empCount == 2) { selectPanel.RemoveAt(2); }
         if (btnmanager.axCount == 2) { selectPanel.RemoveAt(3); }
         if (btnmanager.basketCount == 2) { selectPanel.RemoveAt(4); }
         if (btnmanager.ammoCount == 2) { selectPanel.RemoveAt(5); }
         if (btnmanager.dumbbellCount == 2) { selectPanel.RemoveAt(6); }
-        if (btnmanager.hot7Count == 2) { selectPanel.RemoveAt(7); }
+        if (btnmanager.hot7Count == 2) { selectPanel.RemoveAt(7); }*/
+
         if (levelpanel.activeSelf == true)
         {
             if (selectPanel.Count >= 3) //업그레이드할 무기가 3개 이상일때
@@ -340,10 +345,27 @@ public class GameManager : MonoBehaviour
                 {
                     int rand = UnityEngine.Random.Range(0, selectPanel.Count);
                     empty.Add(selectPanel[rand]);
+                    selectPanel.RemoveAt(rand);
                 }
-                empty[0].SetActive(true);
-                empty[1].SetActive(true);
-                empty[2].SetActive(true);
+                for(int j = 0; j <= empty.Count; j++)
+                {
+                    
+                    if(j == 0)
+                    {
+                        empty[0].transform.position = new Vector3(60, 240,1.0f);
+                        empty[0].SetActive(true);
+                    }
+                    if(j == 1)
+                    {
+                        empty[1].transform.position = new Vector3(173, 240, 1.0f);
+                        empty[1].SetActive(true);
+                    }
+                    if(j == 2)
+                    {
+                        empty[2].transform.position = new Vector3(285, 240, 1.0f);
+                        empty[2].SetActive(true);
+                    }
+                }
             }
             else if (selectPanel.Count == 2) // 업그레이드할 무기가 2개 남았을때
             {
@@ -353,13 +375,26 @@ public class GameManager : MonoBehaviour
                     empty.Add(selectPanel[rand]);
 
                 }
-                empty[0].SetActive(true);
-                empty[1].SetActive(true);
+                for (int j = 0; j <= empty.Count; j++)
+                {
+
+                    if (j == 0)
+                    {
+                        empty[0].transform.position = new Vector3(60, 240, 1.0f);
+                        empty[0].SetActive(true);
+                    }
+                    if (j == 1)
+                    {
+                        empty[1].transform.position = new Vector3(285, 240, 1.0f);
+                        empty[1].SetActive(true);
+                    }
+                }
             }
             else if (selectPanel.Count == 1) // 업그레이드할 무기가 2개 남았을때
             {
                 int rand = UnityEngine.Random.Range(0, selectPanel.Count);
                 empty.Add(selectPanel[rand]);
+                empty[0].transform.position = new Vector3(173, 240, 1.0f);
                 empty[0].SetActive(true);
             }
             else if (selectPanel.Count == 0) // 모든 무기 만렙시 코인이나 체력 올려주는 페널
@@ -369,8 +404,20 @@ public class GameManager : MonoBehaviour
                     int rand = UnityEngine.Random.Range(0, select_coin_hp.Count);
                     empty.Add(select_coin_hp[rand]);
                 }
-                empty[0].SetActive(true);
-                empty[1].SetActive(true);
+                for (int j = 0; j <= empty.Count; j++)
+                {
+
+                    if (j == 0)
+                    {
+                        empty[0].transform.position = new Vector3(60, 240, 1.0f);
+                        empty[0].SetActive(true);
+                    }
+                    if (j == 1)
+                    {
+                        empty[1].transform.position = new Vector3(285, 240, 1.0f);
+                        empty[1].SetActive(true);
+                    }
+                }
             }
         }
        
