@@ -84,7 +84,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        spawnTimeControl();
+        
 
         gameManager = gameObject.GetComponent<GameManager>();
 
@@ -92,15 +92,17 @@ public class SpawnManager : MonoBehaviour
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 6, 1.0f);
-        InvokeRepeating("SpawnEnemy", 6, 0.5f);      
+        //InvokeRepeating("SpawnBox", 6, 1.0f);
+        InvokeRepeating("SpawnEnemy", 6, 0.4f);
         //InvokeRepeating("SpawnbEnemy", 6, 10f);
 
         isSpawnTure = false;
     }
 
+
     void Update()
     {
+        spawnTimeControl();
         SpawnBoss();
     }
     
@@ -193,6 +195,61 @@ public class SpawnManager : MonoBehaviour
             }
             else{
                 if (enabledSpawn){
+                    GameObject enemy = objectManager.MakeObj(Enemy);
+                    enemy.transform.position = new Vector3(0f, 0f, 0f);
+
+                    Enemy enemylogic = enemy.GetComponent<Enemy>();
+                    enemylogic.objectManager = objectManager;
+
+                }
+            }
+        }
+    }
+
+    void SpawnEnemy1()
+    {
+        float spawnPosx1 = player.position.x + 8f;
+        float spawnPosy1 = player.position.y + 8f;
+
+        float spawnPosx2 = player.position.x - 8f;
+        float spawnPosy2 = player.position.y - 8f;
+
+        float canspawnX1 = player.position.x + 3f;
+        float canspawnX2 = player.position.x - 3f;
+
+        float canspawnY1 = player.position.y + 3f;
+        float canspawnY2 = player.position.y - 3f;
+
+        float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
+        float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
+
+
+
+        if (randomX >= canspawnX2 && randomX <= canspawnX1 && randomY >= canspawnY2 && randomY <= canspawnY1)
+        {
+            isSpawnTure = false;
+        }
+        else
+            isSpawnTure = true;
+
+        if (isSpawnTure)
+        {
+            if (randomX >= -29.7f && randomX <= 28.95f && randomY >= -29.3f && randomY <= 29.3f)
+            {
+                if (enabledSpawn)
+                {
+                    GameObject enemy = objectManager.MakeObj(Enemy);
+                    enemy.transform.position = new Vector3(randomX, randomY, 0f);
+
+                    Enemy enemylogic = enemy.GetComponent<Enemy>();
+                    enemylogic.objectManager = objectManager;
+
+                }
+            }
+            else
+            {
+                if (enabledSpawn)
+                {
                     GameObject enemy = objectManager.MakeObj(Enemy);
                     enemy.transform.position = new Vector3(0f, 0f, 0f);
 
