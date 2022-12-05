@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Ex");
             CurEx += ex1Amount;
-            Debug.Log(CurEx);
+
             other.gameObject.SetActive(false);
             Level();
         }
@@ -99,7 +99,6 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Ex2");
             CurEx += ex2Amount;
-            Debug.Log(CurEx);
             other.gameObject.SetActive(false);
             Level();
         }
@@ -352,17 +351,17 @@ public class GameManager : MonoBehaviour
                     
                     if(j == 0)
                     {
-                        empty[0].transform.position = new Vector3(60, 240,1.0f);
+                        empty[0].transform.position = new Vector3(150, 600,1.0f);
                         empty[0].SetActive(true);
                     }
                     if(j == 1)
                     {
-                        empty[1].transform.position = new Vector3(173, 240, 1.0f);
+                        empty[1].transform.position = new Vector3(425, 600, 1.0f);
                         empty[1].SetActive(true);
                     }
                     if(j == 2)
                     {
-                        empty[2].transform.position = new Vector3(285, 240, 1.0f);
+                        empty[2].transform.position = new Vector3(700, 600, 1.0f);
                         empty[2].SetActive(true);
                     }
                 }

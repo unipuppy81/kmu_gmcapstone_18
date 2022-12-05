@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public GameObject Bomb;
     public GameObject skillbtn;
     public GameObject gameoverPannel;
-    public GameObject BasketBall;
+    public GameObject BasketBall1;
     public GameObject Ax;
 
     public string bulletObjA;
@@ -68,11 +68,11 @@ public class Player : MonoBehaviour
     bool isClick;
     float axTime;
     float magnetTimer;
-
+    public int basketCount;
     int count = 0;
 
     Rigidbody2D rigid;
-
+    BasketBall basket;
     void Awake()
     {
         playertop = 29.3f;
@@ -89,6 +89,9 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spawntime = 0.5f;
 
+        basketCount = 0;
+        basket = new BasketBall();
+
         isClick = false;
         isMagnet = false;
     }
@@ -99,7 +102,10 @@ public class Player : MonoBehaviour
         currentFireRate = fireRate;
         InvokeRepeating("SearchEnemy", 0f, spawntime);
     }
-
+    void FixedUpdate()
+    {
+        basketLevel();
+    }
     void Update()
     {
         spcount();
@@ -118,18 +124,22 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            isClick = true;
-        }
+
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             isMagnet = true;
         }
-        basketball();
         ax();
         axTime += Time.deltaTime;
-        Debug.Log(axTime);
+    }
+
+    void basketLevel()
+    {
+        if (BasketBall.basketballLevel == 1 || BasketBall.basketballLevel == 3 || BasketBall.basketballLevel == 5 || BasketBall.basketballLevel == 7)
+        {
+            basketballscript();
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -186,17 +196,6 @@ public class Player : MonoBehaviour
         hit_target = p_shortestTarget;
     }
 
-
-    void basketball()
-    {
-        
-        if (isClick == true)
-        {
-            basketballscript();
-        }
-
-    }
-
     void basketballscript()
     {
         Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 5f, layerMask);
@@ -218,7 +217,7 @@ public class Player : MonoBehaviour
             basketfire = p_shortestTarget.position - transform.position;
 
             //basketfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
-            GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
+            GameObject ball = Instantiate(BasketBall1, transform.position, transform.rotation);
             Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
 
             basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
@@ -228,15 +227,15 @@ public class Player : MonoBehaviour
         else
         {
             basketfire = new Vector2(transform.position.x + 5f, transform.position.y + 5f);
-            GameObject ball = Instantiate(BasketBall, transform.position, transform.rotation);
+            GameObject ball = Instantiate(BasketBall1, transform.position, transform.rotation);
             Rigidbody2D rigid = ball.GetComponent<Rigidbody2D>();
 
             basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
 
             rigid.AddForce(basketfire2d * 4f, ForceMode2D.Impulse);
         }
+        BasketBall.basketballLevel++;
 
-        isClick = false;
     }
 
     void ax()

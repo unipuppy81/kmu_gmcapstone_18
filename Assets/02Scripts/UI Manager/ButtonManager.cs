@@ -207,6 +207,8 @@ public class ButtonManager : MonoBehaviour
         {
             if (basketCount < max)
             {
+                BasketBall.basketballLevel++;
+
                 basketCount++;
             }
             else
