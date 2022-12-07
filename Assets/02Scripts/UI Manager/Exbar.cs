@@ -29,7 +29,7 @@ public class Exbar : MonoBehaviour
 
     public void playerHp()
     {
-        Hpbar.value = player.playercurHp / player.playerMaxHp;
-        exbar.value = gm.CurEx / gm.MaxEx;
+        Hpbar.value = Mathf.Lerp(Hpbar.value, player.playercurHp / player.playerMaxHp , Time.deltaTime * 5f);
+        exbar.value = Mathf.Lerp(exbar.value, gm.CurEx / gm.MaxEx, Time.deltaTime * 5f);
     }
 }

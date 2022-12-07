@@ -24,6 +24,6 @@ public class boss_hp_bar : MonoBehaviour
 
     public void playerHp()
     {
-        Hpbar.value = Boss.bossCurHealth / Boss.bossHealth;
+        Hpbar.value = Mathf.Lerp(Hpbar.value,Boss.bossCurHealth / Boss.bossHealth, Time.deltaTime * 5f);
     }
 }
