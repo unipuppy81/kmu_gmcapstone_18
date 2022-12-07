@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameclearPannel;
     public GameObject Bossalive;
+    public GameObject joystick;
 
     public float MaxEx;
     public float CurEx;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
         levelCount = 0;
         MaxEx = 5f;
         levelpanel.SetActive(false);
+        joystick.SetActive(true);
         Time.timeScale = 1f;
         btnmanager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         empty = new List<GameObject>();
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     public void openPanel()
     {
+        //joystick.SetActive(false);
         levelpanel.SetActive(true);
         Pausebutton.SetActive(false);
         Time.timeScale = 0f;
@@ -145,7 +148,6 @@ public class GameManager : MonoBehaviour
     {
         levelpanel.SetActive(false);
         Pausebutton.SetActive(true);
-
         Time.timeScale = 1f;
     }
     public void leveltext()

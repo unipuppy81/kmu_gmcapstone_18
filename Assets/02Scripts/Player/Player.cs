@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         spcount();
-        Playermove();
+        //Playermove();
         Reload();
         SpecialSkill1();
         specialSkillbtn();
@@ -277,16 +277,16 @@ public class Player : MonoBehaviour
         spcountText.text = String.Format("Count : {0:D1}", specialSkill);
     }
 
-    void Playermove()
+    /*void Playermove()
     {
         Vector3 flipMove = Vector3.zero;
         float h = Input.GetAxisRaw("Horizontal");
-        if(h < 0)
+        if (h < 0)
         {
             flipMove = Vector3.left;
             transform.localScale = new Vector3(-0.04f, 0.04f, 0.0f);
         }
-        else if(h > 0)
+        else if (h > 0)
         {
             flipMove = Vector3.right;
             transform.localScale = new Vector3(0.04f, 0.04f, 0.0f);
@@ -296,12 +296,12 @@ public class Player : MonoBehaviour
 
         Vector3 pos = transform.position;
 
-        if(pos.x > playerright)
+        if (pos.x > playerright)
         {
             h = 0;
             pos.x = playerright;
         }
-        else if(pos.x < playerleft)
+        else if (pos.x < playerleft)
         {
             h = 0;
             pos.x = playerleft;
@@ -325,7 +325,7 @@ public class Player : MonoBehaviour
         Vector3 nextPos = new Vector3(h, v, 0) * playerSpeed * Time.deltaTime;
 
         transform.position = curPos + nextPos;
-    }
+    }*/
 
     void SpecialSkill1() // 군인 특수 스킬
     {

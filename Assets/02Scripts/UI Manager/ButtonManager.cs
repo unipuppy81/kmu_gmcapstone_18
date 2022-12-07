@@ -17,6 +17,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject ButtonName;
     public GameObject pausePanel;
     public GameObject levelpanel;
+    public GameObject joystick2;
 
 
     [SerializeField]
@@ -182,6 +183,7 @@ public class ButtonManager : MonoBehaviour
             player.playercurHp += 20f;
         }
         gm.closePanel();
+        //joystick2.SetActive(true);
         gm.selectPanel.Clear();
     }
 

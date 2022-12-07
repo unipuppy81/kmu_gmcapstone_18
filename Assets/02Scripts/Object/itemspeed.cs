@@ -5,6 +5,7 @@ using UnityEngine;
 public class itemspeed : MonoBehaviour
 {
     private Player player;
+    private PlayerMovement pm;
 
     void Start()
     {
@@ -17,10 +18,10 @@ public class itemspeed : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-            player.playerSpeed += 0.5f;
-            if (player.playerSpeed >= player.maxSpeed)
+            pm.moveSpeed += 0.5f;
+            if (pm.moveSpeed >= pm.maxSpeed)
             {
-                player.playerSpeed = player.maxSpeed;
+                pm.moveSpeed = pm.maxSpeed;
             }
         }
     }

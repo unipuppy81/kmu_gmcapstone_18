@@ -531,6 +531,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33626722}
   m_CullTransparentMesh: 1
+--- !u!1 &34995703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34995704}
+  - component: {fileID: 34995706}
+  - component: {fileID: 34995705}
+  m_Layer: 5
+  m_Name: TouchCheckPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &34995704
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34995703}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 290084218}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &34995705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34995703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &34995706
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34995703}
+  m_CullTransparentMesh: 1
 --- !u!1 &53012700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1655,7 @@ MonoBehaviour:
   exbar: {fileID: 1650073995}
   gameclearPannel: {fileID: 551654291}
   Bossalive: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
+  joystick: {fileID: 523861611}
   MaxEx: 20000
   CurEx: 0
   levelCount: 0
@@ -3446,6 +3523,8 @@ GameObject:
   - component: {fileID: 290084216}
   - component: {fileID: 290084215}
   - component: {fileID: 290084219}
+  - component: {fileID: 290084221}
+  - component: {fileID: 290084220}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3533,9 +3612,11 @@ RectTransform:
   - {fileID: 400205740}
   - {fileID: 468738676}
   - {fileID: 1913626782}
+  - {fileID: 523861612}
+  - {fileID: 34995704}
   - {fileID: 2027341994}
-  - {fileID: 2059436253}
   - {fileID: 551654292}
+  - {fileID: 2059436253}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3557,6 +3638,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hpbar: {fileID: 2113652436}
+--- !u!114 &290084220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290084214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 290084221}
+          m_TargetAssemblyTypeName: JoyStickMovement, Assembly-CSharp
+          m_MethodName: PointDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 290084221}
+          m_TargetAssemblyTypeName: JoyStickMovement, Assembly-CSharp
+          m_MethodName: Drag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 290084221}
+          m_TargetAssemblyTypeName: JoyStickMovement, Assembly-CSharp
+          m_MethodName: Drop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &290084221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290084214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1feefa8982d85f141937314c6e209515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallStick: {fileID: 358785927}
+  bGStick: {fileID: 523861611}
+  joyVec: {x: 0, y: 0, z: 0}
 --- !u!1 &290118667
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,6 +4313,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &358785927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358785928}
+  - component: {fileID: 358785930}
+  - component: {fileID: 358785929}
+  m_Layer: 5
+  m_Name: Stick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &358785928
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358785927}
+  m_LocalRotation: {x: -0, y: -0, z: 0.012932303, w: 0.9999164}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 523861612}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.482}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.2999816, y: 0}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &358785929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358785927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: a03ed7c1cb2dce245bde35591a66b9a9, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &358785930
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358785927}
+  m_CullTransparentMesh: 1
 --- !u!224 &367557804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5265339932802006590, guid: 0f50c1665ef82714a972b90f187ddf79, type: 3}
@@ -4811,6 +5041,7 @@ MonoBehaviour:
   ButtonName: {fileID: 399933174}
   pausePanel: {fileID: 1327610487}
   levelpanel: {fileID: 2027341993}
+  joystick2: {fileID: 0}
   gun1_levelText: {fileID: 0}
   sheild1_levelText: {fileID: 0}
   emp1_levelText: {fileID: 0}
@@ -5861,6 +6092,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &523861611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523861612}
+  - component: {fileID: 523861614}
+  - component: {fileID: 523861613}
+  m_Layer: 5
+  m_Name: Joystick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &523861612
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523861611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 358785928}
+  m_Father: {fileID: 290084218}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00013657, y: -691}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &523861613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523861611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 57b533f6ef11bf1439637d5a3f376b4f, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &523861614
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523861611}
+  m_CullTransparentMesh: 1
 --- !u!1 &524068170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6381,7 +6686,7 @@ RectTransform:
   - {fileID: 887517586}
   - {fileID: 1832369031}
   m_Father: {fileID: 290084218}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7851,6 +8156,7 @@ MonoBehaviour:
   ButtonName: {fileID: 669094259}
   pausePanel: {fileID: 1327610487}
   levelpanel: {fileID: 2027341993}
+  joystick2: {fileID: 0}
   gun1_levelText: {fileID: 0}
   sheild1_levelText: {fileID: 0}
   emp1_levelText: {fileID: 0}
@@ -8386,6 +8692,7 @@ MonoBehaviour:
   exbar: {fileID: 1650073995}
   gameclearPannel: {fileID: 551654291}
   Bossalive: {fileID: 6965814671064007042, guid: 056cc08c008b93a45a7ed9ab14c59a36, type: 3}
+  joystick: {fileID: 523861611}
   MaxEx: 5
   CurEx: 0
   levelCount: 0
@@ -8468,6 +8775,20 @@ MonoBehaviour:
   level3: 1
   level4: 1
   level5: 1
+--- !u!114 &747727069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747727051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8d764a33a4c8648af223d1c89e88ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  maxSpeed: 10
 --- !u!1001 &795030605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9713,6 +10034,7 @@ MonoBehaviour:
   ButtonName: {fileID: 0}
   pausePanel: {fileID: 0}
   levelpanel: {fileID: 0}
+  joystick2: {fileID: 0}
   gun1_levelText: {fileID: 0}
   sheild1_levelText: {fileID: 0}
   emp1_levelText: {fileID: 0}
@@ -11213,6 +11535,7 @@ MonoBehaviour:
   ButtonName: {fileID: 1913626781}
   pausePanel: {fileID: 1327610487}
   levelpanel: {fileID: 2027341993}
+  joystick2: {fileID: 523861611}
   gun1_levelText: {fileID: 912011475}
   sheild1_levelText: {fileID: 399381068}
   emp1_levelText: {fileID: 2127127728}
@@ -14090,6 +14413,7 @@ MonoBehaviour:
   ButtonName: {fileID: 0}
   pausePanel: {fileID: 0}
   levelpanel: {fileID: 0}
+  joystick2: {fileID: 0}
   gun1_levelText: {fileID: 0}
   sheild1_levelText: {fileID: 0}
   emp1_levelText: {fileID: 0}
@@ -22344,6 +22668,7 @@ MonoBehaviour:
   ButtonName: {fileID: 1913626781}
   pausePanel: {fileID: 1327610487}
   levelpanel: {fileID: 2027341993}
+  joystick2: {fileID: 0}
   gun1_levelText: {fileID: 0}
   sheild1_levelText: {fileID: 0}
   emp1_levelText: {fileID: 0}
@@ -23840,7 +24165,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027341993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23859,11 +24184,11 @@ RectTransform:
   - {fileID: 628938019}
   - {fileID: 133997696}
   m_Father: {fileID: 290084218}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027341995
@@ -23937,7 +24262,7 @@ RectTransform:
   - {fileID: 1205268214}
   - {fileID: 1943808145}
   m_Father: {fileID: 290084218}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
