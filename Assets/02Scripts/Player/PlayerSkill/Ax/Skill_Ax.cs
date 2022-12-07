@@ -65,11 +65,9 @@ public class Skill_Ax : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         axTime += Time.deltaTime;
-        //Debug.Log(axTime);
 
         if (axTime >= 0.0f && axTime < 1.5f)
         {
-            //rigidbody2D.AddForce(axfire2d * 6f, ForceMode2D.Impulse);
             rigidbody2D.velocity = axfire2d * 6f;
         }
         else if (axTime == 1.5f)
@@ -83,10 +81,6 @@ public class Skill_Ax : MonoBehaviour
         else if (axTime >= 4.0f && axTime < 6.0f)
         {
             gameObject.SetActive(false);
-        }
-        else if (axTime >= 6.0f)
-        {
-            player.axScript();
             axTime = 0.0f;
         }
 
@@ -95,7 +89,6 @@ public class Skill_Ax : MonoBehaviour
             level5 = true;
             spriteR.sprite = sprites;
         }
-        Debug.Log(lifeCycle);
     }
 
     void FixedUpdate()
@@ -139,9 +132,5 @@ public class Skill_Ax : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerMg"))
-        {
-            
-        }
     }
 }

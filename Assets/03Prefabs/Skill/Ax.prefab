@@ -440,3 +440,12 @@ MonoBehaviour:
   level5: 1
   dmg: 3
   sprites: {fileID: 21300000, guid: f3456f9cb138ba14cbfb7b60b566dc87, type: 3}
+  fired: {x: 0, y: 0}
+  spawnPosx1: 0
+  spawnPosx2: 0
+  spawnPosy1: 0
+  spawnPosy2: 0
+  randomX: 0
+  randomY: 0
+  axFired: {x: 0, y: 0, z: 0}
+  axfire2d: {x: 0, y: 0}
