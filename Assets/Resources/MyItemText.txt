@@ -1,0 +1,1 @@
+[{"Type":"Equipment","Name":"Gun01","Explain":"총","Number":"1","Index":"6\r","isUsing":true}]

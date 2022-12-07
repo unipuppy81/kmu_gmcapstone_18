@@ -1,0 +1,14 @@
+Equipment	Basketball01	농구공	1	FALSE	0
+Equipment	Basketball02	농구공(진화)	1	FALSE	1
+Equipment	Dok2-01	도끼	1	FALSE	2
+Equipment	Dok2-02	도끼(진화)	1	FALSE	3
+Equipment	EmpField01	EMP	1	FALSE	4
+Equipment	EmpField02	EMP(진화)	1	FALSE	5
+Equipment	Gun01	총	1	FALSE	6
+Equipment	Gun02	총(진화)	1	FALSE	7
+Equipment	Shield01	방패	1	FALSE	8
+Equipment	Shield02	방패(진화)	1	FALSE	9
+Passive	BasketballShoes	농구공 패시브	1	FALSE	10
+Passive	Dumbbell	aaa 패시브	1	FALSE	11
+Passive	Hot7	EMP 패시브	1	FALSE	12
+Passive	Magnetic	abc 패시브	1	FALSE	13

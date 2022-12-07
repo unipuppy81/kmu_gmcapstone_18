@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Cinemachine.DocumentationSortingAttribute;
 
 public class Equip_Dumbbell : MonoBehaviour  // 방패의 조합 장비
 {
