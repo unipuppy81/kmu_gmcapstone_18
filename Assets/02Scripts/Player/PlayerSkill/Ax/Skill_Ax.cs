@@ -4,157 +4,127 @@ using UnityEngine;
 
 public class Skill_Ax : MonoBehaviour
 {
-    public int dmg = 3;
+    public static int axLevel = 0;
+    public float axdmg;
+    public bool level1, level2, level3, level4, level5;
+
     float rotationSpeed = 500f;
 
+    public int dmg = 3;
+
     float axTime;
-    public GameObject Ax;
-    public GameObject player;
 
-    public static int axLevel = 0;
-    public bool level1, level2, level3, level4, level5 = true;
-
-    public Vector3 axfire;
-    public Vector2 axfire2d;
-    public Vector3 axPosition;
-    public Vector2 axFire;
-
-    public bool go;
+    Player player;
+    SpriteRenderer spriteR;
+    public Sprite sprites;
 
     ButtonManager buttonManager;
-    // Start is called before the first frame update
-    void Start()
+    new Rigidbody2D rigidbody2D;
+
+    public Vector2 fired;
+
+    void Awake()
     {
-        go = false;
+        level1 = true;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
-        player = GameObject.Find("Player");
-        StartCoroutine(Boom());
+        player = GameObject.Find("Player").GetComponent<Player>();
+        axdmg = 1f;
+        rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         axTime += Time.deltaTime;
-        axLevel = buttonManager.axCount;
-        //axLife();
-        //LevelDesign();
-    }
+        axLife();
+        Debug.Log(axTime);        
 
-    IEnumerator Boom()
-    {
-        go = true;
-        yield return new WaitForSeconds(1.5f);
-        go = false;
-    }
-
-    void instantiate()
-    {
-        float spawnPosx1 = transform.position.x + 1f;
-        float spawnPosy1 = transform.position.y + 1f;
-
-        float spawnPosx2 = transform.position.x - 1f;
-        float spawnPosy2 = transform.position.y - 1f;
-
-        float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
-        float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
-
-        GameObject ax = Instantiate(Ax, transform.position, transform.rotation);
-        Rigidbody2D rigid = ax.GetComponent<Rigidbody2D>();
-
-        Vector3 axFired = new Vector3(randomX, randomY, 0);
-        axfire2d = new Vector2(axFired.x, axFired.y).normalized;
-        axFire = axfire2d * 7f;
-
-        //rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
-        rigid.velocity = new Vector2(axFire.x, axFire.y);
-
-        if (axTime >= 1f)
+        if (axTime == 1.5f)
         {
-            rigid.velocity = new Vector2(-axFire.x, -axFire.y);
+            rigidbody2D.velocity = Vector2.zero;
+            Debug.Log("1초");
         }
-        if (axTime >= 2f)
+        else if (axTime > 1.5f)
         {
-            gameObject.SetActive(false);
-            axTime = 0f;
+            //fired = (player.transform.position - transform.position).normalized;
+            //rigidbody2D.velocity = fired * 6f;
+            rigidbody2D.velocity = Player.axfire2d * -6f;
+            Debug.Log("1초 후 되돌아옴");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            level5 = true;
+            spriteR.sprite = sprites;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        LevelDesign();
+    }
+
+    void LevelDesign()
+    {
+        if (axLevel == 2)
+        {
+            dmg = 1;
+            level1 = false;
+            level2 = true;
+        }
+        else if (axLevel == 4)
+        {
+            dmg = 2;
+            level2 = false;
+            level3 = true;
+        }
+        else if (axLevel == 6)
+        {
+
+            dmg = 2;
+            level3 = false;
+            level4 = true;
+        }
+        else if (axLevel == 8)
+        {
+            dmg = 3;
+            level4 = false;
+            level5 = true;
+        }
+        else if (axLevel == 10)
+        {
+            dmg = 5;
+            spriteR.sprite = sprites;
         }
     }
 
     void axLife()
     {
-        Rigidbody2D rigid = Ax.GetComponent<Rigidbody2D>();
-        if (axTime >= 5f)
+        if (level5 == false)
         {
-            rigid.velocity = new Vector2(-axFire.x, -axFire.y);
+
         }
-        if (axTime >= 10f)
+
+        if (level5 == true)
         {
-            //Destroy(this.gameObject);
-            gameObject.SetActive(false);
-            axTime = 0f;
+            if (axTime >= 4f)
+            {
+                axTime = 0f;
+            }
         }
+
     }
 
-    void LevelDesign()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (axLevel == 1 && level1 == true)
+        if (other.gameObject.CompareTag("PlayerMg"))
         {
-            for(int i = 0; i < 1; i++)
-            {
-                instantiate();
-            }
-            dmg = 3;
-            level1 = false;
-            level2 = true;
-        }
-        else if (axLevel == 2 && level2 == true)
-        {
-            for(int i = 0; i < 2; i++)
-            {
-                instantiate();
-            }
-            dmg = 4;
-            level2 = false;
-            level3 = true;
-        }
-        else if (axLevel == 3 && level3 == true)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                instantiate();
-            }
-            dmg = 5;
-            level3 = false;
-            level4 = true;
-        }
-        else if (axLevel == 4 && level4 == true)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                instantiate();
-            }
-            dmg = 6;
-            level4 = false;
-            level5 = true;
-        }
-        /*else if (axLevel == 5 && level5 == true && Equip_Dumbbell.selectedDumbbell == true)
-        {
-            transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            dmg = 5;
-            level5 = false;
-        }*/
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy01"))
-        {
-
-        }
-
-        if (collision.gameObject.tag == "Box")
-        {
-
+            
         }
     }
 }

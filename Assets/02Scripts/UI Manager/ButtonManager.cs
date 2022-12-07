@@ -148,6 +148,8 @@ public class ButtonManager : MonoBehaviour
         {
             if (axCount < max)
             {
+                Skill_Ax.axLevel++;
+
                 axCount++;
             }
             else

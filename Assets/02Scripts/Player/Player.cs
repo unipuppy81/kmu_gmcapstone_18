@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     public Vector2 basketfire2d;
 
     public Vector3 axfire;
-    public Vector2 axfire2d;
+    static public Vector2 axfire2d;
     public Vector3 axPosition;
     public Vector2 axFire;
 
@@ -71,8 +71,12 @@ public class Player : MonoBehaviour
     public int basketCount;
     int count = 0;
 
+    float time;
+
     Rigidbody2D rigid;
     BasketBall basket;
+    Skill_Ax skillAx;
+
     void Awake()
     {
         playertop = 29.3f;
@@ -91,6 +95,7 @@ public class Player : MonoBehaviour
 
         basketCount = 0;
         basket = new BasketBall();
+        skillAx = new Skill_Ax();
 
         isClick = false;
         isMagnet = false;
@@ -105,6 +110,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         basketLevel();
+        axLevel();
     }
     void Update()
     {
@@ -124,14 +130,11 @@ public class Player : MonoBehaviour
             }
         }
 
-
-
         if (Input.GetKeyDown(KeyCode.O))
         {
             isMagnet = true;
         }
-        ax();
-        axTime += Time.deltaTime;
+
     }
 
     void basketLevel()
@@ -139,6 +142,14 @@ public class Player : MonoBehaviour
         if (BasketBall.basketballLevel == 1 || BasketBall.basketballLevel == 3 || BasketBall.basketballLevel == 5 || BasketBall.basketballLevel == 7)
         {
             basketballscript();
+        }
+    }
+
+    void axLevel()
+    {
+        if (Skill_Ax.axLevel == 1 || Skill_Ax.axLevel == 3 || Skill_Ax.axLevel == 5 || Skill_Ax.axLevel == 7)
+        {
+            axScript();
         }
     }
 
@@ -238,14 +249,6 @@ public class Player : MonoBehaviour
 
     }
 
-    void ax()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            axScript();
-        }
-    }
-
     void axScript()
     {
         float spawnPosx1 = transform.position.x + 1f;
@@ -259,31 +262,14 @@ public class Player : MonoBehaviour
 
         Vector3 axFired = new Vector3(randomX, randomY, 0);
 
-        axfire = new Vector3(transform.position.x + 5f, transform.position.y + 5f, transform.position.z + 5f);
         GameObject ax = Instantiate(Ax, transform.position, transform.rotation);
         Rigidbody2D rigid = ax.GetComponent<Rigidbody2D>();
 
         axfire2d = new Vector2(axFired.x, axFired.y).normalized;
-        axFire = axfire2d * 7f;
 
-        //rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
-        //rigid.velocity = new Vector2(axFire.x, axFire.y);
+        rigid.AddForce(axfire2d * 6f, ForceMode2D.Impulse);
 
-        if (axTime >= 0f && axTime < 0.7f)
-        {
-            //rigid.velocity = new Vector2(axFire.x, axFire.y);
-            rigid.AddForce(axfire2d * 10f, ForceMode2D.Impulse);
-        }
-        else if (axTime >= 0.7f)
-        {
-            //rigid.velocity = new Vector2(-axFire.x, -axFire.y);
-            rigid.AddForce(-axfire2d * 10f, ForceMode2D.Impulse);
-        }
-        else if (axTime >= 1.5f)
-        {
-            Destroy(ax);
-            axTime = 0f;
-        }
+        Skill_Ax.axLevel++;
     }
 
     void spcount()

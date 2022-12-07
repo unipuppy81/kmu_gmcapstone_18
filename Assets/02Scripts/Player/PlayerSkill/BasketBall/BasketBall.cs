@@ -22,7 +22,6 @@ class BasketBall : MonoBehaviour
 
     void Awake()
     {
-  
         level1 = true;
         level2 = false;
         level3 = false;
@@ -34,10 +33,6 @@ class BasketBall : MonoBehaviour
         basketdmg = 1f;
     }
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -113,7 +108,6 @@ class BasketBall : MonoBehaviour
         if (collision.gameObject.tag == "Enemy01")
         {
 
-            UnityEngine.Debug.Log("적 피 사라짐");
             if (level5 == true)
             {
 

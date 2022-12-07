@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5463815195168949306}
   - component: {fileID: 5463815195168949307}
   - component: {fileID: 5463815195168949311}
-  - component: {fileID: 5463815195168949304}
+  - component: {fileID: 4892795677373300552}
   m_Layer: 0
   m_Name: Ax
   m_TagString: Skill3
@@ -420,7 +420,7 @@ PolygonCollider2D:
       - {x: -3.08, y: -8.07}
       - {x: -2.96, y: -8.04}
       - {x: -2.84, y: -7.96}
---- !u!114 &5463815195168949304
+--- !u!114 &4892795677373300552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,16 +432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d4bffc5f7c4fe429bc3b7a8c8e91aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 3
-  Ax: {fileID: 5463815195168949252}
-  player: {fileID: 0}
-  level1: 1
-  level2: 1
-  level3: 1
-  level4: 1
+  axdmg: 0
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
   level5: 1
-  axfire: {x: 0, y: 0, z: 0}
-  axfire2d: {x: 0, y: 0}
-  axPosition: {x: 0, y: 0, z: 0}
-  axFire: {x: 0, y: 0}
-  go: 0
+  dmg: 3
+  sprites: {fileID: 21300000, guid: f3456f9cb138ba14cbfb7b60b566dc87, type: 3}
