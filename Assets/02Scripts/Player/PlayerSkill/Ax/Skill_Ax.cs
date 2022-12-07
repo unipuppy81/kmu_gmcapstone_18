@@ -13,6 +13,7 @@ public class Skill_Ax : MonoBehaviour
     public int dmg = 3;
 
     float axTime;
+    float lifeCycle;
 
     Player player;
     SpriteRenderer spriteR;
@@ -22,6 +23,17 @@ public class Skill_Ax : MonoBehaviour
     new Rigidbody2D rigidbody2D;
 
     public Vector2 fired;
+
+    public float spawnPosx1;
+    public float spawnPosx2;
+    public float spawnPosy1;
+    public float spawnPosy2;
+
+    public float randomX;
+    public float randomY;
+
+    public Vector3 axFired;
+    public Vector2 axfire2d;
 
     void Awake()
     {
@@ -35,25 +47,47 @@ public class Skill_Ax : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         axdmg = 1f;
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+        spawnPosx1 = transform.position.x + 1f;
+        spawnPosy1 = transform.position.y + 1f;
+
+        spawnPosx2 = transform.position.x - 1f;
+        spawnPosy2 = transform.position.y - 1f;
+
+        randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
+        randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
+
+        axFired = new Vector3(randomX, randomY, 0);
+        axfire2d = new Vector2(axFired.x, axFired.y).normalized;
     }
 
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         axTime += Time.deltaTime;
-        axLife();
-          
+        //Debug.Log(axTime);
 
-        if (axTime == 1.5f)
+        if (axTime >= 0.0f && axTime < 1.5f)
+        {
+            //rigidbody2D.AddForce(axfire2d * 6f, ForceMode2D.Impulse);
+            rigidbody2D.velocity = axfire2d * 6f;
+        }
+        else if (axTime == 1.5f)
         {
             rigidbody2D.velocity = Vector2.zero;
         }
-        else if (axTime > 1.5f)
+        else if (axTime > 1.5f && axTime < 4.0f)
         {
-            //fired = (player.transform.position - transform.position).normalized;
-            //rigidbody2D.velocity = fired * 6f;
-            rigidbody2D.velocity = Player.axfire2d * -6f;
-
+            rigidbody2D.velocity = axfire2d * -6f;
+        }
+        else if (axTime >= 4.0f && axTime < 6.0f)
+        {
+            gameObject.SetActive(false);
+        }
+        else if (axTime >= 6.0f)
+        {
+            player.axScript();
+            axTime = 0.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -61,6 +95,7 @@ public class Skill_Ax : MonoBehaviour
             level5 = true;
             spriteR.sprite = sprites;
         }
+        Debug.Log(lifeCycle);
     }
 
     void FixedUpdate()
@@ -100,23 +135,6 @@ public class Skill_Ax : MonoBehaviour
             dmg = 5;
             spriteR.sprite = sprites;
         }
-    }
-
-    void axLife()
-    {
-        if (level5 == false)
-        {
-
-        }
-
-        if (level5 == true)
-        {
-            if (axTime >= 4f)
-            {
-                axTime = 0f;
-            }
-        }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

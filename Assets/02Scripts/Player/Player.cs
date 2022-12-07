@@ -150,6 +150,7 @@ public class Player : MonoBehaviour
         if (Skill_Ax.axLevel == 1 || Skill_Ax.axLevel == 3 || Skill_Ax.axLevel == 5 || Skill_Ax.axLevel == 7)
         {
             axScript();
+            Skill_Ax.axLevel++;
         }
     }
 
@@ -249,27 +250,9 @@ public class Player : MonoBehaviour
 
     }
 
-    void axScript()
+    public void axScript()
     {
-        float spawnPosx1 = transform.position.x + 1f;
-        float spawnPosy1 = transform.position.y + 1f;
-
-        float spawnPosx2 = transform.position.x - 1f;
-        float spawnPosy2 = transform.position.y - 1f;
-
-        float randomX = UnityEngine.Random.Range(spawnPosx1, spawnPosx2);
-        float randomY = UnityEngine.Random.Range(spawnPosy1, spawnPosy2);
-
-        Vector3 axFired = new Vector3(randomX, randomY, 0);
-
         GameObject ax = Instantiate(Ax, transform.position, transform.rotation);
-        Rigidbody2D rigid = ax.GetComponent<Rigidbody2D>();
-
-        axfire2d = new Vector2(axFired.x, axFired.y).normalized;
-
-        rigid.AddForce(axfire2d * 6f, ForceMode2D.Impulse);
-
-        Skill_Ax.axLevel++;
     }
 
     void spcount()

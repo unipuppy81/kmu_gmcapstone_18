@@ -12,8 +12,8 @@ public class Magnet : MonoBehaviour
     public bool hasTarget = false;
     Vector3 targetPosition;
 
-    public float magnetStrength = 2f; // 자석 세기
-    public float distanceStretch = 4f; // 거리에 따른 세기
+    public float magnetStrength = 5f; // 자석 세기
+    public float distanceStretch = 10f; // 거리에 따른 세기
     public int magnetDirection = 1;
 
     private void Awake()
