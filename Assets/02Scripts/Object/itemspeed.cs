@@ -5,11 +5,12 @@ using UnityEngine;
 public class itemspeed : MonoBehaviour
 {
     private Player player;
-    private PlayerMovement pm;
+
 
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,10 +19,10 @@ public class itemspeed : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-            pm.moveSpeed += 0.5f;
-            if (pm.moveSpeed >= pm.maxSpeed)
+            PlayerMovement.moveSpeed += 5.0f;
+            if (PlayerMovement.moveSpeed >= PlayerMovement.maxSpeed)
             {
-                pm.moveSpeed = pm.maxSpeed;
+                PlayerMovement.moveSpeed = PlayerMovement.maxSpeed;
             }
         }
     }

@@ -42,19 +42,18 @@ public class Skill_Ax : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         axTime += Time.deltaTime;
         axLife();
-        Debug.Log(axTime);        
+          
 
         if (axTime == 1.5f)
         {
             rigidbody2D.velocity = Vector2.zero;
-            Debug.Log("1초");
         }
         else if (axTime > 1.5f)
         {
             //fired = (player.transform.position - transform.position).normalized;
             //rigidbody2D.velocity = fired * 6f;
             rigidbody2D.velocity = Player.axfire2d * -6f;
-            Debug.Log("1초 후 되돌아옴");
+
         }
 
         if (Input.GetKeyDown(KeyCode.R))

@@ -28,14 +28,15 @@ public class ItemDB : MonoBehaviour
     public GameObject[] EquipSlot, PassiveSlot, UsingImage;
     public Image[] ItemImage;
     public Sprite[] ItemSprite;
-
+    bool canExist = true;
     int count = 0;
+
     void Start()
     {
         // 전체 아이템 리스트 불러옴
         ItemSprite = Resources.LoadAll<Sprite>("05Sprite/Equipment");
         string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
-       
+      
         for (int i = 0; i < line.Length; i++)
         {
             string[] row = line[i].Split('\t');
@@ -74,33 +75,132 @@ public class ItemDB : MonoBehaviour
 
     public void AddEquip(string EquipName)
     {
-        Item AddItem, CompareItem;
+        Item AddItem, CompareItem, CompareItem1, CompareItem2, CompareItem3;
         curName = EquipName;
 
-        bool canExist;
-
         AddItem = AllItemList.Find(x => x.Name == EquipName);
-        CurItemList.Add(AddItem);
+        AddItem.isUsing = true;
+        int a = count - 1;
+        int i = 0;
 
-        int spriteNum = int.Parse(CurItemList[count].Index);
-        UnityEngine.Debug.Log("spritenum");
-        UnityEngine.Debug.Log(spriteNum);
-        if (count < EquipSlot.Length)
-        {
-            bool isExist = count < EquipSlot.Length;
-
-            EquipSlot[count].SetActive(isExist);
-
-            if (isExist)
-            {
-                ItemImage[count].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == AllItemList[spriteNum].Name)];
-            }
-            count++;
-
-        }
         
+        if (CurItemList.Count > 0)
+        {
+            if(CurItemList.Count == 1) { 
+                CompareItem = CurItemList[0];
+
+                int num1 = int.Parse(AddItem.Index);
+                int num2 = int.Parse(CompareItem.Index);
+
+                if (num1 == num2)
+                {
+                    canExist = false;
+                    UnityEngine.Debug.Log("A");
+                    UnityEngine.Debug.Log(canExist);
+                }
+                else
+                {
+                    canExist = true;
+                    UnityEngine.Debug.Log("B");
+                    UnityEngine.Debug.Log(canExist);
+                }
+            }
+            else if (CurItemList.Count == 2)
+            {
+                CompareItem = CurItemList[0];
+                CompareItem1 = CurItemList[1];
+
+                int num1 = int.Parse(AddItem.Index);
+                int num2 = int.Parse(CompareItem.Index);
+                int num3 = int.Parse(CompareItem1.Index);
 
 
+                if (num1 == num2 || num1 == num3)
+                {
+                    canExist = false;
+                    UnityEngine.Debug.Log("C");
+                    UnityEngine.Debug.Log(canExist);
+                }
+                else
+                {
+                    canExist = true;
+                    UnityEngine.Debug.Log("D");
+                    UnityEngine.Debug.Log(canExist);
+                }
+            }
+            else if (CurItemList.Count == 3)
+            {
+                CompareItem = CurItemList[0];
+                CompareItem1 = CurItemList[1];
+                CompareItem2 = CurItemList[2];
+
+                int num1 = int.Parse(AddItem.Index);
+                int num2 = int.Parse(CompareItem.Index);
+                int num3 = int.Parse(CompareItem1.Index);
+                int num4 = int.Parse(CompareItem2.Index);
+
+                if (num1 == num2 || num1 == num3 || num1 == num4)
+                {
+                    canExist = false;
+                    UnityEngine.Debug.Log("E");
+                    UnityEngine.Debug.Log(canExist);
+                }
+                else
+                {
+                    canExist = true;
+                    UnityEngine.Debug.Log("F");
+                    UnityEngine.Debug.Log(canExist);
+                }
+            }
+            else if (CurItemList.Count == 4)
+            {
+                CompareItem = CurItemList[0];
+                CompareItem1 = CurItemList[1];
+                CompareItem2 = CurItemList[2];
+                CompareItem3 = CurItemList[3];
+
+                int num1 = int.Parse(AddItem.Index);
+                int num2 = int.Parse(CompareItem.Index);
+                int num3 = int.Parse(CompareItem1.Index);
+                int num4 = int.Parse(CompareItem2.Index);
+                int num5 =  int.Parse(CompareItem3.Index);
+
+                if (num1 == num2 || num1 == num3 || num1 == num4 || num1 == num5)
+                {
+                    canExist = false;
+                    UnityEngine.Debug.Log("G");
+                    UnityEngine.Debug.Log(canExist);
+                }
+                else
+                {
+                    canExist = true;
+                    UnityEngine.Debug.Log("H");
+                    UnityEngine.Debug.Log(canExist);
+                }
+            }
+        }
+
+        if (canExist == true) {
+            CurItemList.Add(AddItem);
+            
+            UnityEngine.Debug.Log("AddItem");
+
+            int spriteNum = int.Parse(CurItemList[count].Index);
+
+            if (count < EquipSlot.Length)
+            {
+                 bool isExist = count < EquipSlot.Length;
+
+                EquipSlot[count].SetActive(isExist);
+
+                UnityEngine.Debug.Log("생성");
+                if (isExist)
+                {
+                    ItemImage[count].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == AllItemList[spriteNum].Name)];
+                }
+                count++;
+            }
+        }
     } 
 
     //public void GetItemClick()
