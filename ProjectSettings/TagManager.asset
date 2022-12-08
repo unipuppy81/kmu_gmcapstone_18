@@ -34,6 +34,7 @@ TagManager:
   - heart
   - Bshoes
   - MagInc
+  - Skill4
   layers:
   - Default
   - TransparentFX

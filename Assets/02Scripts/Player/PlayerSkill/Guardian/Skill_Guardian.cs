@@ -42,7 +42,6 @@ public class Skill_Guardian : MonoBehaviour
         transform.position = target.position + offset;
         transform.RotateAround(target.position, Vector3.forward, orbitSpeed * Time.deltaTime);
         transform.rotation = Quaternion.identity;
-        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
         offset = transform.position - target.position;
 

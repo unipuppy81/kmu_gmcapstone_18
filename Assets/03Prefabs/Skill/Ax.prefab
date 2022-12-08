@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8676798856007275371}
   - component: {fileID: 7021389889287898609}
   - component: {fileID: 5058362897701283239}
+  - component: {fileID: 754325581483812826}
   m_Layer: 0
   m_Name: Ax
   m_TagString: Skill3
@@ -28,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5463815195168949252}
-  m_LocalRotation: {x: 0, y: 0, z: 0.2164396, w: 0.97629607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5463815195168949306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -143,8 +144,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008225564, y: -0.43098688}
-  m_Size: {x: 2.6837015, y: 15.818041}
+  m_Offset: {x: 0.28270906, y: 4.029377}
+  m_Size: {x: 2.1347342, y: 7.0345793}
   m_Direction: 0
 --- !u!61 &5058362897701283239
 BoxCollider2D:
@@ -172,3 +173,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.857503, y: 6.4854317}
   m_EdgeRadius: 0
+--- !u!70 &754325581483812826
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463815195168949252}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.2644947, y: -3.0879445}
+  m_Size: {x: 2.9558325, y: 10.5041275}
+  m_Direction: 0

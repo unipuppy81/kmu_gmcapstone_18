@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4232877716850046841}
   - component: {fileID: 4232877716850046842}
   - component: {fileID: 4232877716850046843}
-  - component: {fileID: 4232877716850046836}
   - component: {fileID: 4232877716850046840}
+  - component: {fileID: 8036123398204738656}
   m_Layer: 0
   m_Name: MagneticField 1
-  m_TagString: Untagged
+  m_TagString: Skill2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4232877716850046837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d23aa7beac64b24c867be8d2b3bea73, type: 3}
   m_Color: {r: 0.9355551, g: 1, b: 0.8742138, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 16.68, y: 16.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -108,22 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4232877716850046836
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4232877716850046837}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &4232877716850046840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,10 +124,26 @@ MonoBehaviour:
   damageTime: 0.5
   dmg: 3
   target: {fileID: 0}
-  magnetic: {fileID: 0}
+  magnetic: {fileID: 4232877716850046837}
   magneticLevel: 0
   level1: 1
   level2: 1
   level3: 1
   level4: 1
   level5: 1
+--- !u!70 &8036123398204738656
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4232877716850046837}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5413399, y: -0.06766701}
+  m_Size: {x: 10.048588, y: 10.048588}
+  m_Direction: 0

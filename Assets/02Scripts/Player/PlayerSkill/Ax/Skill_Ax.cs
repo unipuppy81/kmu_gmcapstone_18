@@ -5,7 +5,6 @@ using UnityEngine;
 public class Skill_Ax : MonoBehaviour
 {
     public static int axLevel = 0;
-    public float axdmg;
     public bool level1, level2, level3, level4, level5;
 
     float rotationSpeed = 500f;
@@ -50,7 +49,7 @@ public class Skill_Ax : MonoBehaviour
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         player = GameObject.Find("Player").GetComponent<Player>();
-        axdmg = 1f;
+
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
 
         spawnPosx1 = transform.position.x + 1f;
@@ -77,11 +76,6 @@ public class Skill_Ax : MonoBehaviour
             life = true;
         }
 
-        if(axLevel >= 10)
-        {
-            axLevel = 10;
-        }
-
         if (axTime >= 0.0f && axTime < 1.5f)
         {
             rigidbody2D.velocity = axfire2d * 6f;
@@ -100,12 +94,6 @@ public class Skill_Ax : MonoBehaviour
             axTime = 0.0f;
             life = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            level5 = true;
-            spriteR.sprite = sprites;
-        }
     }
 
     void FixedUpdate()
@@ -116,7 +104,7 @@ public class Skill_Ax : MonoBehaviour
 
     void AxLevel()
     {
-        if (axLevel == 1 || axLevel == 3 || axLevel == 5 || axLevel == 7)
+        if (axLevel == 1 || axLevel == 3 || axLevel == 5 || axLevel == 7 || axLevel == 9)
         {
             AxScript();
             axLevel++;
@@ -157,7 +145,7 @@ public class Skill_Ax : MonoBehaviour
             level4 = false;
             level5 = true;
         }
-        else if (axLevel == 10)
+        else if (axLevel >= 10)
         {
             transform.localScale = new Vector3(0.20f, 0.20f, 1f);
             dmg = 5;
