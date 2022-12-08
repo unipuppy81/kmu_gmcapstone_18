@@ -12,13 +12,16 @@ public class Magnet : MonoBehaviour
     public bool hasTarget = false;
     Vector3 targetPosition;
 
-    public float magnetStrength = 5f; // 자석 세기
+    public float magnetStrength = 15f; // 자석 세기
     public float distanceStretch = 10f; // 거리에 따른 세기
     public int magnetDirection = 1;
+
+    Rigidbody2D rigid;
 
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        rigid = ex.GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -34,6 +37,16 @@ public class Magnet : MonoBehaviour
         if (player.isMagnet == true) { 
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
         }
+
+        if (hasTarget)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
+        }
+
+    }
+    private void Update()
+    {
+
     }
 
 
@@ -52,20 +65,6 @@ public class Magnet : MonoBehaviour
         if (other.tag == "PlayerMg")
         {
             hasTarget = true;
-            Rigidbody2D rigid = ex.GetComponent<Rigidbody2D>();
-
-            Vector2 targetDirection = (player.transform.position - transform.position).normalized; // 플레이어로 향하는 벡터
-            float distance = Vector2.Distance(player.transform.position, transform.position); // 플레이어와 EX의 거리
-            float magnetDistanceStr = (distanceStretch / distance) * magnetStrength; // 거리에 따른 힘이 달라야 하므로 거리로 나눔
-            rigid.AddForce(magnetDistanceStr * (targetDirection * magnetDirection), ForceMode2D.Force);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "PlayerMg")
-        {
-            hasTarget = false;
         }
     }
 }
