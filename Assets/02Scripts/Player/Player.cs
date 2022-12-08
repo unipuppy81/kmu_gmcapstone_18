@@ -336,6 +336,10 @@ public class Player : MonoBehaviour
         {
             skillbtn.SetActive(false);
         }
+        else if(specialSkill > 0) 
+        {
+            skillbtn.SetActive(true);
+        }
     }
 
     void Reload()

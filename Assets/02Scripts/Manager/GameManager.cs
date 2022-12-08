@@ -358,12 +358,12 @@ public class GameManager : MonoBehaviour
                     }
                     if(j == 1)
                     {
-                        empty[1].transform.position = new Vector3(180, 240, 1.0f);
+                        empty[1].transform.position = new Vector3(170, 240, 1.0f);
                         empty[1].SetActive(true);
                     }
                     if(j == 2)
                     {
-                        empty[2].transform.position = new Vector3(300, 240, 1.0f);
+                        empty[2].transform.position = new Vector3(280, 240, 1.0f);
                         empty[2].SetActive(true);
                     }
                 }

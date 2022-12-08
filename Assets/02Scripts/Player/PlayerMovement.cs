@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private static PlayerMovement instance;
     Rigidbody2D rb;
-    static public float moveSpeed = 3f;
-    static public float maxSpeed = 10f;
+    public float moveSpeed = 3f;
+    public float maxSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +38,7 @@ public class PlayerMovement : MonoBehaviour
         float movehorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 dir = new Vector3(JoyStickMovement.Instance.joyVec.x * moveSpeed, JoyStickMovement.Instance.joyVec.y * moveSpeed, 0.0f);
-        dir = dir.normalized;
-
         rb.velocity = new Vector3(moveVertical * moveSpeed, moveVertical * moveSpeed,0.0f );
-        rb.velocity = dir * moveSpeed;
+        rb.velocity = new Vector3(JoyStickMovement.Instance.joyVec.x * moveSpeed, JoyStickMovement.Instance.joyVec.y * moveSpeed, 0.0f);
     }
-}
+   }

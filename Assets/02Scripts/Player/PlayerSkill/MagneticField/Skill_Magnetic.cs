@@ -58,21 +58,21 @@ public class Skill_Magnetic : MonoBehaviour
         }
         else if (magneticLevel == 2 && level2 == true)
         {
-            transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
             dmg = 2;
             level2 = false;
             level3 = true;
         }
         else if (magneticLevel == 3 && level3 == true)
         {
-            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
             dmg = 3;
             level3 = false;
             level4 = true;
         }
         else if (magneticLevel == 4 && level4 == true)
         {
-            transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             dmg = 4;
             level4 = false;
             level5 = true;

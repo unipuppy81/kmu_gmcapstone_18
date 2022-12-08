@@ -32,7 +32,7 @@ public class JoyStickMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stickRadius = bGStick.gameObject.GetComponent<RectTransform>().sizeDelta.y / 2;
+        stickRadius = bGStick.gameObject.GetComponent<RectTransform>().sizeDelta.y / 7;
         joyStickFirstPosition = bGStick.transform.position;
         
     }
