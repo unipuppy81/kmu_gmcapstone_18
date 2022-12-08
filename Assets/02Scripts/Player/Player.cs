@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         basketLevel();
-        axLevel();
+        //axLevel();
     }
     void Update()
     {
@@ -145,14 +145,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    void axLevel()
+    /*void axLevel()
     {
         if (Skill_Ax.axLevel == 1 || Skill_Ax.axLevel == 3 || Skill_Ax.axLevel == 5 || Skill_Ax.axLevel == 7)
         {
-            axScript();
+            //axScript();
             Skill_Ax.axLevel++;
         }
-    }
+    }*/
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -250,10 +250,10 @@ public class Player : MonoBehaviour
 
     }
 
-    public void axScript()
+    /*public void axScript()
     {
         GameObject ax = Instantiate(Ax, transform.position, transform.rotation);
-    }
+    }*/
 
     void spcount()
     {

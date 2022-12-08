@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Ax: {instanceID: 0}
-  - player: {instanceID: 0}
+  - sprites: {fileID: 21300000, guid: f3456f9cb138ba14cbfb7b60b566dc87, type: 3}
+  - Ax: {fileID: 5463815195168949252, guid: 8c1f4bc1dda41d9438caa07f07e75ff4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

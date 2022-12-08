@@ -7,10 +7,12 @@ public class AxCullTime : MonoBehaviour
     Player player;
     float cullTime;
 
+    Skill_Ax ax;
+
     private void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
-
+        //player = GameObject.Find("Player").GetComponent<Player>();
+        ax = GameObject.Find("AX").GetComponent<Skill_Ax>();
     }
 
     void Start()
@@ -22,10 +24,11 @@ public class AxCullTime : MonoBehaviour
     {
         cullTime += Time.deltaTime;
 
-        if(cullTime >= 6.0f)
+        if(cullTime >= 7.0f)
         {
-            player.axScript();
+            ax.axScript();
             cullTime = 0.0f;
         }
+        
     }
 }

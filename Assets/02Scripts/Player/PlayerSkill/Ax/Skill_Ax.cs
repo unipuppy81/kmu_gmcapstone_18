@@ -22,18 +22,20 @@ public class Skill_Ax : MonoBehaviour
     ButtonManager buttonManager;
     new Rigidbody2D rigidbody2D;
 
-    public Vector2 fired;
+    private Vector2 fired;
 
-    public float spawnPosx1;
-    public float spawnPosx2;
-    public float spawnPosy1;
-    public float spawnPosy2;
+    private float spawnPosx1;
+    private float spawnPosx2;
+    private float spawnPosy1;
+    private float spawnPosy2;
 
-    public float randomX;
-    public float randomY;
+    private float randomX;
+    private float randomY;
 
-    public Vector3 axFired;
-    public Vector2 axfire2d;
+    private Vector3 axFired;
+    private Vector2 axfire2d;
+
+    public GameObject Ax;
 
     void Awake()
     {
@@ -78,9 +80,10 @@ public class Skill_Ax : MonoBehaviour
         {
             rigidbody2D.velocity = axfire2d * -6f;
         }
-        else if (axTime >= 5.0f && axTime < 6.0f)
+        else if (axTime >= 5.0f && axTime < 7.0f)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
             axTime = 0.0f;
         }
 
@@ -94,6 +97,21 @@ public class Skill_Ax : MonoBehaviour
     void FixedUpdate()
     {
         LevelDesign();
+        AxLevel();
+    }
+
+    void AxLevel()
+    {
+        if (axLevel == 1 || axLevel == 3 || axLevel == 5 || axLevel == 7)
+        {
+            axScript();
+            axLevel++;
+        }
+    }
+
+    public void axScript()
+    {
+        GameObject ax = Instantiate(Ax, player.transform.position, player.transform.rotation);
     }
 
     void LevelDesign()
