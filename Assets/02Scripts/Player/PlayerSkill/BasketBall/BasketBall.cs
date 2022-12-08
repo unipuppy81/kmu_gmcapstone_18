@@ -5,10 +5,9 @@ using UnityEngine;
 class BasketBall : MonoBehaviour
 {
     public static int basketballLevel = 0;
-    public float basketdmg;
     public bool level1, level2, level3, level4, level5;
 
-    public int dmg = 3;
+    public int basketdmg = 3;
 
     float basketTime;
 
@@ -30,7 +29,6 @@ class BasketBall : MonoBehaviour
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         player = GameObject.Find("Player").GetComponent<Player>();
-        basketdmg = 1f;
     }
 
 
@@ -56,32 +54,32 @@ class BasketBall : MonoBehaviour
     {
         if (basketballLevel == 2)
         {
-            dmg = 1;
+            basketdmg = 3;
             level1 = false;
             level2 = true;
         }
         else if (basketballLevel == 4)
         {
-            dmg = 2;
+            basketdmg = 4;
             level2 = false;
             level3 = true;
         }
         else if (basketballLevel == 6)
         {
 
-            dmg = 2;
+            basketdmg = 5;
             level3 = false;
             level4 = true;
         }
         else if (basketballLevel == 8)
         {
-            dmg = 3;
+            basketdmg = 6;
             level4 = false;
             level5 = true;
         }
         else if (basketballLevel == 10)
         {
-            dmg = 5;
+            basketdmg = 7;
             spriteR.sprite = sprites;
         }
     }
@@ -107,7 +105,7 @@ class BasketBall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy01")
         {
-
+            UnityEngine.Debug.Log("³ó±¸°øÃæµ¹");
             if (level5 == true)
             {
 

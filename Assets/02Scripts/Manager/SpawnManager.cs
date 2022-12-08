@@ -73,8 +73,8 @@ public class SpawnManager : MonoBehaviour
         Enemy = Enemy1;
         bEnemy = Enemy2;
 
-        spawnTime = 60.0f;
-        mbspawnTime = 30.0f;
+        spawnTime = 180.0f;
+        mbspawnTime = 90.0f;
 
         isSpawnTure = false;
         bosshpbar.SetActive(false);
@@ -91,9 +91,9 @@ public class SpawnManager : MonoBehaviour
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 6, 1.0f);
-        InvokeRepeating("SpawnEnemy", 6, 0.4f);
-        //InvokeRepeating("SpawnbEnemy", 6, 10f);
+        InvokeRepeating("SpawnBox", 6, 15.0f);
+        InvokeRepeating("SpawnEnemy", 6, 0.5f);
+        InvokeRepeating("SpawnbEnemy", 6, 15.0f);
 
         isSpawnTure = false;
     }

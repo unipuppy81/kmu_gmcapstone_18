@@ -69,11 +69,11 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.A:
-                if(t >=0 && t <= 10)
+                if(t >=0 && t <= 90)
                 {
                     enemyHealth = 2f;
                 }
-                else if (t >= 10)
+                else if (t >= 90)
                 {
                     enemyHealth = 8f;
                 }
@@ -82,7 +82,15 @@ public class Enemy : MonoBehaviour
                 break;
 
             case Type.B:
-                enemyHealth = 2f;
+                if (t >= 0 && t <= 90)
+                {
+                    enemyHealth = 2f;
+                }
+                else if (t >= 90)
+                {
+                    enemyHealth = 4f;
+                }
+
 
                 break;
         }
@@ -105,7 +113,7 @@ public class Enemy : MonoBehaviour
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
                 searchRadius = 5f;
-                bulletSpeed = 1.0f;
+                bulletSpeed = 7.0f;
                 InvokeRepeating("SearchPlayer", 0f, 0.5f);
                 break;
 
@@ -168,6 +176,7 @@ public class Enemy : MonoBehaviour
             isShoot = true;
 
     }
+
     void FollowTarget()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
@@ -202,9 +211,12 @@ public class Enemy : MonoBehaviour
 
     public void onHit(float dmg)
     {
+        UnityEngine.Debug.Log("A");
         enemyHealth -= dmg;
+        UnityEngine.Debug.Log("B");
         if (enemyHealth <= 0)
         {
+            UnityEngine.Debug.Log("C");
             gameObject.SetActive(false);
             switch (enemyType)
             {
@@ -283,13 +295,18 @@ public class Enemy : MonoBehaviour
             takeDamageText(skill_Ax.dmg);
             //knockback.PlayFeedbackM(skill_Magnetic.gameObject);
         }
-        else if (other.gameObject.CompareTag("Ax"))
-        {
-
-        }
-
-
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Basketball")
+        {
+            BasketBall basket = collision.gameObject.GetComponent<BasketBall>();
+            onHit(basket.basketdmg);
+            takeDamageText(basket.basketdmg);
+        }
+    }
+
     void takeDamageText(float damage)
     {
         GameObject hudText = Instantiate(hudDamageText);

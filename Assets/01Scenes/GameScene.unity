@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 53012704}
   - component: {fileID: 53012703}
   - component: {fileID: 53012702}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: 188181985}
   - component: {fileID: 188181984}
   - component: {fileID: 188181983}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6505,7 +6505,7 @@ GameObject:
   - component: {fileID: 537308843}
   - component: {fileID: 537308842}
   - component: {fileID: 537308841}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10227,7 +10227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 868300002}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: basketBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11982,7 +11982,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 'Magnetic '
+          m_StringArgument: NS
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &971911753
@@ -21212,7 +21212,7 @@ GameObject:
   - component: {fileID: 1744834036}
   - component: {fileID: 1744834035}
   - component: {fileID: 1744834034}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

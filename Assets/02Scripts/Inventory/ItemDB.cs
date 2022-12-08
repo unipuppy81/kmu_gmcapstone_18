@@ -97,8 +97,8 @@ public class ItemDB : MonoBehaviour
             if(CurItemList.Count == 1) { 
                 CompareItem = CurItemList[0];
 
-                int num1 = int.Parse(AddItem.Index);
-                int num2 = int.Parse(CompareItem.Index);
+                int num1 = int.Parse(AddItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
 
                 if (num1 == num2)
                 {
@@ -114,9 +114,9 @@ public class ItemDB : MonoBehaviour
                 CompareItem = CurItemList[0];
                 CompareItem1 = CurItemList[1];
 
-                int num1 = int.Parse(AddItem.Index);
-                int num2 = int.Parse(CompareItem.Index);
-                int num3 = int.Parse(CompareItem1.Index);
+                int num1 = int.Parse(AddItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num3 = int.Parse(CompareItem1.Index, System.Globalization.CultureInfo.InvariantCulture);
 
 
                 if (num1 == num2 || num1 == num3)
@@ -134,10 +134,10 @@ public class ItemDB : MonoBehaviour
                 CompareItem1 = CurItemList[1];
                 CompareItem2 = CurItemList[2];
 
-                int num1 = int.Parse(AddItem.Index);
-                int num2 = int.Parse(CompareItem.Index);
-                int num3 = int.Parse(CompareItem1.Index);
-                int num4 = int.Parse(CompareItem2.Index);
+                int num1 = int.Parse(AddItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num3 = int.Parse(CompareItem1.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num4 = int.Parse(CompareItem2.Index, System.Globalization.CultureInfo.InvariantCulture);
 
                 if (num1 == num2 || num1 == num3 || num1 == num4)
                 {
@@ -155,11 +155,11 @@ public class ItemDB : MonoBehaviour
                 CompareItem2 = CurItemList[2];
                 CompareItem3 = CurItemList[3];
 
-                int num1 = int.Parse(AddItem.Index);
-                int num2 = int.Parse(CompareItem.Index);
-                int num3 = int.Parse(CompareItem1.Index);
-                int num4 = int.Parse(CompareItem2.Index);
-                int num5 =  int.Parse(CompareItem3.Index);
+                int num1 = int.Parse(AddItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num3 = int.Parse(CompareItem1.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num4 = int.Parse(CompareItem2.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num5 =  int.Parse(CompareItem3.Index, System.Globalization.CultureInfo.InvariantCulture);
 
                 if (num1 == num2 || num1 == num3 || num1 == num4 || num1 == num5)
                 {
@@ -175,7 +175,7 @@ public class ItemDB : MonoBehaviour
         if (canExist == true) {
             CurItemList.Add(AddItem);
 
-            int spriteNum = int.Parse(CurItemList[Equipcount].Index);
+            int spriteNum = int.Parse(CurItemList[Equipcount].Index, System.Globalization.CultureInfo.InvariantCulture);
 
             if (Equipcount < EquipSlot.Length)
             {
@@ -197,7 +197,6 @@ public class ItemDB : MonoBehaviour
         Item AddPassive, CompareItem, CompareItem1, CompareItem2, CompareItem3;
         curName = PassiveName;
 
-        UnityEngine.Debug.Log(curName);
         AddPassive = AllItemList.Find(x => x.Name == PassiveName);
         AddPassive.isUsing = true;
         int a = Passivecount - 1;
@@ -210,8 +209,8 @@ public class ItemDB : MonoBehaviour
             {
                 CompareItem = CurPassiveList[0];
 
-                int num1 = int.Parse(AddPassive.Index);
-                int num2 = int.Parse(CompareItem.Index);
+                int num1 = int.Parse(AddPassive.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
 
                 if (num1 == num2)
                 {
@@ -227,9 +226,9 @@ public class ItemDB : MonoBehaviour
                 CompareItem = CurPassiveList[0];
                 CompareItem1 = CurPassiveList[1];
 
-                int num1 = int.Parse(AddPassive.Index);
-                int num2 = int.Parse(CompareItem.Index);
-                int num3 = int.Parse(CompareItem1.Index);
+                int num1 = int.Parse(AddPassive.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num3 = int.Parse(CompareItem1.Index, System.Globalization.CultureInfo.InvariantCulture);
 
 
                 if (num1 == num2 || num1 == num3)
@@ -247,10 +246,10 @@ public class ItemDB : MonoBehaviour
                 CompareItem1 = CurPassiveList[1];
                 CompareItem2 = CurPassiveList[2];
 
-                int num1 = int.Parse(AddPassive.Index);
-                int num2 = int.Parse(CompareItem.Index);
-                int num3 = int.Parse(CompareItem1.Index);
-                int num4 = int.Parse(CompareItem2.Index);
+                int num1 = int.Parse(AddPassive.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num3 = int.Parse(CompareItem1.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num4 = int.Parse(CompareItem2.Index, System.Globalization.CultureInfo.InvariantCulture);
 
                 if (num1 == num2 || num1 == num3 || num1 == num4)
                 {
@@ -268,11 +267,11 @@ public class ItemDB : MonoBehaviour
                 CompareItem2 = CurPassiveList[2];
                 CompareItem3 = CurPassiveList[3];
 
-                int num1 = int.Parse(AddPassive.Index);
-                int num2 = int.Parse(CompareItem.Index);
-                int num3 = int.Parse(CompareItem1.Index);
-                int num4 = int.Parse(CompareItem2.Index);
-                int num5 = int.Parse(CompareItem3.Index);
+                int num1 = int.Parse(AddPassive.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num2 = int.Parse(CompareItem.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num3 = int.Parse(CompareItem1.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num4 = int.Parse(CompareItem2.Index, System.Globalization.CultureInfo.InvariantCulture);
+                int num5 = int.Parse(CompareItem3.Index, System.Globalization.CultureInfo.InvariantCulture);
 
                 if (num1 == num2 || num1 == num3 || num1 == num4 || num1 == num5)
                 {
@@ -289,7 +288,7 @@ public class ItemDB : MonoBehaviour
         {
             CurPassiveList.Add(AddPassive);
 
-            int spriteNum = int.Parse(CurPassiveList[Passivecount].Index);
+            int spriteNum = int.Parse(CurPassiveList[Passivecount].Index, System.Globalization.CultureInfo.InvariantCulture);
 
             if (Passivecount < PassiveSlot.Length)
             {

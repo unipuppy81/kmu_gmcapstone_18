@@ -12,4 +12,4 @@ Passive	Ammo	방탄조끼	1	FALSE	0
 Passive	BasketballShoes	농구공 패시브	1	FALSE	1
 Passive	Dumbbell	aaa 패시브	1	FALSE	2
 Passive	Hot7	EMP 패시브	1	FALSE	3
-Passive	Magnetic	abc 패시브	1	FALSE	4
+Passive	NS	abc 패시브	1	FALSE	4
