@@ -3943,6 +3943,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5265339932802006591, guid: 0f50c1665ef82714a972b90f187ddf79, type: 3}
   m_PrefabInstance: {fileID: 189328912}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &310857994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8610574447911946248, guid: 387e3a99f0f292a4eaa1b4e00c54ea6a, type: 3}
+  m_PrefabInstance: {fileID: 1216434576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311504284
 GameObject:
   m_ObjectHideFlags: 0
@@ -7489,6 +7500,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628938018}
   m_CullTransparentMesh: 1
+--- !u!114 &634487353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8610574447911946248, guid: 387e3a99f0f292a4eaa1b4e00c54ea6a, type: 3}
+  m_PrefabInstance: {fileID: 9097936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &642414077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7223464692711574126, guid: 387e3a99f0f292a4eaa1b4e00c54ea6a, type: 3}
@@ -8464,6 +8486,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8768263566138226915, guid: 00a9805793e4bc44b9f89890aab49a32, type: 3}
   m_PrefabInstance: {fileID: 426641675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &716651559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8610574447911946248, guid: 387e3a99f0f292a4eaa1b4e00c54ea6a, type: 3}
+  m_PrefabInstance: {fileID: 146054582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &732122498
 GameObject:
   m_ObjectHideFlags: 0
@@ -12832,6 +12865,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   posValue: 1
+--- !u!114 &1057955484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8610574447911946248, guid: 387e3a99f0f292a4eaa1b4e00c54ea6a, type: 3}
+  m_PrefabInstance: {fileID: 2013816825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1062433829
 GameObject:
   m_ObjectHideFlags: 0
@@ -13502,14 +13546,14 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1444341467}
         m_TargetAssemblyTypeName: ItemDB, Assembly-CSharp
-        m_MethodName: TabClick
+        m_MethodName: AddPassive
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Passive
+          m_StringArgument: Hot7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1086841235
@@ -17088,6 +17132,7 @@ MonoBehaviour:
   AllItemList: []
   MyItemList: []
   CurItemList: []
+  CurPassiveList: []
   curType: 
   curName: Gun01
   EquipSlot:
@@ -17109,7 +17154,14 @@ MonoBehaviour:
   - {fileID: 1362524953}
   - {fileID: 308638174}
   - {fileID: 947448153}
+  PassiveImage:
+  - {fileID: 1829444663}
+  - {fileID: 716651559}
+  - {fileID: 634487353}
+  - {fileID: 310857994}
+  - {fileID: 1057955484}
   ItemSprite: []
+  PassiveSprite: []
 --- !u!4 &1444341468
 Transform:
   m_ObjectHideFlags: 0
@@ -17983,14 +18035,14 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1444341467}
         m_TargetAssemblyTypeName: ItemDB, Assembly-CSharp
-        m_MethodName: TabClick
+        m_MethodName: AddPassive
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Passive
+          m_StringArgument: Dumbbell
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1502872951
@@ -21281,6 +21333,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1829444663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8610574447911946248, guid: 387e3a99f0f292a4eaa1b4e00c54ea6a, type: 3}
+  m_PrefabInstance: {fileID: 867702006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1832369030
 GameObject:
   m_ObjectHideFlags: 0
@@ -24953,14 +25016,14 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1444341467}
         m_TargetAssemblyTypeName: ItemDB, Assembly-CSharp
-        m_MethodName: TabClick
+        m_MethodName: AddPassive
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Passive
+          m_StringArgument: BasketballShoes
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2109036600
