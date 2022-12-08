@@ -5370,7 +5370,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hot7
+          m_StringArgument: BasketballShoes
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &418419977
@@ -5393,8 +5393,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11876,7 +11876,7 @@ GameObject:
   - component: {fileID: 971911753}
   - component: {fileID: 971911752}
   m_Layer: 5
-  m_Name: Pan1_MagInc
+  m_Name: Pan1_Magnetic
   m_TagString: MagInc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11982,7 +11982,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hot7
+          m_StringArgument: 'Magnetic '
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &971911753
@@ -17511,7 +17511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e0eee7366c47cf40a96e98554055d12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ac2080bd8992d34a864f8e78fe0702f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22929,7 +22929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b063da7f0b4869a46a1aaf1cd00b7d75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a063ad89910d55f459d7d392c0e40a5e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26136,7 +26136,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BasketballShoes
+          m_StringArgument: Ammo
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2109036600

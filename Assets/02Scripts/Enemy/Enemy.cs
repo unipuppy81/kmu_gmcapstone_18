@@ -283,6 +283,12 @@ public class Enemy : MonoBehaviour
             takeDamageText(skill_Ax.dmg);
             //knockback.PlayFeedbackM(skill_Magnetic.gameObject);
         }
+        else if (other.gameObject.CompareTag("Ax"))
+        {
+
+        }
+
+
     }
     void takeDamageText(float damage)
     {

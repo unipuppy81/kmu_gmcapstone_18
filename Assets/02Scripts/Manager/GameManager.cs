@@ -294,17 +294,15 @@ public class GameManager : MonoBehaviour
             for (int t = 0; t < selectPanel.Count; t++)
             {
                 selectPanel[t].SetActive(false);
-                //select3[t].SetActive(false);
+                
             }
             for (int t = 0; t < select_coin_hp.Count; t++)
             {
                 select_coin_hp[t].SetActive(false);
-                //select3[t].SetActive(false);
             }
             empty.Clear();
             
         }
-        
     }
 
     void Timer()

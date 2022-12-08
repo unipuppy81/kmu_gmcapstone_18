@@ -49,7 +49,6 @@ public class ItemDB : MonoBehaviour
 
         StartEqiup();
         Load();
-
     }
 
     public void StartEqiup()
@@ -104,14 +103,10 @@ public class ItemDB : MonoBehaviour
                 if (num1 == num2)
                 {
                     canExist = false;
-                    UnityEngine.Debug.Log("A");
-                    UnityEngine.Debug.Log(canExist);
                 }
                 else
                 {
                     canExist = true;
-                    UnityEngine.Debug.Log("B");
-                    UnityEngine.Debug.Log(canExist);
                 }
             }
             else if (CurItemList.Count == 2)
@@ -127,14 +122,10 @@ public class ItemDB : MonoBehaviour
                 if (num1 == num2 || num1 == num3)
                 {
                     canExist = false;
-                    UnityEngine.Debug.Log("C");
-                    UnityEngine.Debug.Log(canExist);
                 }
                 else
                 {
                     canExist = true;
-                    UnityEngine.Debug.Log("D");
-                    UnityEngine.Debug.Log(canExist);
                 }
             }
             else if (CurItemList.Count == 3)
@@ -151,14 +142,10 @@ public class ItemDB : MonoBehaviour
                 if (num1 == num2 || num1 == num3 || num1 == num4)
                 {
                     canExist = false;
-                    UnityEngine.Debug.Log("E");
-                    UnityEngine.Debug.Log(canExist);
                 }
                 else
                 {
                     canExist = true;
-                    UnityEngine.Debug.Log("F");
-                    UnityEngine.Debug.Log(canExist);
                 }
             }
             else if (CurItemList.Count == 4)
@@ -177,14 +164,10 @@ public class ItemDB : MonoBehaviour
                 if (num1 == num2 || num1 == num3 || num1 == num4 || num1 == num5)
                 {
                     canExist = false;
-                    UnityEngine.Debug.Log("G");
-                    UnityEngine.Debug.Log(canExist);
                 }
                 else
                 {
                     canExist = true;
-                    UnityEngine.Debug.Log("H");
-                    UnityEngine.Debug.Log(canExist);
                 }
             }
         }
@@ -200,7 +183,6 @@ public class ItemDB : MonoBehaviour
 
                 EquipSlot[Equipcount].SetActive(isExist);
 
-                UnityEngine.Debug.Log("»ý¼º");
                 if (isExist)
                 {
                     ItemImage[Equipcount].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == AllItemList[spriteNum].Name)];
@@ -215,6 +197,7 @@ public class ItemDB : MonoBehaviour
         Item AddPassive, CompareItem, CompareItem1, CompareItem2, CompareItem3;
         curName = PassiveName;
 
+        UnityEngine.Debug.Log(curName);
         AddPassive = AllItemList.Find(x => x.Name == PassiveName);
         AddPassive.isUsing = true;
         int a = Passivecount - 1;
@@ -307,8 +290,7 @@ public class ItemDB : MonoBehaviour
             CurPassiveList.Add(AddPassive);
 
             int spriteNum = int.Parse(CurPassiveList[Passivecount].Index);
-            UnityEngine.Debug.Log(spriteNum);
-            UnityEngine.Debug.Log("ABC");
+
             if (Passivecount < PassiveSlot.Length)
             {
                 bool isExist = Passivecount < PassiveSlot.Length;
