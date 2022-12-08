@@ -18,28 +18,26 @@ public class Item
     public bool isUsing;
 }
 
+// Item == Equipment
 
 public class ItemDB : MonoBehaviour
 {
     public TextAsset ItemDatabase;
-    public List<Item> AllItemList, MyItemList, CurItemList;
+    public List<Item> AllItemList, MyItemList, CurItemList, CurPassiveList;
     public string curType = "Equipment";
     public string curName = "Gun01";
     public GameObject[] EquipSlot, PassiveSlot, UsingImage;
-    public Image[] ItemImage;
-    public Sprite[] ItemSprite;
+    public Image[] ItemImage, PassiveImage;
+    public Sprite[] ItemSprite, PassiveSprite;
     bool canExist = true;
-    int count = 0;
-
-    void Awake()
-    {
-
-    }
+    int Equipcount = 0;
+    int Passivecount = 0;
 
     void Start()
     {
         // 전체 아이템 리스트 불러옴
         ItemSprite = Resources.LoadAll<Sprite>("05Sprite/Equipment");
+        PassiveSprite = Resources.LoadAll<Sprite>("05Sprite/Passive");
         string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
       
         for (int i = 0; i < line.Length; i++)
@@ -83,7 +81,7 @@ public class ItemDB : MonoBehaviour
         }
         */
     }
-
+    
     public void AddEquip(string EquipName)
     {
         Item AddItem, CompareItem, CompareItem1, CompareItem2, CompareItem3;
@@ -91,7 +89,7 @@ public class ItemDB : MonoBehaviour
 
         AddItem = AllItemList.Find(x => x.Name == EquipName);
         AddItem.isUsing = true;
-        int a = count - 1;
+        int a = Equipcount - 1;
         int i = 0;
 
         
@@ -193,27 +191,139 @@ public class ItemDB : MonoBehaviour
 
         if (canExist == true) {
             CurItemList.Add(AddItem);
-            
-            UnityEngine.Debug.Log("AddItem");
 
-            int spriteNum = int.Parse(CurItemList[count].Index);
+            int spriteNum = int.Parse(CurItemList[Equipcount].Index);
 
-            if (count < EquipSlot.Length)
+            if (Equipcount < EquipSlot.Length)
             {
-                 bool isExist = count < EquipSlot.Length;
+                 bool isExist = Equipcount < EquipSlot.Length;
 
-                EquipSlot[count].SetActive(isExist);
+                EquipSlot[Equipcount].SetActive(isExist);
 
                 UnityEngine.Debug.Log("생성");
                 if (isExist)
                 {
-                    ItemImage[count].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == AllItemList[spriteNum].Name)];
+                    ItemImage[Equipcount].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == AllItemList[spriteNum].Name)];
                 }
-                count++;
+                Equipcount++;
             }
         }
-    } 
+    }
+    
+    public void AddPassive(string PassiveName)
+    {
+        Item AddPassive, CompareItem, CompareItem1, CompareItem2, CompareItem3;
+        curName = PassiveName;
 
+        AddPassive = AllItemList.Find(x => x.Name == PassiveName);
+        AddPassive.isUsing = true;
+        int a = Passivecount - 1;
+        int i = 0;
+
+
+        if (CurPassiveList.Count > 0)
+        {
+            if (CurPassiveList.Count == 1)
+            {
+                CompareItem = CurPassiveList[0];
+
+                int num1 = int.Parse(AddPassive.Index);
+                int num2 = int.Parse(CompareItem.Index);
+
+                if (num1 == num2)
+                {
+                    canExist = false;
+                }
+                else
+                {
+                    canExist = true;
+                }
+            }
+            else if (CurPassiveList.Count == 2)
+            {
+                CompareItem = CurPassiveList[0];
+                CompareItem1 = CurPassiveList[1];
+
+                int num1 = int.Parse(AddPassive.Index);
+                int num2 = int.Parse(CompareItem.Index);
+                int num3 = int.Parse(CompareItem1.Index);
+
+
+                if (num1 == num2 || num1 == num3)
+                {
+                    canExist = false;
+                }
+                else
+                {
+                    canExist = true;
+                }
+            }
+            else if (CurPassiveList.Count == 3)
+            {
+                CompareItem = CurPassiveList[0];
+                CompareItem1 = CurPassiveList[1];
+                CompareItem2 = CurPassiveList[2];
+
+                int num1 = int.Parse(AddPassive.Index);
+                int num2 = int.Parse(CompareItem.Index);
+                int num3 = int.Parse(CompareItem1.Index);
+                int num4 = int.Parse(CompareItem2.Index);
+
+                if (num1 == num2 || num1 == num3 || num1 == num4)
+                {
+                    canExist = false;
+                }
+                else
+                {
+                    canExist = true;
+                }
+            }
+            else if (CurPassiveList.Count == 4)
+            {
+                CompareItem = CurItemList[0];
+                CompareItem1 = CurPassiveList[1];
+                CompareItem2 = CurPassiveList[2];
+                CompareItem3 = CurPassiveList[3];
+
+                int num1 = int.Parse(AddPassive.Index);
+                int num2 = int.Parse(CompareItem.Index);
+                int num3 = int.Parse(CompareItem1.Index);
+                int num4 = int.Parse(CompareItem2.Index);
+                int num5 = int.Parse(CompareItem3.Index);
+
+                if (num1 == num2 || num1 == num3 || num1 == num4 || num1 == num5)
+                {
+                    canExist = false;
+                }
+                else
+                {
+                    canExist = true;
+                }
+            }
+        }
+
+        if (canExist == true)
+        {
+            CurPassiveList.Add(AddPassive);
+
+            int spriteNum = int.Parse(CurPassiveList[Passivecount].Index);
+            UnityEngine.Debug.Log(spriteNum);
+            UnityEngine.Debug.Log("ABC");
+            if (Passivecount < PassiveSlot.Length)
+            {
+                bool isExist = Passivecount < PassiveSlot.Length;
+
+                PassiveSlot[Passivecount].SetActive(isExist);
+
+                if (isExist)
+                {
+                    PassiveImage[Passivecount].sprite = PassiveSprite[AllItemList.FindIndex(x => x.Name == AllItemList[spriteNum].Name)];
+                }
+                Passivecount++;
+            }
+        }
+    }
+    
     public void StartItem()
     {
         Item BasicItem = AllItemList.Find(x => x.Name == "Gun01");
