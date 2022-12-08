@@ -37,6 +37,8 @@ public class Skill_Ax : MonoBehaviour
 
     public GameObject Ax;
 
+    static public bool life;
+
     void Awake()
     {
         level1 = true;
@@ -44,6 +46,7 @@ public class Skill_Ax : MonoBehaviour
         level3 = false;
         level4 = false;
         level5 = false;
+        life = false;
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -61,12 +64,23 @@ public class Skill_Ax : MonoBehaviour
 
         axFired = new Vector3(randomX, randomY, 0);
         axfire2d = new Vector2(axFired.x, axFired.y).normalized;
+
     }
 
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
         axTime += Time.deltaTime;
+
+        if (axTime >= 0.0f && axTime <= 5.0f)
+        {
+            life = true;
+        }
+
+        if(axLevel >= 10)
+        {
+            axLevel = 10;
+        }
 
         if (axTime >= 0.0f && axTime < 1.5f)
         {
@@ -82,9 +96,9 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axTime >= 5.0f && axTime < 7.0f)
         {
-            //gameObject.SetActive(false);
             Destroy(gameObject);
             axTime = 0.0f;
+            life = false;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -104,12 +118,12 @@ public class Skill_Ax : MonoBehaviour
     {
         if (axLevel == 1 || axLevel == 3 || axLevel == 5 || axLevel == 7)
         {
-            axScript();
+            AxScript();
             axLevel++;
         }
     }
 
-    public void axScript()
+    public void AxScript()
     {
         GameObject ax = Instantiate(Ax, player.transform.position, player.transform.rotation);
     }
@@ -124,24 +138,28 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axLevel == 4)
         {
+            transform.localScale = new Vector3(0.08f, 0.08f, 1f);
             dmg = 2;
             level2 = false;
             level3 = true;
         }
         else if (axLevel == 6)
         {
+            transform.localScale = new Vector3(0.12f, 0.12f, 1f);
             dmg = 3;
             level3 = false;
             level4 = true;
         }
         else if (axLevel == 8)
         {
+            transform.localScale = new Vector3(0.15f, 0.15f, 1f);
             dmg = 4;
             level4 = false;
             level5 = true;
         }
         else if (axLevel == 10)
         {
+            transform.localScale = new Vector3(0.20f, 0.20f, 1f);
             dmg = 5;
             spriteR.sprite = sprites;
         }

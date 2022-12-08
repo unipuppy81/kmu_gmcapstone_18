@@ -24,9 +24,9 @@ public class AxCullTime : MonoBehaviour
     {
         cullTime += Time.deltaTime;
 
-        if(cullTime >= 7.0f)
+        if (cullTime >= 7.0f && Skill_Ax.axLevel >= 1 && Skill_Ax.life == false)
         {
-            ax.axScript();
+            ax.AxScript();
             cullTime = 0.0f;
         }
         
