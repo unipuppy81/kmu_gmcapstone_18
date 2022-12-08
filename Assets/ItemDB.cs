@@ -31,6 +31,11 @@ public class ItemDB : MonoBehaviour
     bool canExist = true;
     int count = 0;
 
+    void Awake()
+    {
+
+    }
+
     void Start()
     {
         // 전체 아이템 리스트 불러옴
@@ -44,9 +49,15 @@ public class ItemDB : MonoBehaviour
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE", row[5]));
         }
 
-        //StartItem();
+        StartEqiup();
         Load();
 
+    }
+
+    public void StartEqiup()
+    {
+        // 조건주고 캐릭터마다 무기 골라넣기
+        AddEquip("Gun01");
     }
 
     public void TabClick(string tabName)
@@ -203,17 +214,6 @@ public class ItemDB : MonoBehaviour
         }
     } 
 
-    //public void GetItemClick()
-    //{
-    //    Item curItem = MyItemList.Find(x => x.Name == ItemNameInput.text);
-    //    if(curItem != null)
-    //    {
-    //        curItem.Number = (int.Parse(curItem.Number) + int.Parse(ItemNumberInput.text)).ToString();
-    //    }
-    //    Save();
-
-    //}
-
     public void StartItem()
     {
         Item BasicItem = AllItemList.Find(x => x.Name == "Gun01");
@@ -242,8 +242,6 @@ public class ItemDB : MonoBehaviour
         Save();
         */
     }
-
-
 
     void Save()
     {
