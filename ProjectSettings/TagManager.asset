@@ -32,6 +32,8 @@ TagManager:
   - PlayerCo
   - coin
   - heart
+  - Bshoes
+  - MagInc
   layers:
   - Default
   - TransparentFX
