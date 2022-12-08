@@ -74,11 +74,11 @@ public class Skill_Ax : MonoBehaviour
         {
             rigidbody2D.velocity = Vector2.zero;
         }
-        else if (axTime > 1.5f && axTime < 4.0f)
+        else if (axTime > 1.5f && axTime < 5.0f)
         {
             rigidbody2D.velocity = axfire2d * -6f;
         }
-        else if (axTime >= 4.0f && axTime < 6.0f)
+        else if (axTime >= 5.0f && axTime < 6.0f)
         {
             gameObject.SetActive(false);
             axTime = 0.0f;
@@ -100,7 +100,7 @@ public class Skill_Ax : MonoBehaviour
     {
         if (axLevel == 2)
         {
-            dmg = 1;
+            dmg = 2;
             level1 = false;
             level2 = true;
         }
@@ -112,14 +112,13 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axLevel == 6)
         {
-
-            dmg = 2;
+            dmg = 3;
             level3 = false;
             level4 = true;
         }
         else if (axLevel == 8)
         {
-            dmg = 3;
+            dmg = 4;
             level4 = false;
             level5 = true;
         }

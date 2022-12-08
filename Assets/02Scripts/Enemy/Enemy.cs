@@ -270,13 +270,13 @@ public class Enemy : MonoBehaviour
             onHit(skill_Guardian.dmg);
             takeDamageText(skill_Guardian.dmg);
         }
-        else if (other.gameObject.CompareTag("Skill2")) //EMP필드(자기장)
+        else if (other.gameObject.CompareTag("Skill2")) // EMP필드(자기장)
         {
             Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
             onHit(skill_Magnetic.dmg);
             takeDamageText(skill_Magnetic.dmg);
         }
-        else if (other.gameObject.CompareTag("Skill3")) //EMP필드(자기장)
+        else if (other.gameObject.CompareTag("Skill3")) // 도끼
         {
             Skill_Ax skill_Ax = other.gameObject.GetComponent<Skill_Ax>();
             onHit(skill_Ax.dmg);
