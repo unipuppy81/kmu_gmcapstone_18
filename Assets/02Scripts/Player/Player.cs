@@ -28,11 +28,12 @@ public class Player : MonoBehaviour
     public GameObject gameoverPannel;
     public GameObject BasketBall1;
     public GameObject Ax;
+    public GameObject tomb;
 
     public string bulletObjA;
     string playerbulletA = "bulletPlayerA";
 
-
+    public Sprite dieSprites;
 
     bool spSkill1Check = true;
 
@@ -76,6 +77,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     BasketBall basket;
     Skill_Ax skillAx;
+    public Animator anim;
+    SpriteRenderer spriteR;
 
     void Awake()
     {
@@ -99,6 +102,9 @@ public class Player : MonoBehaviour
 
         isClick = false;
         isMagnet = false;
+
+        spriteR = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -106,6 +112,7 @@ public class Player : MonoBehaviour
     {
         currentFireRate = fireRate;
         InvokeRepeating("SearchEnemy", 0f, spawntime);
+        StartCoroutine(CheckPlayerHealth());
     }
     void FixedUpdate()
     {
@@ -119,8 +126,9 @@ public class Player : MonoBehaviour
         Reload();
         SpecialSkill1();
         specialSkillbtn();
+        //DiePlayer();
 
-        if(isMagnet == true)
+        if (isMagnet == true)
         {
             magnetTimer += Time.deltaTime;
             if(magnetTimer >= 3.0f)
@@ -156,11 +164,17 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
+        /*
         if (playercurHp <= 0)
         {
-            Time.timeScale = 0;
-            gameoverPannel.SetActive(true);
+                Destroy(gameObject);
+                Instantiate(tomb, transform.position, transform.rotation);
+
+                yield return new WaitForSeconds(2);
+                Time.timeScale = 0;
+                gameoverPannel.SetActive(true);
         }
+        */
     }
 
     void SearchEnemy()
@@ -347,5 +361,37 @@ public class Player : MonoBehaviour
         curShotDelay += Time.deltaTime;
     }
 
+    void DiePlayer()
+    {
+        if (playercurHp <= 0)
+        {
+            gameObject.SetActive(false);
+            
+            //Destroy(gameObject);
+            Instantiate(tomb, transform.position, transform.rotation);
+
+            Time.timeScale = 0;
+            gameoverPannel.SetActive(true);
+        }
+    }
+
+    IEnumerator CheckPlayerHealth()
+    {
+        while (true)
+        {
+            if (playercurHp <= 0)
+            {
+                anim.SetTrigger("Dead");
+
+                yield return new WaitForSeconds(2);
+
+                Time.timeScale = 0;
+                UnityEngine.Debug.Log("2");
+                gameoverPannel.SetActive(true);
+
+            }
+            yield return new WaitForEndOfFrame(); // 매 프레임의 마지막 마다 실행
+        }
+    }
 }
    

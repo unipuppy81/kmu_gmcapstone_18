@@ -10151,6 +10151,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   maxSpeed: 10
+  s: 0
+--- !u!95 &747727070
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747727051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5456e0da54cad7947aac3b0c5c83e56b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &795030605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29734,6 +29755,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125054, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135236314464125054, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135236314464125054, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_Size.x
       value: 16.68
       objectReference: {fileID: 0}
@@ -29762,6 +29791,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7135236314464125054, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135236314464125054, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -29773,6 +29806,10 @@ PrefabInstance:
       propertyPath: Bomb
       value: 
       objectReference: {fileID: 7253572862770996703, guid: 823b634f35417d64a83662cd725946a5, type: 3}
+    - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: tomb
+      value: 
+      objectReference: {fileID: 5241927160783004028, guid: cb9f6596b61942d4e9e1c5b921c1990f, type: 3}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: maxEx
       value: 10
@@ -29789,6 +29826,10 @@ PrefabInstance:
       propertyPath: PausePanel
       value: 
       objectReference: {fileID: 1327610487}
+    - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
+      propertyPath: dieSprites
+      value: 
+      objectReference: {fileID: 21300000, guid: fa6e399f85f359c49994274df94d7f12, type: 3}
     - target: {fileID: 7135236314464125055, guid: 34a51d1053e45194eabe4cb17fc7514a, type: 3}
       propertyPath: BasketBall1
       value: 

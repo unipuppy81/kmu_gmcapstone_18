@@ -48,10 +48,12 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriteRenderer; // 피격 애니메이션
     Rigidbody2D rigid;
     Transform target;
+    Animator anim;
     float t;
 
     void Awake()
     {
+        
         experienceA = exAcheck;
         experienceB = exBcheck;
 
@@ -62,6 +64,7 @@ public class Enemy : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player2 = GameObject.Find("Player").GetComponent<Player>();
+        anim = GetComponent<Animator>();
     }
 
     void OnEnable() // 활성화될때 실행됨
@@ -98,16 +101,18 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-
         switch (enemyType)
         {
             case Type.A:
-                    enemyHealth = 2f;
+
+                enemyHealth = 2f;
                     enemySpeed = 0.75f;
                     enemyDamage = 2f;
+
                 break;
 
             case Type.B:
+
                 enemyHealth = 2f;
                 enemySpeed = 0.5f;
                 bulletenemyDamage = 4f;
@@ -115,6 +120,7 @@ public class Enemy : MonoBehaviour
                 searchRadius = 5f;
                 bulletSpeed = 7.0f;
                 InvokeRepeating("SearchPlayer", 0f, 0.5f);
+
                 break;
 
             case Type.C:
@@ -123,9 +129,8 @@ public class Enemy : MonoBehaviour
                 enemyDamage = 5f;
 
                 break;
-
         }
-       
+
     }
 
     void Update()
@@ -151,6 +156,8 @@ public class Enemy : MonoBehaviour
                 break;
         }
     }
+
+
 
     void UpdateHealth()
     {
@@ -180,12 +187,18 @@ public class Enemy : MonoBehaviour
     void FollowTarget()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
+
+        float spriteflip = target.position.x - transform.position.x;
+        spriteRenderer.flipX = spriteflip > 0;
+
     }
 
     void SearchPlayer()
     {
-        // OverlapCircleAll = 일정한 범위 내의 특정 layer 찾아줌
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, searchRadius, layerMask);
+        if (player2.playercurHp < 0)
+        {
+            // OverlapCircleAll = 일정한 범위 내의 특정 layer 찾아줌
+            Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, searchRadius, layerMask);
 
         foreach (Collider2D p_Target in colls)
         {
@@ -207,16 +220,20 @@ public class Enemy : MonoBehaviour
         rigid.AddForce(fire * bulletSpeed, ForceMode2D.Impulse);
 
         curShotDelay = 0;
+        }
     }
 
     public void onHit(float dmg)
     {
-        UnityEngine.Debug.Log("A");
         enemyHealth -= dmg;
-        UnityEngine.Debug.Log("B");
+        StartCoroutine(CheckEnemyHealth());
+    }
+
+    public void setEx()
+    {
         if (enemyHealth <= 0)
         {
-            UnityEngine.Debug.Log("C");
+            
             gameObject.SetActive(false);
             switch (enemyType)
             {
@@ -235,7 +252,6 @@ public class Enemy : MonoBehaviour
                     Instantiate(sbossEx, transform.position, sbossEx.transform.rotation);
                     break;
             }
-            
         }
     }
 
@@ -312,5 +328,21 @@ public class Enemy : MonoBehaviour
         GameObject hudText = Instantiate(hudDamageText);
         hudText.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);  // 자기 자신 머리 위에 데미지 표시
         hudText.GetComponent<DamageText>().damage = damage;
+    }
+
+    IEnumerator CheckEnemyHealth()
+    {
+
+            if (enemyHealth <= 0)
+            {
+                enemySpeed = 0;
+                gameObject.layer = 0;
+                anim.SetTrigger("Dead");
+
+                yield return new WaitForSeconds(1.0f);
+                setEx();
+            }
+            yield return new WaitForEndOfFrame(); // 매 프레임의 마지막 마다 실행
+        
     }
 }

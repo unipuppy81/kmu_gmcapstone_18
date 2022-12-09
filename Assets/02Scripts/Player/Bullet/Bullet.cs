@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     ButtonManager buttonManager;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         _Ammo = GetComponent<Equip_Ammo>();
@@ -27,9 +27,11 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
+        if(player.playercurHp > 0) { 
         levelDesign();
         bulletLevel = buttonManager.gunCount;
         alive();
+        }
     }
 
     void alive()
