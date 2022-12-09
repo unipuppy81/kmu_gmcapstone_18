@@ -72,7 +72,9 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.A:
-                if(t >=0 && t <= 90)
+                enemySpeed = 0.75f;
+                gameObject.layer = 7;
+                if (t >=0 && t <= 90)
                 {
                     enemyHealth = 2f;
                 }
@@ -85,6 +87,8 @@ public class Enemy : MonoBehaviour
                 break;
 
             case Type.B:
+                enemySpeed = 0.5f;
+                gameObject.layer = 7;
                 if (t >= 0 && t <= 90)
                 {
                     enemyHealth = 2f;
@@ -226,9 +230,20 @@ public class Enemy : MonoBehaviour
     public void onHit(float dmg)
     {
         enemyHealth -= dmg;
-        StartCoroutine(CheckEnemyHealth());
-    }
 
+        if (enemyHealth >= 0)
+        {
+            spriteRenderer.color = new Color(1,0,0,0.3f);
+            Invoke("ReturnSprite", 0.2f);
+        }
+        StartCoroutine(CheckEnemyHealth());
+
+    }
+    
+    void ReturnSprite()
+    {
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
     public void setEx()
     {
         if (enemyHealth <= 0)
@@ -255,10 +270,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void ReturnSprite()
-    {
-        spriteRenderer.sprite = sprites[0];
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -332,7 +343,6 @@ public class Enemy : MonoBehaviour
 
     IEnumerator CheckEnemyHealth()
     {
-
             if (enemyHealth <= 0)
             {
                 enemySpeed = 0;
@@ -343,6 +353,6 @@ public class Enemy : MonoBehaviour
                 setEx();
             }
             yield return new WaitForEndOfFrame(); // 매 프레임의 마지막 마다 실행
-        
     }
+
 }
