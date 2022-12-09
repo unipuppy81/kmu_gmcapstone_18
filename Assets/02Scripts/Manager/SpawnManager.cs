@@ -40,14 +40,18 @@ public class SpawnManager : MonoBehaviour
     public TextMeshProUGUI textTimer;
 
     public Vector3 spawnPos;
+    public Vector3[] pos;
+
 
     public float spawnTime;
     public float mbspawnTime;
     public float timeAfterSpawn;
     public float aenemyspawn;
     public float benemyspawn;
- 
-    
+
+
+
+
     public bool isSpawnTure;
 
   
@@ -91,8 +95,8 @@ public class SpawnManager : MonoBehaviour
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 6, 15.0f);
-        InvokeRepeating("SpawnEnemy", 6, 0.5f);
+        InvokeRepeating("SpawnBox", 6, 1.0f);
+        InvokeRepeating("SpawnEnemy", 6, 0.3f);
         InvokeRepeating("SpawnbEnemy", 6, 15.0f);
 
         isSpawnTure = false;
@@ -116,6 +120,7 @@ public class SpawnManager : MonoBehaviour
             aenemyspawn = 0.1f;
         }
     }
+
     void SpawnBoss()
     {
         timeAfterSpawn += Time.deltaTime;
@@ -205,8 +210,16 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemy1()
+    void SpawnEnemyArray()
     {
+        for(int i =0; i< 5; i++)
+        {
+
+        }
+
+
+
+
         float spawnPosx1 = player.position.x + 8f;
         float spawnPosy1 = player.position.y + 8f;
 

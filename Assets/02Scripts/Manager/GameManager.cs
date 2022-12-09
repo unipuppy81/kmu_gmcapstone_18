@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
        
     }
+
     private void Update()
     {
         Timer();
@@ -144,12 +145,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
 
     }
+
     public void closePanel()
     {
         levelpanel.SetActive(false);
         Pausebutton.SetActive(true);
         Time.timeScale = 1f;
     }
+
     public void leveltext()
     {
         levelText.text = string.Format("LV : {0:D1}", levelCount);
@@ -323,6 +326,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
     public void Gatcha()
     {
         
