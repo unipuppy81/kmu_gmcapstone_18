@@ -22668,6 +22668,7 @@ GameObject:
   - component: {fileID: 1684765528}
   - component: {fileID: 1684765530}
   - component: {fileID: 1684765531}
+  - component: {fileID: 1684765532}
   m_Layer: 8
   m_Name: playerMg
   m_TagString: PlayerMg
@@ -22684,7 +22685,7 @@ Transform:
   m_GameObject: {fileID: 1684765527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -22719,6 +22720,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 128811910}
+--- !u!114 &1684765532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684765527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c296569c7791eb41b5ca9586ba372b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetInclLevel: 0
+  level1: 1
+  level2: 1
+  level3: 1
+  level4: 1
+  level5: 1
 --- !u!1 &1687110829 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5265339932802006591, guid: 0f50c1665ef82714a972b90f187ddf79, type: 3}

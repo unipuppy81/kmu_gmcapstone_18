@@ -145,7 +145,7 @@ public class Skill_Ax : MonoBehaviour
             level4 = false;
             level5 = true;
         }
-        else if (axLevel >= 10)
+        else if (axLevel >= 10 && Equip_MagInc.selectedMagnetInc == true)
         {
             transform.localScale = new Vector3(0.20f, 0.20f, 1f);
             dmg = 5;
