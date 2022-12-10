@@ -77,7 +77,7 @@ class BasketBall : MonoBehaviour
             level4 = false;
             level5 = true;
         }
-        else if (basketballLevel == 10)
+        else if (basketballLevel == 10 && Equip_BBShoes.selectedBBShoes == true)
         {
             basketdmg = 7;
             spriteR.sprite = sprites;

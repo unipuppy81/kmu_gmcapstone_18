@@ -10172,6 +10172,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &747727075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747727051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399b0d2804afc6346bd4930083e9cfff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bbshoeslLevel: 0
+  level1: 1
+  level2: 1
+  level3: 1
+  level4: 1
+  level5: 1
 --- !u!1001 &795030605
 PrefabInstance:
   m_ObjectHideFlags: 0
