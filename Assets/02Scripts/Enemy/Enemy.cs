@@ -244,11 +244,11 @@ public class Enemy : MonoBehaviour
     {
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
+
     public void setEx()
     {
         if (enemyHealth <= 0)
-        {
-            
+        { 
             gameObject.SetActive(false);
             switch (enemyType)
             {
@@ -269,8 +269,22 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    void setAnimator()
+    {
+        switch (enemyType)
+        {
+            case Type.A:
+                anim.SetTrigger("Dead");
 
+                break;
+            case Type.B:
+                anim.SetTrigger("Dead");
 
+                break;
+            case Type.C:
+                break;
+        }
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -347,7 +361,8 @@ public class Enemy : MonoBehaviour
             {
                 enemySpeed = 0;
                 gameObject.layer = 0;
-                anim.SetTrigger("Dead");
+
+                setAnimator();
 
                 yield return new WaitForSeconds(1.0f);
                 setEx();
