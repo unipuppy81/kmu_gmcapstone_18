@@ -18,7 +18,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject levelpanel;
     public GameObject joystick2;
-
+    public GameObject eqPanel;
 
     [SerializeField]
     TextMeshProUGUI gun1_levelText;
@@ -251,6 +251,16 @@ public class ButtonManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainScene");
     }
+    public void EqPanelOpenbtn()
+    {
+        eqPanel.SetActive(true);
+    }
+    public void EqPanelClosebtn()
+    {
+        eqPanel.SetActive(false);
+    }
+
+    
     void Wp_1_levelText()
     {
         gun1_levelText.text = string.Format("LV : {0:D1}", gunCount);

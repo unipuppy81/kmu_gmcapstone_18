@@ -51,7 +51,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> empty = new List<GameObject>();
     public List<GameObject> bList;
 
-   
+    Vector3 posx1;
+    Vector3 posx2;
+    Vector3 posx3;
     Player player;
     ButtonManager btnmanager;
 
@@ -63,13 +65,15 @@ public class GameManager : MonoBehaviour
         joystick.SetActive(true);
         Time.timeScale = 1f;
         btnmanager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
-        empty = new List<GameObject>();
+        //empty = new List<GameObject>();
         bList = new List<GameObject>(selectPanel);
     }
 
     public void Start()
     {
-       
+       posx1 = empty[0].transform.position;
+       posx2 = empty[1].transform.position;
+       posx3 = empty[2].transform.position;     
     }
 
     private void Update()
@@ -329,44 +333,32 @@ public class GameManager : MonoBehaviour
 
     public void Gatcha()
     {
-        
         // 카운트가 5이상이면 selectPanel 에서 삭제
-        /*if (btnmanager.gunCount == 2) { selectPanel.RemoveAt(0); }
-        if (btnmanager.sheildCount == 2) { selectPanel.RemoveAt(1); }
-        if (btnmanager.empCount == 2) { selectPanel.RemoveAt(2); }
-        if (btnmanager.axCount == 2) { selectPanel.RemoveAt(3); }
-        if (btnmanager.basketCount == 2) { selectPanel.RemoveAt(4); }
-        if (btnmanager.ammoCount == 2) { selectPanel.RemoveAt(5); }
-        if (btnmanager.dumbbellCount == 2) { selectPanel.RemoveAt(6); }
-        if (btnmanager.hot7Count == 2) { selectPanel.RemoveAt(7); }*/
-
         if (levelpanel.activeSelf == true)
         {
             if (selectPanel.Count >= 3) //업그레이드할 무기가 3개 이상일때
             {
+               
                 for (int i = 0; i < 3; i++)
                 {
                     int rand = UnityEngine.Random.Range(0, selectPanel.Count);
-                    empty.Add(selectPanel[rand]);
-                    selectPanel.RemoveAt(rand);
-                }
-                for(int j = 0; j <= empty.Count; j++)
-                {
-                    
-                    if(j == 0)
+                    if (i == 0)
                     {
-                        empty[0].transform.position = new Vector3(60, 240, 1.0f);
-                        empty[0].SetActive(true);
+                        selectPanel[rand].transform.position = posx1;
+                        selectPanel[rand].SetActive(true);
+                        selectPanel.RemoveAt(rand);
                     }
-                    if(j == 1)
+                    if (i == 1)
                     {
-                        empty[1].transform.position = new Vector3(170, 240, 1.0f);
-                        empty[1].SetActive(true);
+                        selectPanel[rand].transform.position = posx2;
+                        selectPanel[rand].SetActive(true);
+                        selectPanel.RemoveAt(rand);
                     }
-                    if(j == 2)
+                    if (i == 2)
                     {
-                        empty[2].transform.position = new Vector3(280, 240, 1.0f);
-                        empty[2].SetActive(true);
+                        selectPanel[rand].transform.position = posx3;
+                        selectPanel[rand].SetActive(true);
+                        selectPanel.RemoveAt(rand);
                     }
                 }
             }
