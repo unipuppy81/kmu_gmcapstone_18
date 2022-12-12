@@ -36,6 +36,8 @@ public class Skill_Ax : MonoBehaviour
 
     public GameObject Ax;
 
+    public float axSpeed;
+
     static public bool life;
 
     void Awake()
@@ -63,7 +65,12 @@ public class Skill_Ax : MonoBehaviour
 
         axFired = new Vector3(randomX, randomY, 0);
         axfire2d = new Vector2(axFired.x, axFired.y).normalized;
+        axSpeed = 1.0f;
+    }
 
+    void Start()
+    {
+        life = true;
     }
 
     void Update()
@@ -78,7 +85,7 @@ public class Skill_Ax : MonoBehaviour
 
         if (axTime >= 0.0f && axTime < 1.5f)
         {
-            rigidbody2D.velocity = axfire2d * 6f;
+            rigidbody2D.velocity = axfire2d * axSpeed * 6f;
         }
         else if (axTime == 1.5f)
         {
@@ -86,7 +93,7 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axTime > 1.5f && axTime < 5.0f)
         {
-            rigidbody2D.velocity = axfire2d * -6f;
+            rigidbody2D.velocity = axfire2d * axSpeed * -6f;
         }
         else if (axTime >= 5.0f && axTime < 7.0f)
         {
@@ -113,7 +120,9 @@ public class Skill_Ax : MonoBehaviour
 
     public void AxScript()
     {
+        if (!life) { 
         GameObject ax = Instantiate(Ax, player.transform.position, player.transform.rotation);
+        }
     }
 
     void LevelDesign()
@@ -121,13 +130,15 @@ public class Skill_Ax : MonoBehaviour
         if (axLevel == 2)
         {
             dmg = 2;
+            axSpeed = 1.2f;
             level1 = false;
             level2 = true;
         }
         else if (axLevel == 4)
         {
-            transform.localScale = new Vector3(0.08f, 0.08f, 1f);
+            //transform.localScale = new Vector3(0.08f, 0.08f, 1f);
             dmg = 2;
+            axSpeed = 1.4f;
             level2 = false;
             level3 = true;
         }
@@ -140,20 +151,18 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axLevel == 8)
         {
-            transform.localScale = new Vector3(0.15f, 0.15f, 1f);
+            //transform.localScale = new Vector3(0.15f, 0.15f, 1f);
             dmg = 4;
+            axSpeed = 1.8f;
             level4 = false;
             level5 = true;
         }
         else if (axLevel >= 10 && Equip_MagInc.selectedMagnetInc == true)
         {
             transform.localScale = new Vector3(0.20f, 0.20f, 1f);
+            axSpeed = 2.0f;
             dmg = 5;
             spriteR.sprite = sprites;
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
     }
 }

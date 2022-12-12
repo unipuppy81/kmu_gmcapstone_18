@@ -48,36 +48,41 @@ public class Bullet : MonoBehaviour
     {
         if (bulletLevel == 1 && level1 == true)
         {
-            dmg = 2;
-            player.spawntime = 0.4f;
+            player.bulletDamage = 2.0f;
+            player.bulletSpeed = 7f;
+            player.maxShotDelay = 1.0f;
+
             level1 = false;
             level2 = true;
         }
         else if (bulletLevel == 2 && level2 == true)
         {
-            dmg = 2;
-            player.bulletSpeed = 5f;
+            player.bulletDamage = 2.25f;
+            player.maxShotDelay = 0.6f;
+
             level2 = false;
             level3 = true;
         }
         else if (bulletLevel == 3 && level3 == true)
         {
-            dmg = 3;
-            player.spawntime = 0.35f;
+            player.bulletDamage = 2.5f;
+            player.bulletSpeed = 10f;
             level3 = false;
             level4 = true;
         }
         else if (bulletLevel == 4 && level4 == true)
         {
-            dmg = 3;
-            player.bulletSpeed = 7f;
+            player.bulletDamage = 2.75f;
+            player.maxShotDelay = 0.4f;
+
             level4 = false;
             level5 = true;
         }
         else if (bulletLevel == 5 && level5 == true && Equip_Ammo.selectedBullet == true)
         {
-            dmg = 4;
-            player.maxShotDelay *= 0.5f;
+            player.bulletDamage = 3.0f;
+            player.maxShotDelay = 0.1f;
+
             level5 = false;
         }
     }

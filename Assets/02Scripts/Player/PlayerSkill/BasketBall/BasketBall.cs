@@ -61,25 +61,28 @@ class BasketBall : MonoBehaviour
         else if (basketballLevel == 4)
         {
             basketdmg = 4;
+
             level2 = false;
             level3 = true;
         }
         else if (basketballLevel == 6)
         {
-
             basketdmg = 5;
+
             level3 = false;
             level4 = true;
         }
         else if (basketballLevel == 8)
         {
             basketdmg = 6;
+
             level4 = false;
             level5 = true;
         }
         else if (basketballLevel == 10 && Equip_BBShoes.selectedBBShoes == true)
         {
             basketdmg = 7;
+
             spriteR.sprite = sprites;
         }
     }

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public float playercurHp;
     public float bulletSpeed;
     public float bulletDamage;
-    public float maxShotDelay = 0.2f;
+    public float maxShotDelay;
     public float curShotDelay;
     public int playerLevel = 0;
     public int specialSkill = 0;
@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
     public float playerbottom;
     public float playerleft;
     public float playerright;
+
+    public float basketSpeed;
 
     public bool isMagnet;
 
@@ -86,23 +88,28 @@ public class Player : MonoBehaviour
         playerbottom = -29.3f;
         playerleft = -29.7f;
         playerright = 28.95f;
-        searchRadius = 4f;
+
+        searchRadius = 10f;
+        bulletDamage = 2.0f;
         bulletSpeed = 7f;
-        specialSkill = 1;
-        bulletDamage = 3.0f;
+        maxShotDelay = 1.0f;
+
         bulletObjA = playerbulletA;
+
         playerMaxHp = 30f;
         playercurHp = 30f;
-        rigid = GetComponent<Rigidbody2D>();
-        spawntime = 0.5f;
 
         basketCount = 0;
-        basket = new BasketBall();
-        skillAx = new Skill_Ax();
+        basketSpeed = 4f;
+        specialSkill = 1;
 
         isClick = false;
         isMagnet = false;
 
+        basket = new BasketBall();
+        skillAx = new Skill_Ax();
+
+        rigid = GetComponent<Rigidbody2D>();
         spriteR = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -111,14 +118,16 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentFireRate = fireRate;
-        InvokeRepeating("SearchEnemy", 0f, spawntime);
+        InvokeRepeating("SearchEnemy", 0f, 0.1f);
         StartCoroutine(CheckPlayerHealth());
     }
+
     void FixedUpdate()
     {
         basketLevel();
         //axLevel();
     }
+
     void Update()
     {
         spcount();
@@ -248,7 +257,7 @@ public class Player : MonoBehaviour
 
             basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
 
-            rigid.AddForce(basketfire2d * 4f, ForceMode2D.Impulse);
+            rigid.AddForce(basketfire2d * basketSpeed, ForceMode2D.Impulse);
         }
         else
         {
@@ -258,7 +267,7 @@ public class Player : MonoBehaviour
 
             basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
 
-            rigid.AddForce(basketfire2d * 4f, ForceMode2D.Impulse);
+            rigid.AddForce(basketfire2d * basketSpeed, ForceMode2D.Impulse);
         }
         BasketBall.basketballLevel++;
 
