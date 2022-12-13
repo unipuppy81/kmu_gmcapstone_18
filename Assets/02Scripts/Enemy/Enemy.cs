@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     public float enemybMaxHealth;
 
     public bool isShoot;
+    public bool isAlive;
 
     public string experienceA;
     public string experienceB;
@@ -53,7 +54,8 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        
+        isAlive = true;
+
         experienceA = exAcheck;
         experienceB = exBcheck;
 
@@ -193,8 +195,9 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
 
         float spriteflip = target.position.x - transform.position.x;
-        spriteRenderer.flipX = spriteflip > 0;
 
+        if(isAlive)
+            spriteRenderer.flipX = spriteflip > 0;
     }
 
     void SearchPlayer()
@@ -359,6 +362,7 @@ public class Enemy : MonoBehaviour
     {
             if (enemyHealth <= 0)
             {
+                isAlive = false;
                 enemySpeed = 0;
                 gameObject.layer = 0;
 

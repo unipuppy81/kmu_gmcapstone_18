@@ -20,7 +20,7 @@ public class itemspeed : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-            player.playerSpeed += 1.0f;
+            player.playerSpeed += 0.5f;
             if (player.playerSpeed >= player.maxSpeed)
             {
                 player.playerSpeed = player.maxSpeed;

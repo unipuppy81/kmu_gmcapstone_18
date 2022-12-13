@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     bool spSkill1Check = true;
 
     public float playerSpeed = 1.2f;
-    public float maxSpeed = 10f;
+    public float maxSpeed = 6f;
     public float playerMaxHp;
     public float playercurHp;
     public float bulletSpeed;
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         playercurHp = 30f;
 
         basketCount = 0;
-        basketSpeed = 4f;
+        basketSpeed = 6f;
         specialSkill = 1;
 
         isClick = false;
@@ -258,6 +258,7 @@ public class Player : MonoBehaviour
             basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
 
             rigid.AddForce(basketfire2d * basketSpeed, ForceMode2D.Impulse);
+           // rigid.Translate(new Vector3(basketfire2d.x, basketfire2d.y, 0) * 3f * Time.deltaTime);
         }
         else
         {
@@ -268,6 +269,7 @@ public class Player : MonoBehaviour
             basketfire2d = new Vector2(basketfire.x, basketfire.y).normalized;
 
             rigid.AddForce(basketfire2d * basketSpeed, ForceMode2D.Impulse);
+            //rigid.Translate(new Vector3(basketfire2d.x, basketfire2d.y, 0) * 3f * Time.deltaTime);
         }
         BasketBall.basketballLevel++;
 
