@@ -134,7 +134,6 @@ public class Player : MonoBehaviour
         Playermove();
         Reload();
         SpecialSkill1();
-        specialSkillbtn();
         //DiePlayer();
 
         if (isMagnet == true)
@@ -282,7 +281,7 @@ public class Player : MonoBehaviour
 
     void spcount()
     {
-        spcountText.text = String.Format("Count : {0:D1}", specialSkill);
+        spcountText.text = String.Format("{0:D1}", specialSkill);
     }
 
     void Playermove()
@@ -353,18 +352,6 @@ public class Player : MonoBehaviour
               //   skillbtn.SetActive(false);
               //}
          }
-    }
-
-    void specialSkillbtn()
-    {
-        if(specialSkill == 0)
-        {
-            skillbtn.SetActive(false);
-        }
-        else if(specialSkill > 0) 
-        {
-            skillbtn.SetActive(true);
-        }
     }
 
     void Reload()
