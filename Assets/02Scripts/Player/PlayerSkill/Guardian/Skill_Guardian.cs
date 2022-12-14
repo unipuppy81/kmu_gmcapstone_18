@@ -24,11 +24,25 @@ public class Skill_Guardian : MonoBehaviour
 
     public static int guardianLevel = 0;
     public bool level1, level2, level3, level4, level5 = true;
-    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5;
 
     //Equip_Dumbbell _Dumbbell;
 
     ButtonManager buttonManager;
+
+    void Awake()
+    {
+        level1 = true;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        levelp1 = true;
+        levelp2 = false;
+        levelp3 = false;
+        levelp4 = false;
+        levelp5 = false;
+    }
 
     // Start is called before the first frame update
     void Start()

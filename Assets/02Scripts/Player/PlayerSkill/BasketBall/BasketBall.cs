@@ -6,7 +6,7 @@ class BasketBall : MonoBehaviour
 {
     public static int basketballLevel = 0;
     public bool level1, level2, level3, level4, level5;
-    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5;
 
     public float basketdmg = 3;
 
@@ -27,11 +27,15 @@ class BasketBall : MonoBehaviour
         level3 = false;
         level4 = false;
         level5 = false;
+        levelp1 = true;
+        levelp2 = false;
+        levelp3 = false;
+        levelp4 = false;
+        levelp5 = false;
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         player = GameObject.Find("Player").GetComponent<Player>();
     }
-
 
     void Update()
     {

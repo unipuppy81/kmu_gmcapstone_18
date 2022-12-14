@@ -6,7 +6,7 @@ public class Skill_Ax : MonoBehaviour
 {
     public static int axLevel = 0;
     public bool level1, level2, level3, level4, level5;
-    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5;
 
     float rotationSpeed = 500f;
 
@@ -48,6 +48,11 @@ public class Skill_Ax : MonoBehaviour
         level3 = false;
         level4 = false;
         level5 = false;
+        levelp1 = true;
+        levelp2 = false;
+        levelp3 = false;
+        levelp4 = false;
+        levelp5 = false;
         life = false;
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();

@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public int bulletLevel = 1;
     public bool selectedBullet = false;
     public bool level1, level2, level3, level4, level5 = true;
-    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5;
 
     Equip_Ammo _Ammo;
 
@@ -23,6 +23,11 @@ public class Bullet : MonoBehaviour
         _Ammo = GetComponent<Equip_Ammo>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         dmg = player.bulletDamage;
+        levelp1 = true;
+        levelp2 = false;
+        levelp3 = false;
+        levelp4 = false;
+        levelp5 = false;
     }
 
     void Update()
