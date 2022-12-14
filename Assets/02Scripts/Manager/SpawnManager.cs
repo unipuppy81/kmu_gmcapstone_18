@@ -95,9 +95,10 @@ public class SpawnManager : MonoBehaviour
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 6, 1.0f);
+        InvokeRepeating("SpawnBox", 6, 15.0f);
         InvokeRepeating("SpawnEnemy", 6, 0.3f);
         InvokeRepeating("SpawnbEnemy", 6, 15.0f);
+        InvokeRepeating("SpawnEnemyRush", 90, 10000f);
 
         isSpawnTure = false;
     }
@@ -105,20 +106,7 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
-        spawnTimeControl();
         SpawnBoss();
-    }
-    
-    void spawnTimeControl()
-    {
-        if(timeAfterSpawn >= 0 && timeAfterSpawn < 10f)
-        {
-            aenemyspawn = 4f;
-        }
-        else if(timeAfterSpawn >= 10f)
-        {
-            aenemyspawn = 0.1f;
-        }
     }
 
     void SpawnBoss()
@@ -159,7 +147,7 @@ public class SpawnManager : MonoBehaviour
             spawnTime = 10000000000000f;
         }
     }
-
+    
     void SpawnEnemy()
     {
         float spawnPosx1 = player.position.x + 8f;
@@ -210,16 +198,9 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemyArray()
+    void SpawnEnemyRush()
     {
-        for(int i =0; i< 5; i++)
-        {
-
-        }
-
-
-
-
+        for(int i = 0; i < 200; i++) { 
         float spawnPosx1 = player.position.x + 8f;
         float spawnPosy1 = player.position.y + 8f;
 
@@ -270,6 +251,7 @@ public class SpawnManager : MonoBehaviour
 
                 }
             }
+        }
         }
     }
 
