@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.A:
+                isAlive= true;
                 enemySpeed = 0.9f;
                 gameObject.layer = 7;
                 if (t >=0 && t <= 90)
@@ -89,6 +90,7 @@ public class Enemy : MonoBehaviour
                 break;
 
             case Type.B:
+                isAlive = true;
                 enemySpeed = 0.7f;
                 gameObject.layer = 7;
                 if (t >= 0 && t <= 90)
@@ -196,7 +198,7 @@ public class Enemy : MonoBehaviour
 
         float spriteflip = target.position.x - transform.position.x;
 
-        if(isAlive)
+        if (isAlive)
             spriteRenderer.flipX = spriteflip > 0;
     }
 
@@ -240,7 +242,6 @@ public class Enemy : MonoBehaviour
             Invoke("ReturnSprite", 0.2f);
         }
         StartCoroutine(CheckEnemyHealth());
-
     }
     
     void ReturnSprite()
