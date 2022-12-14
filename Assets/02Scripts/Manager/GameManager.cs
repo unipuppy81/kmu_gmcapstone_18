@@ -169,12 +169,12 @@ public class GameManager : MonoBehaviour
     {
         levelText.text = string.Format("LV : {0:D1}", levelCount);
     }
-    /*
-    public void RandomChoose()
+    
+/*    public void RandomChoose()
     {
         if (levelpanel.activeSelf == true)
         {
-            i = UnityEngine.Random.Range(0, select1.Count);
+            i = UnityEngine.Random.Range(0, selectPanel.Count);
             switch (i)
             {
                 case 0:
@@ -300,8 +300,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-    }
-    */
+    }*/
+    
     public void ActiveFalse()
     {
         if (levelpanel.activeSelf == false)
@@ -371,107 +371,40 @@ public class GameManager : MonoBehaviour
         {
             if (selectPanel.Count >= 3) //업그레이드할 무기가 3개 이상일때
             {
-                
-                if (btnmanager.gunCount == 5)
-                {
-                    selectPanel.RemoveAt(0);
-                    random();
-                }
-                else if (btnmanager.sheildCount == 5)
-                {
-                    selectPanel.RemoveAt(1);
-                    random();
-                }
-                else if (btnmanager.empCount == 5)
-                {
-                    selectPanel.RemoveAt(2);
-                    random();
-                }
-                else if (btnmanager.axCount == 5)
-                {
-                    selectPanel.RemoveAt(3);
-                    random();
-                }
-                else if (btnmanager.basketCount == 5)
-                {
-                    selectPanel.RemoveAt(4);
-                    random();
-                }
-                else if (btnmanager.ammoCount == 5)
-                {
-                    selectPanel.RemoveAt(5);
-                    random();
-                }
-                else if (btnmanager.dumbbellCount == 5)
-                {
-                    selectPanel.RemoveAt(6);
-                    random();
-                }
-                else if (btnmanager.hot7Count == 5)
-                {
-                    selectPanel.RemoveAt(7);
-                    random();
-                }
-                else if (btnmanager.bshoesCount == 5)
-                {
-                    selectPanel.RemoveAt(8);
-                    random();
-                }
-                else if (btnmanager.magincCount == 5)
-                {
-                    selectPanel.RemoveAt(9);
-                    random();
-                }
-                else if (selectPanel.Count == 2) // 업그레이드할 무기가 2개 남았을때
-                {
-                    for (int i = 0; i < 2; i++)
-                    {
-                        int rand = UnityEngine.Random.Range(0, selectPanel.Count);
-                        if (i == 0)
-                        {
-                            selectPanel[rand].transform.position = posx4;
-                            selectPanel[rand].SetActive(true);
-                            selectPanel.RemoveAt(rand);
-                        }
-                        if (i == 1)
-                        {
-                            selectPanel[rand].transform.position = posx5;
-                            selectPanel[rand].SetActive(true);
-                            selectPanel.RemoveAt(rand);
-                        }
-                    }
-                }
-                else if (selectPanel.Count == 1) // 업그레이드할 무기가 2개 남았을때
+                random();
+            }
+            else if (selectPanel.Count == 2) // 업그레이드할 무기가 2개 남았을때
+            {
+                for (int i = 0; i < 2; i++)
                 {
                     int rand = UnityEngine.Random.Range(0, selectPanel.Count);
-                    selectPanel[rand].transform.position = posx6;
-                    selectPanel[rand].SetActive(true);
-                }
-                else if (selectPanel.Count == 0) // 모든 무기 만렙시 코인이나 체력 올려주는 페널
-                {
-                    for (int i = 0; i < 2; i++)
+                    if (i == 0)
                     {
-                        int rand = UnityEngine.Random.Range(0, select_coin_hp.Count);
-                        if (i == 0)
-                        {
-                            select_coin_hp[0].transform.position = posx4;
-                            select_coin_hp[0].SetActive(true);
-                        }
-                        if (i == 1)
-                        {
-                            select_coin_hp[1].transform.position = posx5;
-                            select_coin_hp[1].SetActive(true);
-                        }
+                        selectPanel[rand].transform.position = posx4;
+                        selectPanel[rand].SetActive(true);
+                        selectPanel.RemoveAt(rand);
+                    }
+                    if (i == 1)
+                    {
+                        selectPanel[rand].transform.position = posx5;
+                        selectPanel[rand].SetActive(true);
+                        selectPanel.RemoveAt(rand);
                     }
                 }
-                else
-                {
-                    random();
-                }
-
             }
-           
+            else if (selectPanel.Count == 1) // 업그레이드할 무기가 2개 남았을때
+            {
+                int rand = UnityEngine.Random.Range(0, selectPanel.Count);
+                selectPanel[rand].transform.position = posx6;
+                selectPanel[rand].SetActive(true);
+            }
+            else if (selectPanel.Count == 0) // 모든 무기 만렙시 코인이나 체력 올려주는 페널
+            {
+                select_coin_hp[0].transform.position = posx4;
+                select_coin_hp[1].transform.position = posx5;
+                select_coin_hp[0].SetActive(true);
+                select_coin_hp[1].SetActive(true);
+            }
         }
-       
     }
 }

@@ -41,6 +41,10 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI maginc_levelText;
     [SerializeField]
+    TextMeshProUGUI ppoppai_levelText;
+    [SerializeField]
+    TextMeshProUGUI armor_levelText;
+    [SerializeField]
     TextMeshProUGUI coinText;
 
     int maxGuardians = 4;
@@ -60,6 +64,8 @@ public class ButtonManager : MonoBehaviour
     public int basketCount;
     public int bshoesCount;
     public int magincCount;
+    public int ppoppaiCount;
+    public int armorCount;
     public int coin;
 
     public GameManager gm;
@@ -205,6 +211,30 @@ public class ButtonManager : MonoBehaviour
             }
             Wp_1_levelText();
         }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Ppoppai")
+        {
+            if (ppoppaiCount < max)
+            {
+                ppoppaiCount++;
+            }
+            else
+            {
+                ppoppaiCount = 5;
+            }
+            Wp_1_levelText();
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Armor")
+        {
+            if (armorCount < max)
+            {
+                armorCount++;
+            }
+            else
+            {
+                armorCount = 5;
+            }
+            Wp_1_levelText();
+        }
         else if (EventSystem.current.currentSelectedGameObject.tag == "coin")
         {
             coin += 200;
@@ -273,6 +303,8 @@ public class ButtonManager : MonoBehaviour
         hot1_levelText.text = string.Format("LV : {0:D1}", hot7Count);
         bshoes_levelText.text = string.Format("LV : {0:D1}", bshoesCount);
         maginc_levelText.text = string.Format("LV : {0:D1}", magincCount);
+        ppoppai_levelText.text = string.Format("LV : {0:D1}", ppoppaiCount);
+        armor_levelText.text = string.Format("LV : {0:D1}", armorCount);
     }
     void cointext()
     {
