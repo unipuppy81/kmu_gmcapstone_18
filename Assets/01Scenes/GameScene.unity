@@ -876,7 +876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06ab22716483f79448aca79c9cc81839, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4819a5b98b031342a1c4033aa763346, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1876,7 +1876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6c3b35d945917a64aaacd53188d355fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06ab22716483f79448aca79c9cc81839, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9295,12 +9295,12 @@ GameObject:
   - component: {fileID: 638271734}
   - component: {fileID: 638271733}
   m_Layer: 5
-  m_Name: Pan1_Ppoppai
+  m_Name: Pan1_Spinach
   m_TagString: Ppoppai
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638271732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9394,18 +9394,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1444341467}
         m_TargetAssemblyTypeName: ItemDB, Assembly-CSharp
-        m_MethodName: SlotClick
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1444341467}
-        m_TargetAssemblyTypeName: ItemDB, Assembly-CSharp
         m_MethodName: AddEquip
         m_Mode: 5
         m_Arguments:
@@ -9413,7 +9401,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gun01
+          m_StringArgument: Spinach
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &638271734
@@ -18636,7 +18624,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190335
   m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -22909,7 +22897,7 @@ GameObject:
   - component: {fileID: 1537942338}
   - component: {fileID: 1537942337}
   m_Layer: 5
-  m_Name: Pan1_Armor
+  m_Name: Pan1_Vest
   m_TagString: Armor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23027,7 +23015,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gun01
+          m_StringArgument: Vest
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1537942338
@@ -23216,7 +23204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81892b9f873fbc343afcb1339429f2b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b5f1dc53cb324f43b5c2cd02211cf00, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27407,7 +27395,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281808695
   m_fontColor: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

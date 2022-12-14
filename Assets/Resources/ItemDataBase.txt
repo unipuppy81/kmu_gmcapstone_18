@@ -8,8 +8,10 @@ Equipment	Gun01	총	1	FALSE	6
 Equipment	Gun02	총(진화)	1	FALSE	7
 Equipment	Shield01	방패	1	FALSE	8
 Equipment	Shield02	방패(진화)	1	FALSE	9
-Passive	Ammo	방탄조끼	1	FALSE	0
-Passive	BasketballShoes	농구공 패시브	1	FALSE	1
-Passive	Dumbbell	aaa 패시브	1	FALSE	2
-Passive	Hot7	EMP 패시브	1	FALSE	3
-Passive	NS	abc 패시브	1	FALSE	4
+Passive	Ammo	탄창	1	FALSE	0
+Passive	BasketballShoes	농구화	1	FALSE	1
+Passive	Dumbbell	덤벨	1	FALSE	2
+Passive	Hot7	핫세븐	1	FALSE	3
+Passive	NS	자석	1	FALSE	4
+Passive	Spinach	시금치	1	FALSE	5
+Passive	Vest	방탄조끼	1	FALSE	6
