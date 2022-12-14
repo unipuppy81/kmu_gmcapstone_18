@@ -6,10 +6,11 @@ public class Skill_Ax : MonoBehaviour
 {
     public static int axLevel = 0;
     public bool level1, level2, level3, level4, level5;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
 
     float rotationSpeed = 500f;
 
-    public int dmg = 3;
+    public float dmg;
 
     float axTime;
     float lifeCycle;
@@ -107,6 +108,7 @@ public class Skill_Ax : MonoBehaviour
     {
         LevelDesign();
         AxLevel();
+        Ppoppai();
     }
 
     void AxLevel()
@@ -163,6 +165,39 @@ public class Skill_Ax : MonoBehaviour
             axSpeed = 2.0f;
             dmg = 5;
             spriteR.sprite = sprites;
+        }
+    }
+
+    void Ppoppai()
+    {
+        if (Equip_Spinach.ppoppaiLevel == 1 && levelp1 == true)
+        {
+            dmg += 1f;
+            levelp1 = false;
+            levelp2 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 2 && levelp2 == true)
+        {
+            dmg += 1f;
+            levelp2 = false;
+            levelp3 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 3 && levelp3 == true)
+        {
+            dmg += 1f;
+            levelp3 = false;
+            levelp4 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 4 && levelp4 == true)
+        {
+            dmg += 1f;
+            levelp4 = false;
+            levelp5 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 5 && levelp5 == true)
+        {
+            dmg += 1f;
+            levelp5 = false;
         }
     }
 }

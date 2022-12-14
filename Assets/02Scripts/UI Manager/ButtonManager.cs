@@ -190,8 +190,6 @@ public class ButtonManager : MonoBehaviour
             if (bshoesCount < max)
             {
                 bshoesCount++;
-
-                
             }
             else
             {

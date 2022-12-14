@@ -6,8 +6,9 @@ class BasketBall : MonoBehaviour
 {
     public static int basketballLevel = 0;
     public bool level1, level2, level3, level4, level5;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
 
-    public int basketdmg = 3;
+    public float basketdmg = 3;
 
     float basketTime;
 
@@ -37,7 +38,6 @@ class BasketBall : MonoBehaviour
         basketTime += Time.deltaTime;
         basketLife();
 
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             level5 = true;
@@ -48,6 +48,7 @@ class BasketBall : MonoBehaviour
     void FixedUpdate()
     {
         LevelDesign();
+        Ppoppai();
     }
 
     void LevelDesign()
@@ -87,33 +88,64 @@ class BasketBall : MonoBehaviour
         }
     }
 
-    void basketLife()
+    void Ppoppai()
     {
-        if (level5 == false)
+        if (Equip_Spinach.ppoppaiLevel == 1 && levelp1 == true)
         {
-
+            basketdmg += 1f;
+            levelp1 = false;
+            levelp2 = true;
         }
-
-        if (level5 == true)
+        else if (Equip_Spinach.ppoppaiLevel == 2 && levelp2 == true)
         {
-            if (basketTime >= 5f)
-            {
-                basketTime = 0f;
-            }
+            basketdmg += 1f;
+            levelp2 = false;
+            levelp3 = true;
         }
-
+        else if (Equip_Spinach.ppoppaiLevel == 3 && levelp3 == true)
+        {
+            basketdmg += 1f;
+            levelp3 = false;
+            levelp4 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 4 && levelp4 == true)
+        {
+            basketdmg += 1f;
+            levelp4 = false;
+            levelp5 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 5 && levelp5 == true)
+        {
+            basketdmg += 1f;
+            levelp5 = false;
+        }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy01")
+        void basketLife()
         {
-            UnityEngine.Debug.Log("丑备傍面倒");
+            if (level5 == false)
+            {
+
+            }
+
             if (level5 == true)
             {
+                if (basketTime >= 5f)
+                {
+                    basketTime = 0f;
+                }
+            }
 
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Enemy01")
+            {
+                UnityEngine.Debug.Log("丑备傍面倒");
+                if (level5 == true)
+                {
+
+                }
             }
         }
-    }
-
 }

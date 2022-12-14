@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public int bulletLevel = 1;
     public bool selectedBullet = false;
     public bool level1, level2, level3, level4, level5 = true;
-
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5 = true;
 
     Equip_Ammo _Ammo;
 
@@ -28,9 +28,10 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if(player.playercurHp > 0) { 
-        levelDesign();
-        bulletLevel = buttonManager.gunCount;
-        alive();
+            levelDesign();
+            Ppoppai();
+            bulletLevel = buttonManager.gunCount;
+            alive();
         }
     }
 
@@ -84,6 +85,39 @@ public class Bullet : MonoBehaviour
             player.maxShotDelay = 0.1f;
 
             level5 = false;
+        }
+    }
+
+    void Ppoppai()
+    {
+        if (Equip_Spinach.ppoppaiLevel == 1 && levelp1 == true)
+        {
+            dmg += 1f;
+            levelp1 = false;
+            levelp2 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 2 && levelp2 == true)
+        {
+            dmg += 1f;
+            levelp2 = false;
+            levelp3 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 3 && levelp3 == true)
+        {
+            dmg += 1f;
+            levelp3 = false;
+            levelp4 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 4 && levelp4 == true)
+        {
+            dmg += 1f;
+            levelp4 = false;
+            levelp5 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 5 && levelp5 == true)
+        {
+            dmg += 1f;
+            levelp5 = false;
         }
     }
 

@@ -7,7 +7,7 @@ public class Skill_Magnetic : MonoBehaviour
     [SerializeField] private float damageTime = 0.5f; // 데미지가 들어갈 딜레이 (매 프레임마다가 아닌 일정 시간마다 데미지를 주기 위하여)
     private float currentDamageTime;
 
-    public int dmg = 3;
+    public float dmg = 3;
 
     public Transform target;
     public GameObject magnetic;
@@ -15,6 +15,7 @@ public class Skill_Magnetic : MonoBehaviour
     public int magneticLevel = 0;
 
     public bool level1, level2, level3, level4, level5;
+    public bool levelp1, levelp2, levelp3, levelp4, levelp5;
 
     ButtonManager buttonManager;
 
@@ -31,6 +32,11 @@ public class Skill_Magnetic : MonoBehaviour
         level3 = true;
         level4 = true;
         level5 = true;
+        levelp1 = true;
+        levelp2 = true;
+        levelp3 = true;
+        levelp4 = true;
+        levelp5 = true;
     }
 
     // Update is called once per frame
@@ -38,6 +44,7 @@ public class Skill_Magnetic : MonoBehaviour
     {
         magneticLevel = buttonManager.empCount;
         levelDesign();
+        Ppoppai();
         transform.position = target.position;
     }
 
@@ -76,6 +83,39 @@ public class Skill_Magnetic : MonoBehaviour
             transform.localScale = new Vector3(0.7f, 0.7f, 1f);
             dmg = 5;
             level5 = false;
+        }
+    }
+
+    void Ppoppai()
+    {
+        if (Equip_Spinach.ppoppaiLevel == 1 && levelp1 == true)
+        {
+            dmg += 1f;
+            levelp1 = false;
+            levelp2 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 2 && levelp2 == true)
+        {
+            dmg += 1f;
+            levelp2 = false;
+            levelp3 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 3 && levelp3 == true)
+        {
+            dmg += 1f;
+            levelp3 = false;
+            levelp4 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 4 && levelp4 == true)
+        {
+            dmg += 1f;
+            levelp4 = false;
+            levelp5 = true;
+        }
+        else if (Equip_Spinach.ppoppaiLevel == 5 && levelp5 == true)
+        {
+            dmg += 1f;
+            levelp5 = false;
         }
     }
 
