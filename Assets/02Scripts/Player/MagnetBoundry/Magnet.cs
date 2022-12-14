@@ -35,12 +35,12 @@ public class Magnet : MonoBehaviour
 
         // 조건 줘서 자석 아이템 먹으면 자석 발동되게 할거임
         if (player.isMagnet == true) { 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.15f);
         }
 
         if (hasTarget)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.15f);
         }
 
     }

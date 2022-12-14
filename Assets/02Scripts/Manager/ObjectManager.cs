@@ -35,15 +35,15 @@ public class ObjectManager : MonoBehaviour
 
     void Awake() // 로딩시간에 오브젝트 풀 생성
     {
-        enemyA = new GameObject[200];
-        enemyB = new GameObject[20];
+        enemyA = new GameObject[400];
+        enemyB = new GameObject[30];
 
-        exA = new GameObject[800];
-        exB = new GameObject[500];
+        exA = new GameObject[1200];
+        exB = new GameObject[300];
 
-        bulletPlayerA = new GameObject[20];
+        bulletPlayerA = new GameObject[30];
 
-        bulletEnemyA = new GameObject[20];
+        bulletEnemyA = new GameObject[30];
 
         Wall = new GameObject[100];
         Generate();
