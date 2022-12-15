@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public ObjectManager objectManager;
     public GameManager gameManger;
 
+    Skill_Magnetic skill_magnetic;
+
     // A = 근접, B = 원거리, C = 중간보스
     public enum Type { A, B, C };
     public Type enemyType;
@@ -36,6 +38,9 @@ public class Enemy : MonoBehaviour
     public float bulletSpeed;
     public float enemyaMaxHealth;
     public float enemybMaxHealth;
+
+    public bool isHit;
+    float hitTime;
 
     public bool isShoot;
     public bool isAlive;
@@ -67,6 +72,9 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player2 = GameObject.Find("Player").GetComponent<Player>();
         anim = GetComponent<Animator>();
+        //skill_magnetic = new Skill_Magnetic();
+        //skill_magnetic = GetComponent<Skill_Magnetic>();
+        skill_magnetic = GameObject.Find("MagneticField").GetComponent<Skill_Magnetic>();
     }
 
     void OnEnable() // 활성화될때 실행됨
@@ -138,12 +146,12 @@ public class Enemy : MonoBehaviour
 
                 break;
         }
-
     }
 
     void Update()
     {
         t += Time.deltaTime;
+        hitTime += Time.deltaTime;
         switch (enemyType)
         {
             case Type.A:
@@ -162,10 +170,17 @@ public class Enemy : MonoBehaviour
                 FollowTarget();
 
                 break;
+        }    
+        if(isHit)
+        {
+            if(hitTime >= 0.5f)
+            {
+                onHit(skill_magnetic.dmg);
+                takeDamageText(skill_magnetic.dmg);
+                hitTime = 0.0f;
+            }
         }
     }
-
-
 
     void UpdateHealth()
     {
@@ -289,6 +304,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -329,6 +345,7 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Skill2")) // EMP필드(자기장)
         {
+            isHit = true;
             Skill_Magnetic skill_Magnetic = other.gameObject.GetComponent<Skill_Magnetic>();
             onHit(skill_Magnetic.dmg);
             takeDamageText(skill_Magnetic.dmg);
@@ -340,6 +357,11 @@ public class Enemy : MonoBehaviour
             takeDamageText(skill_Ax.dmg);
             //knockback.PlayFeedbackM(skill_Magnetic.gameObject);
         }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        isHit = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

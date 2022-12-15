@@ -7,7 +7,7 @@ public class Skill_Magnetic : MonoBehaviour
     [SerializeField] private float damageTime = 0.5f; // 데미지가 들어갈 딜레이 (매 프레임마다가 아닌 일정 시간마다 데미지를 주기 위하여)
     private float currentDamageTime;
 
-    public float dmg = 3;
+    public float dmg = 1;
 
     public Transform target;
     public GameObject magnetic;
