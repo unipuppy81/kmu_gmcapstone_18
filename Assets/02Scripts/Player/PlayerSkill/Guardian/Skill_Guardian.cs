@@ -32,7 +32,7 @@ public class Skill_Guardian : MonoBehaviour
 
     void Awake()
     {
-        rotationSpeed = 200f;
+        orbitSpeed = 200f;
         level1 = true;
         level2 = false;
         level3 = false;
