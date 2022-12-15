@@ -138,3 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleSpeed: 7
   dmg: 30
+  enemy1:
+  - {fileID: 8409871284461968199, guid: cab2f3e9a5af04540b6523c2eeda939e, type: 3}
+  - {fileID: 9124793542810104664, guid: 4145d2a9c7dbc3a459a533a38a11b91f, type: 3}
+  - {fileID: 724861632309306098, guid: 3f84103bfc656fd4f818c5c2a9cb6a51, type: 3}
+  enemy: {fileID: 8409871284461968199, guid: cab2f3e9a5af04540b6523c2eeda939e, type: 3}
