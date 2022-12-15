@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3804629760719283083}
   - component: {fileID: 7489949479273156649}
   - component: {fileID: 3560317084819174590}
-  - component: {fileID: 8898619926398306722}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -77,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cc02cb8c0b6fa90419f426f49e06912c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 16223ba5df84638439fd043786fe9e95, type: 3}
+  m_Color: {r: 1, g: 0.6808815, b: 0.5424528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,23 +137,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallDamage: 0
---- !u!95 &8898619926398306722
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245208704090265564}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bfa7a9c2a52b5924097b4af42ff334d9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
