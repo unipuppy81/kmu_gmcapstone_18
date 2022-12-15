@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     int i, j, k;
     public float ex1Amount = 1f;
     public float ex2Amount = 2f;
+    public float ex3Amount = 10f;
 
 
     
@@ -114,6 +115,13 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Ex2");
             CurEx += ex2Amount;
+            other.gameObject.SetActive(false);
+            Level();
+        }
+        else if (other.gameObject.tag == "Ex3")
+        {
+            GameObject.Find("Ex3");
+            CurEx += ex3Amount;
             other.gameObject.SetActive(false);
             Level();
         }

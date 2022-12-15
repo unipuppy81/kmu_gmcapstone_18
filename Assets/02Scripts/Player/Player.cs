@@ -96,8 +96,8 @@ public class Player : MonoBehaviour
 
         bulletObjA = playerbulletA;
 
-        playerMaxHp = 30f;
-        playercurHp = 30f;
+        playerMaxHp = 50f;
+        playercurHp = 50f;
 
         basketCount = 0;
         basketSpeed = 6f;
