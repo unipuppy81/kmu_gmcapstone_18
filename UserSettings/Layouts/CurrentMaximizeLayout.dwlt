@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 360
     height: 486.66666
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -544,8 +544,8 @@ MonoBehaviour:
     y: 0
     width: 340.6667
     height: 486.66666
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -582,9 +582,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1e51feff
-      m_LastClickedID: -110306
-      m_ExpandedIDs: ac59feffa60effff12f8ffff32fbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1ee5f8ff32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 116
+  controlID: 3683
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -700,22 +700,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/03Prefabs/Skill
+    - Assets/02Scripts/Player/SpecialSkill
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/03Prefabs/Skill
+  - Assets/02Scripts/Player/SpecialSkill
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\Owner\Documents\GitHub\kmu_gmcapstone_18
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 212.33334}
-    m_SelectedIDs: 40850000
-    m_LastClickedID: 34112
-    m_ExpandedIDs: 000000005a6600005c6600005e6600007666000000ca9a3b
+    scrollPos: {x: 0, y: 263}
+    m_SelectedIDs: 34670000
+    m_LastClickedID: 26420
+    m_ExpandedIDs: 00000000c8660000ca660000cc660000ce660000d0660000e66600000867000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -743,7 +743,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005a6600005c6600005e660000
+    m_ExpandedIDs: 00000000c8660000ca660000cc660000ce660000d06600000867000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -768,10 +768,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1e51feff
-    m_LastClickedInstanceID: -110306
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300002c7200004e640000fa630000ba6a0000b2660000f86900000c6b00004a6300005a6300005e63000000000000
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300002c7200004e640000fa630000ba6a0000b2660000f86900000c6b00004a6300005a6300005e63000000000000e46300002a640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
