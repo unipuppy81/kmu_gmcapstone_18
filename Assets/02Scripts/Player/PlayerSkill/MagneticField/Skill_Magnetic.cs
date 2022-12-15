@@ -11,6 +11,7 @@ public class Skill_Magnetic : MonoBehaviour
 
     public Transform target;
     public GameObject magnetic;
+    public GameObject magnetic2;
 
     public int magneticLevel = 0;
 
@@ -27,16 +28,17 @@ public class Skill_Magnetic : MonoBehaviour
         _Hot7 = GetComponent<Equip_Hot7>();
         enemy = GetComponent<Enemy>();
         buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
+
         level1 = true;
         level2 = true;
         level3 = true;
         level4 = true;
         level5 = true;
         levelp1 = true;
-        levelp2 = true;
-        levelp3 = true;
-        levelp4 = true;
-        levelp5 = true;
+        levelp2 = false;
+        levelp3 = false;
+        levelp4 = false;
+        levelp5 = false;
     }
 
     // Update is called once per frame
@@ -80,6 +82,8 @@ public class Skill_Magnetic : MonoBehaviour
         }
         else if (magneticLevel == 5 && level5 == true && Equip_Hot7.selectedHot7 == true)
         {
+            magnetic.SetActive(false);
+            magnetic2.SetActive(true);
             transform.localScale = new Vector3(0.7f, 0.7f, 1f);
             dmg = 5;
             level5 = false;
