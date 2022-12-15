@@ -12,7 +12,7 @@ public class Boss : MonoBehaviour
     public ObjectManager objectManager;
 
     private Player player;
-
+    private LineRenderer lineRenderer;
    
 
     public enum Type { A,B,C };
@@ -62,6 +62,7 @@ public class Boss : MonoBehaviour
         bossDamage = 5;
         btarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.Find("Player").GetComponent<Player>();
+        lineRenderer = GetComponent<LineRenderer>();
         isCrash = false;
         isWalk = true;
         isPattern = false;
@@ -75,7 +76,15 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
+        lineRenderer.SetColors(Color.red, Color.yellow);
+        lineRenderer.SetWidth(0.1f, 0.1f);
+    }
 
+
+    void line()
+    {
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, btarget.position);
     }
 
     void Update()
@@ -155,6 +164,7 @@ public class Boss : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Border")
@@ -242,6 +252,8 @@ public class Boss : MonoBehaviour
         {
             return;
         }
+
+        
 
         for(int i=0; i < 1; i++)
         {
@@ -347,6 +359,7 @@ public class Boss : MonoBehaviour
 
             StartCoroutine(Think());
         }
+
     void takeDamageText(float damage)
     {
         GameObject hudText = Instantiate(hudDamageText);

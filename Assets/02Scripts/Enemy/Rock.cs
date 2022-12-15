@@ -17,6 +17,7 @@ public class Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = Quaternion.Euler(30,0,0);
         alive();   
     }
 
