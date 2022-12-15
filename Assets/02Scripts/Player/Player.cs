@@ -380,11 +380,9 @@ public class Player : MonoBehaviour
             if (playercurHp <= 0)
             {
                 anim.SetTrigger("Dead");
-
                 yield return new WaitForSeconds(2);
 
                 Time.timeScale = 0;
-                UnityEngine.Debug.Log("2");
                 gameoverPannel.SetActive(true);
 
             }
