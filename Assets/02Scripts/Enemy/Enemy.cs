@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
         {
             case Type.A:
                 isAlive= true;
-                enemySpeed = 0.9f;
+                enemySpeed = 0.75f;
                 gameObject.layer = 7;
                 if (t >=0 && t <= 45)
                 {
@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour
 
             case Type.B:
                 isAlive = true;
-                enemySpeed = 0.7f;
+                enemySpeed = 0.55f;
                 gameObject.layer = 7;
                 if (t >= 0 && t <= 45)
                 {
@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour
             case Type.A:
 
                 enemyHealth = 2f;
-                    enemySpeed = 0.9f;
+                    enemySpeed = 0.7f;
                     enemyDamage = 2f;
 
                 break;
@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour
             case Type.B:
 
                 enemyHealth = 2f;
-                enemySpeed = 0.7f;
+                enemySpeed = 0.5f;
                 bulletenemyDamage = 4f;
                 enemyDamage = 1f;
                 searchRadius = 5f;
