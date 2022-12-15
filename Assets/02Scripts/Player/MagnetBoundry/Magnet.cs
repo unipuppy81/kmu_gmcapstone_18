@@ -46,7 +46,7 @@ public class Magnet : MonoBehaviour
     }
     private void Update()
     {
-
+        transform.Rotate(new Vector3(0,10f,0) * 40f *Time.deltaTime);
     }
 
 

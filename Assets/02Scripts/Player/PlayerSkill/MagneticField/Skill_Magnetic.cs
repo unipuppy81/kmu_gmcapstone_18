@@ -62,21 +62,21 @@ public class Skill_Magnetic : MonoBehaviour
         else if (magneticLevel == 2 && level2 == true)
         {
             transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-            dmg = 2;
+            dmg = 1.2f;
             level2 = false;
             level3 = true;
         }
         else if (magneticLevel == 3 && level3 == true)
         {
             transform.localScale = new Vector3(0.55f, 0.55f, 1f);
-            dmg = 3;
+            dmg = 1.3f;
             level3 = false;
             level4 = true;
         }
         else if (magneticLevel == 4 && level4 == true)
         {
             transform.localScale = new Vector3(0.6f, 0.6f, 1f);
-            dmg = 4;
+            dmg = 1.4f;
             level4 = false;
             level5 = true;
         }
@@ -85,7 +85,7 @@ public class Skill_Magnetic : MonoBehaviour
             magnetic.SetActive(false);
             magnetic2.SetActive(true);
             transform.localScale = new Vector3(0.7f, 0.7f, 1f);
-            dmg = 5;
+            dmg = 1.5f;
             level5 = false;
         }
     }
@@ -94,31 +94,31 @@ public class Skill_Magnetic : MonoBehaviour
     {
         if (Equip_Spinach.ppoppaiLevel == 1 && levelp1 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp1 = false;
             levelp2 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 2 && levelp2 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp2 = false;
             levelp3 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 3 && levelp3 == true)
         {
-            dmg += 1f;
+           // dmg += 1f;
             levelp3 = false;
             levelp4 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 4 && levelp4 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp4 = false;
             levelp5 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 5 && levelp5 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp5 = false;
         }
     }

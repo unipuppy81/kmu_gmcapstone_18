@@ -10,6 +10,10 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+
+    [SerializeField]
+    private GameObject BossWarning;
+
     public ObjectManager objectManager;
     public GameManager gameManager;
 
@@ -71,6 +75,7 @@ public class SpawnManager : MonoBehaviour
    
     void Awake()
     {
+        BossWarning.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         p = GameObject.Find("Player").GetComponent<Player>();
 
@@ -117,6 +122,11 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(sBoss, spawnPos, sBoss.transform.rotation);
             mbspawnTime = 10000000000000f;
+        }
+
+        if(timeAfterSpawn >= spawnTime - 2.0f)
+        {
+            StartCoroutine("SpawnBossText");
         }
 
         if (timeAfterSpawn >= spawnTime)
@@ -313,5 +323,14 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject box = (GameObject)Instantiate(Box, new Vector3(brandomX, brandomY, 0f), Quaternion.identity);
         }
+    }
+
+    private IEnumerator SpawnBossText()
+    {
+        BossWarning.SetActive(true);
+
+        yield return new WaitForSeconds(2.0f);
+
+        BossWarning.SetActive(false);
     }
 }

@@ -16,7 +16,7 @@ public class Skill_Guardian : MonoBehaviour
 
     public float time = 360;
 
-    public float rotationSpeed = 50f;
+    public float rotationSpeed;
 
     public Transform target;
     public float orbitSpeed;
@@ -32,6 +32,7 @@ public class Skill_Guardian : MonoBehaviour
 
     void Awake()
     {
+        rotationSpeed = 200f;
         level1 = true;
         level2 = false;
         level3 = false;
@@ -79,7 +80,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 2;
+            dmg = 1.2f;
             level2 = false;
             level3 = true;
         }
@@ -87,7 +88,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 2;
+            dmg = 1.5f;
             level3 = false;
             level4 = true;
         }
@@ -95,7 +96,7 @@ public class Skill_Guardian : MonoBehaviour
         {
             guardians[hasGuardians].SetActive(true);
             hasGuardians += 1;
-            dmg = 3;
+            dmg = 2;
             level4 = false;
             level5 = true;
         }
@@ -107,7 +108,7 @@ public class Skill_Guardian : MonoBehaviour
                 guardians2[i].SetActive(true);
             }
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            dmg = 5;
+            dmg = 3;
             level5 = false;
         }
     }
@@ -116,31 +117,31 @@ public class Skill_Guardian : MonoBehaviour
     {
         if (Equip_Spinach.ppoppaiLevel == 1 && levelp1 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp1 = false;
             levelp2 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 2 && levelp2 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp2 = false;
             levelp3 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 3 && levelp3 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp3 = false;
             levelp4 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 4 && levelp4 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp4 = false;
             levelp5 = true;
         }
         else if (Equip_Spinach.ppoppaiLevel == 5 && levelp5 == true)
         {
-            dmg += 1f;
+            //dmg += 1f;
             levelp5 = false;
         }
     }

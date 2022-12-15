@@ -77,11 +77,11 @@ public class Enemy : MonoBehaviour
                 isAlive= true;
                 enemySpeed = 0.9f;
                 gameObject.layer = 7;
-                if (t >=0 && t <= 90)
+                if (t >=0 && t <= 45)
                 {
                     enemyHealth = 2f;
                 }
-                else if (t >= 90)
+                else if (t >= 45)
                 {
                     enemyHealth = 8f;
                 }
@@ -93,13 +93,13 @@ public class Enemy : MonoBehaviour
                 isAlive = true;
                 enemySpeed = 0.7f;
                 gameObject.layer = 7;
-                if (t >= 0 && t <= 90)
+                if (t >= 0 && t <= 45)
                 {
                     enemyHealth = 2f;
                 }
-                else if (t >= 90)
+                else if (t >= 45)
                 {
-                    enemyHealth = 4f;
+                    enemyHealth = 6f;
                 }
 
 
