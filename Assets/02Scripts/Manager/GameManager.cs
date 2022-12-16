@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         levelCount = 0;
         MaxEx = 5f;
         levelpanel.SetActive(false);
-        joystick.SetActive(true);
+        //joystick.SetActive(true);
         Time.timeScale = 1f;
         btnmanager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         //empty = new List<GameObject>();
@@ -142,17 +142,17 @@ public class GameManager : MonoBehaviour
             else if (levelCount > 10 && levelCount <= 20)
             {
                 CurEx = 0;
-                MaxEx += 1;
+                MaxEx += 5;
             }
             else if (levelCount > 20 && levelCount <= 30)
             {
                 CurEx = 0;
-                MaxEx += 1;
+                MaxEx += 10;
             }
             else if (levelCount > 30 && levelCount <= 40)
             {
                 CurEx = 0;
-                MaxEx += 2;
+                MaxEx += 20;
             }
         }
     }

@@ -210,7 +210,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemyRush()
     {
-        for(int i = 0; i < 200; i++) { 
+        for(int i = 0; i < 50; i++) { 
         float spawnPosx1 = player.position.x + 8f;
         float spawnPosy1 = player.position.y + 8f;
 
