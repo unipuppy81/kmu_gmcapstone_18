@@ -143,7 +143,7 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axLevel == 4)
         {
-            //transform.localScale = new Vector3(0.08f, 0.08f, 1f);
+            transform.localScale = new Vector3(0.08f, 0.08f, 1f);
             dmg = 2;
             axSpeed = 1.4f;
             level2 = false;
@@ -158,7 +158,7 @@ public class Skill_Ax : MonoBehaviour
         }
         else if (axLevel == 8)
         {
-            //transform.localScale = new Vector3(0.15f, 0.15f, 1f);
+            transform.localScale = new Vector3(0.15f, 0.15f, 1f);
             dmg = 4;
             axSpeed = 1.8f;
             level4 = false;
