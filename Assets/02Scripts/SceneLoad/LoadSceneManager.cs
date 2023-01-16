@@ -29,4 +29,12 @@ public class LoadSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+    public void SelectStageSceneLoad()
+    {
+        SceneManager.LoadScene("SelectStageScene");
+    }
+    public void MainLoad2()
+    {
+        SceneManager.LoadScene("MainScene2");
+    }
 }
