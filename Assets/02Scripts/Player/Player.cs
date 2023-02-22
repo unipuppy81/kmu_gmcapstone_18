@@ -12,49 +12,57 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     //layer 사용시 필요
-    [SerializeField] LayerMask layerMask = 0;
-    [SerializeField] LayerMask layerMask2 = 0;
-    [SerializeField] float searchRadius;
-    [SerializeField] float fireRate = 0f;
-    [SerializeField] TextMeshProUGUI spcountText;
 
-    public ObjectManager objectManager;
-    public Enemy enemy;
+    
+    [SerializeField] LayerMask layerMask = 0;       // 적 찾는 레이어마스크
+    [SerializeField] LayerMask layerMask2 = 0;      // 어따쓰는지 모르겠음
+    [SerializeField] float searchRadius;            // 원거리 공격범위
+    [SerializeField] float fireRate = 0f;           // 발사횟수
+    [SerializeField] TextMeshProUGUI spcountText;   // special skill count text
 
-    public Transform hit_target = null;  // 최종타겟 임시시정
+    public ObjectManager objectManager;             // 오브젝트 풀링
+    public Enemy enemy;                                
+
+    public Transform hit_target = null;             // 최종타겟 지정
     //public GameObject bulletObjA;
     public GameObject Bomb;
-    public GameObject skillbtn;
-    public GameObject gameoverPannel;
     public GameObject BasketBall1;
     public GameObject Ax;
-    public GameObject tomb;
+    public GameObject tomb;                         //
+    public GameObject skillbtn;                     // 특수스킬 버튼
+    public GameObject gameoverPannel;               // 게임오버 패널
 
-    public string bulletObjA;
-    string playerbulletA = "bulletPlayerA";
+    // 오브젝트 풀링
+    public string bulletObjA;                   // 오브젝트 풀링에 사용
+    string playerbulletA = "bulletPlayerA";     // 오브젝트 풀링에 사용
 
-    public Sprite dieSprites;
+    public Sprite dieSprites;       // 캐릭터 사망시 스프라이트 교체
 
-    bool spSkill1Check = true;
+    bool spSkill1Check = true;      // 특수스킬 사용여부 (사용중인지 모르겠음)
 
-    public float playerSpeed = 1.2f;
-    public float maxSpeed = 6f;
-    public float playerMaxHp;
-    public float playercurHp;
-    public float bulletSpeed;
-    public float bulletDamage;
-    public float maxShotDelay;
-    public float curShotDelay;
-    public int playerLevel = 0;
-    public int specialSkill = 0;
+    public float playerSpeed = 1.2f;    // 현재 Speed
+    public float maxSpeed = 6f;         // 최대 Speed
+    public float playercurHp;           // 현재 HP
+    public float playerMaxHp;           // 최대 HP
+    public float bulletSpeed;           // 총알 속도
+    public float bulletDamage;          // 총알 데미지
+    public float maxShotDelay;          // 장전속도
+    public float curShotDelay;          // 장전속도
     public float spawntime;
 
-    public float playertop;
+
+    // 플레이어 위치 고정
+    public float playertop;             // 맵 사이즈 top, bottom, left, right
     public float playerbottom;
     public float playerleft;
     public float playerright;
 
-    public float basketSpeed;
+    public int playerLevel = 0;         // 플레이어 레벨
+    public int specialSkill = 0;        // 특수스킬 횟수
+
+
+
+    public float basketSpeed;           // 농구공 속도
 
     public bool isMagnet;
 
@@ -117,7 +125,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentFireRate = fireRate;
+        //currentFireRate = fireRate;
         InvokeRepeating("SearchEnemy", 0f, 0.1f);
         StartCoroutine(CheckPlayerHealth());
     }

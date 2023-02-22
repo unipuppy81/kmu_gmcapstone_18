@@ -200,6 +200,7 @@ public class Enemy : MonoBehaviour
     void isShooting()
     {
         float dist = Vector3.SqrMagnitude(transform.position - target.transform.position);
+        
         if (dist > searchRadius)
             isShoot = false;
         else

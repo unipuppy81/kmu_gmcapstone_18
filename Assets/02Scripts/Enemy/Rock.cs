@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Rock : MonoBehaviour
 {
+
     private Player player;
     public float lifetime;
     public int rockDamage;
@@ -14,7 +16,7 @@ public class Rock : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
     }
 
-    // Update is called once per frame
+    // Update is called once per  frame
     void Update()
     {
         alive();   

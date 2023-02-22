@@ -337,7 +337,6 @@ public class Boss : MonoBehaviour
 
     IEnumerator CrushAttack1()
         {
-
             // +crush anim
             if (transform.position != btarget.position)
             {

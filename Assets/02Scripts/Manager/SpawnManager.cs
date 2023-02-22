@@ -100,10 +100,10 @@ public class SpawnManager : MonoBehaviour
         spawnPos = player.position;
         spawnPos.y += 5f;
 
-        InvokeRepeating("SpawnBox", 3, 15.0f);
+        //InvokeRepeating("SpawnBox", 3, 15.0f);
         InvokeRepeating("SpawnEnemy", 3, 0.3f);
-        InvokeRepeating("SpawnbEnemy", 3, 15.0f);
-        InvokeRepeating("SpawnEnemyRush", 45, 10000f);
+        //InvokeRepeating("SpawnbEnemy", 3, 15.0f);
+        //InvokeRepeating("SpawnEnemyRush", 45, 10000f);
 
         isSpawnTure = false;
     }
