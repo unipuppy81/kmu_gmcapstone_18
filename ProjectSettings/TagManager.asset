@@ -37,6 +37,9 @@ TagManager:
   - Skill4
   - Ppoppai
   - Armor
+  - Ex3
+  - Ice
+  - Thunder
   layers:
   - Default
   - TransparentFX

@@ -45,6 +45,10 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI armor_levelText;
     [SerializeField]
+    TextMeshProUGUI ice_levelText;
+    [SerializeField]
+    TextMeshProUGUI thunder_levelText;
+    [SerializeField]
     TextMeshProUGUI coinText;
 
     int maxGuardians = 4;
@@ -66,6 +70,8 @@ public class ButtonManager : MonoBehaviour
     public int magincCount;
     public int ppoppaiCount;
     public int armorCount;
+    public int iceCount;
+    public int thunderCount;
     public int coin;
 
     public GameManager gm;
@@ -233,6 +239,30 @@ public class ButtonManager : MonoBehaviour
             }
             Wp_1_levelText();
         }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Ice")
+        {
+            if (iceCount < max)
+            {
+                iceCount++;
+            }
+            else
+            {
+                iceCount = 5;
+            }
+            Wp_1_levelText();
+        }
+        else if (EventSystem.current.currentSelectedGameObject.tag == "Thunder")
+        {
+            if (thunderCount < max)
+            {
+                thunderCount++;
+            }
+            else
+            {
+                thunderCount = 5;
+            }
+            Wp_1_levelText();
+        }
         else if (EventSystem.current.currentSelectedGameObject.tag == "coin")
         {
             coin += 200;
@@ -303,6 +333,8 @@ public class ButtonManager : MonoBehaviour
         maginc_levelText.text = string.Format("LV : {0:D1}", magincCount);
         ppoppai_levelText.text = string.Format("LV : {0:D1}", ppoppaiCount);
         armor_levelText.text = string.Format("LV : {0:D1}", armorCount);
+        ice_levelText.text = string.Format("LV : {0:D1}", iceCount);
+        thunder_levelText.text = string.Format("LV : {0:D1}", thunderCount);
     }
     void cointext()
     {
