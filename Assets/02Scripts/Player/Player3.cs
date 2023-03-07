@@ -19,7 +19,7 @@ public class Player3 : MonoBehaviour
     }
     void Start()
     {
-        speed = 3.0f;
+        speed = 2.0f;
     }
 
     void Update()

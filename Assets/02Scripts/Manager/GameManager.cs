@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Slider exbar;
 
+    public Player3 player;
+    public Player3 playerthree;
+    public GameObject player3;
+    ButtonManager btnmanager;
+
     public GameObject gameclearPannel;
     public GameObject Bossalive;
     public GameObject joystick;
@@ -60,19 +65,19 @@ public class GameManager : MonoBehaviour
     Vector3 posx5;
     Vector3 posx6;
 
-    Player player;
-    ButtonManager btnmanager;
+
 
     private void Awake()
     {
         levelCount = 0;
         MaxEx = 5f;
-        levelpanel.SetActive(false);
+        levelpanel.SetActive(false); 
         //joystick.SetActive(true);
         Time.timeScale = 1f;
         btnmanager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
         //empty = new List<GameObject>();
         bList = new List<GameObject>(selectPanel);
+        playerthree = GameObject.Find("Player").GetComponent<Player3>();
     }
 
     public void Start()
@@ -165,14 +170,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
 
     }
-
     public void closePanel()
     {
         levelpanel.SetActive(false);
         Pausebutton.SetActive(true);
         Time.timeScale = 1f;
     }
-
     public void leveltext()
     {
         levelText.text = string.Format("LV : {0:D1}", levelCount);
@@ -309,7 +312,7 @@ public class GameManager : MonoBehaviour
         }
 
     }*/
-    
+   
     public void ActiveFalse()
     {
         if (levelpanel.activeSelf == false)

@@ -40,6 +40,8 @@ TagManager:
   - Ex3
   - Ice
   - Thunder
+  - Ground
+  - Area
   layers:
   - Default
   - TransparentFX
